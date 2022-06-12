@@ -21,7 +21,6 @@ pub fn initialize() -> windows::core::Result<()> {
             },
         },
     };
-    let min_framework_version = PACKAGE_VERSION::default();
 
     unsafe {
         MddBootstrapInitialize2(

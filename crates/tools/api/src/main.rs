@@ -48,13 +48,13 @@ documentation = ""
 readme = ".github/readme.md"
 
 [target.i686-pc-windows-msvc.dependencies]
-windows_app_i686_msvc = { path = "../../targets/i686_msvc", version = "0.3.0" }
+windows_app_i686_msvc = { path = "../../targets/i686_msvc", version = "0.4.0" }
 
 [target.x86_64-pc-windows-msvc.dependencies]
-windows_app_x86_64_msvc = { path = "../../targets/x86_64_msvc", version = "0.3.0" }
+windows_app_x86_64_msvc = { path = "../../targets/x86_64_msvc", version = "0.4.0" }
 
 [target.aarch64-pc-windows-msvc.dependencies]
-windows_app_aarch64_msvc = { path = "../../targets/aarch64_msvc", version = "0.3.0" }
+windows_app_aarch64_msvc = { path = "../../targets/aarch64_msvc", version = "0.4.0" }
 
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-msvc"

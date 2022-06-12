@@ -4,7 +4,7 @@
 
     <PropertyGroup Label="Globals">
         <OutputWinmd>../.windows/winmd/Microsoft.WindowsAppSdk.Generated.winmd</OutputWinmd>
-        <WinmdVersion>3.0.0</WinmdVersion>
+        <WinmdVersion>255.255.255.255</WinmdVersion>
         <ExcludeFromCrossarch>Microsoft.MRM;Microsoft.UI.Xaml;Microsoft.UI.Xaml.Hosting;Microsoft.UI.Xaml.Media;Microsoft.WindowsAppSdk.Foundation</ExcludeFromCrossarch>
     </PropertyGroup>
 
@@ -139,6 +139,7 @@
         <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.6.4" GeneratePathProperty="true">
             <IncludeAssets>none</IncludeAssets>
         </PackageReference>
+
     </ItemGroup>
 
 </Project>

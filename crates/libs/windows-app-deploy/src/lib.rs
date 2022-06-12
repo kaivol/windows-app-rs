@@ -14,7 +14,7 @@ pub fn to_output_dir() {
     path.pop();
     path.pop();
     path.push("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-    if let Ok(mut file) = OpenOptions::new().create_new(true).write(true).open(path) {
+    if let Ok(mut file) = OpenOptions::new().create_new(true).write(true).open(&path) {
         file.write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
     }
 
@@ -22,4 +22,5 @@ pub fn to_output_dir() {
         &env::var("CARGO_PKG_NAME").expect("Unable to read package name"),
     ))
     .expect("unable to embed manifest file");
+    println!("cargo:rerun-if-changed={}", path.display());
 }

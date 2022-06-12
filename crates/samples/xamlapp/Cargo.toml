@@ -1,5 +1,5 @@
 [package]
-name = "sample_mrm"
+name = "sample_xamlapp"
 version = "0.0.0"
 publish = false
 edition = "2018"
@@ -9,11 +9,18 @@ path = "../../libs/windows-app-deploy"
 
 [dependencies.windows]
 git = "https://github.com/microsoft/windows-rs"
+features = [
+    "alloc",
+    "implement",
+    "Win32_UI_HiDpi",
+    "Win32_UI_WindowsAndMessaging",
+]
 
 [dependencies.windows-app]
 path = "../../libs/windows-app"
 features = [
+    "implement",
     "bootstrap",
     "WindowsAppSdk_Foundation",
-    "Windows_ApplicationModel_Resources",
+    "UI_Xaml_Controls_Primitives",
 ]
