@@ -22,11 +22,6 @@ fn main() {
                 .filter(|e| e.file_type().unwrap().is_file())
                 .map(|e| e.path().into_os_string().into_string().unwrap())
         })
-        .chain([
-            "../windows-rs/crates/libs/metadata/default/Windows.winmd".into(),
-            "../windows-rs/crates/libs/metadata/default/Windows.Win32.winmd".into(),
-            "../windows-rs/crates/libs/metadata/default/Windows.Win32.Interop.winmd".into(),
-        ])
         .map(|e| metadata::reader::File::new(&e).unwrap())
         .collect::<Vec<_>>();
     let reader = &windows_metadata::reader::Reader::new(&files);
@@ -43,7 +38,7 @@ fn main() {
     file.write_all(
         r#"[package]
 name = "windows-app"
-version = "0.3.0"
+version = "0.4.0"
 authors = [""]
 edition = "2018"
 license = "MIT OR Apache-2.0"
