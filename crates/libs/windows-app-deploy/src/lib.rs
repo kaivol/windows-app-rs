@@ -1,3 +1,4 @@
+#[rustfmt::skip]
 mod generated;
 
 use embed_manifest::{embed_manifest, new_manifest};

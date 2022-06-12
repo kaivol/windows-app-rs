@@ -104,11 +104,12 @@ implement = ["windows/implement"]
             .map(|f| f[8..].replace('.', "_"))
             .for_each(|f| sub_features.push(format!("windows/{}", f)));
 
-        let features = sub_features
+        let mut features = sub_features
             .iter()
             .map(|f| format!("\"{f}\""))
-            .collect::<Vec<_>>()
-            .join(",");
+            .collect::<Vec<_>>();
+        features.sort();
+        let features = features.join(",");
 
         file.write_all(format!("{} = [{}]\n", feature, features).as_bytes())
             .unwrap();

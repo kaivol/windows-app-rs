@@ -1,4 +1,1 @@
 newline_style = "Unix"
-ignore = [
-    "src/Microsoft",
-]
