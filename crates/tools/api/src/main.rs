@@ -1,13 +1,23 @@
+use std::collections::HashSet;
+use std::fs::OpenOptions;
+use std::io::prelude::*;
+use std::path::PathBuf;
+use std::{env, fs};
+
 use quote::*;
 use rayon::prelude::*;
-use std::collections::HashSet;
-use std::fs::read_dir;
-use std::{fs::OpenOptions, io::prelude::*};
-use windows_bindgen as bindgen;
-use windows_metadata as metadata;
+use {windows_bindgen as bindgen, windows_metadata as metadata};
 
 fn main() {
-    let libs = std::path::PathBuf::from("crates/libs/");
+    let workspace_root = {
+        let mut temp = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
+        temp.pop();
+        temp.pop();
+        temp.pop();
+        temp
+    };
+    let libs = workspace_root.join("crates/libs/");
+
     let windows_app_deploy = libs.join("windows-app-deploy/");
     gen_bootstrap(&windows_app_deploy);
 
@@ -15,7 +25,7 @@ fn main() {
 
     let _ = std::fs::remove_dir_all(&windows_app.join("src/Microsoft/"));
 
-    let files = read_dir(".windows/winmd")
+    let files = fs::read_dir(workspace_root.join(".windows/winmd/"))
         .unwrap()
         .filter_map(|e| {
             e.ok()
@@ -38,7 +48,7 @@ fn main() {
     file.write_all(
         r#"[package]
 name = "windows-app"
-version = "0.4.0"
+version = "0.5.0"
 authors = [""]
 edition = "2018"
 license = "MIT OR Apache-2.0"
@@ -48,13 +58,13 @@ documentation = ""
 readme = ".github/readme.md"
 
 [target.i686-pc-windows-msvc.dependencies]
-windows_app_i686_msvc = { path = "../../targets/i686_msvc", version = "0.4.0" }
+windows_app_i686_msvc = { path = "../../targets/i686_msvc", version = "0.5.0" }
 
 [target.x86_64-pc-windows-msvc.dependencies]
-windows_app_x86_64_msvc = { path = "../../targets/x86_64_msvc", version = "0.4.0" }
+windows_app_x86_64_msvc = { path = "../../targets/x86_64_msvc", version = "0.5.0" }
 
 [target.aarch64-pc-windows-msvc.dependencies]
-windows_app_aarch64_msvc = { path = "../../targets/aarch64_msvc", version = "0.4.0" }
+windows_app_aarch64_msvc = { path = "../../targets/aarch64_msvc", version = "0.5.0" }
 
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-msvc"
@@ -69,6 +79,7 @@ features = [
 [features]
 default = []
 bootstrap = ["WindowsAppSdk_Foundation"]
+interop = ["UI", "windows/Win32_System_LibraryLoader", "windows/Win32_Graphics_Gdi", "windows/Win32_Foundation", "windows/Win32_Graphics_Gdi", "windows/Win32_UI_WindowsAndMessaging"]
 deprecated = []
 implement = ["windows/implement"]
 "#
