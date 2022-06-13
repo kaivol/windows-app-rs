@@ -1,5 +1,5 @@
 [package]
-name = "samples_battery_xcopy"
+name = "sample_battery_xcopy"
 version = "0.0.0"
 publish = false
 edition = "2018"
@@ -13,6 +13,7 @@ features = [
     "alloc",
     "Win32_Foundation",
     "Win32_System_LibraryLoader",
+    "Win32_UI_WindowsAndMessaging",
 ]
 
 [dependencies.windows-app]

@@ -136,9 +136,6 @@
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.0" GeneratePathProperty="true">
             <IncludeAssets>none</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.6.4" GeneratePathProperty="true">
-            <IncludeAssets>none</IncludeAssets>
-        </PackageReference>
 
     </ItemGroup>
 
