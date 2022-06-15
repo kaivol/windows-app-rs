@@ -31,6 +31,14 @@ jobs:
     - run: rustup update --no-self-update ${{ matrix.rust }} && rustup default ${{ matrix.rust }}
     - run: rustup target add ${{ matrix.other }}
 
+    - run: Invoke-webrequest -uri https://aka.ms/windowsappsdk/1.1/1.1.1/windowsappruntimeinstall-1.1.1-x64.exe -OutFile windowsappruntimeinstall-1.1-x64.exe
+      shell: powershell
+    - run: '&.\windowsappruntimeinstall-1.1-x64.exe'
+      shell: powershell
+      continue-on-error: true
+    - run: (Get-WinEvent Microsoft-Windows-AppXDeploymentServer/Operational -MaxEvents 10) | Format-Table -Wrap
+      shell: powershell
+
     - name: windows-app build
       run: cargo test --workspace --target ${{ matrix.other }} --exclude sample_xamlapp
 
