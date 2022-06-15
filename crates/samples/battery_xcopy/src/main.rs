@@ -1,8 +1,6 @@
-use windows::Win32::{
-    Foundation::{ERROR_FILE_NOT_FOUND, HWND},
-    System::LibraryLoader::LoadLibraryW,
-    UI::WindowsAndMessaging::{MessageBoxW, MB_ICONSTOP, MB_OK},
-};
+use windows::Win32::Foundation::{ERROR_FILE_NOT_FOUND, HWND};
+use windows::Win32::System::LibraryLoader::LoadLibraryW;
+use windows::Win32::UI::WindowsAndMessaging::{MessageBoxW, MB_ICONSTOP, MB_OK};
 use windows_app::Microsoft::Windows::System::Power::*;
 
 fn main() -> ::windows::core::Result<()> {

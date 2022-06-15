@@ -1,27 +1,46 @@
 #[rustfmt::skip]
 mod generated;
 
-use std::env;
 use std::fs::File;
 use std::io::Write;
 use std::path::PathBuf;
+use std::{env, fmt};
 
-/// Writes the Windows App Runtime Bootstrap dll to `OUT_DIR` and embeds a manifest into the executable.
+/// Includes the Windows App Runtime Bootstrap dll in rustc-link-search.
 /// This is only useful when called from a build script.
-pub fn dll_to_output_dir() {
-    let mut path = PathBuf::from(env::var("OUT_DIR").expect("No `OUT_DIR` env variable set"));
-    path.pop();
-    path.pop();
-    path.pop();
-    path.push("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-    File::create(&path)
+pub fn include_bootstrap_dll() {
+    let path = PathBuf::from(env::var("OUT_DIR").expect("No `OUT_DIR` env variable set"));
+    let file = path.join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
+    File::create(&file)
         .unwrap()
         .write_all(&generated::BOOTSTRAP_DLL_BYTES)
         .unwrap();
-    println!("cargo:rerun-if-changed={}", path.display());
+    println!("cargo:rustc-link-search={}", path.display());
 }
 
-pub fn embed_manifest() {
+pub enum LinkArgTarget {
+    All,
+    Benches,
+    Bin(&'static str),
+    Bins,
+    Tests,
+    Examples,
+}
+
+impl LinkArgTarget {
+    fn rustc_link_arg(&self, args: fmt::Arguments) {
+        match self {
+            LinkArgTarget::All => println!("cargo:rustc-link-arg={args}"),
+            LinkArgTarget::Benches => println!("cargo:rustc-link-arg-benches={args}"),
+            LinkArgTarget::Bin(bin) => println!("cargo:rustc-link-arg-{bin}={args}"),
+            LinkArgTarget::Bins => println!("cargo:rustc-link-arg-bins={args}"),
+            LinkArgTarget::Tests => println!("cargo:rustc-link-arg-tests={args}"),
+            LinkArgTarget::Examples => println!("cargo:rustc-link-arg-examples={args}"),
+        };
+    }
+}
+
+pub fn embed_manifest(target: LinkArgTarget) {
     let out_dir = env::var("OUT_DIR").expect("No `OUT_DIR` env variable set");
     let manifest_file = PathBuf::from(out_dir).join("manifest.xml");
     File::create(&manifest_file)
@@ -33,10 +52,7 @@ pub fn embed_manifest() {
             .as_bytes(),
         )
         .unwrap();
-    println!("cargo:rustc-link-arg-bins=/MANIFEST:EMBED");
-    println!(
-        "cargo:rustc-link-arg-bins=/MANIFESTINPUT:{}",
-        manifest_file.display()
-    );
-    println!("cargo:rustc-link-arg-bins=/MANIFESTUAC:NO");
+    target.rustc_link_arg(format_args!("/MANIFEST:EMBED"));
+    target.rustc_link_arg(format_args!("/MANIFESTINPUT:{}", manifest_file.display()));
+    target.rustc_link_arg(format_args!("/MANIFESTUAC:NO"));
 }
