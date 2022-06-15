@@ -31,6 +31,7 @@ features = [
 [features]
 default = []
 bootstrap = ["WindowsAppSdk_Foundation"]
+interop = ["UI", "windows/Win32_Foundation", "windows/Win32_Graphics_Gdi", "windows/Win32_System_LibraryLoader", "windows/Win32_UI_WindowsAndMessaging"]
 deprecated = []
 implement = ["windows/implement"]
 Foundation = []

@@ -1,27 +1,18 @@
 use std::cell::RefCell;
 use std::convert::TryFrom;
 
-use windows::{
-    core::{implement, IInspectable, Interface},
-    Win32::{
-        Foundation::{HWND, RECT},
-        UI::{
-            HiDpi::GetDpiForWindow,
-            WindowsAndMessaging::{
-                GetSystemMetrics, GetWindowRect, SetWindowPos, SM_CXSCREEN, SM_CYSCREEN,
-                SWP_NOMOVE, SWP_NOSIZE,
-            },
-        },
-    },
+use windows::core::{implement, IInspectable, Interface};
+use windows::Win32::Foundation::{HWND, RECT};
+use windows::Win32::UI::HiDpi::GetDpiForWindow;
+use windows::Win32::UI::WindowsAndMessaging::{
+    GetSystemMetrics, GetWindowRect, SetWindowPos, SM_CXSCREEN, SM_CYSCREEN, SWP_NOMOVE, SWP_NOSIZE,
 };
-
-use windows_app::{
-    bootstrap,
-    Microsoft::UI::Xaml::{
-        Application, ApplicationInitializationCallback, Controls::Button, HorizontalAlignment,
-        IApplicationOverrides, IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs,
-        RoutedEventHandler, Window,
-    },
+use windows_app::bootstrap;
+use windows_app::Microsoft::UI::Xaml::Controls::Button;
+use windows_app::Microsoft::UI::Xaml::{
+    Application, ApplicationInitializationCallback, HorizontalAlignment, IApplicationOverrides,
+    IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs, RoutedEventHandler,
+    Window,
 };
 
 fn main() -> windows::core::Result<()> {

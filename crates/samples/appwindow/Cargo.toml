@@ -20,6 +20,7 @@ features = [
 path = "../../libs/windows-app"
 features = [
     "bootstrap",
+    "interop",
     "WindowsAppSdk_Foundation",
     "UI_Windowing",
 ]

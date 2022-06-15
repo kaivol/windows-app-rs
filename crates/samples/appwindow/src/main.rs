@@ -1,6 +1,6 @@
-use ::windows::core::*;
-use ::windows_app::Microsoft::UI::Windowing::*;
-use ::windows_app::*;
+use std::convert::TryInto;
+
+use windows::core::*;
 use windows::Foundation::TypedEventHandler;
 use windows::Win32::Foundation::{BOOL, HWND, RECT};
 use windows::Win32::UI::HiDpi::GetDpiForWindow;
@@ -8,6 +8,8 @@ use windows::Win32::UI::WindowsAndMessaging::{
     DispatchMessageW, GetMessageW, GetSystemMetrics, GetWindowRect, PostQuitMessage, SetWindowPos,
     TranslateMessage, MSG, SM_CXSCREEN, SM_CYSCREEN, SWP_NOMOVE, SWP_NOSIZE,
 };
+use windows_app::Microsoft::UI::Windowing::*;
+use windows_app::*;
 
 fn main() -> Result<()> {
     bootstrap::initialize()?;
@@ -33,7 +35,7 @@ fn sample_main() -> Result<()> {
         Ok(())
     }))?;
 
-    let hwnd = HWND(window.Id()?.Value as _);
+    let hwnd = window.Id()?.try_into()?;
     resize_window(hwnd, 800, 600).then(|| {
         center_window(hwnd);
     });

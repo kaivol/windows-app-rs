@@ -1,9 +1,10 @@
 //! Utilities for bootstrapping an app that uses the Windows App SDK.
 
-use crate::Microsoft::WindowsAppSdk::Foundation::*;
 use windows::Win32::Storage::Packaging::Appx::{
     PACKAGE_VERSION, PACKAGE_VERSION_0, PACKAGE_VERSION_0_0,
 };
+
+use crate::Microsoft::WindowsAppSdk::Foundation::*;
 
 /// Locates the Windows App SDK framework package compatible with the (currently internal)
 /// versioning criteria and loads it into the current process.
