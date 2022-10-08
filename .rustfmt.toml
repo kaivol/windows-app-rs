@@ -1,1 +1,5 @@
-newline_style = "Unix"
+imports_granularity = "Module"
+group_imports = "StdExternalCrate"
+chain_width = 80
+fn_call_width = 80
+overflow_delimited_expr = true

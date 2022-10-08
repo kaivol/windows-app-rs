@@ -6,16 +6,29 @@ use std::io::Write;
 use std::path::PathBuf;
 use std::{env, fmt};
 
-/// Includes the Windows App Runtime Bootstrap dll in rustc-link-search.
+/// Copies the Windows App Runtime Bootstrap dll in rustc-link-search.
 /// This is only useful when called from a build script.
 pub fn include_bootstrap_dll() {
-    let path = PathBuf::from(env::var("OUT_DIR").expect("No `OUT_DIR` env variable set"));
+    let mut path = PathBuf::from(env::var("OUT_DIR").expect("No `OUT_DIR` env variable set"));
+    path.pop();
+    path.pop();
+    path.pop();
     let file = path.join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-    File::create(&file)
-        .unwrap()
-        .write_all(&generated::BOOTSTRAP_DLL_BYTES)
-        .unwrap();
-    println!("cargo:rustc-link-search={}", path.display());
+    File::create(&file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
+
+    // All Windows App SDK DLLs with non-COM/WinRT exports must be delay-loaded to give
+    // developers a chance to hook LoadLibrary with the bootstrap and get the
+    // Windows App Runtime package into the dll search path.
+    //
+    // GNU targets already utilize delay-loaded import libraries and do not need the
+    // additional linker instructions.
+
+    if !env::var("TARGET").unwrap().contains("pc-windows-gnu") {
+        println!("cargo:rustc-link-arg=/DELAYLOAD:mrm.dll");
+        println!("cargo:rustc-link-arg=/DELAYLOAD:dwritecore.dll");
+        println!("cargo:rustc-link-arg=/DELAYLOAD:microsoft.windowsappruntime.dll");
+        println!("cargo:rustc-link-lib=static=delayimp");
+    }
 }
 
 pub enum LinkArgTarget {

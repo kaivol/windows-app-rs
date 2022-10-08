@@ -1,0 +1,12 @@
+[package]
+name = "tool_windows_app"
+version = "0.0.0"
+edition = "2018"
+publish = false
+
+[dependencies]
+rayon = "1.5.3"
+patricia_tree = "0.3.2"
+windows-metadata = { path = "../../../../windows-rs/crates/libs/metadata" }
+windows-bindgen = { path = "../../../../windows-rs/crates/libs/bindgen" }
+tool_lib = { path = "../../../../windows-rs/crates/tools/lib" }

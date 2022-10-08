@@ -1,36 +1,17 @@
 //! Utilities for bootstrapping an app that uses the Windows App SDK.
 
-use windows::Win32::Storage::Packaging::Appx::{
-    PACKAGE_VERSION, PACKAGE_VERSION_0, PACKAGE_VERSION_0_0,
-};
+use windows::core::HSTRING;
+use windows::Win32::Storage::Packaging::Appx::{PACKAGE_VERSION, PACKAGE_VERSION_0};
 
 use crate::Microsoft::WindowsAppSdk::Foundation::*;
 
-/// Locates the Windows App SDK framework package compatible with the (currently internal)
-/// versioning criteria and loads it into the current process.
+#[allow(clippy::identity_op)]
+/// Locates the Windows App SDK framework package compatible with the
+/// metadata-matched versioning criteria and loads it into the current process.
 ///
 /// If multiple packages meet the criteria, the best candidate is selected.
 pub fn initialize() -> windows::core::Result<()> {
-    let mdd_version = 0x00010001;
-    let min_framework_version = PACKAGE_VERSION {
-        Anonymous: PACKAGE_VERSION_0 {
-            Anonymous: PACKAGE_VERSION_0_0 {
-                Major: 1000,
-                Minor: 516,
-                Build: 2156,
-                Revision: 0,
-            },
-        },
-    };
-
-    unsafe {
-        MddBootstrapInitialize2(
-            mdd_version,
-            "",
-            min_framework_version,
-            MddBootstrapInitializeOptions_None,
-        )
-    }
+    unsafe { MddBootstrapInitialize2(WINDOWSAPPSDK_RELEASE_MAJORMINOR, &HSTRING::from(WINDOWSAPPSDK_RELEASE_VERSION_TAG_W), PACKAGE_VERSION { Anonymous: PACKAGE_VERSION_0 { Version: WASR_VERSION_UINT64 } }, MddBootstrapInitializeOptions_OnNoMatch_ShowUI) }
 }
 
 /// Undo the changes made by `initialize()`.

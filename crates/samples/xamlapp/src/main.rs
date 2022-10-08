@@ -1,29 +1,40 @@
 use std::cell::RefCell;
 use std::convert::TryFrom;
 
-use windows::core::{implement, IInspectable, Interface};
+use windows::core::{implement, IInspectable, Interface, PWSTR};
+use windows::w;
+use windows::ApplicationModel::Package;
+use windows::Win32::Foundation;
 use windows::Win32::Foundation::{HWND, RECT};
+use windows::Win32::Storage::Packaging::Appx::GetCurrentPackageFullName;
 use windows::Win32::UI::HiDpi::GetDpiForWindow;
 use windows::Win32::UI::WindowsAndMessaging::{
     GetSystemMetrics, GetWindowRect, SetWindowPos, SM_CXSCREEN, SM_CYSCREEN, SWP_NOMOVE, SWP_NOSIZE,
 };
 use windows_app::bootstrap;
-use windows_app::Microsoft::UI::Xaml::Controls::Button;
-use windows_app::Microsoft::UI::Xaml::{
-    Application, ApplicationInitializationCallback, HorizontalAlignment, IApplicationOverrides,
-    IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs, RoutedEventHandler,
-    Window,
-};
+use windows_app::UI::Xaml::Controls::{Button, StackPanel};
+use windows_app::UI::Xaml::Media::SolidColorBrush;
+use windows_app::UI::Xaml::{Application, ApplicationInitializationCallback, HorizontalAlignment, IApplicationOverrides, IApplicationOverrides_Impl, IUIElementFactory_Vtbl, IWindowNative, LaunchActivatedEventArgs, RoutedEventHandler, UIElement, Window};
 
 fn main() -> windows::core::Result<()> {
-    bootstrap::initialize()?;
+    let package = unsafe {
+        GetCurrentPackageFullName(&mut 0, PWSTR::null()) == Foundation::ERROR_INSUFFICIENT_BUFFER
+    };
+    if !package {
+        bootstrap::initialize()?;
+    }
 
-    Application::Start(ApplicationInitializationCallback::new(|_| {
+    let appbar = windows_app::UI::Xaml::Controls::Button::compose(App::new()?);
+
+    Application::Start(&ApplicationInitializationCallback::new(|_| {
         let _ = Application::compose(App::new()?)?;
         Ok(())
     }))?;
 
-    bootstrap::uninitialize()
+    if !package {
+        bootstrap::uninitialize()?;
+    }
+    Ok(())
 }
 
 #[implement(IApplicationOverrides)]
@@ -44,26 +55,37 @@ impl App {
 impl IApplicationOverrides_Impl for App {
     fn OnLaunched(&self, _: &Option<LaunchActivatedEventArgs>) -> windows::core::Result<()> {
         let window = Window::new()?;
-        window.SetTitle("WinUI 3 Desktop, Unpackaged (Rust)")?;
+        window.SetTitle(w!("WinUI 3 Desktop, Unpackaged (Rust)"))?;
 
         let mut hwnd = HWND::default();
         unsafe {
             window.cast::<IWindowNative>()?.WindowHandle(&mut hwnd)?;
         }
 
+        let package = Package::Current();
+        let text = if package.is_ok() {
+            "package"
+        } else {
+            "nopackage"
+        };
+
+        let panel = StackPanel::new()?;
+        panel.SetBackground(&SolidColorBrush::CreateInstanceWithColor(
+            windows_app::UI::Colors::Transparent()?,
+        )?)?;
+
         let button = Button::new()?;
-        button.SetContent(IInspectable::try_from("Click Me")?)?;
+        button.SetContent(&IInspectable::try_from(text)?)?;
         button.SetHorizontalAlignment(HorizontalAlignment::Center)?;
-        button.Click(RoutedEventHandler::new(|sender, _args| {
+        button.Click(&RoutedEventHandler::new(|sender, _args| {
             if let Some(button) = sender {
-                button
-                    .cast::<Button>()?
-                    .SetContent(IInspectable::try_from("Clicked! 🦀")?)?;
+                button.cast::<Button>()?.SetContent(&IInspectable::try_from("Clicked! 🦀")?)?;
             }
             Ok(())
         }))?;
+        panel.Children()?.Append(&button)?;
 
-        window.SetContent(&button)?;
+        window.SetContent(&panel)?;
 
         resize_window(hwnd, 800, 600).then(|| {
             center_window(hwnd);

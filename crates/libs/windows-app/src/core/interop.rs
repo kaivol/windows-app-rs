@@ -14,18 +14,12 @@ use windows::Win32::UI::WindowsAndMessaging::HICON;
 
 use crate::Microsoft::UI::{DisplayId, IconId, WindowId};
 
-static GetWindowIdFromWindow: FunctionCache<HWND, WindowId> =
-    FunctionCache::new(b"Windowing_GetWindowIdFromWindow\0");
-static GetWindowFromWindowId: FunctionCache<WindowId, HWND> =
-    FunctionCache::new(b"Windowing_GetWindowFromWindowId\0");
-static GetDisplayIdFromMonitor: FunctionCache<HMONITOR, DisplayId> =
-    FunctionCache::new(b"Windowing_GetDisplayIdFromMonitor\0");
-static GetMonitorFromDisplayId: FunctionCache<DisplayId, HMONITOR> =
-    FunctionCache::new(b"Windowing_GetMonitorFromDisplayId\0");
-static GetIconIdFromIcon: FunctionCache<HICON, IconId> =
-    FunctionCache::new(b"Windowing_GetIconIdFromIcon\0");
-static GetIconFromIconId: FunctionCache<IconId, HICON> =
-    FunctionCache::new(b"Windowing_GetIconFromIconId\0");
+static GetWindowIdFromWindow: FunctionCache<HWND, WindowId> = FunctionCache::new(b"Windowing_GetWindowIdFromWindow\0");
+static GetWindowFromWindowId: FunctionCache<WindowId, HWND> = FunctionCache::new(b"Windowing_GetWindowFromWindowId\0");
+static GetDisplayIdFromMonitor: FunctionCache<HMONITOR, DisplayId> = FunctionCache::new(b"Windowing_GetDisplayIdFromMonitor\0");
+static GetMonitorFromDisplayId: FunctionCache<DisplayId, HMONITOR> = FunctionCache::new(b"Windowing_GetMonitorFromDisplayId\0");
+static GetIconIdFromIcon: FunctionCache<HICON, IconId> = FunctionCache::new(b"Windowing_GetIconIdFromIcon\0");
+static GetIconFromIconId: FunctionCache<IconId, HICON> = FunctionCache::new(b"Windowing_GetIconFromIconId\0");
 
 struct FunctionCache<T1, T2: Default> {
     function: AtomicPtr<()>,
@@ -35,11 +29,7 @@ struct FunctionCache<T1, T2: Default> {
 
 impl<T1, T2: Default> FunctionCache<T1, T2> {
     const fn new(name: &'static [u8]) -> FunctionCache<T1, T2> {
-        Self {
-            function: AtomicPtr::new(null_mut()),
-            name,
-            _phantom: PhantomData,
-        }
+        Self { function: AtomicPtr::new(null_mut()), name, _phantom: PhantomData }
     }
 
     fn get(&self) -> windows::core::Result<extern "system" fn(T1, *mut T2) -> HRESULT> {
@@ -47,10 +37,7 @@ impl<T1, T2: Default> FunctionCache<T1, T2> {
         if !(function.is_null()) {
             Ok(unsafe { mem::transmute(function) })
         } else {
-            unsafe {
-                delay_load(b"Microsoft.Internal.FrameworkUdk.dll\0", self.name)
-                    .map(|f| mem::transmute(f))
-            }
+            unsafe { delay_load(b"Microsoft.Internal.FrameworkUdk.dll\0", self.name).map(|f| mem::transmute(f)) }
         }
     }
 

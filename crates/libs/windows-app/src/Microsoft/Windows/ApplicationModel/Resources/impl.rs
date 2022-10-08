@@ -37,7 +37,7 @@ impl IResourceContext_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IResourceContext, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IResourceContext, OFFSET>(),
             QualifierValues: QualifierValues::<Identity, Impl, OFFSET>,
         }
     }
@@ -136,11 +136,10 @@ impl IResourceManager_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveResourceNotFound(::core::mem::transmute(&token))
-                .into()
+            this.RemoveResourceNotFound(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IResourceManager, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IResourceManager, OFFSET>(),
             MainResourceMap: MainResourceMap::<Identity, Impl, OFFSET>,
             CreateResourceContext: CreateResourceContext::<Identity, Impl, OFFSET>,
             ResourceNotFound: ResourceNotFound::<Identity, Impl, OFFSET>,

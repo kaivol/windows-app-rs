@@ -8,7 +8,7 @@ use windows::Win32::UI::WindowsAndMessaging::{
     DispatchMessageW, GetMessageW, GetSystemMetrics, GetWindowRect, PostQuitMessage, SetWindowPos,
     TranslateMessage, MSG, SM_CXSCREEN, SM_CYSCREEN, SWP_NOMOVE, SWP_NOSIZE,
 };
-use windows_app::Microsoft::UI::Windowing::*;
+use windows_app::UI::Windowing::*;
 use windows_app::*;
 
 fn main() -> Result<()> {
@@ -25,12 +25,11 @@ fn sample_main() -> Result<()> {
 
     let presenter = OverlappedPresenter::Create()?;
     presenter.SetBorderAndTitleBar(true, true)?;
-    presenter.SetIsAlwaysOnTop(true)?;
 
-    let window = AppWindow::CreateWithPresenter(presenter)?;
-    window.SetTitle("Hello, world!")?;
+    let window = AppWindow::CreateWithPresenter(&presenter)?;
+    window.SetTitle(&HSTRING::from("Hello, world!"))?;
 
-    window.Destroying(TypedEventHandler::new(|_, __| unsafe {
+    window.Destroying(&TypedEventHandler::new(|_, __| unsafe {
         PostQuitMessage(0);
         Ok(())
     }))?;
