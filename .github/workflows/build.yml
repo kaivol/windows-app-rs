@@ -17,6 +17,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Update toolchain
         run: rustup update --no-self-update nightly && rustup default nightly-x86_64-pc-windows-msvc
+      - name: Install rustfmt
+        run: rustup component add rustfmt
       - name: Run cargo fmt
         run: cargo +nightly fmt --all -- --check
 
