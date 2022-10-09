@@ -33,7 +33,7 @@ fn main() {
 
     write!(file,
            r#"[package]
-name = "windows-app"
+name = "windows_app"
 version = "0.5.0"
 authors = [""]
 edition = "2018"
