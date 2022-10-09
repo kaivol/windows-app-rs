@@ -199,8 +199,7 @@ impl ICollectionView_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveCurrentChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveCurrentChanged(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn CurrentChanging<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -232,8 +231,7 @@ impl ICollectionView_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveCurrentChanging(::core::mem::transmute(&token))
-                .into()
+            this.RemoveCurrentChanging(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn MoveCurrentTo<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -372,7 +370,7 @@ impl ICollectionView_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICollectionView, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICollectionView, OFFSET>(),
             CurrentItem: CurrentItem::<Identity, Impl, OFFSET>,
             CurrentPosition: CurrentPosition::<Identity, Impl, OFFSET>,
             IsCurrentAfterLast: IsCurrentAfterLast::<Identity, Impl, OFFSET>,
@@ -428,7 +426,7 @@ impl ICollectionViewFactory_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICollectionViewFactory,
                 OFFSET,
@@ -496,7 +494,7 @@ impl ICollectionViewGroup_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICollectionViewGroup, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICollectionViewGroup, OFFSET>(
             ),
             Group: Group::<Identity, Impl, OFFSET>,
             GroupItems: GroupItems::<Identity, Impl, OFFSET>,
@@ -507,7 +505,7 @@ impl ICollectionViewGroup_Vtbl {
     }
 }
 pub trait ICustomProperty_Impl: Sized {
-    fn Type(&self) -> ::windows::core::Result<::windows::UI::Xaml::Interop::TypeName>;
+    fn Type(&self) -> ::windows::core::Result<crate::core::TypeName>;
     fn Name(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
     fn GetValue(
         &self,
@@ -547,7 +545,7 @@ impl ICustomProperty_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            result__: *mut ::core::mem::ManuallyDrop<crate::core::TypeName>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -610,11 +608,8 @@ impl ICustomProperty_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetValue(
-                ::core::mem::transmute(&target),
-                ::core::mem::transmute(&value),
-            )
-            .into()
+            this.SetValue(::core::mem::transmute(&target), ::core::mem::transmute(&value))
+                .into()
         }
         unsafe extern "system" fn GetIndexedValue<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -628,10 +623,9 @@ impl ICustomProperty_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.GetIndexedValue(
-                ::core::mem::transmute(&target),
-                ::core::mem::transmute(&index),
-            ) {
+            match this
+                .GetIndexedValue(::core::mem::transmute(&target), ::core::mem::transmute(&index))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -698,7 +692,7 @@ impl ICustomProperty_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICustomProperty, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICustomProperty, OFFSET>(),
             Type: Type::<Identity, Impl, OFFSET>,
             Name: Name::<Identity, Impl, OFFSET>,
             GetValue: GetValue::<Identity, Impl, OFFSET>,
@@ -721,10 +715,10 @@ pub trait ICustomPropertyProvider_Impl: Sized {
     fn GetIndexedProperty(
         &self,
         name: &::windows::core::HSTRING,
-        r#type: &::windows::UI::Xaml::Interop::TypeName,
+        r#type: &crate::core::TypeName,
     ) -> ::windows::core::Result<ICustomProperty>;
     fn GetStringRepresentation(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn Type(&self) -> ::windows::core::Result<::windows::UI::Xaml::Interop::TypeName>;
+    fn Type(&self) -> ::windows::core::Result<crate::core::TypeName>;
 }
 impl ::windows::core::RuntimeName for ICustomPropertyProvider {
     const NAME: &'static str = "Microsoft.UI.Xaml.Data.ICustomPropertyProvider";
@@ -762,15 +756,14 @@ impl ICustomPropertyProvider_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             name: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            r#type: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            r#type: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             result__: *mut *mut ::core::ffi::c_void,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.GetIndexedProperty(
-                ::core::mem::transmute(&name),
-                ::core::mem::transmute(&r#type),
-            ) {
+            match this
+                .GetIndexedProperty(::core::mem::transmute(&name), ::core::mem::transmute(&r#type))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -804,7 +797,7 @@ impl ICustomPropertyProvider_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            result__: *mut ::core::mem::ManuallyDrop<crate::core::TypeName>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -818,7 +811,7 @@ impl ICustomPropertyProvider_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICustomPropertyProvider,
                 OFFSET,
@@ -869,7 +862,7 @@ impl IItemsRangeInfo_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IItemsRangeInfo, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IItemsRangeInfo, OFFSET>(),
             RangesChanged: RangesChanged::<Identity, Impl, OFFSET>,
         }
     }
@@ -954,8 +947,7 @@ impl INotifyDataErrorInfo_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveErrorsChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveErrorsChanged(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn GetErrors<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -978,7 +970,7 @@ impl INotifyDataErrorInfo_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, INotifyDataErrorInfo, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, INotifyDataErrorInfo, OFFSET>(
             ),
             HasErrors: HasErrors::<Identity, Impl, OFFSET>,
             ErrorsChanged: ErrorsChanged::<Identity, Impl, OFFSET>,
@@ -1039,11 +1031,10 @@ impl INotifyPropertyChanged_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemovePropertyChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemovePropertyChanged(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 INotifyPropertyChanged,
                 OFFSET,
@@ -1089,8 +1080,7 @@ impl ISelectionInfo_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SelectRange(::core::mem::transmute(&itemindexrange))
-                .into()
+            this.SelectRange(::core::mem::transmute(&itemindexrange)).into()
         }
         unsafe extern "system" fn DeselectRange<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1102,8 +1092,7 @@ impl ISelectionInfo_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.DeselectRange(::core::mem::transmute(&itemindexrange))
-                .into()
+            this.DeselectRange(::core::mem::transmute(&itemindexrange)).into()
         }
         unsafe extern "system" fn IsSelected<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1145,7 +1134,7 @@ impl ISelectionInfo_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ISelectionInfo, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ISelectionInfo, OFFSET>(),
             SelectRange: SelectRange::<Identity, Impl, OFFSET>,
             DeselectRange: DeselectRange::<Identity, Impl, OFFSET>,
             IsSelected: IsSelected::<Identity, Impl, OFFSET>,
@@ -1212,7 +1201,7 @@ impl ISupportIncrementalLoading_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ISupportIncrementalLoading,
                 OFFSET,
@@ -1229,14 +1218,14 @@ pub trait IValueConverter_Impl: Sized {
     fn Convert(
         &self,
         value: &::core::option::Option<::windows::core::IInspectable>,
-        targettype: &::windows::UI::Xaml::Interop::TypeName,
+        targettype: &crate::core::TypeName,
         parameter: &::core::option::Option<::windows::core::IInspectable>,
         language: &::windows::core::HSTRING,
     ) -> ::windows::core::Result<::windows::core::IInspectable>;
     fn ConvertBack(
         &self,
         value: &::core::option::Option<::windows::core::IInspectable>,
-        targettype: &::windows::UI::Xaml::Interop::TypeName,
+        targettype: &crate::core::TypeName,
         parameter: &::core::option::Option<::windows::core::IInspectable>,
         language: &::windows::core::HSTRING,
     ) -> ::windows::core::Result<::windows::core::IInspectable>;
@@ -1257,7 +1246,7 @@ impl IValueConverter_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-            targettype: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            targettype: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             parameter: *mut ::core::ffi::c_void,
             language: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
             result__: *mut *mut ::core::ffi::c_void,
@@ -1285,7 +1274,7 @@ impl IValueConverter_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-            targettype: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            targettype: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             parameter: *mut ::core::ffi::c_void,
             language: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
             result__: *mut *mut ::core::ffi::c_void,
@@ -1307,7 +1296,7 @@ impl IValueConverter_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IValueConverter, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IValueConverter, OFFSET>(),
             Convert: Convert::<Identity, Impl, OFFSET>,
             ConvertBack: ConvertBack::<Identity, Impl, OFFSET>,
         }

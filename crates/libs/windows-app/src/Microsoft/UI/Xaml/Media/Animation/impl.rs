@@ -46,11 +46,10 @@ impl INavigationTransitionInfoOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetNavigationStateCore(::core::mem::transmute(&navigationstate))
-                .into()
+            this.SetNavigationStateCore(::core::mem::transmute(&navigationstate)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 INavigationTransitionInfoOverrides,
                 OFFSET,

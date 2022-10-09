@@ -6,6 +6,8 @@ pub mod AppNotifications;
 pub mod ApplicationModel;
 #[cfg(feature = "Windows_PushNotifications")]
 pub mod PushNotifications;
+#[cfg(feature = "Windows_Security")]
+pub mod Security;
 #[cfg(feature = "Windows_System")]
 pub mod System;
 #[cfg(feature = "implement")]

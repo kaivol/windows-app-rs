@@ -28,8 +28,11 @@ impl IApplicationOverrides_Vtbl {
             this.OnLaunched(::core::mem::transmute(&args)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IApplicationOverrides, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IApplicationOverrides,
+                OFFSET,
+            >(),
             OnLaunched: OnLaunched::<Identity, Impl, OFFSET>,
         }
     }
@@ -109,7 +112,7 @@ impl IDataTemplateExtension_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IDataTemplateExtension,
                 OFFSET,
@@ -175,7 +178,7 @@ impl IElementFactory_Vtbl {
             this.RecycleElement(::core::mem::transmute(&args)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IElementFactory, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IElementFactory, OFFSET>(),
             GetElement: GetElement::<Identity, Impl, OFFSET>,
             RecycleElement: RecycleElement::<Identity, Impl, OFFSET>,
         }
@@ -284,7 +287,7 @@ impl IFrameworkElementOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IFrameworkElementOverrides,
                 OFFSET,
@@ -449,8 +452,7 @@ impl IUIElementOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnKeyboardAcceleratorInvoked(::core::mem::transmute(&args))
-                .into()
+            this.OnKeyboardAcceleratorInvoked(::core::mem::transmute(&args)).into()
         }
         unsafe extern "system" fn OnProcessKeyboardAccelerators<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -462,8 +464,7 @@ impl IUIElementOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnProcessKeyboardAccelerators(::core::mem::transmute(&args))
-                .into()
+            this.OnProcessKeyboardAccelerators(::core::mem::transmute(&args)).into()
         }
         unsafe extern "system" fn OnBringIntoViewRequested<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -475,8 +476,7 @@ impl IUIElementOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnBringIntoViewRequested(::core::mem::transmute(&e))
-                .into()
+            this.OnBringIntoViewRequested(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn PopulatePropertyInfoOverride<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -496,7 +496,7 @@ impl IUIElementOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IUIElementOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IUIElementOverrides, OFFSET>(
             ),
             OnCreateAutomationPeer: OnCreateAutomationPeer::<Identity, Impl, OFFSET>,
             OnDisconnectVisualChildren: OnDisconnectVisualChildren::<Identity, Impl, OFFSET>,
@@ -572,7 +572,7 @@ impl IVisualStateManagerOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IVisualStateManagerOverrides,
                 OFFSET,
@@ -610,7 +610,7 @@ impl IWindowNative_Vtbl {
             this.WindowHandle(::core::mem::transmute_copy(&hwnd)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             WindowHandle: WindowHandle::<Identity, Impl, OFFSET>,
         }
     }
@@ -621,7 +621,7 @@ impl IWindowNative_Vtbl {
 pub trait IXamlServiceProvider_Impl: Sized {
     fn GetService(
         &self,
-        r#type: &::windows::UI::Xaml::Interop::TypeName,
+        r#type: &crate::core::TypeName,
     ) -> ::windows::core::Result<::windows::core::IInspectable>;
 }
 impl ::windows::core::RuntimeName for IXamlServiceProvider {
@@ -639,7 +639,7 @@ impl IXamlServiceProvider_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            r#type: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            r#type: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             result__: *mut *mut ::core::ffi::c_void,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
@@ -654,7 +654,7 @@ impl IXamlServiceProvider_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlServiceProvider, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IXamlServiceProvider, OFFSET>(
             ),
             GetService: GetService::<Identity, Impl, OFFSET>,
         }

@@ -1,6 +1,6 @@
 #[doc = "*Required features: `\"Graphics_DirectX\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DirectXAlphaMode(pub i32);
 impl DirectXAlphaMode {
     pub const Unspecified: Self = Self(0i32);
@@ -38,7 +38,7 @@ unsafe impl ::windows::core::RuntimeType for DirectXAlphaMode {
 }
 #[doc = "*Required features: `\"Graphics_DirectX\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DirectXColorSpace(pub i32);
 impl DirectXColorSpace {
     pub const RgbFullG22NoneP709: Self = Self(0i32);
@@ -97,7 +97,7 @@ unsafe impl ::windows::core::RuntimeType for DirectXColorSpace {
 }
 #[doc = "*Required features: `\"Graphics_DirectX\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DirectXPixelFormat(pub i32);
 impl DirectXPixelFormat {
     pub const Unknown: Self = Self(0i32);
@@ -252,7 +252,7 @@ unsafe impl ::windows::core::RuntimeType for DirectXPixelFormat {
 }
 #[doc = "*Required features: `\"Graphics_DirectX\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DirectXPrimitiveTopology(pub i32);
 impl DirectXPrimitiveTopology {
     pub const Undefined: Self = Self(0i32);
@@ -278,9 +278,7 @@ unsafe impl ::windows::core::Abi for DirectXPrimitiveTopology {
 }
 impl ::core::fmt::Debug for DirectXPrimitiveTopology {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("DirectXPrimitiveTopology")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("DirectXPrimitiveTopology").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for DirectXPrimitiveTopology {

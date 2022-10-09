@@ -30,7 +30,8 @@ impl IBindableIterable_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IBindableIterable, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IBindableIterable, OFFSET>(
+            ),
             First: First::<Identity, Impl, OFFSET>,
         }
     }
@@ -110,7 +111,8 @@ impl IBindableIterator_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IBindableIterator, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IBindableIterator, OFFSET>(
+            ),
             Current: Current::<Identity, Impl, OFFSET>,
             HasCurrent: HasCurrent::<Identity, Impl, OFFSET>,
             MoveNext: MoveNext::<Identity, Impl, OFFSET>,
@@ -171,11 +173,10 @@ impl IBindableObservableVector_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveVectorChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveVectorChanged(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IBindableObservableVector,
                 OFFSET,
@@ -294,10 +295,8 @@ impl IBindableVector_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IndexOf(
-                ::core::mem::transmute(&value),
-                ::core::mem::transmute_copy(&index),
-            ) {
+            match this.IndexOf(::core::mem::transmute(&value), ::core::mem::transmute_copy(&index))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -379,7 +378,7 @@ impl IBindableVector_Vtbl {
             this.Clear().into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IBindableVector, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IBindableVector, OFFSET>(),
             GetAt: GetAt::<Identity, Impl, OFFSET>,
             Size: Size::<Identity, Impl, OFFSET>,
             GetView: GetView::<Identity, Impl, OFFSET>,
@@ -465,10 +464,8 @@ impl IBindableVectorView_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IndexOf(
-                ::core::mem::transmute(&value),
-                ::core::mem::transmute_copy(&index),
-            ) {
+            match this.IndexOf(::core::mem::transmute(&value), ::core::mem::transmute_copy(&index))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -478,7 +475,7 @@ impl IBindableVectorView_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IBindableVectorView, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IBindableVectorView, OFFSET>(
             ),
             GetAt: GetAt::<Identity, Impl, OFFSET>,
             Size: Size::<Identity, Impl, OFFSET>,
@@ -538,11 +535,10 @@ impl INotifyCollectionChanged_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveCollectionChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveCollectionChanged(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 INotifyCollectionChanged,
                 OFFSET,

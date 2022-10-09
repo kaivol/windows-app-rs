@@ -10,7 +10,7 @@ impl ICompositionInteractionSource_Vtbl {
         const OFFSET: isize,
     >() -> ICompositionInteractionSource_Vtbl {
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICompositionInteractionSource,
                 OFFSET,
@@ -90,11 +90,8 @@ impl IInteractionTrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.IdleStateEntered(
-                ::core::mem::transmute(&sender),
-                ::core::mem::transmute(&args),
-            )
-            .into()
+            this.IdleStateEntered(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
+                .into()
         }
         unsafe extern "system" fn InertiaStateEntered<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -107,11 +104,8 @@ impl IInteractionTrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.InertiaStateEntered(
-                ::core::mem::transmute(&sender),
-                ::core::mem::transmute(&args),
-            )
-            .into()
+            this.InertiaStateEntered(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
+                .into()
         }
         unsafe extern "system" fn InteractingStateEntered<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -141,11 +135,8 @@ impl IInteractionTrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RequestIgnored(
-                ::core::mem::transmute(&sender),
-                ::core::mem::transmute(&args),
-            )
-            .into()
+            this.RequestIgnored(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
+                .into()
         }
         unsafe extern "system" fn ValuesChanged<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -158,14 +149,11 @@ impl IInteractionTrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.ValuesChanged(
-                ::core::mem::transmute(&sender),
-                ::core::mem::transmute(&args),
-            )
-            .into()
+            this.ValuesChanged(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
+                .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IInteractionTrackerOwner,
                 OFFSET,

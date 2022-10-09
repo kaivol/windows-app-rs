@@ -48,11 +48,10 @@ impl IFlyoutBaseOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnProcessKeyboardAccelerators(::core::mem::transmute(&args))
-                .into()
+            this.OnProcessKeyboardAccelerators(::core::mem::transmute(&args)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IFlyoutBaseOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IFlyoutBaseOverrides, OFFSET>(
             ),
             CreatePresenter: CreatePresenter::<Identity, Impl, OFFSET>,
             OnProcessKeyboardAccelerators: OnProcessKeyboardAccelerators::<Identity, Impl, OFFSET>,
@@ -108,7 +107,7 @@ impl IPickerFlyoutBaseOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IPickerFlyoutBaseOverrides,
                 OFFSET,
@@ -181,7 +180,7 @@ impl IRangeBaseOverrides_Vtbl {
             this.OnValueChanged(oldvalue, newvalue).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IRangeBaseOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IRangeBaseOverrides, OFFSET>(
             ),
             OnMinimumChanged: OnMinimumChanged::<Identity, Impl, OFFSET>,
             OnMaximumChanged: OnMaximumChanged::<Identity, Impl, OFFSET>,
@@ -304,8 +303,7 @@ impl IScrollSnapPointsInfo_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveHorizontalSnapPointsChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveHorizontalSnapPointsChanged(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn VerticalSnapPointsChanged<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -337,8 +335,7 @@ impl IScrollSnapPointsInfo_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveVerticalSnapPointsChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveVerticalSnapPointsChanged(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn GetIrregularSnapPoints<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -388,8 +385,11 @@ impl IScrollSnapPointsInfo_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IScrollSnapPointsInfo, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IScrollSnapPointsInfo,
+                OFFSET,
+            >(),
             AreHorizontalSnapPointsRegular: AreHorizontalSnapPointsRegular::<Identity, Impl, OFFSET>,
             AreVerticalSnapPointsRegular: AreVerticalSnapPointsRegular::<Identity, Impl, OFFSET>,
             HorizontalSnapPointsChanged: HorizontalSnapPointsChanged::<Identity, Impl, OFFSET>,
@@ -438,7 +438,7 @@ impl IToggleButtonOverrides_Vtbl {
             this.OnToggle().into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IToggleButtonOverrides,
                 OFFSET,

@@ -57,8 +57,7 @@ impl ICommand_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveCanExecuteChanged(::core::mem::transmute(&token))
-                .into()
+            this.RemoveCanExecuteChanged(::core::mem::transmute(&token)).into()
         }
         unsafe extern "system" fn CanExecute<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -93,7 +92,7 @@ impl ICommand_Vtbl {
             this.Execute(::core::mem::transmute(&parameter)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICommand, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICommand, OFFSET>(),
             CanExecuteChanged: CanExecuteChanged::<Identity, Impl, OFFSET>,
             RemoveCanExecuteChanged: RemoveCanExecuteChanged::<Identity, Impl, OFFSET>,
             CanExecute: CanExecute::<Identity, Impl, OFFSET>,

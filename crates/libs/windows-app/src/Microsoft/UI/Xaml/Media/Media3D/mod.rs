@@ -1,736 +1,17 @@
-#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-#[repr(transparent)]
-pub struct CompositeTransform3D(::windows::core::IUnknown);
-impl CompositeTransform3D {
-    pub fn new() -> ::windows::core::Result<Self> {
-        Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
-    }
-    fn IActivationFactory<
-        R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
-            CompositeTransform3D,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterX(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterX)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetCenterX(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetCenterX)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterY(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterY)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetCenterY(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetCenterY)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterZ(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterZ)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetCenterZ(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetCenterZ)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationX(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationX)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetRotationX(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetRotationX)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationY(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationY)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetRotationY(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetRotationY)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationZ(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationZ)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetRotationZ(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetRotationZ)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleX(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleX)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetScaleX(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetScaleX)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleY(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleY)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetScaleY(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetScaleY)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleZ(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleZ)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetScaleZ(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetScaleZ)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateX(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateX)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetTranslateX(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetTranslateX)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateY(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateY)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetTranslateY(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetTranslateY)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateZ(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateZ)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetTranslateZ(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetTranslateZ)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterXProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterYProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn CenterZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).CenterZProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationXProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationYProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RotationZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RotationZProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleXProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleYProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ScaleZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ScaleZProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateXProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateYProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn TranslateZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::ICompositeTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TranslateZProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
-        &self,
-        dp: Param0,
-        value: Param1,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                value.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ClearValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).ClearValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ReadLocalValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ReadLocalValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetAnimationBaseValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnimationBaseValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RegisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, super::super::DependencyPropertyChangedCallback>,
-    >(
-        &self,
-        dp: Param0,
-        callback: Param1,
-    ) -> ::windows::core::Result<i64> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-            (::windows::core::Interface::vtable(this).RegisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                callback.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<i64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn UnregisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-        token: i64,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).UnregisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                token,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Dispatcher)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`, `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(
-        &self,
-    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DispatcherQueue)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
-        }
-    }
-    #[doc(hidden)]
-    pub fn ICompositeTransform3DStatics<
-        R,
-        F: FnOnce(&ICompositeTransform3DStatics) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
-            CompositeTransform3D,
-            ICompositeTransform3DStatics,
-        > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
-    }
-}
-impl ::core::clone::Clone for CompositeTransform3D {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for CompositeTransform3D {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for CompositeTransform3D {}
-impl ::core::fmt::Debug for CompositeTransform3D {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("CompositeTransform3D")
-            .field(&self.0)
-            .finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for CompositeTransform3D {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.CompositeTransform3D;{cbaf163f-c254-5dcf-8ae4-40e21ce1b4ca})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Interface for CompositeTransform3D {
-    type Vtable = ICompositeTransform3D_Vtbl;
-    const IID: ::windows::core::GUID = <ICompositeTransform3D as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for CompositeTransform3D {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.CompositeTransform3D";
-}
-impl ::core::convert::From<CompositeTransform3D> for ::windows::core::IUnknown {
-    fn from(value: CompositeTransform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&CompositeTransform3D> for ::windows::core::IUnknown {
-    fn from(value: &CompositeTransform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<CompositeTransform3D> for ::windows::core::IInspectable {
-    fn from(value: CompositeTransform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&CompositeTransform3D> for ::windows::core::IInspectable {
-    fn from(value: &CompositeTransform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a CompositeTransform3D
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<CompositeTransform3D> for Transform3D {
-    fn from(value: CompositeTransform3D) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&CompositeTransform3D> for Transform3D {
-    fn from(value: &CompositeTransform3D) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, Transform3D> for CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, Transform3D> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, Transform3D> for &CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, Transform3D> {
-        ::windows::core::Param::Owned(::core::convert::Into::<Transform3D>::into(self))
-    }
-}
-impl ::core::convert::From<CompositeTransform3D> for super::super::DependencyObject {
-    fn from(value: CompositeTransform3D) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&CompositeTransform3D> for super::super::DependencyObject {
-    fn from(value: &CompositeTransform3D) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject> for CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject> for &CompositeTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::Param::Owned(
-            ::core::convert::Into::<super::super::DependencyObject>::into(self),
-        )
-    }
-}
-unsafe impl ::core::marker::Send for CompositeTransform3D {}
-unsafe impl ::core::marker::Sync for CompositeTransform3D {}
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct ICompositeTransform3D(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ICompositeTransform3D {
+unsafe impl ::windows::core::Vtable for ICompositeTransform3D {
     type Vtable = ICompositeTransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ICompositeTransform3D {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xcbaf163f_c254_5dcf_8ae4_40e21ce1b4ca);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositeTransform3D_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CenterX: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f64,
@@ -831,15 +112,17 @@ pub struct ICompositeTransform3D_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct ICompositeTransform3DStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ICompositeTransform3DStatics {
+unsafe impl ::windows::core::Vtable for ICompositeTransform3DStatics {
     type Vtable = ICompositeTransform3DStatics_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ICompositeTransform3DStatics {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xb64d4181_6988_5d46_858a_224db7089dc4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositeTransform3DStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CenterXProperty: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -892,28 +175,32 @@ pub struct ICompositeTransform3DStatics_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct IMatrix3DHelper(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMatrix3DHelper {
+unsafe impl ::windows::core::Vtable for IMatrix3DHelper {
     type Vtable = IMatrix3DHelper_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IMatrix3DHelper {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xd2909be1_9c28_5b38_b63c_88e838644533);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMatrix3DHelper_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct IMatrix3DHelperStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IMatrix3DHelperStatics {
+unsafe impl ::windows::core::Vtable for IMatrix3DHelperStatics {
     type Vtable = IMatrix3DHelperStatics_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IMatrix3DHelperStatics {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x930e447b_265c_5ded_9e64_57b8933c55c3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMatrix3DHelperStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Identity: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut Matrix3D,
@@ -963,15 +250,17 @@ pub struct IMatrix3DHelperStatics_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct IPerspectiveTransform3D(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPerspectiveTransform3D {
+unsafe impl ::windows::core::Vtable for IPerspectiveTransform3D {
     type Vtable = IPerspectiveTransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IPerspectiveTransform3D {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x4006cc46_684e_54ea_a421_dae5b0556b85);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPerspectiveTransform3D_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Depth: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f64,
@@ -1000,15 +289,17 @@ pub struct IPerspectiveTransform3D_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct IPerspectiveTransform3DStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IPerspectiveTransform3DStatics {
+unsafe impl ::windows::core::Vtable for IPerspectiveTransform3DStatics {
     type Vtable = IPerspectiveTransform3DStatics_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IPerspectiveTransform3DStatics {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x3b16aa8d_0ee2_5d46_a723_dc8e5c1c0b19);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPerspectiveTransform3DStatics_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub DepthProperty: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -1025,28 +316,32 @@ pub struct IPerspectiveTransform3DStatics_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct ITransform3D(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITransform3D {
+unsafe impl ::windows::core::Vtable for ITransform3D {
     type Vtable = ITransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITransform3D {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xafea4941_2e49_533c_9f8f_2c126ef9893a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITransform3D_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct ITransform3DFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for ITransform3DFactory {
+unsafe impl ::windows::core::Vtable for ITransform3DFactory {
     type Vtable = ITransform3DFactory_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITransform3DFactory {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x9bcce0a1_10ac_5319_bdf1_548d2e5ae504);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITransform3DFactory_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CreateInstance: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         baseinterface: *mut ::core::ffi::c_void,
@@ -1054,6 +349,1292 @@ pub struct ITransform3DFactory_Vtbl {
         result__: *mut *mut ::core::ffi::c_void,
     ) -> ::windows::core::HRESULT,
 }
+#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
+#[repr(transparent)]
+pub struct CompositeTransform3D(::windows::core::IUnknown);
+impl CompositeTransform3D {
+    pub fn new() -> ::windows::core::Result<Self> {
+        Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
+    }
+    fn IActivationFactory<
+        R,
+        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<
+            CompositeTransform3D,
+            ::windows::core::IGenericFactory,
+        > = ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    pub fn CenterX(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterX)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetCenterX(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetCenterX)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn CenterY(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterY)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetCenterY(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetCenterY)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn CenterZ(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterZ)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetCenterZ(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetCenterZ)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn RotationX(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationX)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetRotationX(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetRotationX)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn RotationY(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationY)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetRotationY(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetRotationY)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn RotationZ(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationZ)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetRotationZ(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetRotationZ)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn ScaleX(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleX)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetScaleX(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetScaleX)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn ScaleY(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleY)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetScaleY(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetScaleY)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn ScaleZ(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleZ)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetScaleZ(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetScaleZ)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn TranslateX(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateX)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetTranslateX(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetTranslateX)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn TranslateY(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateY)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetTranslateY(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetTranslateY)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn TranslateZ(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateZ)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetTranslateZ(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetTranslateZ)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn CenterXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterXProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn CenterYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterYProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn CenterZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CenterZProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn RotationXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationXProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn RotationYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationYProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn RotationZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RotationZProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn ScaleXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleXProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn ScaleYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleYProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn ScaleZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ScaleZProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn TranslateXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateXProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn TranslateYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateYProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn TranslateZProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::ICompositeTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TranslateZProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn GetValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn SetValue<'a, P0>(
+        &self,
+        dp: &super::super::DependencyProperty,
+        value: P0,
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                value.into().abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ClearValue(&self, dp: &super::super::DependencyProperty) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).ClearValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+            )
+            .ok()
+        }
+    }
+    pub fn ReadLocalValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ReadLocalValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn GetAnimationBaseValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnimationBaseValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn RegisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        callback: &super::super::DependencyPropertyChangedCallback,
+    ) -> ::windows::core::Result<i64> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RegisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                ::core::mem::transmute_copy(callback),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<i64>(result__)
+        }
+    }
+    pub fn UnregisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        token: i64,
+    ) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).UnregisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                token,
+            )
+            .ok()
+        }
+    }
+    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Dispatcher)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
+    #[cfg(feature = "UI_Dispatching")]
+    pub fn DispatcherQueue(
+        &self,
+    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
+        }
+    }
+    #[doc(hidden)]
+    pub fn ICompositeTransform3DStatics<
+        R,
+        F: FnOnce(&ICompositeTransform3DStatics) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<
+            CompositeTransform3D,
+            ICompositeTransform3DStatics,
+        > = ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::core::clone::Clone for CompositeTransform3D {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
+impl ::core::cmp::PartialEq for CompositeTransform3D {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+impl ::core::cmp::Eq for CompositeTransform3D {}
+impl ::core::fmt::Debug for CompositeTransform3D {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("CompositeTransform3D").field(&self.0).finish()
+    }
+}
+unsafe impl ::windows::core::RuntimeType for CompositeTransform3D {
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.CompositeTransform3D;{cbaf163f-c254-5dcf-8ae4-40e21ce1b4ca})" ) ;
+    type DefaultType = ::core::option::Option<Self>;
+    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    }
+}
+unsafe impl ::windows::core::Vtable for CompositeTransform3D {
+    type Vtable = ICompositeTransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for CompositeTransform3D {
+    const IID: ::windows::core::GUID = <ICompositeTransform3D as ::windows::core::Interface>::IID;
+}
+impl ::windows::core::RuntimeName for CompositeTransform3D {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.CompositeTransform3D";
+}
+::windows::core::interface_hierarchy!(
+    CompositeTransform3D,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
+impl ::core::convert::From<CompositeTransform3D> for Transform3D {
+    fn from(value: CompositeTransform3D) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&CompositeTransform3D> for Transform3D {
+    fn from(value: &CompositeTransform3D) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&CompositeTransform3D>
+    for ::windows::core::InParam<'a, Transform3D>
+{
+    fn from(value: &CompositeTransform3D) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+impl ::core::convert::From<CompositeTransform3D> for super::super::DependencyObject {
+    fn from(value: CompositeTransform3D) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&CompositeTransform3D> for super::super::DependencyObject {
+    fn from(value: &CompositeTransform3D) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&CompositeTransform3D>
+    for ::windows::core::InParam<'a, super::super::DependencyObject>
+{
+    fn from(value: &CompositeTransform3D) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+unsafe impl ::core::marker::Send for CompositeTransform3D {}
+unsafe impl ::core::marker::Sync for CompositeTransform3D {}
+#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
+#[repr(transparent)]
+pub struct Matrix3DHelper(::windows::core::IUnknown);
+impl Matrix3DHelper {
+    pub fn Identity() -> ::windows::core::Result<Matrix3D> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Identity)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<Matrix3D>(result__)
+        })
+    }
+    pub fn Multiply(matrix1: Matrix3D, matrix2: Matrix3D) -> ::windows::core::Result<Matrix3D> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Multiply)(
+                ::windows::core::Vtable::as_raw(this),
+                matrix1,
+                matrix2,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<Matrix3D>(result__)
+        })
+    }
+    pub fn FromElements(
+        m11: f64,
+        m12: f64,
+        m13: f64,
+        m14: f64,
+        m21: f64,
+        m22: f64,
+        m23: f64,
+        m24: f64,
+        m31: f64,
+        m32: f64,
+        m33: f64,
+        m34: f64,
+        offsetx: f64,
+        offsety: f64,
+        offsetz: f64,
+        m44: f64,
+    ) -> ::windows::core::Result<Matrix3D> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FromElements)(
+                ::windows::core::Vtable::as_raw(this),
+                m11,
+                m12,
+                m13,
+                m14,
+                m21,
+                m22,
+                m23,
+                m24,
+                m31,
+                m32,
+                m33,
+                m34,
+                offsetx,
+                offsety,
+                offsetz,
+                m44,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<Matrix3D>(result__)
+        })
+    }
+    pub fn GetHasInverse(target: Matrix3D) -> ::windows::core::Result<bool> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetHasInverse)(
+                ::windows::core::Vtable::as_raw(this),
+                target,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<bool>(result__)
+        })
+    }
+    pub fn GetIsIdentity(target: Matrix3D) -> ::windows::core::Result<bool> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetIsIdentity)(
+                ::windows::core::Vtable::as_raw(this),
+                target,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<bool>(result__)
+        })
+    }
+    pub fn Invert(target: Matrix3D) -> ::windows::core::Result<Matrix3D> {
+        Self::IMatrix3DHelperStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Invert)(
+                ::windows::core::Vtable::as_raw(this),
+                target,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<Matrix3D>(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IMatrix3DHelperStatics<
+        R,
+        F: FnOnce(&IMatrix3DHelperStatics) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<Matrix3DHelper, IMatrix3DHelperStatics> =
+            ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::core::clone::Clone for Matrix3DHelper {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
+impl ::core::cmp::PartialEq for Matrix3DHelper {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+impl ::core::cmp::Eq for Matrix3DHelper {}
+impl ::core::fmt::Debug for Matrix3DHelper {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("Matrix3DHelper").field(&self.0).finish()
+    }
+}
+unsafe impl ::windows::core::RuntimeType for Matrix3DHelper {
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.Matrix3DHelper;{d2909be1-9c28-5b38-b63c-88e838644533})" ) ;
+    type DefaultType = ::core::option::Option<Self>;
+    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    }
+}
+unsafe impl ::windows::core::Vtable for Matrix3DHelper {
+    type Vtable = IMatrix3DHelper_Vtbl;
+}
+unsafe impl ::windows::core::Interface for Matrix3DHelper {
+    const IID: ::windows::core::GUID = <IMatrix3DHelper as ::windows::core::Interface>::IID;
+}
+impl ::windows::core::RuntimeName for Matrix3DHelper {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.Matrix3DHelper";
+}
+::windows::core::interface_hierarchy!(
+    Matrix3DHelper,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
+unsafe impl ::core::marker::Send for Matrix3DHelper {}
+unsafe impl ::core::marker::Sync for Matrix3DHelper {}
+#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
+#[repr(transparent)]
+pub struct PerspectiveTransform3D(::windows::core::IUnknown);
+impl PerspectiveTransform3D {
+    pub fn new() -> ::windows::core::Result<Self> {
+        Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
+    }
+    fn IActivationFactory<
+        R,
+        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<
+            PerspectiveTransform3D,
+            ::windows::core::IGenericFactory,
+        > = ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    pub fn GetValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn SetValue<'a, P0>(
+        &self,
+        dp: &super::super::DependencyProperty,
+        value: P0,
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                value.into().abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ClearValue(&self, dp: &super::super::DependencyProperty) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).ClearValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+            )
+            .ok()
+        }
+    }
+    pub fn ReadLocalValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ReadLocalValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn GetAnimationBaseValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnimationBaseValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn RegisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        callback: &super::super::DependencyPropertyChangedCallback,
+    ) -> ::windows::core::Result<i64> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RegisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                ::core::mem::transmute_copy(callback),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<i64>(result__)
+        }
+    }
+    pub fn UnregisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        token: i64,
+    ) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).UnregisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                token,
+            )
+            .ok()
+        }
+    }
+    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Dispatcher)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
+    #[cfg(feature = "UI_Dispatching")]
+    pub fn DispatcherQueue(
+        &self,
+    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
+        }
+    }
+    pub fn Depth(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Depth)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetDepth(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetDepth)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn OffsetX(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).OffsetX)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetOffsetX(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetOffsetX)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn OffsetY(&self) -> ::windows::core::Result<f64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).OffsetY)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<f64>(result__)
+        }
+    }
+    pub fn SetOffsetY(&self, value: f64) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetOffsetY)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn DepthProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::IPerspectiveTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DepthProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn OffsetXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::IPerspectiveTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).OffsetXProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    pub fn OffsetYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
+        Self::IPerspectiveTransform3DStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).OffsetYProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::DependencyProperty>(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IPerspectiveTransform3DStatics<
+        R,
+        F: FnOnce(&IPerspectiveTransform3DStatics) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<
+            PerspectiveTransform3D,
+            IPerspectiveTransform3DStatics,
+        > = ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::core::clone::Clone for PerspectiveTransform3D {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
+impl ::core::cmp::PartialEq for PerspectiveTransform3D {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+impl ::core::cmp::Eq for PerspectiveTransform3D {}
+impl ::core::fmt::Debug for PerspectiveTransform3D {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("PerspectiveTransform3D").field(&self.0).finish()
+    }
+}
+unsafe impl ::windows::core::RuntimeType for PerspectiveTransform3D {
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.PerspectiveTransform3D;{4006cc46-684e-54ea-a421-dae5b0556b85})" ) ;
+    type DefaultType = ::core::option::Option<Self>;
+    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    }
+}
+unsafe impl ::windows::core::Vtable for PerspectiveTransform3D {
+    type Vtable = IPerspectiveTransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for PerspectiveTransform3D {
+    const IID: ::windows::core::GUID = <IPerspectiveTransform3D as ::windows::core::Interface>::IID;
+}
+impl ::windows::core::RuntimeName for PerspectiveTransform3D {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.PerspectiveTransform3D";
+}
+::windows::core::interface_hierarchy!(
+    PerspectiveTransform3D,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
+impl ::core::convert::From<PerspectiveTransform3D> for Transform3D {
+    fn from(value: PerspectiveTransform3D) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&PerspectiveTransform3D> for Transform3D {
+    fn from(value: &PerspectiveTransform3D) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&PerspectiveTransform3D>
+    for ::windows::core::InParam<'a, Transform3D>
+{
+    fn from(value: &PerspectiveTransform3D) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+impl ::core::convert::From<PerspectiveTransform3D> for super::super::DependencyObject {
+    fn from(value: PerspectiveTransform3D) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&PerspectiveTransform3D> for super::super::DependencyObject {
+    fn from(value: &PerspectiveTransform3D) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&PerspectiveTransform3D>
+    for ::windows::core::InParam<'a, super::super::DependencyObject>
+{
+    fn from(value: &PerspectiveTransform3D) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+unsafe impl ::core::marker::Send for PerspectiveTransform3D {}
+unsafe impl ::core::marker::Sync for PerspectiveTransform3D {}
+#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
+#[repr(transparent)]
+pub struct Transform3D(::windows::core::IUnknown);
+impl Transform3D {
+    pub fn GetValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn SetValue<'a, P0>(
+        &self,
+        dp: &super::super::DependencyProperty,
+        value: P0,
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                value.into().abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ClearValue(&self, dp: &super::super::DependencyProperty) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).ClearValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+            )
+            .ok()
+        }
+    }
+    pub fn ReadLocalValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ReadLocalValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn GetAnimationBaseValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnimationBaseValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn RegisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        callback: &super::super::DependencyPropertyChangedCallback,
+    ) -> ::windows::core::Result<i64> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RegisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                ::core::mem::transmute_copy(callback),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<i64>(result__)
+        }
+    }
+    pub fn UnregisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        token: i64,
+    ) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).UnregisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                token,
+            )
+            .ok()
+        }
+    }
+    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Dispatcher)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
+    #[cfg(feature = "UI_Dispatching")]
+    pub fn DispatcherQueue(
+        &self,
+    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
+        }
+    }
+}
+impl ::core::clone::Clone for Transform3D {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
+impl ::core::cmp::PartialEq for Transform3D {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+impl ::core::cmp::Eq for Transform3D {}
+impl ::core::fmt::Debug for Transform3D {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("Transform3D").field(&self.0).finish()
+    }
+}
+unsafe impl ::windows::core::RuntimeType for Transform3D {
+    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
+        b"rc(Microsoft.UI.Xaml.Media.Media3D.Transform3D;{afea4941-2e49-533c-9f8f-2c126ef9893a})",
+    );
+    type DefaultType = ::core::option::Option<Self>;
+    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    }
+}
+unsafe impl ::windows::core::Vtable for Transform3D {
+    type Vtable = ITransform3D_Vtbl;
+}
+unsafe impl ::windows::core::Interface for Transform3D {
+    const IID: ::windows::core::GUID = <ITransform3D as ::windows::core::Interface>::IID;
+}
+impl ::windows::core::RuntimeName for Transform3D {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.Transform3D";
+}
+::windows::core::interface_hierarchy!(
+    Transform3D,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
+impl ::core::convert::From<Transform3D> for super::super::DependencyObject {
+    fn from(value: Transform3D) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&Transform3D> for super::super::DependencyObject {
+    fn from(value: &Transform3D) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&Transform3D>
+    for ::windows::core::InParam<'a, super::super::DependencyObject>
+{
+    fn from(value: &Transform3D) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+unsafe impl ::core::marker::Send for Transform3D {}
+unsafe impl ::core::marker::Sync for Transform3D {}
 #[repr(C)]
 #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
 pub struct Matrix3D {
@@ -1106,7 +1687,7 @@ unsafe impl ::windows::core::Abi for Matrix3D {
     type Abi = Self;
 }
 unsafe impl ::windows::core::RuntimeType for Matrix3D {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"struct(Microsoft.UI.Xaml.Media.Media3D.Matrix3D;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8)" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer =::windows::core::ConstBuffer::from_slice ( b"struct(Microsoft.UI.Xaml.Media.Media3D.Matrix3D;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8;f8)" ) ;
     type DefaultType = Self;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         Ok(*from)
@@ -1129,890 +1710,5 @@ impl ::core::default::Default for Matrix3D {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-#[repr(transparent)]
-pub struct Matrix3DHelper(::windows::core::IUnknown);
-impl Matrix3DHelper {
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Identity() -> ::windows::core::Result<Matrix3D> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<Matrix3D>::zeroed();
-            (::windows::core::Interface::vtable(this).Identity)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<Matrix3D>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Multiply<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, Matrix3D>,
-        Param1: ::windows::core::IntoParam<'a, Matrix3D>,
-    >(
-        matrix1: Param0,
-        matrix2: Param1,
-    ) -> ::windows::core::Result<Matrix3D> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<Matrix3D>::zeroed();
-            (::windows::core::Interface::vtable(this).Multiply)(
-                ::windows::core::Interface::as_raw(this),
-                matrix1.into_param().abi(),
-                matrix2.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<Matrix3D>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn FromElements(
-        m11: f64,
-        m12: f64,
-        m13: f64,
-        m14: f64,
-        m21: f64,
-        m22: f64,
-        m23: f64,
-        m24: f64,
-        m31: f64,
-        m32: f64,
-        m33: f64,
-        m34: f64,
-        offsetx: f64,
-        offsety: f64,
-        offsetz: f64,
-        m44: f64,
-    ) -> ::windows::core::Result<Matrix3D> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<Matrix3D>::zeroed();
-            (::windows::core::Interface::vtable(this).FromElements)(
-                ::windows::core::Interface::as_raw(this),
-                m11,
-                m12,
-                m13,
-                m14,
-                m21,
-                m22,
-                m23,
-                m24,
-                m31,
-                m32,
-                m33,
-                m34,
-                offsetx,
-                offsety,
-                offsetz,
-                m44,
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<Matrix3D>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetHasInverse<'a, Param0: ::windows::core::IntoParam<'a, Matrix3D>>(
-        target: Param0,
-    ) -> ::windows::core::Result<bool> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).GetHasInverse)(
-                ::windows::core::Interface::as_raw(this),
-                target.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetIsIdentity<'a, Param0: ::windows::core::IntoParam<'a, Matrix3D>>(
-        target: Param0,
-    ) -> ::windows::core::Result<bool> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).GetIsIdentity)(
-                ::windows::core::Interface::as_raw(this),
-                target.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Invert<'a, Param0: ::windows::core::IntoParam<'a, Matrix3D>>(
-        target: Param0,
-    ) -> ::windows::core::Result<Matrix3D> {
-        Self::IMatrix3DHelperStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<Matrix3D>::zeroed();
-            (::windows::core::Interface::vtable(this).Invert)(
-                ::windows::core::Interface::as_raw(this),
-                target.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<Matrix3D>(result__)
-        })
-    }
-    #[doc(hidden)]
-    pub fn IMatrix3DHelperStatics<
-        R,
-        F: FnOnce(&IMatrix3DHelperStatics) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<Matrix3DHelper, IMatrix3DHelperStatics> =
-            ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
-    }
-}
-impl ::core::clone::Clone for Matrix3DHelper {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for Matrix3DHelper {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for Matrix3DHelper {}
-impl ::core::fmt::Debug for Matrix3DHelper {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("Matrix3DHelper").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for Matrix3DHelper {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.Matrix3DHelper;{d2909be1-9c28-5b38-b63c-88e838644533})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Interface for Matrix3DHelper {
-    type Vtable = IMatrix3DHelper_Vtbl;
-    const IID: ::windows::core::GUID = <IMatrix3DHelper as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for Matrix3DHelper {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.Matrix3DHelper";
-}
-impl ::core::convert::From<Matrix3DHelper> for ::windows::core::IUnknown {
-    fn from(value: Matrix3DHelper) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&Matrix3DHelper> for ::windows::core::IUnknown {
-    fn from(value: &Matrix3DHelper) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Matrix3DHelper {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Matrix3DHelper {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<Matrix3DHelper> for ::windows::core::IInspectable {
-    fn from(value: Matrix3DHelper) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&Matrix3DHelper> for ::windows::core::IInspectable {
-    fn from(value: &Matrix3DHelper) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Matrix3DHelper {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Matrix3DHelper {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-unsafe impl ::core::marker::Send for Matrix3DHelper {}
-unsafe impl ::core::marker::Sync for Matrix3DHelper {}
-#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-#[repr(transparent)]
-pub struct PerspectiveTransform3D(::windows::core::IUnknown);
-impl PerspectiveTransform3D {
-    pub fn new() -> ::windows::core::Result<Self> {
-        Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
-    }
-    fn IActivationFactory<
-        R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
-            PerspectiveTransform3D,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
-        &self,
-        dp: Param0,
-        value: Param1,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                value.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ClearValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).ClearValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ReadLocalValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ReadLocalValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetAnimationBaseValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnimationBaseValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RegisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, super::super::DependencyPropertyChangedCallback>,
-    >(
-        &self,
-        dp: Param0,
-        callback: Param1,
-    ) -> ::windows::core::Result<i64> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-            (::windows::core::Interface::vtable(this).RegisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                callback.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<i64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn UnregisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-        token: i64,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).UnregisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                token,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Dispatcher)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`, `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(
-        &self,
-    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DispatcherQueue)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Depth(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Depth)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetDepth(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetDepth)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn OffsetX(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).OffsetX)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetOffsetX(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetOffsetX)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn OffsetY(&self) -> ::windows::core::Result<f64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).OffsetY)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetOffsetY(&self, value: f64) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetOffsetY)(
-                ::windows::core::Interface::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn DepthProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::IPerspectiveTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DepthProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn OffsetXProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::IPerspectiveTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).OffsetXProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn OffsetYProperty() -> ::windows::core::Result<super::super::DependencyProperty> {
-        Self::IPerspectiveTransform3DStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).OffsetYProperty)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::DependencyProperty>(result__)
-        })
-    }
-    #[doc(hidden)]
-    pub fn IPerspectiveTransform3DStatics<
-        R,
-        F: FnOnce(&IPerspectiveTransform3DStatics) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
-            PerspectiveTransform3D,
-            IPerspectiveTransform3DStatics,
-        > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
-    }
-}
-impl ::core::clone::Clone for PerspectiveTransform3D {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for PerspectiveTransform3D {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for PerspectiveTransform3D {}
-impl ::core::fmt::Debug for PerspectiveTransform3D {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("PerspectiveTransform3D")
-            .field(&self.0)
-            .finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for PerspectiveTransform3D {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Media.Media3D.PerspectiveTransform3D;{4006cc46-684e-54ea-a421-dae5b0556b85})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Interface for PerspectiveTransform3D {
-    type Vtable = IPerspectiveTransform3D_Vtbl;
-    const IID: ::windows::core::GUID = <IPerspectiveTransform3D as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for PerspectiveTransform3D {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.PerspectiveTransform3D";
-}
-impl ::core::convert::From<PerspectiveTransform3D> for ::windows::core::IUnknown {
-    fn from(value: PerspectiveTransform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&PerspectiveTransform3D> for ::windows::core::IUnknown {
-    fn from(value: &PerspectiveTransform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<PerspectiveTransform3D> for ::windows::core::IInspectable {
-    fn from(value: PerspectiveTransform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&PerspectiveTransform3D> for ::windows::core::IInspectable {
-    fn from(value: &PerspectiveTransform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a PerspectiveTransform3D
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<PerspectiveTransform3D> for Transform3D {
-    fn from(value: PerspectiveTransform3D) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&PerspectiveTransform3D> for Transform3D {
-    fn from(value: &PerspectiveTransform3D) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, Transform3D> for PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, Transform3D> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, Transform3D> for &PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, Transform3D> {
-        ::windows::core::Param::Owned(::core::convert::Into::<Transform3D>::into(self))
-    }
-}
-impl ::core::convert::From<PerspectiveTransform3D> for super::super::DependencyObject {
-    fn from(value: PerspectiveTransform3D) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&PerspectiveTransform3D> for super::super::DependencyObject {
-    fn from(value: &PerspectiveTransform3D) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject> for PerspectiveTransform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject>
-    for &PerspectiveTransform3D
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::Param::Owned(
-            ::core::convert::Into::<super::super::DependencyObject>::into(self),
-        )
-    }
-}
-unsafe impl ::core::marker::Send for PerspectiveTransform3D {}
-unsafe impl ::core::marker::Sync for PerspectiveTransform3D {}
-#[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-#[repr(transparent)]
-pub struct Transform3D(::windows::core::IUnknown);
-impl Transform3D {
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn SetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
-        &self,
-        dp: Param0,
-        value: Param1,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                value.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ClearValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).ClearValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn ReadLocalValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ReadLocalValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn GetAnimationBaseValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnimationBaseValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn RegisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, super::super::DependencyPropertyChangedCallback>,
-    >(
-        &self,
-        dp: Param0,
-        callback: Param1,
-    ) -> ::windows::core::Result<i64> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-            (::windows::core::Interface::vtable(this).RegisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                callback.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<i64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn UnregisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-        token: i64,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).UnregisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                token,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`*"]
-    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Dispatcher)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Media_Media3D\"`, `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(
-        &self,
-    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DispatcherQueue)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for Transform3D {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for Transform3D {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for Transform3D {}
-impl ::core::fmt::Debug for Transform3D {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("Transform3D").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for Transform3D {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Xaml.Media.Media3D.Transform3D;{afea4941-2e49-533c-9f8f-2c126ef9893a})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Interface for Transform3D {
-    type Vtable = ITransform3D_Vtbl;
-    const IID: ::windows::core::GUID = <ITransform3D as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for Transform3D {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Media.Media3D.Transform3D";
-}
-impl ::core::convert::From<Transform3D> for ::windows::core::IUnknown {
-    fn from(value: Transform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&Transform3D> for ::windows::core::IUnknown {
-    fn from(value: &Transform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<Transform3D> for ::windows::core::IInspectable {
-    fn from(value: Transform3D) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&Transform3D> for ::windows::core::IInspectable {
-    fn from(value: &Transform3D) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<Transform3D> for super::super::DependencyObject {
-    fn from(value: Transform3D) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&Transform3D> for super::super::DependencyObject {
-    fn from(value: &Transform3D) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject> for Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject> for &Transform3D {
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::Param::Owned(
-            ::core::convert::Into::<super::super::DependencyObject>::into(self),
-        )
-    }
-}
-unsafe impl ::core::marker::Send for Transform3D {}
-unsafe impl ::core::marker::Sync for Transform3D {}
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

@@ -29,7 +29,8 @@ impl ::core::fmt::Debug for TypeKind {
     }
 }
 unsafe impl ::windows::core::RuntimeType for TypeKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Interop.TypeKind;i4)");
+    const SIGNATURE: ::windows::core::ConstBuffer =
+        ::windows::core::ConstBuffer::from_slice(b"enum(Windows.UI.Xaml.Interop.TypeKind;i4)");
     type DefaultType = Self;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         Ok(*from)
@@ -42,12 +43,18 @@ pub struct TypeName {
 }
 impl ::core::clone::Clone for TypeName {
     fn clone(&self) -> Self {
-        Self { Name: self.Name.clone(), Kind: self.Kind }
+        Self {
+            Name: self.Name.clone(),
+            Kind: self.Kind,
+        }
     }
 }
 impl ::core::fmt::Debug for TypeName {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_struct("TypeName").field("Name", &self.Name).field("Kind", &self.Kind).finish()
+        f.debug_struct("TypeName")
+            .field("Name", &self.Name)
+            .field("Kind", &self.Kind)
+            .finish()
     }
 }
 unsafe impl ::windows::core::Abi for TypeName {

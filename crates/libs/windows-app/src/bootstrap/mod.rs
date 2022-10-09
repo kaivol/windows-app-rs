@@ -11,7 +11,18 @@ use crate::Microsoft::WindowsAppSdk::Foundation::*;
 ///
 /// If multiple packages meet the criteria, the best candidate is selected.
 pub fn initialize() -> windows::core::Result<()> {
-    unsafe { MddBootstrapInitialize2(WINDOWSAPPSDK_RELEASE_MAJORMINOR, &HSTRING::from(WINDOWSAPPSDK_RELEASE_VERSION_TAG_W), PACKAGE_VERSION { Anonymous: PACKAGE_VERSION_0 { Version: WASR_VERSION_UINT64 } }, MddBootstrapInitializeOptions_OnNoMatch_ShowUI) }
+    unsafe {
+        MddBootstrapInitialize2(
+            WINDOWSAPPSDK_RELEASE_MAJORMINOR,
+            &HSTRING::from(WINDOWSAPPSDK_RELEASE_VERSION_TAG_W),
+            PACKAGE_VERSION {
+                Anonymous: PACKAGE_VERSION_0 {
+                    Version: WASR_VERSION_UINT64,
+                },
+            },
+            MddBootstrapInitializeOptions_OnNoMatch_ShowUI,
+        )
+    }
 }
 
 /// Undo the changes made by `initialize()`.

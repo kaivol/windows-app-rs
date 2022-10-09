@@ -11,35 +11,31 @@ impl AnimatedAcceptVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedAcceptVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -47,26 +43,21 @@ impl AnimatedAcceptVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -85,20 +76,20 @@ impl ::core::cmp::PartialEq for AnimatedAcceptVisualSource {
 impl ::core::cmp::Eq for AnimatedAcceptVisualSource {}
 impl ::core::fmt::Debug for AnimatedAcceptVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedAcceptVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedAcceptVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedAcceptVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedAcceptVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedAcceptVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedAcceptVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedAcceptVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedAcceptVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -106,52 +97,11 @@ impl ::windows::core::RuntimeName for AnimatedAcceptVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedAcceptVisualSource";
 }
-impl ::core::convert::From<AnimatedAcceptVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedAcceptVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedAcceptVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedAcceptVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AnimatedAcceptVisualSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedAcceptVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedAcceptVisualSource> for ::windows::core::IInspectable {
-    fn from(value: AnimatedAcceptVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedAcceptVisualSource> for ::windows::core::IInspectable {
-    fn from(value: &AnimatedAcceptVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedAcceptVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedAcceptVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedAcceptVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedAcceptVisualSource> for super::IAnimatedVisualSource {
     type Error = ::windows::core::Error;
     fn try_from(value: AnimatedAcceptVisualSource) -> ::windows::core::Result<Self> {
@@ -164,20 +114,13 @@ impl ::core::convert::TryFrom<&AnimatedAcceptVisualSource> for super::IAnimatedV
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedAcceptVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedAcceptVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedAcceptVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedAcceptVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedAcceptVisualSource> for super::IAnimatedVisualSource2 {
@@ -192,20 +135,13 @@ impl ::core::convert::TryFrom<&AnimatedAcceptVisualSource> for super::IAnimatedV
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedAcceptVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedAcceptVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedAcceptVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedAcceptVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedAcceptVisualSource {}
@@ -223,35 +159,31 @@ impl AnimatedBackVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedBackVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -259,26 +191,21 @@ impl AnimatedBackVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -297,20 +224,20 @@ impl ::core::cmp::PartialEq for AnimatedBackVisualSource {
 impl ::core::cmp::Eq for AnimatedBackVisualSource {}
 impl ::core::fmt::Debug for AnimatedBackVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedBackVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedBackVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedBackVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedBackVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedBackVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedBackVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedBackVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedBackVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -318,52 +245,11 @@ impl ::windows::core::RuntimeName for AnimatedBackVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedBackVisualSource";
 }
-impl ::core::convert::From<AnimatedBackVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedBackVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedBackVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedBackVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AnimatedBackVisualSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedBackVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedBackVisualSource> for ::windows::core::IInspectable {
-    fn from(value: AnimatedBackVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedBackVisualSource> for ::windows::core::IInspectable {
-    fn from(value: &AnimatedBackVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedBackVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedBackVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedBackVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedBackVisualSource> for super::IAnimatedVisualSource {
     type Error = ::windows::core::Error;
     fn try_from(value: AnimatedBackVisualSource) -> ::windows::core::Result<Self> {
@@ -376,18 +262,13 @@ impl ::core::convert::TryFrom<&AnimatedBackVisualSource> for super::IAnimatedVis
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource> for AnimatedBackVisualSource {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedBackVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedBackVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedBackVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedBackVisualSource> for super::IAnimatedVisualSource2 {
@@ -402,20 +283,13 @@ impl ::core::convert::TryFrom<&AnimatedBackVisualSource> for super::IAnimatedVis
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedBackVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedBackVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedBackVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedBackVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedBackVisualSource {}
@@ -433,35 +307,31 @@ impl AnimatedChevronDownSmallVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedChevronDownSmallVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -469,26 +339,21 @@ impl AnimatedChevronDownSmallVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -507,20 +372,20 @@ impl ::core::cmp::PartialEq for AnimatedChevronDownSmallVisualSource {
 impl ::core::cmp::Eq for AnimatedChevronDownSmallVisualSource {}
 impl ::core::fmt::Debug for AnimatedChevronDownSmallVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedChevronDownSmallVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedChevronDownSmallVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedChevronDownSmallVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedChevronDownSmallVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedChevronDownSmallVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedChevronDownSmallVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -528,56 +393,11 @@ impl ::windows::core::RuntimeName for AnimatedChevronDownSmallVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronDownSmallVisualSource";
 }
-impl ::core::convert::From<AnimatedChevronDownSmallVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedChevronDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronDownSmallVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedChevronDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedChevronDownSmallVisualSource> for ::windows::core::IInspectable {
-    fn from(value: AnimatedChevronDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronDownSmallVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: &AnimatedChevronDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedChevronDownSmallVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedChevronDownSmallVisualSource>
     for super::IAnimatedVisualSource
 {
@@ -594,20 +414,13 @@ impl ::core::convert::TryFrom<&AnimatedChevronDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedChevronDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedChevronDownSmallVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedChevronDownSmallVisualSource>
@@ -626,20 +439,13 @@ impl ::core::convert::TryFrom<&AnimatedChevronDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedChevronDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedChevronDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedChevronDownSmallVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedChevronDownSmallVisualSource {}
@@ -657,35 +463,31 @@ impl AnimatedChevronRightDownSmallVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedChevronRightDownSmallVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -693,26 +495,21 @@ impl AnimatedChevronRightDownSmallVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -737,14 +534,16 @@ impl ::core::fmt::Debug for AnimatedChevronRightDownSmallVisualSource {
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedChevronRightDownSmallVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronRightDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronRightDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedChevronRightDownSmallVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedChevronRightDownSmallVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedChevronRightDownSmallVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -752,62 +551,11 @@ impl ::windows::core::RuntimeName for AnimatedChevronRightDownSmallVisualSource 
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronRightDownSmallVisualSource";
 }
-impl ::core::convert::From<AnimatedChevronRightDownSmallVisualSource>
-    for ::windows::core::IUnknown
-{
-    fn from(value: AnimatedChevronRightDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronRightDownSmallVisualSource>
-    for ::windows::core::IUnknown
-{
-    fn from(value: &AnimatedChevronRightDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedChevronRightDownSmallVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: AnimatedChevronRightDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronRightDownSmallVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: &AnimatedChevronRightDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedChevronRightDownSmallVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedChevronRightDownSmallVisualSource>
     for super::IAnimatedVisualSource
 {
@@ -826,20 +574,15 @@ impl ::core::convert::TryFrom<&AnimatedChevronRightDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedChevronRightDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronRightDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(
+        value: &AnimatedChevronRightDownSmallVisualSource,
+    ) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedChevronRightDownSmallVisualSource>
@@ -860,20 +603,15 @@ impl ::core::convert::TryFrom<&AnimatedChevronRightDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedChevronRightDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronRightDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedChevronRightDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(
+        value: &AnimatedChevronRightDownSmallVisualSource,
+    ) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedChevronRightDownSmallVisualSource {}
@@ -891,35 +629,31 @@ impl AnimatedChevronUpDownSmallVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedChevronUpDownSmallVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -927,26 +661,21 @@ impl AnimatedChevronUpDownSmallVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -965,20 +694,20 @@ impl ::core::cmp::PartialEq for AnimatedChevronUpDownSmallVisualSource {
 impl ::core::cmp::Eq for AnimatedChevronUpDownSmallVisualSource {}
 impl ::core::fmt::Debug for AnimatedChevronUpDownSmallVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedChevronUpDownSmallVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedChevronUpDownSmallVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedChevronUpDownSmallVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronUpDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronUpDownSmallVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedChevronUpDownSmallVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedChevronUpDownSmallVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedChevronUpDownSmallVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -986,58 +715,11 @@ impl ::windows::core::RuntimeName for AnimatedChevronUpDownSmallVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedChevronUpDownSmallVisualSource";
 }
-impl ::core::convert::From<AnimatedChevronUpDownSmallVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedChevronUpDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronUpDownSmallVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedChevronUpDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedChevronUpDownSmallVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: AnimatedChevronUpDownSmallVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedChevronUpDownSmallVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: &AnimatedChevronUpDownSmallVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedChevronUpDownSmallVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedChevronUpDownSmallVisualSource>
     for super::IAnimatedVisualSource
 {
@@ -1054,20 +736,13 @@ impl ::core::convert::TryFrom<&AnimatedChevronUpDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedChevronUpDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronUpDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedChevronUpDownSmallVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedChevronUpDownSmallVisualSource>
@@ -1086,20 +761,13 @@ impl ::core::convert::TryFrom<&AnimatedChevronUpDownSmallVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedChevronUpDownSmallVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedChevronUpDownSmallVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedChevronUpDownSmallVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedChevronUpDownSmallVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedChevronUpDownSmallVisualSource {}
@@ -1117,35 +785,31 @@ impl AnimatedFindVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedFindVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -1153,26 +817,21 @@ impl AnimatedFindVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -1191,20 +850,20 @@ impl ::core::cmp::PartialEq for AnimatedFindVisualSource {
 impl ::core::cmp::Eq for AnimatedFindVisualSource {}
 impl ::core::fmt::Debug for AnimatedFindVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedFindVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedFindVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedFindVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedFindVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedFindVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedFindVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedFindVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedFindVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -1212,52 +871,11 @@ impl ::windows::core::RuntimeName for AnimatedFindVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedFindVisualSource";
 }
-impl ::core::convert::From<AnimatedFindVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedFindVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedFindVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedFindVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for AnimatedFindVisualSource {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedFindVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedFindVisualSource> for ::windows::core::IInspectable {
-    fn from(value: AnimatedFindVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedFindVisualSource> for ::windows::core::IInspectable {
-    fn from(value: &AnimatedFindVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedFindVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedFindVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedFindVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedFindVisualSource> for super::IAnimatedVisualSource {
     type Error = ::windows::core::Error;
     fn try_from(value: AnimatedFindVisualSource) -> ::windows::core::Result<Self> {
@@ -1270,18 +888,13 @@ impl ::core::convert::TryFrom<&AnimatedFindVisualSource> for super::IAnimatedVis
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource> for AnimatedFindVisualSource {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedFindVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedFindVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedFindVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedFindVisualSource> for super::IAnimatedVisualSource2 {
@@ -1296,20 +909,13 @@ impl ::core::convert::TryFrom<&AnimatedFindVisualSource> for super::IAnimatedVis
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedFindVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedFindVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedFindVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedFindVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedFindVisualSource {}
@@ -1327,35 +933,31 @@ impl AnimatedGlobalNavigationButtonVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedGlobalNavigationButtonVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -1363,26 +965,21 @@ impl AnimatedGlobalNavigationButtonVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -1407,14 +1004,16 @@ impl ::core::fmt::Debug for AnimatedGlobalNavigationButtonVisualSource {
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedGlobalNavigationButtonVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedGlobalNavigationButtonVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedGlobalNavigationButtonVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedGlobalNavigationButtonVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedGlobalNavigationButtonVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedGlobalNavigationButtonVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -1422,62 +1021,11 @@ impl ::windows::core::RuntimeName for AnimatedGlobalNavigationButtonVisualSource
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedGlobalNavigationButtonVisualSource";
 }
-impl ::core::convert::From<AnimatedGlobalNavigationButtonVisualSource>
-    for ::windows::core::IUnknown
-{
-    fn from(value: AnimatedGlobalNavigationButtonVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedGlobalNavigationButtonVisualSource>
-    for ::windows::core::IUnknown
-{
-    fn from(value: &AnimatedGlobalNavigationButtonVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedGlobalNavigationButtonVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: AnimatedGlobalNavigationButtonVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedGlobalNavigationButtonVisualSource>
-    for ::windows::core::IInspectable
-{
-    fn from(value: &AnimatedGlobalNavigationButtonVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedGlobalNavigationButtonVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedGlobalNavigationButtonVisualSource>
     for super::IAnimatedVisualSource
 {
@@ -1498,20 +1046,15 @@ impl ::core::convert::TryFrom<&AnimatedGlobalNavigationButtonVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedGlobalNavigationButtonVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedGlobalNavigationButtonVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(
+        value: &AnimatedGlobalNavigationButtonVisualSource,
+    ) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedGlobalNavigationButtonVisualSource>
@@ -1534,20 +1077,15 @@ impl ::core::convert::TryFrom<&AnimatedGlobalNavigationButtonVisualSource>
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedGlobalNavigationButtonVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedGlobalNavigationButtonVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedGlobalNavigationButtonVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(
+        value: &AnimatedGlobalNavigationButtonVisualSource,
+    ) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedGlobalNavigationButtonVisualSource {}
@@ -1565,35 +1103,31 @@ impl AnimatedSettingsVisualSource {
     >(
         callback: F,
     ) -> ::windows::core::Result<R> {
-        static mut SHARED: ::windows::core::FactoryCache<
+        static SHARED: ::windows::core::FactoryCache<
             AnimatedSettingsVisualSource,
             ::windows::core::IGenericFactory,
         > = ::windows::core::FactoryCache::new();
-        unsafe { SHARED.call(callback) }
+        SHARED.call(callback)
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`, `\"UI_Composition\"`*"]
+    #[doc = "*Required features: `\"UI_Composition\"`*"]
     #[cfg(feature = "UI_Composition")]
-    pub fn TryCreateAnimatedVisual<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::super::Composition::Compositor>,
-    >(
+    pub fn TryCreateAnimatedVisual(
         &self,
-        compositor: Param0,
+        compositor: &super::super::super::Composition::Compositor,
         diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
     ) -> ::windows::core::Result<super::IAnimatedVisual> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TryCreateAnimatedVisual)(
-                ::windows::core::Interface::as_raw(this),
-                compositor.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TryCreateAnimatedVisual)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(compositor),
                 diagnostics as *mut _ as _,
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::IAnimatedVisual>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
     pub fn Markers(
         &self,
     ) -> ::windows::core::Result<
@@ -1601,26 +1135,21 @@ impl AnimatedSettingsVisualSource {
     > {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            ( :: windows :: core :: Interface :: vtable ( this ) . Markers ) ( :: windows :: core :: Interface :: as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi :: < ::windows::Foundation::Collections:: IMapView :: < :: windows :: core :: HSTRING , f64 > > ( result__ )
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            ( ::windows::core::Vtable::vtable ( this ) . Markers ) ( ::windows::core::Vtable::as_raw ( this ) , result__ . as_mut_ptr ( ) ) . from_abi:: < ::windows::Foundation::Collections:: IMapView :: < :: windows::core::HSTRING , f64 > > ( result__ )
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Controls_AnimatedVisuals\"`*"]
-    pub fn SetColorProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::UI::Color>,
-    >(
+    pub fn SetColorProperty(
         &self,
-        propertyname: Param0,
-        value: Param1,
+        propertyname: &::windows::core::HSTRING,
+        value: ::windows::UI::Color,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<super::IAnimatedVisualSource2>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetColorProperty)(
-                ::windows::core::Interface::as_raw(this),
-                propertyname.into_param().abi(),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetColorProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(propertyname),
+                value,
             )
             .ok()
         }
@@ -1639,20 +1168,20 @@ impl ::core::cmp::PartialEq for AnimatedSettingsVisualSource {
 impl ::core::cmp::Eq for AnimatedSettingsVisualSource {}
 impl ::core::fmt::Debug for AnimatedSettingsVisualSource {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AnimatedSettingsVisualSource")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("AnimatedSettingsVisualSource").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for AnimatedSettingsVisualSource {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource;{294765c3-70e3-555c-9657-01fc4051169d})" ) ;
     type DefaultType = ::core::option::Option<Self>;
     fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for AnimatedSettingsVisualSource {
+unsafe impl ::windows::core::Vtable for AnimatedSettingsVisualSource {
     type Vtable = super::IAnimatedVisualSource_Vtbl;
+}
+unsafe impl ::windows::core::Interface for AnimatedSettingsVisualSource {
     const IID: ::windows::core::GUID =
         <super::IAnimatedVisualSource as ::windows::core::Interface>::IID;
 }
@@ -1660,54 +1189,11 @@ impl ::windows::core::RuntimeName for AnimatedSettingsVisualSource {
     const NAME: &'static str =
         "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource";
 }
-impl ::core::convert::From<AnimatedSettingsVisualSource> for ::windows::core::IUnknown {
-    fn from(value: AnimatedSettingsVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedSettingsVisualSource> for ::windows::core::IUnknown {
-    fn from(value: &AnimatedSettingsVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<AnimatedSettingsVisualSource> for ::windows::core::IInspectable {
-    fn from(value: AnimatedSettingsVisualSource) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&AnimatedSettingsVisualSource> for ::windows::core::IInspectable {
-    fn from(value: &AnimatedSettingsVisualSource) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    AnimatedSettingsVisualSource,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<AnimatedSettingsVisualSource> for super::IAnimatedVisualSource {
     type Error = ::windows::core::Error;
     fn try_from(value: AnimatedSettingsVisualSource) -> ::windows::core::Result<Self> {
@@ -1720,20 +1206,13 @@ impl ::core::convert::TryFrom<&AnimatedSettingsVisualSource> for super::IAnimate
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for AnimatedSettingsVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedSettingsVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource>
-    for &AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedSettingsVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::convert::TryFrom<AnimatedSettingsVisualSource> for super::IAnimatedVisualSource2 {
@@ -1748,20 +1227,13 @@ impl ::core::convert::TryFrom<&AnimatedSettingsVisualSource> for super::IAnimate
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for AnimatedSettingsVisualSource
+impl<'a> ::core::convert::TryFrom<&AnimatedSettingsVisualSource>
+    for ::windows::core::InParam<'a, super::IAnimatedVisualSource2>
 {
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::IAnimatedVisualSource2>
-    for &AnimatedSettingsVisualSource
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::IAnimatedVisualSource2> {
-        ::core::convert::TryInto::<super::IAnimatedVisualSource2>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+    type Error = ::windows::core::Error;
+    fn try_from(value: &AnimatedSettingsVisualSource) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 unsafe impl ::core::marker::Send for AnimatedSettingsVisualSource {}

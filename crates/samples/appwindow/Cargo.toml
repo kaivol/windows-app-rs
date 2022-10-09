@@ -8,7 +8,8 @@ edition = "2018"
 path = "../../libs/windows-app-deploy"
 
 [dependencies.windows]
-version = "0.42.0"
+git = "https://github.com/kaivol/windows-rs"
+branch = "composable"
 features = [
     "Foundation",
     "Win32_Foundation",

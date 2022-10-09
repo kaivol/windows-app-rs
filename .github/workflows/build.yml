@@ -39,7 +39,7 @@ jobs:
             >> $env:GITHUB_ENV
       - name: Run cargo clippy
         run: |
-          cargo clippy --work
+          cargo clippy --workspace
 
   cargo_doc:
     runs-on: windows-2019

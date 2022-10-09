@@ -30,8 +30,7 @@ impl IDesktopWindowXamlSourceNative_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.AttachToWindow(::core::mem::transmute_copy(&parentwnd))
-                .into()
+            this.AttachToWindow(::core::mem::transmute_copy(&parentwnd)).into()
         }
         unsafe extern "system" fn WindowHandle<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -63,7 +62,7 @@ impl IDesktopWindowXamlSourceNative_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             AttachToWindow: AttachToWindow::<Identity, Impl, OFFSET>,
             WindowHandle: WindowHandle::<Identity, Impl, OFFSET>,
             PreTranslateMessage: PreTranslateMessage::<Identity, Impl, OFFSET>,
@@ -96,11 +95,10 @@ impl IFindReferenceTargetsCallback_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.FoundTrackerTarget(::core::mem::transmute(&target))
-                .into()
+            this.FoundTrackerTarget(::core::mem::transmute(&target)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             FoundTrackerTarget: FoundTrackerTarget::<Identity, Impl, OFFSET>,
         }
     }
@@ -159,8 +157,7 @@ impl IReferenceTracker_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.FindTrackerTargets(::core::mem::transmute(&callback))
-                .into()
+            this.FindTrackerTargets(::core::mem::transmute(&callback)).into()
         }
         unsafe extern "system" fn GetReferenceTrackerManager<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -214,7 +211,7 @@ impl IReferenceTracker_Vtbl {
             this.PegFromTrackerSource().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             ConnectFromTrackerSource: ConnectFromTrackerSource::<Identity, Impl, OFFSET>,
             DisconnectFromTrackerSource: DisconnectFromTrackerSource::<Identity, Impl, OFFSET>,
             FindTrackerTargets: FindTrackerTargets::<Identity, Impl, OFFSET>,
@@ -237,7 +234,7 @@ impl IReferenceTrackerExtension_Vtbl {
         const OFFSET: isize,
     >() -> IReferenceTrackerExtension_Vtbl {
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
         }
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
@@ -329,8 +326,7 @@ impl IReferenceTrackerHost_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.AddMemoryPressure(::core::mem::transmute_copy(&bytesallocated))
-                .into()
+            this.AddMemoryPressure(::core::mem::transmute_copy(&bytesallocated)).into()
         }
         unsafe extern "system" fn RemoveMemoryPressure<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -342,11 +338,10 @@ impl IReferenceTrackerHost_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveMemoryPressure(::core::mem::transmute_copy(&bytesallocated))
-                .into()
+            this.RemoveMemoryPressure(::core::mem::transmute_copy(&bytesallocated)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             DisconnectUnusedReferenceSources: DisconnectUnusedReferenceSources::<
                 Identity,
                 Impl,
@@ -432,11 +427,10 @@ impl IReferenceTrackerManager_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetReferenceTrackerHost(::core::mem::transmute(&value))
-                .into()
+            this.SetReferenceTrackerHost(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             ReferenceTrackingStarted: ReferenceTrackingStarted::<Identity, Impl, OFFSET>,
             FindTrackerTargetsCompleted: FindTrackerTargetsCompleted::<Identity, Impl, OFFSET>,
             ReferenceTrackingCompleted: ReferenceTrackingCompleted::<Identity, Impl, OFFSET>,
@@ -505,7 +499,7 @@ impl IReferenceTrackerTarget_Vtbl {
             this.Unpeg().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             AddRefFromReferenceTracker: AddRefFromReferenceTracker::<Identity, Impl, OFFSET>,
             ReleaseFromReferenceTracker: ReleaseFromReferenceTracker::<Identity, Impl, OFFSET>,
             Peg: Peg::<Identity, Impl, OFFSET>,
@@ -550,8 +544,7 @@ impl ITrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.CreateTrackerHandle(::core::mem::transmute_copy(&returnvalue))
-                .into()
+            this.CreateTrackerHandle(::core::mem::transmute_copy(&returnvalue)).into()
         }
         unsafe extern "system" fn DeleteTrackerHandle<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -563,8 +556,7 @@ impl ITrackerOwner_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.DeleteTrackerHandle(::core::mem::transmute_copy(&handle))
-                .into()
+            this.DeleteTrackerHandle(::core::mem::transmute_copy(&handle)).into()
         }
         unsafe extern "system" fn SetTrackerValue<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -600,7 +592,7 @@ impl ITrackerOwner_Vtbl {
             )
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             CreateTrackerHandle: CreateTrackerHandle::<Identity, Impl, OFFSET>,
             DeleteTrackerHandle: DeleteTrackerHandle::<Identity, Impl, OFFSET>,
             SetTrackerValue: SetTrackerValue::<Identity, Impl, OFFSET>,

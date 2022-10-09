@@ -128,8 +128,7 @@ impl ITextCharacterFormat_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetBackgroundColor(::core::mem::transmute(&value))
-                .into()
+            this.SetBackgroundColor(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn Bold<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -253,8 +252,7 @@ impl ITextCharacterFormat_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetForegroundColor(::core::mem::transmute(&value))
-                .into()
+            this.SetForegroundColor(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn Hidden<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -854,7 +852,7 @@ impl ITextCharacterFormat_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ITextCharacterFormat, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextCharacterFormat, OFFSET>(
             ),
             AllCaps: AllCaps::<Identity, Impl, OFFSET>,
             SetAllCaps: SetAllCaps::<Identity, Impl, OFFSET>,
@@ -1747,7 +1745,7 @@ impl ITextParagraphFormat_Vtbl {
             this.SetLineSpacing(rule, spacing).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ITextParagraphFormat, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextParagraphFormat, OFFSET>(
             ),
             Alignment: Alignment::<Identity, Impl, OFFSET>,
             SetAlignment: SetAlignment::<Identity, Impl, OFFSET>,
@@ -1985,8 +1983,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetCharacterFormat(::core::mem::transmute(&value))
-                .into()
+            this.SetCharacterFormat(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn FormattedText<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2160,8 +2157,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetParagraphFormat(::core::mem::transmute(&value))
-                .into()
+            this.SetParagraphFormat(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn StartPosition<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2405,8 +2401,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.GetCharacterUtf32(::core::mem::transmute_copy(&value), offset)
-                .into()
+            this.GetCharacterUtf32(::core::mem::transmute_copy(&value), offset).into()
         }
         unsafe extern "system" fn GetClone<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2498,8 +2493,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.GetText(options, ::core::mem::transmute_copy(&value))
-                .into()
+            this.GetText(options, ::core::mem::transmute_copy(&value)).into()
         }
         unsafe extern "system" fn GetTextViaStream<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2512,8 +2506,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.GetTextViaStream(options, ::core::mem::transmute(&value))
-                .into()
+            this.GetTextViaStream(options, ::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn InRange<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2724,8 +2717,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetPoint(::core::mem::transmute(&point), options, extend)
-                .into()
+            this.SetPoint(::core::mem::transmute(&point), options, extend).into()
         }
         unsafe extern "system" fn SetRange<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2751,8 +2743,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetText2(options, ::core::mem::transmute(&value))
-                .into()
+            this.SetText2(options, ::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn SetTextViaStream<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2765,8 +2756,7 @@ impl ITextRange_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetTextViaStream(options, ::core::mem::transmute(&value))
-                .into()
+            this.SetTextViaStream(options, ::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn StartOf<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2790,7 +2780,7 @@ impl ITextRange_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ITextRange, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextRange, OFFSET>(),
             Character: Character::<Identity, Impl, OFFSET>,
             SetCharacter: SetCharacter::<Identity, Impl, OFFSET>,
             CharacterFormat: CharacterFormat::<Identity, Impl, OFFSET>,
@@ -3079,7 +3069,7 @@ impl ITextSelection_Vtbl {
             this.TypeText(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ITextSelection, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextSelection, OFFSET>(),
             Options: Options::<Identity, Impl, OFFSET>,
             SetOptions: SetOptions::<Identity, Impl, OFFSET>,
             Type: Type::<Identity, Impl, OFFSET>,

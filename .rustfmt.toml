@@ -1,3 +1,5 @@
+ignore = ["crates/libs/windows-app/Microsoft"]
+
 imports_granularity = "Module"
 group_imports = "StdExternalCrate"
 chain_width = 80

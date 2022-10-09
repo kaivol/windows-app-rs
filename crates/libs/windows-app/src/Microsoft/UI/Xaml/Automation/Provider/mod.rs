@@ -2,113 +2,67 @@
 #[repr(transparent)]
 pub struct IAnnotationProvider(::windows::core::IUnknown);
 impl IAnnotationProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn AnnotationTypeId(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).AnnotationTypeId)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).AnnotationTypeId)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn AnnotationTypeName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).AnnotationTypeName)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).AnnotationTypeName)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Author(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).Author)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Author)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DateTime(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).DateTime)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DateTime)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Target(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Target)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Target)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
 }
-impl ::core::convert::From<IAnnotationProvider> for ::windows::core::IUnknown {
-    fn from(value: IAnnotationProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IAnnotationProvider> for ::windows::core::IUnknown {
-    fn from(value: &IAnnotationProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IAnnotationProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IAnnotationProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IAnnotationProvider> for ::windows::core::IInspectable {
-    fn from(value: IAnnotationProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IAnnotationProvider> for ::windows::core::IInspectable {
-    fn from(value: &IAnnotationProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IAnnotationProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IAnnotationProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IAnnotationProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IAnnotationProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -133,15 +87,17 @@ unsafe impl ::windows::core::RuntimeType for IAnnotationProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IAnnotationProvider {
+unsafe impl ::windows::core::Vtable for IAnnotationProvider {
     type Vtable = IAnnotationProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IAnnotationProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x546ab18e_986d_5deb_8f2a_2d9303a43006);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAnnotationProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub AnnotationTypeId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
@@ -167,7 +123,7 @@ pub struct IAnnotationProvider_Vtbl {
 #[repr(transparent)]
 pub struct ICustomNavigationProvider(::windows::core::IUnknown);
 impl ICustomNavigationProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Peers\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Peers\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Peers")]
     pub fn NavigateCustom(
         &self,
@@ -175,9 +131,9 @@ impl ICustomNavigationProvider {
     ) -> ::windows::core::Result<::windows::core::IInspectable> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).NavigateCustom)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).NavigateCustom)(
+                ::windows::core::Vtable::as_raw(this),
                 direction,
                 result__.as_mut_ptr(),
             )
@@ -185,52 +141,11 @@ impl ICustomNavigationProvider {
         }
     }
 }
-impl ::core::convert::From<ICustomNavigationProvider> for ::windows::core::IUnknown {
-    fn from(value: ICustomNavigationProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ICustomNavigationProvider> for ::windows::core::IUnknown {
-    fn from(value: &ICustomNavigationProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ICustomNavigationProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a ICustomNavigationProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ICustomNavigationProvider> for ::windows::core::IInspectable {
-    fn from(value: ICustomNavigationProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ICustomNavigationProvider> for ::windows::core::IInspectable {
-    fn from(value: &ICustomNavigationProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for ICustomNavigationProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a ICustomNavigationProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ICustomNavigationProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ICustomNavigationProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -244,9 +159,7 @@ impl ::core::cmp::PartialEq for ICustomNavigationProvider {
 impl ::core::cmp::Eq for ICustomNavigationProvider {}
 impl ::core::fmt::Debug for ICustomNavigationProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ICustomNavigationProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("ICustomNavigationProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for ICustomNavigationProvider {
@@ -257,15 +170,17 @@ unsafe impl ::windows::core::RuntimeType for ICustomNavigationProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ICustomNavigationProvider {
+unsafe impl ::windows::core::Vtable for ICustomNavigationProvider {
     type Vtable = ICustomNavigationProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ICustomNavigationProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xcad51322_faa9_5a2b_90f0_b762c46178b3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICustomNavigationProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     #[cfg(feature = "UI_Xaml_Automation_Peers")]
     pub NavigateCustom: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
@@ -279,73 +194,36 @@ pub struct ICustomNavigationProvider_Vtbl {
 #[repr(transparent)]
 pub struct IDockProvider(::windows::core::IUnknown);
 impl IDockProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DockPosition(&self) -> ::windows::core::Result<super::DockPosition> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::DockPosition>::zeroed();
-            (::windows::core::Interface::vtable(this).DockPosition)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DockPosition)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::DockPosition>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SetDockPosition(
         &self,
         dockposition: super::DockPosition,
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetDockPosition)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).SetDockPosition)(
+                ::windows::core::Vtable::as_raw(this),
                 dockposition,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<IDockProvider> for ::windows::core::IUnknown {
-    fn from(value: IDockProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDockProvider> for ::windows::core::IUnknown {
-    fn from(value: &IDockProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDockProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDockProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IDockProvider> for ::windows::core::IInspectable {
-    fn from(value: IDockProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDockProvider> for ::windows::core::IInspectable {
-    fn from(value: &IDockProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IDockProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IDockProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IDockProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IDockProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -370,15 +248,17 @@ unsafe impl ::windows::core::RuntimeType for IDockProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IDockProvider {
+unsafe impl ::windows::core::Vtable for IDockProvider {
     type Vtable = IDockProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IDockProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x9882b971_70ea_5c6d_a818_7a7ab68c6f3b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDockProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub DockPosition: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut super::DockPosition,
@@ -392,43 +272,36 @@ pub struct IDockProvider_Vtbl {
 #[repr(transparent)]
 pub struct IDragProvider(::windows::core::IUnknown);
 impl IDragProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsGrabbed(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsGrabbed)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsGrabbed)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DropEffect(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).DropEffect)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DropEffect)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DropEffects(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<::windows::core::HSTRING>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).DropEffects)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DropEffects)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<::windows::core::HSTRING>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -437,17 +310,14 @@ impl IDragProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetGrabbedItems(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetGrabbedItems)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetGrabbedItems)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -457,46 +327,11 @@ impl IDragProvider {
         }
     }
 }
-impl ::core::convert::From<IDragProvider> for ::windows::core::IUnknown {
-    fn from(value: IDragProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDragProvider> for ::windows::core::IUnknown {
-    fn from(value: &IDragProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDragProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDragProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IDragProvider> for ::windows::core::IInspectable {
-    fn from(value: IDragProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDragProvider> for ::windows::core::IInspectable {
-    fn from(value: &IDragProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IDragProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IDragProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IDragProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IDragProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -521,15 +356,17 @@ unsafe impl ::windows::core::RuntimeType for IDragProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IDragProvider {
+unsafe impl ::windows::core::Vtable for IDragProvider {
     type Vtable = IDragProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IDragProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xc60bb643_a356_5132_a258_ffba6c7480f2);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDragProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub IsGrabbed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -553,31 +390,25 @@ pub struct IDragProvider_Vtbl {
 #[repr(transparent)]
 pub struct IDropTargetProvider(::windows::core::IUnknown);
 impl IDropTargetProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DropEffect(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).DropEffect)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DropEffect)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DropEffects(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<::windows::core::HSTRING>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).DropEffects)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DropEffects)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<::windows::core::HSTRING>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -587,46 +418,11 @@ impl IDropTargetProvider {
         }
     }
 }
-impl ::core::convert::From<IDropTargetProvider> for ::windows::core::IUnknown {
-    fn from(value: IDropTargetProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDropTargetProvider> for ::windows::core::IUnknown {
-    fn from(value: &IDropTargetProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IDropTargetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IDropTargetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IDropTargetProvider> for ::windows::core::IInspectable {
-    fn from(value: IDropTargetProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IDropTargetProvider> for ::windows::core::IInspectable {
-    fn from(value: &IDropTargetProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IDropTargetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IDropTargetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IDropTargetProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IDropTargetProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -651,15 +447,17 @@ unsafe impl ::windows::core::RuntimeType for IDropTargetProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IDropTargetProvider {
+unsafe impl ::windows::core::Vtable for IDropTargetProvider {
     type Vtable = IDropTargetProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IDropTargetProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x9b2a9f3d_bbb1_510d_99e8_0e0ae14a6e3b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDropTargetProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub DropEffect: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
@@ -674,81 +472,37 @@ pub struct IDropTargetProvider_Vtbl {
 #[repr(transparent)]
 pub struct IExpandCollapseProvider(::windows::core::IUnknown);
 impl IExpandCollapseProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ExpandCollapseState(&self) -> ::windows::core::Result<super::ExpandCollapseState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::ExpandCollapseState>::zeroed();
-            (::windows::core::Interface::vtable(this).ExpandCollapseState)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ExpandCollapseState)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::ExpandCollapseState>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Collapse(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Collapse)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Collapse)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Expand(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Expand)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Expand)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
 }
-impl ::core::convert::From<IExpandCollapseProvider> for ::windows::core::IUnknown {
-    fn from(value: IExpandCollapseProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IExpandCollapseProvider> for ::windows::core::IUnknown {
-    fn from(value: &IExpandCollapseProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IExpandCollapseProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IExpandCollapseProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IExpandCollapseProvider> for ::windows::core::IInspectable {
-    fn from(value: IExpandCollapseProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IExpandCollapseProvider> for ::windows::core::IInspectable {
-    fn from(value: &IExpandCollapseProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IExpandCollapseProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IExpandCollapseProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IExpandCollapseProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IExpandCollapseProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -762,9 +516,7 @@ impl ::core::cmp::PartialEq for IExpandCollapseProvider {
 impl ::core::cmp::Eq for IExpandCollapseProvider {}
 impl ::core::fmt::Debug for IExpandCollapseProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IExpandCollapseProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("IExpandCollapseProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for IExpandCollapseProvider {
@@ -775,15 +527,17 @@ unsafe impl ::windows::core::RuntimeType for IExpandCollapseProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IExpandCollapseProvider {
+unsafe impl ::windows::core::Vtable for IExpandCollapseProvider {
     type Vtable = IExpandCollapseProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IExpandCollapseProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x6cef349c_b181_5d0b_b297_c3b0166120c3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IExpandCollapseProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ExpandCollapseState: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut super::ExpandCollapseState,
@@ -797,107 +551,67 @@ pub struct IExpandCollapseProvider_Vtbl {
 #[repr(transparent)]
 pub struct IGridItemProvider(::windows::core::IUnknown);
 impl IGridItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Column(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Column)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Column)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ColumnSpan(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ColumnSpan)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ColumnSpan)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ContainingGrid(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ContainingGrid)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ContainingGrid)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Row(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Row)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Row)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn RowSpan(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).RowSpan)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RowSpan)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
 }
-impl ::core::convert::From<IGridItemProvider> for ::windows::core::IUnknown {
-    fn from(value: IGridItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IGridItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &IGridItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IGridItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IGridItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IGridItemProvider> for ::windows::core::IInspectable {
-    fn from(value: IGridItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IGridItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &IGridItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IGridItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IGridItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IGridItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IGridItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -922,15 +636,17 @@ unsafe impl ::windows::core::RuntimeType for IGridItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IGridItemProvider {
+unsafe impl ::windows::core::Vtable for IGridItemProvider {
     type Vtable = IGridItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IGridItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xd2557a0e_6909_5170_a680_60728df339b4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGridItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Column: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
@@ -956,31 +672,28 @@ pub struct IGridItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct IGridProvider(::windows::core::IUnknown);
 impl IGridProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ColumnCount(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).ColumnCount)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ColumnCount)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn RowCount(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).RowCount)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RowCount)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetItem(
         &self,
         row: i32,
@@ -988,9 +701,9 @@ impl IGridProvider {
     ) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetItem)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetItem)(
+                ::windows::core::Vtable::as_raw(this),
                 row,
                 column,
                 result__.as_mut_ptr(),
@@ -999,46 +712,11 @@ impl IGridProvider {
         }
     }
 }
-impl ::core::convert::From<IGridProvider> for ::windows::core::IUnknown {
-    fn from(value: IGridProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IGridProvider> for ::windows::core::IUnknown {
-    fn from(value: &IGridProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IGridProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IGridProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IGridProvider> for ::windows::core::IInspectable {
-    fn from(value: IGridProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IGridProvider> for ::windows::core::IInspectable {
-    fn from(value: &IGridProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IGridProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IGridProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IGridProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IGridProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1063,15 +741,17 @@ unsafe impl ::windows::core::RuntimeType for IGridProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IGridProvider {
+unsafe impl ::windows::core::Vtable for IGridProvider {
     type Vtable = IGridProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IGridProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x50992d5e_d225_56e9_a25a_78c372e81955);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGridProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ColumnCount: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
@@ -1090,71 +770,35 @@ pub struct IGridProvider_Vtbl {
 #[doc(hidden)]
 #[repr(transparent)]
 pub struct IIRawElementProviderSimple(::windows::core::IUnknown);
-unsafe impl ::windows::core::Interface for IIRawElementProviderSimple {
+unsafe impl ::windows::core::Vtable for IIRawElementProviderSimple {
     type Vtable = IIRawElementProviderSimple_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IIRawElementProviderSimple {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xf90bc239_ade2_55c9_a838_a3b0579763c5);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IIRawElementProviderSimple_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
 }
 #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
 #[repr(transparent)]
 pub struct IInvokeProvider(::windows::core::IUnknown);
 impl IInvokeProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Invoke(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Invoke)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Invoke)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
 }
-impl ::core::convert::From<IInvokeProvider> for ::windows::core::IUnknown {
-    fn from(value: IInvokeProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IInvokeProvider> for ::windows::core::IUnknown {
-    fn from(value: &IInvokeProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IInvokeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IInvokeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IInvokeProvider> for ::windows::core::IInspectable {
-    fn from(value: IInvokeProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IInvokeProvider> for ::windows::core::IInspectable {
-    fn from(value: &IInvokeProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IInvokeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IInvokeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IInvokeProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IInvokeProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1179,15 +823,17 @@ unsafe impl ::windows::core::RuntimeType for IInvokeProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IInvokeProvider {
+unsafe impl ::windows::core::Vtable for IInvokeProvider {
     type Vtable = IInvokeProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IInvokeProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x02481105_3378_544d_b4e1_a1b368afbc02);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInvokeProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Invoke:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
 }
@@ -1195,74 +841,34 @@ pub struct IInvokeProvider_Vtbl {
 #[repr(transparent)]
 pub struct IItemContainerProvider(::windows::core::IUnknown);
 impl IItemContainerProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn FindItemByProperty<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, IRawElementProviderSimple>,
-        Param1: ::windows::core::IntoParam<'a, super::AutomationProperty>,
-        Param2: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
+    pub fn FindItemByProperty<'a, P0>(
         &self,
-        startafter: Param0,
-        automationproperty: Param1,
-        value: Param2,
-    ) -> ::windows::core::Result<IRawElementProviderSimple> {
+        startafter: &IRawElementProviderSimple,
+        automationproperty: &super::AutomationProperty,
+        value: P0,
+    ) -> ::windows::core::Result<IRawElementProviderSimple>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).FindItemByProperty)(
-                ::windows::core::Interface::as_raw(this),
-                startafter.into_param().abi(),
-                automationproperty.into_param().abi(),
-                value.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FindItemByProperty)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(startafter),
+                ::core::mem::transmute_copy(automationproperty),
+                value.into().abi(),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
 }
-impl ::core::convert::From<IItemContainerProvider> for ::windows::core::IUnknown {
-    fn from(value: IItemContainerProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IItemContainerProvider> for ::windows::core::IUnknown {
-    fn from(value: &IItemContainerProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IItemContainerProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IItemContainerProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IItemContainerProvider> for ::windows::core::IInspectable {
-    fn from(value: IItemContainerProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IItemContainerProvider> for ::windows::core::IInspectable {
-    fn from(value: &IItemContainerProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IItemContainerProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IItemContainerProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IItemContainerProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IItemContainerProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1276,9 +882,7 @@ impl ::core::cmp::PartialEq for IItemContainerProvider {
 impl ::core::cmp::Eq for IItemContainerProvider {}
 impl ::core::fmt::Debug for IItemContainerProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IItemContainerProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("IItemContainerProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for IItemContainerProvider {
@@ -1289,15 +893,17 @@ unsafe impl ::windows::core::RuntimeType for IItemContainerProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IItemContainerProvider {
+unsafe impl ::windows::core::Vtable for IItemContainerProvider {
     type Vtable = IItemContainerProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IItemContainerProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xad297363_694e_5885_997d_a2d6dff415a7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IItemContainerProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub FindItemByProperty: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         startafter: *mut ::core::ffi::c_void,
@@ -1310,100 +916,57 @@ pub struct IItemContainerProvider_Vtbl {
 #[repr(transparent)]
 pub struct IMultipleViewProvider(::windows::core::IUnknown);
 impl IMultipleViewProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CurrentView(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).CurrentView)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CurrentView)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetSupportedViews(&self) -> ::windows::core::Result<::windows::core::Array<i32>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::core::Array<i32>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetSupportedViews)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetSupportedViews)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<i32>::set_abi_len(result__.assume_init_mut()),
                 result__.as_mut_ptr() as *mut _ as _,
             )
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetViewName(&self, viewid: i32) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetViewName)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetViewName)(
+                ::windows::core::Vtable::as_raw(this),
                 viewid,
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SetCurrentView(&self, viewid: i32) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetCurrentView)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).SetCurrentView)(
+                ::windows::core::Vtable::as_raw(this),
                 viewid,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<IMultipleViewProvider> for ::windows::core::IUnknown {
-    fn from(value: IMultipleViewProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IMultipleViewProvider> for ::windows::core::IUnknown {
-    fn from(value: &IMultipleViewProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IMultipleViewProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IMultipleViewProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IMultipleViewProvider> for ::windows::core::IInspectable {
-    fn from(value: IMultipleViewProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IMultipleViewProvider> for ::windows::core::IInspectable {
-    fn from(value: &IMultipleViewProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IMultipleViewProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IMultipleViewProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IMultipleViewProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IMultipleViewProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1417,9 +980,7 @@ impl ::core::cmp::PartialEq for IMultipleViewProvider {
 impl ::core::cmp::Eq for IMultipleViewProvider {}
 impl ::core::fmt::Debug for IMultipleViewProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IMultipleViewProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("IMultipleViewProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for IMultipleViewProvider {
@@ -1430,15 +991,17 @@ unsafe impl ::windows::core::RuntimeType for IMultipleViewProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IMultipleViewProvider {
+unsafe impl ::windows::core::Vtable for IMultipleViewProvider {
     type Vtable = IMultipleViewProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IMultipleViewProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x60be5484_3d8f_51fd_beab_423422ee1e03);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMultipleViewProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CurrentView: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
@@ -1462,63 +1025,25 @@ pub struct IMultipleViewProvider_Vtbl {
 #[repr(transparent)]
 pub struct IObjectModelProvider(::windows::core::IUnknown);
 impl IObjectModelProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetUnderlyingObjectModel(
         &self,
     ) -> ::windows::core::Result<::windows::core::IInspectable> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetUnderlyingObjectModel)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetUnderlyingObjectModel)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::IInspectable>(result__)
         }
     }
 }
-impl ::core::convert::From<IObjectModelProvider> for ::windows::core::IUnknown {
-    fn from(value: IObjectModelProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IObjectModelProvider> for ::windows::core::IUnknown {
-    fn from(value: &IObjectModelProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IObjectModelProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IObjectModelProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IObjectModelProvider> for ::windows::core::IInspectable {
-    fn from(value: IObjectModelProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IObjectModelProvider> for ::windows::core::IInspectable {
-    fn from(value: &IObjectModelProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IObjectModelProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IObjectModelProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IObjectModelProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IObjectModelProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1532,9 +1057,7 @@ impl ::core::cmp::PartialEq for IObjectModelProvider {
 impl ::core::cmp::Eq for IObjectModelProvider {}
 impl ::core::fmt::Debug for IObjectModelProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IObjectModelProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("IObjectModelProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for IObjectModelProvider {
@@ -1545,15 +1068,17 @@ unsafe impl ::windows::core::RuntimeType for IObjectModelProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IObjectModelProvider {
+unsafe impl ::windows::core::Vtable for IObjectModelProvider {
     type Vtable = IObjectModelProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IObjectModelProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x92953ed0_4bd8_5624_8e3d_78d45fde9cf2);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IObjectModelProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub GetUnderlyingObjectModel: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -1563,130 +1088,88 @@ pub struct IObjectModelProvider_Vtbl {
 #[repr(transparent)]
 pub struct IRangeValueProvider(::windows::core::IUnknown);
 impl IRangeValueProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsReadOnly(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsReadOnly)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsReadOnly)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn LargeChange(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).LargeChange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).LargeChange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Maximum(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Maximum)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Maximum)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Minimum(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Minimum)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Minimum)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SmallChange(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).SmallChange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).SmallChange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Value(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).Value)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Value)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SetValue(&self, value: f64) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
                 value,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<IRangeValueProvider> for ::windows::core::IUnknown {
-    fn from(value: IRangeValueProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IRangeValueProvider> for ::windows::core::IUnknown {
-    fn from(value: &IRangeValueProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IRangeValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IRangeValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IRangeValueProvider> for ::windows::core::IInspectable {
-    fn from(value: IRangeValueProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IRangeValueProvider> for ::windows::core::IInspectable {
-    fn from(value: &IRangeValueProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IRangeValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IRangeValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IRangeValueProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IRangeValueProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -1711,15 +1194,17 @@ unsafe impl ::windows::core::RuntimeType for IRangeValueProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IRangeValueProvider {
+unsafe impl ::windows::core::Vtable for IRangeValueProvider {
     type Vtable = IRangeValueProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IRangeValueProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x729ae414_1e8f_5020_82bb_bb574d145fd8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IRangeValueProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub IsReadOnly: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -1751,333 +1236,23 @@ pub struct IRangeValueProvider_Vtbl {
 }
 #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
 #[repr(transparent)]
-pub struct IRawElementProviderSimple(::windows::core::IUnknown);
-impl IRawElementProviderSimple {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn GetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn SetValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
-        &self,
-        dp: Param0,
-        value: Param1,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                value.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn ClearValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).ClearValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn ReadLocalValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).ReadLocalValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn GetAnimationBaseValue<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-    ) -> ::windows::core::Result<::windows::core::IInspectable> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnimationBaseValue)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::core::IInspectable>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RegisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-        Param1: ::windows::core::IntoParam<'a, super::super::DependencyPropertyChangedCallback>,
-    >(
-        &self,
-        dp: Param0,
-        callback: Param1,
-    ) -> ::windows::core::Result<i64> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i64>::zeroed();
-            (::windows::core::Interface::vtable(this).RegisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                callback.into_param().abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<i64>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn UnregisterPropertyChangedCallback<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, super::super::DependencyProperty>,
-    >(
-        &self,
-        dp: Param0,
-        token: i64,
-    ) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).UnregisterPropertyChangedCallback)(
-                ::windows::core::Interface::as_raw(this),
-                dp.into_param().abi(),
-                token,
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Dispatcher)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(
-        &self,
-    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DispatcherQueue)(
-                ::windows::core::Interface::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for IRawElementProviderSimple {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for IRawElementProviderSimple {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IRawElementProviderSimple {}
-impl ::core::fmt::Debug for IRawElementProviderSimple {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IRawElementProviderSimple")
-            .field(&self.0)
-            .finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for IRawElementProviderSimple {
-    const SIGNATURE : :: windows :: core :: ConstBuffer = :: windows :: core :: ConstBuffer :: from_slice ( b"rc(Microsoft.UI.Xaml.Automation.Provider.IRawElementProviderSimple;{f90bc239-ade2-55c9-a838-a3b0579763c5})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Interface for IRawElementProviderSimple {
-    type Vtable = IIRawElementProviderSimple_Vtbl;
-    const IID: ::windows::core::GUID =
-        <IIRawElementProviderSimple as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for IRawElementProviderSimple {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Automation.Provider.IRawElementProviderSimple";
-}
-impl ::core::convert::From<IRawElementProviderSimple> for ::windows::core::IUnknown {
-    fn from(value: IRawElementProviderSimple) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IRawElementProviderSimple> for ::windows::core::IUnknown {
-    fn from(value: &IRawElementProviderSimple) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IRawElementProviderSimple {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a IRawElementProviderSimple
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IRawElementProviderSimple> for ::windows::core::IInspectable {
-    fn from(value: IRawElementProviderSimple) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IRawElementProviderSimple> for ::windows::core::IInspectable {
-    fn from(value: &IRawElementProviderSimple) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for IRawElementProviderSimple
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IRawElementProviderSimple
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IRawElementProviderSimple> for super::super::DependencyObject {
-    fn from(value: IRawElementProviderSimple) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&IRawElementProviderSimple> for super::super::DependencyObject {
-    fn from(value: &IRawElementProviderSimple) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject>
-    for IRawElementProviderSimple
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, super::super::DependencyObject>
-    for &IRawElementProviderSimple
-{
-    fn into_param(self) -> ::windows::core::Param<'a, super::super::DependencyObject> {
-        ::windows::core::Param::Owned(
-            ::core::convert::Into::<super::super::DependencyObject>::into(self),
-        )
-    }
-}
-unsafe impl ::core::marker::Send for IRawElementProviderSimple {}
-unsafe impl ::core::marker::Sync for IRawElementProviderSimple {}
-#[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-#[repr(transparent)]
 pub struct IScrollItemProvider(::windows::core::IUnknown);
 impl IScrollItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ScrollIntoView(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).ScrollIntoView)(
-                ::windows::core::Interface::as_raw(this),
-            )
+            (::windows::core::Vtable::vtable(this).ScrollIntoView)(::windows::core::Vtable::as_raw(
+                this,
+            ))
             .ok()
         }
     }
 }
-impl ::core::convert::From<IScrollItemProvider> for ::windows::core::IUnknown {
-    fn from(value: IScrollItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IScrollItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &IScrollItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IScrollItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IScrollItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IScrollItemProvider> for ::windows::core::IInspectable {
-    fn from(value: IScrollItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IScrollItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &IScrollItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IScrollItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IScrollItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IScrollItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IScrollItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2102,15 +1277,17 @@ unsafe impl ::windows::core::RuntimeType for IScrollItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IScrollItemProvider {
+unsafe impl ::windows::core::Vtable for IScrollItemProvider {
     type Vtable = IScrollItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IScrollItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x8a6fb8eb_e5f1_58eb_8e72_8b95f236fc47);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IScrollItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ScrollIntoView:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
 }
@@ -2118,79 +1295,72 @@ pub struct IScrollItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct IScrollProvider(::windows::core::IUnknown);
 impl IScrollProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn HorizontallyScrollable(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).HorizontallyScrollable)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).HorizontallyScrollable)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn HorizontalScrollPercent(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).HorizontalScrollPercent)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).HorizontalScrollPercent)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn HorizontalViewSize(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).HorizontalViewSize)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).HorizontalViewSize)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn VerticallyScrollable(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).VerticallyScrollable)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).VerticallyScrollable)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn VerticalScrollPercent(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).VerticalScrollPercent)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).VerticalScrollPercent)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn VerticalViewSize(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).VerticalViewSize)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).VerticalViewSize)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Scroll(
         &self,
         horizontalamount: super::ScrollAmount,
@@ -2198,15 +1368,14 @@ impl IScrollProvider {
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Scroll)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Scroll)(
+                ::windows::core::Vtable::as_raw(this),
                 horizontalamount,
                 verticalamount,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SetScrollPercent(
         &self,
         horizontalpercent: f64,
@@ -2214,8 +1383,8 @@ impl IScrollProvider {
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetScrollPercent)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).SetScrollPercent)(
+                ::windows::core::Vtable::as_raw(this),
                 horizontalpercent,
                 verticalpercent,
             )
@@ -2223,46 +1392,11 @@ impl IScrollProvider {
         }
     }
 }
-impl ::core::convert::From<IScrollProvider> for ::windows::core::IUnknown {
-    fn from(value: IScrollProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IScrollProvider> for ::windows::core::IUnknown {
-    fn from(value: &IScrollProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IScrollProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IScrollProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IScrollProvider> for ::windows::core::IInspectable {
-    fn from(value: IScrollProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IScrollProvider> for ::windows::core::IInspectable {
-    fn from(value: &IScrollProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IScrollProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IScrollProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IScrollProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IScrollProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2287,15 +1421,17 @@ unsafe impl ::windows::core::RuntimeType for IScrollProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IScrollProvider {
+unsafe impl ::windows::core::Vtable for IScrollProvider {
     type Vtable = IScrollProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IScrollProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x7e2e5af3_ff50_5365_bcfe_ef424b2fd590);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IScrollProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub HorizontallyScrollable: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -2335,103 +1471,59 @@ pub struct IScrollProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISelectionItemProvider(::windows::core::IUnknown);
 impl ISelectionItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsSelected(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsSelected)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsSelected)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SelectionContainer(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).SelectionContainer)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).SelectionContainer)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn AddToSelection(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).AddToSelection)(
-                ::windows::core::Interface::as_raw(this),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RemoveFromSelection(&self) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).RemoveFromSelection)(
-                ::windows::core::Interface::as_raw(this),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn Select(&self) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).Select)(::windows::core::Interface::as_raw(
+            (::windows::core::Vtable::vtable(this).AddToSelection)(::windows::core::Vtable::as_raw(
                 this,
             ))
             .ok()
         }
     }
-}
-impl ::core::convert::From<ISelectionItemProvider> for ::windows::core::IUnknown {
-    fn from(value: ISelectionItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
+    pub fn RemoveFromSelection(&self) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).RemoveFromSelection)(
+                ::windows::core::Vtable::as_raw(this),
+            )
+            .ok()
+        }
+    }
+    pub fn Select(&self) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).Select)(::windows::core::Vtable::as_raw(this))
+                .ok()
+        }
     }
 }
-impl ::core::convert::From<&ISelectionItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &ISelectionItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ISelectionItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ISelectionItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ISelectionItemProvider> for ::windows::core::IInspectable {
-    fn from(value: ISelectionItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISelectionItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &ISelectionItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ISelectionItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a ISelectionItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ISelectionItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ISelectionItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2445,9 +1537,7 @@ impl ::core::cmp::PartialEq for ISelectionItemProvider {
 impl ::core::cmp::Eq for ISelectionItemProvider {}
 impl ::core::fmt::Debug for ISelectionItemProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ISelectionItemProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("ISelectionItemProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for ISelectionItemProvider {
@@ -2458,15 +1548,17 @@ unsafe impl ::windows::core::RuntimeType for ISelectionItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ISelectionItemProvider {
+unsafe impl ::windows::core::Vtable for ISelectionItemProvider {
     type Vtable = ISelectionItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ISelectionItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xc9dfdd81_d4ac_5d31_be7f_24fab16060e4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISelectionItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub IsSelected: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -2486,41 +1578,36 @@ pub struct ISelectionItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISelectionProvider(::windows::core::IUnknown);
 impl ISelectionProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanSelectMultiple(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanSelectMultiple)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanSelectMultiple)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsSelectionRequired(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsSelectionRequired)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsSelectionRequired)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetSelection(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -2530,46 +1617,11 @@ impl ISelectionProvider {
         }
     }
 }
-impl ::core::convert::From<ISelectionProvider> for ::windows::core::IUnknown {
-    fn from(value: ISelectionProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISelectionProvider> for ::windows::core::IUnknown {
-    fn from(value: &ISelectionProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ISelectionProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ISelectionProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ISelectionProvider> for ::windows::core::IInspectable {
-    fn from(value: ISelectionProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISelectionProvider> for ::windows::core::IInspectable {
-    fn from(value: &ISelectionProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ISelectionProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ISelectionProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ISelectionProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ISelectionProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2594,15 +1646,17 @@ unsafe impl ::windows::core::RuntimeType for ISelectionProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ISelectionProvider {
+unsafe impl ::windows::core::Vtable for ISelectionProvider {
     type Vtable = ISelectionProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ISelectionProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x80d56d4e_0052_541f_9411_9d1778b3bfca);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISelectionProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CanSelectMultiple: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -2621,31 +1675,25 @@ pub struct ISelectionProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISpreadsheetItemProvider(::windows::core::IUnknown);
 impl ISpreadsheetItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Formula(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).Formula)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Formula)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetAnnotationObjects(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnnotationObjects)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnnotationObjects)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -2654,16 +1702,14 @@ impl ISpreadsheetItemProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetAnnotationTypes(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<super::AnnotationType>> {
         let this = self;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<super::AnnotationType>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAnnotationTypes)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnnotationTypes)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<super::AnnotationType>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -2673,52 +1719,11 @@ impl ISpreadsheetItemProvider {
         }
     }
 }
-impl ::core::convert::From<ISpreadsheetItemProvider> for ::windows::core::IUnknown {
-    fn from(value: ISpreadsheetItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISpreadsheetItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &ISpreadsheetItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ISpreadsheetItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a ISpreadsheetItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ISpreadsheetItemProvider> for ::windows::core::IInspectable {
-    fn from(value: ISpreadsheetItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISpreadsheetItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &ISpreadsheetItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for ISpreadsheetItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a ISpreadsheetItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ISpreadsheetItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ISpreadsheetItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2732,9 +1737,7 @@ impl ::core::cmp::PartialEq for ISpreadsheetItemProvider {
 impl ::core::cmp::Eq for ISpreadsheetItemProvider {}
 impl ::core::fmt::Debug for ISpreadsheetItemProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ISpreadsheetItemProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("ISpreadsheetItemProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for ISpreadsheetItemProvider {
@@ -2745,15 +1748,17 @@ unsafe impl ::windows::core::RuntimeType for ISpreadsheetItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ISpreadsheetItemProvider {
+unsafe impl ::windows::core::Vtable for ISpreadsheetItemProvider {
     type Vtable = ISpreadsheetItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ISpreadsheetItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x51c1ce89_b21f_592c_8768_0accdefd5738);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISpreadsheetItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Formula: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
@@ -2773,65 +1778,27 @@ pub struct ISpreadsheetItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISpreadsheetProvider(::windows::core::IUnknown);
 impl ISpreadsheetProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn GetItemByName<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(
+    pub fn GetItemByName(
         &self,
-        name: Param0,
+        name: &::windows::core::HSTRING,
     ) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetItemByName)(
-                ::windows::core::Interface::as_raw(this),
-                name.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetItemByName)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(name),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
 }
-impl ::core::convert::From<ISpreadsheetProvider> for ::windows::core::IUnknown {
-    fn from(value: ISpreadsheetProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISpreadsheetProvider> for ::windows::core::IUnknown {
-    fn from(value: &ISpreadsheetProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ISpreadsheetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ISpreadsheetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ISpreadsheetProvider> for ::windows::core::IInspectable {
-    fn from(value: ISpreadsheetProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISpreadsheetProvider> for ::windows::core::IInspectable {
-    fn from(value: &ISpreadsheetProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ISpreadsheetProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a ISpreadsheetProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ISpreadsheetProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ISpreadsheetProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -2845,9 +1812,7 @@ impl ::core::cmp::PartialEq for ISpreadsheetProvider {
 impl ::core::cmp::Eq for ISpreadsheetProvider {}
 impl ::core::fmt::Debug for ISpreadsheetProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ISpreadsheetProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("ISpreadsheetProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for ISpreadsheetProvider {
@@ -2858,15 +1823,17 @@ unsafe impl ::windows::core::RuntimeType for ISpreadsheetProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ISpreadsheetProvider {
+unsafe impl ::windows::core::Vtable for ISpreadsheetProvider {
     type Vtable = ISpreadsheetProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ISpreadsheetProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x1ff41bac_d9e3_5e48_b5f8_9eab0fb2d9d8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISpreadsheetProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub GetItemByName: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         name: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
@@ -2877,139 +1844,89 @@ pub struct ISpreadsheetProvider_Vtbl {
 #[repr(transparent)]
 pub struct IStylesProvider(::windows::core::IUnknown);
 impl IStylesProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ExtendedProperties(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).ExtendedProperties)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ExtendedProperties)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn FillColor(&self) -> ::windows::core::Result<::windows::UI::Color> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::UI::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).FillColor)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FillColor)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::UI::Color>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn FillPatternColor(&self) -> ::windows::core::Result<::windows::UI::Color> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<::windows::UI::Color>::zeroed();
-            (::windows::core::Interface::vtable(this).FillPatternColor)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FillPatternColor)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::UI::Color>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn FillPatternStyle(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).FillPatternStyle)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FillPatternStyle)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Shape(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).Shape)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Shape)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn StyleId(&self) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).StyleId)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).StyleId)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn StyleName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).StyleName)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).StyleName)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
 }
-impl ::core::convert::From<IStylesProvider> for ::windows::core::IUnknown {
-    fn from(value: IStylesProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IStylesProvider> for ::windows::core::IUnknown {
-    fn from(value: &IStylesProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IStylesProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IStylesProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IStylesProvider> for ::windows::core::IInspectable {
-    fn from(value: IStylesProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IStylesProvider> for ::windows::core::IInspectable {
-    fn from(value: &IStylesProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IStylesProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IStylesProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IStylesProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IStylesProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3034,15 +1951,17 @@ unsafe impl ::windows::core::RuntimeType for IStylesProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IStylesProvider {
+unsafe impl ::windows::core::Vtable for IStylesProvider {
     type Vtable = IStylesProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IStylesProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xd8895839_0048_54de_9c1f_152de6665e80);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IStylesProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ExtendedProperties: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
@@ -3076,77 +1995,32 @@ pub struct IStylesProvider_Vtbl {
 #[repr(transparent)]
 pub struct ISynchronizedInputProvider(::windows::core::IUnknown);
 impl ISynchronizedInputProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Cancel(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Cancel)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Cancel)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn StartListening(
         &self,
         inputtype: super::SynchronizedInputType,
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).StartListening)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).StartListening)(
+                ::windows::core::Vtable::as_raw(this),
                 inputtype,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<ISynchronizedInputProvider> for ::windows::core::IUnknown {
-    fn from(value: ISynchronizedInputProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISynchronizedInputProvider> for ::windows::core::IUnknown {
-    fn from(value: &ISynchronizedInputProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ISynchronizedInputProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a ISynchronizedInputProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ISynchronizedInputProvider> for ::windows::core::IInspectable {
-    fn from(value: ISynchronizedInputProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ISynchronizedInputProvider> for ::windows::core::IInspectable {
-    fn from(value: &ISynchronizedInputProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for ISynchronizedInputProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a ISynchronizedInputProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ISynchronizedInputProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ISynchronizedInputProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3160,9 +2034,7 @@ impl ::core::cmp::PartialEq for ISynchronizedInputProvider {
 impl ::core::cmp::Eq for ISynchronizedInputProvider {}
 impl ::core::fmt::Debug for ISynchronizedInputProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ISynchronizedInputProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("ISynchronizedInputProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for ISynchronizedInputProvider {
@@ -3173,15 +2045,17 @@ unsafe impl ::windows::core::RuntimeType for ISynchronizedInputProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ISynchronizedInputProvider {
+unsafe impl ::windows::core::Vtable for ISynchronizedInputProvider {
     type Vtable = ISynchronizedInputProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ISynchronizedInputProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0xc5615613_936d_5289_a190_e82057e0ff5a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISynchronizedInputProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Cancel:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
     pub StartListening: unsafe extern "system" fn(
@@ -3193,17 +2067,14 @@ pub struct ISynchronizedInputProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITableItemProvider(::windows::core::IUnknown);
 impl ITableItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetColumnHeaderItems(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetColumnHeaderItems)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetColumnHeaderItems)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3212,17 +2083,14 @@ impl ITableItemProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetRowHeaderItems(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetRowHeaderItems)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetRowHeaderItems)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3232,46 +2100,11 @@ impl ITableItemProvider {
         }
     }
 }
-impl ::core::convert::From<ITableItemProvider> for ::windows::core::IUnknown {
-    fn from(value: ITableItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITableItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITableItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITableItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITableItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITableItemProvider> for ::windows::core::IInspectable {
-    fn from(value: ITableItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITableItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITableItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITableItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITableItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITableItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITableItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3296,15 +2129,17 @@ unsafe impl ::windows::core::RuntimeType for ITableItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITableItemProvider {
+unsafe impl ::windows::core::Vtable for ITableItemProvider {
     type Vtable = ITableItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITableItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x6ce6f038_54d4_5553_a4ad_03cbcf358197);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITableItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub GetColumnHeaderItems: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result_size__: *mut u32,
@@ -3320,29 +2155,25 @@ pub struct ITableItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITableProvider(::windows::core::IUnknown);
 impl ITableProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn RowOrColumnMajor(&self) -> ::windows::core::Result<super::RowOrColumnMajor> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::RowOrColumnMajor>::zeroed();
-            (::windows::core::Interface::vtable(this).RowOrColumnMajor)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RowOrColumnMajor)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::RowOrColumnMajor>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetColumnHeaders(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetColumnHeaders)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetColumnHeaders)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3351,17 +2182,14 @@ impl ITableProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetRowHeaders(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetRowHeaders)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetRowHeaders)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3371,46 +2199,11 @@ impl ITableProvider {
         }
     }
 }
-impl ::core::convert::From<ITableProvider> for ::windows::core::IUnknown {
-    fn from(value: ITableProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITableProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITableProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITableProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITableProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITableProvider> for ::windows::core::IInspectable {
-    fn from(value: ITableProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITableProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITableProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITableProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITableProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITableProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITableProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3435,15 +2228,17 @@ unsafe impl ::windows::core::RuntimeType for ITableProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITableProvider {
+unsafe impl ::windows::core::Vtable for ITableProvider {
     type Vtable = ITableProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITableProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x9aba6724_b22d_5db8_8abb_81f911f18af2);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITableProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub RowOrColumnMajor: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut super::RowOrColumnMajor,
@@ -3463,71 +2258,34 @@ pub struct ITableProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextChildProvider(::windows::core::IUnknown);
 impl ITextChildProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn TextContainer(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TextContainer)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TextContainer)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn TextRange(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).TextRange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).TextRange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextChildProvider> for ::windows::core::IUnknown {
-    fn from(value: ITextChildProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextChildProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITextChildProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextChildProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextChildProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextChildProvider> for ::windows::core::IInspectable {
-    fn from(value: ITextChildProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextChildProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITextChildProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextChildProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextChildProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextChildProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITextChildProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3552,15 +2310,17 @@ unsafe impl ::windows::core::RuntimeType for ITextChildProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextChildProvider {
+unsafe impl ::windows::core::Vtable for ITextChildProvider {
     type Vtable = ITextChildProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextChildProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x7c72e55f_f75d_5522_aeb5_c1f82c32933b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextChildProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub TextContainer: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -3574,64 +2334,58 @@ pub struct ITextChildProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextEditProvider(::windows::core::IUnknown);
 impl ITextEditProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetActiveComposition(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetActiveComposition)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetActiveComposition)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetConversionTarget(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetConversionTarget)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetConversionTarget)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DocumentRange(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DocumentRange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DocumentRange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SupportedTextSelection(&self) -> ::windows::core::Result<super::SupportedTextSelection> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::SupportedTextSelection>::zeroed();
-            (::windows::core::Interface::vtable(this).SupportedTextSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).SupportedTextSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::SupportedTextSelection>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetSelection(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3640,16 +2394,14 @@ impl ITextEditProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetVisibleRanges(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetVisibleRanges)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetVisibleRanges)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3658,82 +2410,42 @@ impl ITextEditProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromChild<'a, Param0: ::windows::core::IntoParam<'a, IRawElementProviderSimple>>(
+    pub fn RangeFromChild(
         &self,
-        childelement: Param0,
+        childelement: &IRawElementProviderSimple,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromChild)(
-                ::windows::core::Interface::as_raw(this),
-                childelement.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromChild)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(childelement),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromPoint<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::Foundation::Point>,
-    >(
+    pub fn RangeFromPoint(
         &self,
-        screenlocation: Param0,
+        screenlocation: ::windows::Foundation::Point,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromPoint)(
-                ::windows::core::Interface::as_raw(this),
-                screenlocation.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromPoint)(
+                ::windows::core::Vtable::as_raw(this),
+                screenlocation,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextEditProvider> for ::windows::core::IUnknown {
-    fn from(value: ITextEditProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextEditProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITextEditProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextEditProvider> for ::windows::core::IInspectable {
-    fn from(value: ITextEditProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextEditProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITextEditProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextEditProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<ITextEditProvider> for ITextProvider {
     type Error = ::windows::core::Error;
     fn try_from(value: ITextEditProvider) -> ::windows::core::Result<Self> {
@@ -3746,16 +2458,13 @@ impl ::core::convert::TryFrom<&ITextEditProvider> for ITextProvider {
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextProvider> for ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextProvider> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ITextProvider> for &ITextEditProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextProvider> {
-        ::core::convert::TryInto::<ITextProvider>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+impl<'a> ::core::convert::TryFrom<&ITextEditProvider>
+    for ::windows::core::InParam<'a, ITextProvider>
+{
+    type Error = ::windows::core::Error;
+    fn try_from(value: &ITextEditProvider) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::clone::Clone for ITextEditProvider {
@@ -3782,15 +2491,17 @@ unsafe impl ::windows::core::RuntimeType for ITextEditProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextEditProvider {
+unsafe impl ::windows::core::Vtable for ITextEditProvider {
     type Vtable = ITextEditProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextEditProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x7f09bbe8_bea7_5dd3_ba6b_28dbb402fad4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextEditProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub GetActiveComposition: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -3804,40 +2515,36 @@ pub struct ITextEditProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextProvider(::windows::core::IUnknown);
 impl ITextProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DocumentRange(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DocumentRange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DocumentRange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SupportedTextSelection(&self) -> ::windows::core::Result<super::SupportedTextSelection> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::SupportedTextSelection>::zeroed();
-            (::windows::core::Interface::vtable(this).SupportedTextSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).SupportedTextSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::SupportedTextSelection>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetSelection(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = self;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3846,16 +2553,14 @@ impl ITextProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetVisibleRanges(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = self;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetVisibleRanges)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetVisibleRanges)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -3864,82 +2569,42 @@ impl ITextProvider {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromChild<'a, Param0: ::windows::core::IntoParam<'a, IRawElementProviderSimple>>(
+    pub fn RangeFromChild(
         &self,
-        childelement: Param0,
+        childelement: &IRawElementProviderSimple,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromChild)(
-                ::windows::core::Interface::as_raw(this),
-                childelement.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromChild)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(childelement),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromPoint<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::Foundation::Point>,
-    >(
+    pub fn RangeFromPoint(
         &self,
-        screenlocation: Param0,
+        screenlocation: ::windows::Foundation::Point,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromPoint)(
-                ::windows::core::Interface::as_raw(this),
-                screenlocation.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromPoint)(
+                ::windows::core::Vtable::as_raw(this),
+                screenlocation,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextProvider> for ::windows::core::IUnknown {
-    fn from(value: ITextProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITextProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextProvider> for ::windows::core::IInspectable {
-    fn from(value: ITextProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITextProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITextProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -3964,15 +2629,17 @@ unsafe impl ::windows::core::RuntimeType for ITextProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextProvider {
+unsafe impl ::windows::core::Vtable for ITextProvider {
     type Vtable = ITextProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x37e7dce6_fe7a_56a7_a47a_9462872c67ef);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub DocumentRange: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -4006,75 +2673,66 @@ pub struct ITextProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextProvider2(::windows::core::IUnknown);
 impl ITextProvider2 {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromAnnotation<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, IRawElementProviderSimple>,
-    >(
+    pub fn RangeFromAnnotation(
         &self,
-        annotationelement: Param0,
+        annotationelement: &IRawElementProviderSimple,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromAnnotation)(
-                ::windows::core::Interface::as_raw(this),
-                annotationelement.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromAnnotation)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(annotationelement),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetCaretRange(
         &self,
         isactive: &mut bool,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetCaretRange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetCaretRange)(
+                ::windows::core::Vtable::as_raw(this),
                 isactive,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn DocumentRange(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).DocumentRange)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DocumentRange)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SupportedTextSelection(&self) -> ::windows::core::Result<super::SupportedTextSelection> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::SupportedTextSelection>::zeroed();
-            (::windows::core::Interface::vtable(this).SupportedTextSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).SupportedTextSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::SupportedTextSelection>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetSelection(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetSelection)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetSelection)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -4083,16 +2741,14 @@ impl ITextProvider2 {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetVisibleRanges(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<ITextRangeProvider>> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ =
-                ::core::mem::MaybeUninit::<::windows::core::Array<ITextRangeProvider>>::zeroed();
-            (::windows::core::Interface::vtable(this).GetVisibleRanges)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetVisibleRanges)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<ITextRangeProvider>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -4101,82 +2757,42 @@ impl ITextProvider2 {
             .and_then(|| result__.assume_init())
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromChild<'a, Param0: ::windows::core::IntoParam<'a, IRawElementProviderSimple>>(
+    pub fn RangeFromChild(
         &self,
-        childelement: Param0,
+        childelement: &IRawElementProviderSimple,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromChild)(
-                ::windows::core::Interface::as_raw(this),
-                childelement.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromChild)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(childelement),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn RangeFromPoint<
-        'a,
-        Param0: ::windows::core::IntoParam<'a, ::windows::Foundation::Point>,
-    >(
+    pub fn RangeFromPoint(
         &self,
-        screenlocation: Param0,
+        screenlocation: ::windows::Foundation::Point,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).RangeFromPoint)(
-                ::windows::core::Interface::as_raw(this),
-                screenlocation.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RangeFromPoint)(
+                ::windows::core::Vtable::as_raw(this),
+                screenlocation,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
 }
-impl ::core::convert::From<ITextProvider2> for ::windows::core::IUnknown {
-    fn from(value: ITextProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextProvider2> for ::windows::core::IUnknown {
-    fn from(value: &ITextProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextProvider2> for ::windows::core::IInspectable {
-    fn from(value: ITextProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextProvider2> for ::windows::core::IInspectable {
-    fn from(value: &ITextProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextProvider2,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<ITextProvider2> for ITextProvider {
     type Error = ::windows::core::Error;
     fn try_from(value: ITextProvider2) -> ::windows::core::Result<Self> {
@@ -4189,16 +2805,11 @@ impl ::core::convert::TryFrom<&ITextProvider2> for ITextProvider {
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextProvider> for ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextProvider> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ITextProvider> for &ITextProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextProvider> {
-        ::core::convert::TryInto::<ITextProvider>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+impl<'a> ::core::convert::TryFrom<&ITextProvider2> for ::windows::core::InParam<'a, ITextProvider> {
+    type Error = ::windows::core::Error;
+    fn try_from(value: &ITextProvider2) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::clone::Clone for ITextProvider2 {
@@ -4225,15 +2836,17 @@ unsafe impl ::windows::core::RuntimeType for ITextProvider2 {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextProvider2 {
+unsafe impl ::windows::core::Vtable for ITextProvider2 {
     type Vtable = ITextProvider2_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextProvider2 {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x6844f012_c7e6_5763_ba04_5b6db910cd34);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextProvider2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub RangeFromAnnotation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         annotationelement: *mut ::core::ffi::c_void,
@@ -4249,56 +2862,59 @@ pub struct ITextProvider2_Vtbl {
 #[repr(transparent)]
 pub struct ITextRangeProvider(::windows::core::IUnknown);
 impl ITextRangeProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Clone(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Clone)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Clone)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn Compare<'a, Param0: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
-        &self,
-        textrangeprovider: Param0,
-    ) -> ::windows::core::Result<bool> {
+    pub fn Compare<'a, P0, E0>(&self, textrangeprovider: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).Compare)(
-                ::windows::core::Interface::as_raw(this),
-                textrangeprovider.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Compare)(
+                ::windows::core::Vtable::as_raw(this),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
-    pub fn CompareEndpoints<'a, Param1: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
+    pub fn CompareEndpoints<'a, P0, E0>(
         &self,
         endpoint: super::Text::TextPatternRangeEndpoint,
-        textrangeprovider: Param1,
+        textrangeprovider: P0,
         targetendpoint: super::Text::TextPatternRangeEndpoint,
-    ) -> ::windows::core::Result<i32> {
+    ) -> ::windows::core::Result<i32>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).CompareEndpoints)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CompareEndpoints)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
-                textrangeprovider.into_param().abi(),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 targetendpoint,
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn ExpandToEnclosingUnit(
         &self,
@@ -4306,49 +2922,47 @@ impl ITextRangeProvider {
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).ExpandToEnclosingUnit)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ExpandToEnclosingUnit)(
+                ::windows::core::Vtable::as_raw(this),
                 unit,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn FindAttribute<
-        'a,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
+    pub fn FindAttribute<'a, P0>(
         &self,
         attributeid: i32,
-        value: Param1,
+        value: P0,
         backward: bool,
-    ) -> ::windows::core::Result<ITextRangeProvider> {
+    ) -> ::windows::core::Result<ITextRangeProvider>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).FindAttribute)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FindAttribute)(
+                ::windows::core::Vtable::as_raw(this),
                 attributeid,
-                value.into_param().abi(),
+                value.into().abi(),
                 backward,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn FindText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(
+    pub fn FindText(
         &self,
-        text: Param0,
+        text: &::windows::core::HSTRING,
         backward: bool,
         ignorecase: bool,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).FindText)(
-                ::windows::core::Interface::as_raw(this),
-                text.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FindText)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(text),
                 backward,
                 ignorecase,
                 result__.as_mut_ptr(),
@@ -4356,72 +2970,66 @@ impl ITextRangeProvider {
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetAttributeValue(
         &self,
         attributeid: i32,
     ) -> ::windows::core::Result<::windows::core::IInspectable> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAttributeValue)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAttributeValue)(
+                ::windows::core::Vtable::as_raw(this),
                 attributeid,
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::IInspectable>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetBoundingRectangles(
         &self,
         returnvalue: &mut ::windows::core::Array<f64>,
     ) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).GetBoundingRectangles)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).GetBoundingRectangles)(
+                ::windows::core::Vtable::as_raw(this),
                 returnvalue.set_abi_len(),
                 returnvalue as *mut _ as _,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetEnclosingElement(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetEnclosingElement)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetEnclosingElement)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetText(&self, maxlength: i32) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetText)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetText)(
+                ::windows::core::Vtable::as_raw(this),
                 maxlength,
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn Move(&self, unit: super::Text::TextUnit, count: i32) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Move)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Move)(
+                ::windows::core::Vtable::as_raw(this),
                 unit,
                 count,
                 result__.as_mut_ptr(),
@@ -4429,7 +3037,7 @@ impl ITextRangeProvider {
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn MoveEndpointByUnit(
         &self,
@@ -4439,9 +3047,9 @@ impl ITextRangeProvider {
     ) -> ::windows::core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveEndpointByUnit)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).MoveEndpointByUnit)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
                 unit,
                 count,
@@ -4450,77 +3058,72 @@ impl ITextRangeProvider {
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
-    pub fn MoveEndpointByRange<'a, Param1: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
+    pub fn MoveEndpointByRange<'a, P0, E0>(
         &self,
         endpoint: super::Text::TextPatternRangeEndpoint,
-        textrangeprovider: Param1,
+        textrangeprovider: P0,
         targetendpoint: super::Text::TextPatternRangeEndpoint,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).MoveEndpointByRange)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).MoveEndpointByRange)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
-                textrangeprovider.into_param().abi(),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 targetendpoint,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Select(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Select)(::windows::core::Interface::as_raw(
+            (::windows::core::Vtable::vtable(this).Select)(::windows::core::Vtable::as_raw(this))
+                .ok()
+        }
+    }
+    pub fn AddToSelection(&self) -> ::windows::core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).AddToSelection)(::windows::core::Vtable::as_raw(
                 this,
             ))
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn AddToSelection(&self) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Interface::vtable(this).AddToSelection)(
-                ::windows::core::Interface::as_raw(this),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn RemoveFromSelection(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).RemoveFromSelection)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).RemoveFromSelection)(
+                ::windows::core::Vtable::as_raw(this),
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ScrollIntoView(&self, aligntotop: bool) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).ScrollIntoView)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ScrollIntoView)(
+                ::windows::core::Vtable::as_raw(this),
                 aligntotop,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetChildren(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetChildren)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetChildren)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -4530,46 +3133,11 @@ impl ITextRangeProvider {
         }
     }
 }
-impl ::core::convert::From<ITextRangeProvider> for ::windows::core::IUnknown {
-    fn from(value: ITextRangeProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextRangeProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITextRangeProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextRangeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextRangeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextRangeProvider> for ::windows::core::IInspectable {
-    fn from(value: ITextRangeProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextRangeProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITextRangeProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextRangeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextRangeProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextRangeProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITextRangeProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -4594,15 +3162,17 @@ unsafe impl ::windows::core::RuntimeType for ITextRangeProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextRangeProvider {
+unsafe impl ::windows::core::Vtable for ITextRangeProvider {
     type Vtable = ITextRangeProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextRangeProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x84210361_6ce2_5084_bf3b_28afa6e9851f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextRangeProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Clone: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
@@ -4710,66 +3280,68 @@ pub struct ITextRangeProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITextRangeProvider2(::windows::core::IUnknown);
 impl ITextRangeProvider2 {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ShowContextMenu(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).ShowContextMenu)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ShowContextMenu)(
+                ::windows::core::Vtable::as_raw(this),
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Clone(&self) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).Clone)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Clone)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn Compare<'a, Param0: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
-        &self,
-        textrangeprovider: Param0,
-    ) -> ::windows::core::Result<bool> {
+    pub fn Compare<'a, P0, E0>(&self, textrangeprovider: P0) -> ::windows::core::Result<bool>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).Compare)(
-                ::windows::core::Interface::as_raw(this),
-                textrangeprovider.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Compare)(
+                ::windows::core::Vtable::as_raw(this),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
-    pub fn CompareEndpoints<'a, Param1: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
+    pub fn CompareEndpoints<'a, P0, E0>(
         &self,
         endpoint: super::Text::TextPatternRangeEndpoint,
-        textrangeprovider: Param1,
+        textrangeprovider: P0,
         targetendpoint: super::Text::TextPatternRangeEndpoint,
-    ) -> ::windows::core::Result<i32> {
+    ) -> ::windows::core::Result<i32>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).CompareEndpoints)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CompareEndpoints)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
-                textrangeprovider.into_param().abi(),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 targetendpoint,
                 result__.as_mut_ptr(),
             )
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn ExpandToEnclosingUnit(
         &self,
@@ -4777,49 +3349,47 @@ impl ITextRangeProvider2 {
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).ExpandToEnclosingUnit)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ExpandToEnclosingUnit)(
+                ::windows::core::Vtable::as_raw(this),
                 unit,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn FindAttribute<
-        'a,
-        Param1: ::windows::core::IntoParam<'a, ::windows::core::IInspectable>,
-    >(
+    pub fn FindAttribute<'a, P0>(
         &self,
         attributeid: i32,
-        value: Param1,
+        value: P0,
         backward: bool,
-    ) -> ::windows::core::Result<ITextRangeProvider> {
+    ) -> ::windows::core::Result<ITextRangeProvider>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).FindAttribute)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FindAttribute)(
+                ::windows::core::Vtable::as_raw(this),
                 attributeid,
-                value.into_param().abi(),
+                value.into().abi(),
                 backward,
                 result__.as_mut_ptr(),
             )
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn FindText<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(
+    pub fn FindText(
         &self,
-        text: Param0,
+        text: &::windows::core::HSTRING,
         backward: bool,
         ignorecase: bool,
     ) -> ::windows::core::Result<ITextRangeProvider> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).FindText)(
-                ::windows::core::Interface::as_raw(this),
-                text.into_param().abi(),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).FindText)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(text),
                 backward,
                 ignorecase,
                 result__.as_mut_ptr(),
@@ -4827,72 +3397,66 @@ impl ITextRangeProvider2 {
             .from_abi::<ITextRangeProvider>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetAttributeValue(
         &self,
         attributeid: i32,
     ) -> ::windows::core::Result<::windows::core::IInspectable> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetAttributeValue)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAttributeValue)(
+                ::windows::core::Vtable::as_raw(this),
                 attributeid,
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::IInspectable>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetBoundingRectangles(
         &self,
         returnvalue: &mut ::windows::core::Array<f64>,
     ) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).GetBoundingRectangles)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).GetBoundingRectangles)(
+                ::windows::core::Vtable::as_raw(this),
                 returnvalue.set_abi_len(),
                 returnvalue as *mut _ as _,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetEnclosingElement(&self) -> ::windows::core::Result<IRawElementProviderSimple> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<*mut ::core::ffi::c_void>::zeroed();
-            (::windows::core::Interface::vtable(this).GetEnclosingElement)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetEnclosingElement)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<IRawElementProviderSimple>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetText(&self, maxlength: i32) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetText)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetText)(
+                ::windows::core::Vtable::as_raw(this),
                 maxlength,
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn Move(&self, unit: super::Text::TextUnit, count: i32) -> ::windows::core::Result<i32> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).Move)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Move)(
+                ::windows::core::Vtable::as_raw(this),
                 unit,
                 count,
                 result__.as_mut_ptr(),
@@ -4900,7 +3464,7 @@ impl ITextRangeProvider2 {
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
     pub fn MoveEndpointByUnit(
         &self,
@@ -4910,9 +3474,9 @@ impl ITextRangeProvider2 {
     ) -> ::windows::core::Result<i32> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<i32>::zeroed();
-            (::windows::core::Interface::vtable(this).MoveEndpointByUnit)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).MoveEndpointByUnit)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
                 unit,
                 count,
@@ -4921,77 +3485,72 @@ impl ITextRangeProvider2 {
             .from_abi::<i32>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`, `\"UI_Xaml_Automation_Text\"`*"]
+    #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
     #[cfg(feature = "UI_Xaml_Automation_Text")]
-    pub fn MoveEndpointByRange<'a, Param1: ::windows::core::IntoParam<'a, ITextRangeProvider>>(
+    pub fn MoveEndpointByRange<'a, P0, E0>(
         &self,
         endpoint: super::Text::TextPatternRangeEndpoint,
-        textrangeprovider: Param1,
+        textrangeprovider: P0,
         targetendpoint: super::Text::TextPatternRangeEndpoint,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::TryInto<::windows::core::InParam<'a, ITextRangeProvider>, Error = E0>,
+        E0: ::std::convert::Into<::windows::core::Error>,
+    {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).MoveEndpointByRange)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).MoveEndpointByRange)(
+                ::windows::core::Vtable::as_raw(this),
                 endpoint,
-                textrangeprovider.into_param().abi(),
+                textrangeprovider.try_into().map_err(|e| e.into())?.abi(),
                 targetendpoint,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Select(&self) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).Select)(::windows::core::Interface::as_raw(
+            (::windows::core::Vtable::vtable(this).Select)(::windows::core::Vtable::as_raw(this))
+                .ok()
+        }
+    }
+    pub fn AddToSelection(&self) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).AddToSelection)(::windows::core::Vtable::as_raw(
                 this,
             ))
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn AddToSelection(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
-        unsafe {
-            (::windows::core::Interface::vtable(this).AddToSelection)(
-                ::windows::core::Interface::as_raw(this),
-            )
-            .ok()
-        }
-    }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn RemoveFromSelection(&self) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).RemoveFromSelection)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).RemoveFromSelection)(
+                ::windows::core::Vtable::as_raw(this),
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ScrollIntoView(&self, aligntotop: bool) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).ScrollIntoView)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ScrollIntoView)(
+                ::windows::core::Vtable::as_raw(this),
                 aligntotop,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn GetChildren(
         &self,
     ) -> ::windows::core::Result<::windows::core::Array<IRawElementProviderSimple>> {
         let this = &::windows::core::Interface::cast::<ITextRangeProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::windows::core::Array<IRawElementProviderSimple>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).GetChildren)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetChildren)(
+                ::windows::core::Vtable::as_raw(this),
                 ::windows::core::Array::<IRawElementProviderSimple>::set_abi_len(
                     result__.assume_init_mut(),
                 ),
@@ -5001,46 +3560,11 @@ impl ITextRangeProvider2 {
         }
     }
 }
-impl ::core::convert::From<ITextRangeProvider2> for ::windows::core::IUnknown {
-    fn from(value: ITextRangeProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextRangeProvider2> for ::windows::core::IUnknown {
-    fn from(value: &ITextRangeProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITextRangeProvider2> for ::windows::core::IInspectable {
-    fn from(value: ITextRangeProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITextRangeProvider2> for ::windows::core::IInspectable {
-    fn from(value: &ITextRangeProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITextRangeProvider2,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<ITextRangeProvider2> for ITextRangeProvider {
     type Error = ::windows::core::Error;
     fn try_from(value: ITextRangeProvider2) -> ::windows::core::Result<Self> {
@@ -5053,16 +3577,13 @@ impl ::core::convert::TryFrom<&ITextRangeProvider2> for ITextRangeProvider {
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITextRangeProvider> for ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRangeProvider> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ITextRangeProvider> for &ITextRangeProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITextRangeProvider> {
-        ::core::convert::TryInto::<ITextRangeProvider>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+impl<'a> ::core::convert::TryFrom<&ITextRangeProvider2>
+    for ::windows::core::InParam<'a, ITextRangeProvider>
+{
+    type Error = ::windows::core::Error;
+    fn try_from(value: &ITextRangeProvider2) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::clone::Clone for ITextRangeProvider2 {
@@ -5089,15 +3610,17 @@ unsafe impl ::windows::core::RuntimeType for ITextRangeProvider2 {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITextRangeProvider2 {
+unsafe impl ::windows::core::Vtable for ITextRangeProvider2 {
     type Vtable = ITextRangeProvider2_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITextRangeProvider2 {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x34d4a80e_36bb_5362_a53b_490428a8b367);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITextRangeProvider2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ShowContextMenu:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
 }
@@ -5105,69 +3628,30 @@ pub struct ITextRangeProvider2_Vtbl {
 #[repr(transparent)]
 pub struct IToggleProvider(::windows::core::IUnknown);
 impl IToggleProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ToggleState(&self) -> ::windows::core::Result<super::ToggleState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::ToggleState>::zeroed();
-            (::windows::core::Interface::vtable(this).ToggleState)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ToggleState)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::ToggleState>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Toggle(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Toggle)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Toggle)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
 }
-impl ::core::convert::From<IToggleProvider> for ::windows::core::IUnknown {
-    fn from(value: IToggleProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IToggleProvider> for ::windows::core::IUnknown {
-    fn from(value: &IToggleProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IToggleProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IToggleProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IToggleProvider> for ::windows::core::IInspectable {
-    fn from(value: IToggleProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IToggleProvider> for ::windows::core::IInspectable {
-    fn from(value: &IToggleProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IToggleProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IToggleProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IToggleProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IToggleProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -5192,15 +3676,17 @@ unsafe impl ::windows::core::RuntimeType for IToggleProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IToggleProvider {
+unsafe impl ::windows::core::Vtable for IToggleProvider {
     type Vtable = IToggleProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IToggleProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x021080c2_30a9_52ef_bc32_2b79847b6ba7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IToggleProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub ToggleState: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut super::ToggleState,
@@ -5212,118 +3698,77 @@ pub struct IToggleProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITransformProvider(::windows::core::IUnknown);
 impl ITransformProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanMove(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanMove)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanMove)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanResize(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanResize)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanResize)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanRotate(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanRotate)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanRotate)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Move(&self, x: f64, y: f64) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Move)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Move)(
+                ::windows::core::Vtable::as_raw(this),
                 x,
                 y,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Resize(&self, width: f64, height: f64) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Resize)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Resize)(
+                ::windows::core::Vtable::as_raw(this),
                 width,
                 height,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Rotate(&self, degrees: f64) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Rotate)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Rotate)(
+                ::windows::core::Vtable::as_raw(this),
                 degrees,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<ITransformProvider> for ::windows::core::IUnknown {
-    fn from(value: ITransformProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITransformProvider> for ::windows::core::IUnknown {
-    fn from(value: &ITransformProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITransformProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITransformProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITransformProvider> for ::windows::core::IInspectable {
-    fn from(value: ITransformProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITransformProvider> for ::windows::core::IInspectable {
-    fn from(value: &ITransformProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITransformProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITransformProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITransformProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for ITransformProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -5348,15 +3793,17 @@ unsafe impl ::windows::core::RuntimeType for ITransformProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITransformProvider {
+unsafe impl ::windows::core::Vtable for ITransformProvider {
     type Vtable = ITransformProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITransformProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x6fd76988_8f52_5ef2_a826_9c8c4951c911);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITransformProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CanMove: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -5388,188 +3835,141 @@ pub struct ITransformProvider_Vtbl {
 #[repr(transparent)]
 pub struct ITransformProvider2(::windows::core::IUnknown);
 impl ITransformProvider2 {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanZoom(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanZoom)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanZoom)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ZoomLevel(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).ZoomLevel)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ZoomLevel)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn MaxZoom(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).MaxZoom)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).MaxZoom)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn MinZoom(&self) -> ::windows::core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<f64>::zeroed();
-            (::windows::core::Interface::vtable(this).MinZoom)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).MinZoom)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<f64>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Zoom(&self, zoom: f64) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Zoom)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Zoom)(
+                ::windows::core::Vtable::as_raw(this),
                 zoom,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn ZoomByUnit(&self, zoomunit: super::ZoomUnit) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).ZoomByUnit)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).ZoomByUnit)(
+                ::windows::core::Vtable::as_raw(this),
                 zoomunit,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanMove(&self) -> ::windows::core::Result<bool> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanMove)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanMove)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanResize(&self) -> ::windows::core::Result<bool> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanResize)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanResize)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn CanRotate(&self) -> ::windows::core::Result<bool> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).CanRotate)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).CanRotate)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Move(&self, x: f64, y: f64) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).Move)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Move)(
+                ::windows::core::Vtable::as_raw(this),
                 x,
                 y,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Resize(&self, width: f64, height: f64) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).Resize)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Resize)(
+                ::windows::core::Vtable::as_raw(this),
                 width,
                 height,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Rotate(&self, degrees: f64) -> ::windows::core::Result<()> {
         let this = &::windows::core::Interface::cast::<ITransformProvider>(self)?;
         unsafe {
-            (::windows::core::Interface::vtable(this).Rotate)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).Rotate)(
+                ::windows::core::Vtable::as_raw(this),
                 degrees,
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<ITransformProvider2> for ::windows::core::IUnknown {
-    fn from(value: ITransformProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITransformProvider2> for ::windows::core::IUnknown {
-    fn from(value: &ITransformProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<ITransformProvider2> for ::windows::core::IInspectable {
-    fn from(value: ITransformProvider2) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&ITransformProvider2> for ::windows::core::IInspectable {
-    fn from(value: &ITransformProvider2) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    ITransformProvider2,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::convert::TryFrom<ITransformProvider2> for ITransformProvider {
     type Error = ::windows::core::Error;
     fn try_from(value: ITransformProvider2) -> ::windows::core::Result<Self> {
@@ -5582,16 +3982,13 @@ impl ::core::convert::TryFrom<&ITransformProvider2> for ITransformProvider {
         ::windows::core::Interface::cast(value)
     }
 }
-impl<'a> ::windows::core::IntoParam<'a, ITransformProvider> for ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITransformProvider> {
-        ::windows::core::IntoParam::into_param(&self)
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ITransformProvider> for &ITransformProvider2 {
-    fn into_param(self) -> ::windows::core::Param<'a, ITransformProvider> {
-        ::core::convert::TryInto::<ITransformProvider>::try_into(self)
-            .map(::windows::core::Param::Owned)
-            .unwrap_or(::windows::core::Param::None)
+impl<'a> ::core::convert::TryFrom<&ITransformProvider2>
+    for ::windows::core::InParam<'a, ITransformProvider>
+{
+    type Error = ::windows::core::Error;
+    fn try_from(value: &ITransformProvider2) -> ::windows::core::Result<Self> {
+        let item = ::std::convert::TryInto::try_into(value)?;
+        Ok(::windows::core::InParam::owned(item))
     }
 }
 impl ::core::clone::Clone for ITransformProvider2 {
@@ -5618,15 +4015,17 @@ unsafe impl ::windows::core::RuntimeType for ITransformProvider2 {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for ITransformProvider2 {
+unsafe impl ::windows::core::Vtable for ITransformProvider2 {
     type Vtable = ITransformProvider2_Vtbl;
+}
+unsafe impl ::windows::core::Interface for ITransformProvider2 {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x7d91d02d_8401_5cf8_bbc4_47391a524215);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITransformProvider2_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub CanZoom: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -5656,87 +4055,44 @@ pub struct ITransformProvider2_Vtbl {
 #[repr(transparent)]
 pub struct IValueProvider(::windows::core::IUnknown);
 impl IValueProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsReadOnly(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsReadOnly)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsReadOnly)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Value(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<
-                ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            >::zeroed();
-            (::windows::core::Interface::vtable(this).Value)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Value)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<::windows::core::HSTRING>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
-    pub fn SetValue<'a, Param0: ::windows::core::IntoParam<'a, ::windows::core::HSTRING>>(
-        &self,
-        value: Param0,
-    ) -> ::windows::core::Result<()> {
+    pub fn SetValue(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetValue)(
-                ::windows::core::Interface::as_raw(this),
-                value.into_param().abi(),
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
 }
-impl ::core::convert::From<IValueProvider> for ::windows::core::IUnknown {
-    fn from(value: IValueProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IValueProvider> for ::windows::core::IUnknown {
-    fn from(value: &IValueProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IValueProvider> for ::windows::core::IInspectable {
-    fn from(value: IValueProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IValueProvider> for ::windows::core::IInspectable {
-    fn from(value: &IValueProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IValueProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IValueProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IValueProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -5761,15 +4117,17 @@ unsafe impl ::windows::core::RuntimeType for IValueProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IValueProvider {
+unsafe impl ::windows::core::Vtable for IValueProvider {
     type Vtable = IValueProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IValueProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x984f11cf_4611_588e_b52e_b96a12322c71);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IValueProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub IsReadOnly: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -5787,63 +4145,19 @@ pub struct IValueProvider_Vtbl {
 #[repr(transparent)]
 pub struct IVirtualizedItemProvider(::windows::core::IUnknown);
 impl IVirtualizedItemProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Realize(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Realize)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Realize)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
 }
-impl ::core::convert::From<IVirtualizedItemProvider> for ::windows::core::IUnknown {
-    fn from(value: IVirtualizedItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IVirtualizedItemProvider> for ::windows::core::IUnknown {
-    fn from(value: &IVirtualizedItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IVirtualizedItemProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown>
-    for &'a IVirtualizedItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IVirtualizedItemProvider> for ::windows::core::IInspectable {
-    fn from(value: IVirtualizedItemProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IVirtualizedItemProvider> for ::windows::core::IInspectable {
-    fn from(value: &IVirtualizedItemProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for IVirtualizedItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable>
-    for &'a IVirtualizedItemProvider
-{
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IVirtualizedItemProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IVirtualizedItemProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -5857,9 +4171,7 @@ impl ::core::cmp::PartialEq for IVirtualizedItemProvider {
 impl ::core::cmp::Eq for IVirtualizedItemProvider {}
 impl ::core::fmt::Debug for IVirtualizedItemProvider {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IVirtualizedItemProvider")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("IVirtualizedItemProvider").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for IVirtualizedItemProvider {
@@ -5870,15 +4182,17 @@ unsafe impl ::windows::core::RuntimeType for IVirtualizedItemProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IVirtualizedItemProvider {
+unsafe impl ::windows::core::Vtable for IVirtualizedItemProvider {
     type Vtable = IVirtualizedItemProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IVirtualizedItemProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x098f858a_2e63_5985_ab87_f8ebdb1c5740);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IVirtualizedItemProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub Realize:
         unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
 }
@@ -5886,106 +4200,95 @@ pub struct IVirtualizedItemProvider_Vtbl {
 #[repr(transparent)]
 pub struct IWindowProvider(::windows::core::IUnknown);
 impl IWindowProvider {
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsModal(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsModal)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsModal)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn IsTopmost(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).IsTopmost)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).IsTopmost)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Maximizable(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).Maximizable)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Maximizable)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Minimizable(&self) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).Minimizable)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Minimizable)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<bool>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn InteractionState(&self) -> ::windows::core::Result<super::WindowInteractionState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::WindowInteractionState>::zeroed();
-            (::windows::core::Interface::vtable(this).InteractionState)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).InteractionState)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::WindowInteractionState>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn VisualState(&self) -> ::windows::core::Result<super::WindowVisualState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<super::WindowVisualState>::zeroed();
-            (::windows::core::Interface::vtable(this).VisualState)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).VisualState)(
+                ::windows::core::Vtable::as_raw(this),
                 result__.as_mut_ptr(),
             )
             .from_abi::<super::WindowVisualState>(result__)
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn Close(&self) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).Close)(::windows::core::Interface::as_raw(
-                this,
-            ))
-            .ok()
+            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+                .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn SetVisualState(&self, state: super::WindowVisualState) -> ::windows::core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Interface::vtable(this).SetVisualState)(
-                ::windows::core::Interface::as_raw(this),
+            (::windows::core::Vtable::vtable(this).SetVisualState)(
+                ::windows::core::Vtable::as_raw(this),
                 state,
             )
             .ok()
         }
     }
-    #[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
     pub fn WaitForInputIdle(&self, milliseconds: i32) -> ::windows::core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::<bool>::zeroed();
-            (::windows::core::Interface::vtable(this).WaitForInputIdle)(
-                ::windows::core::Interface::as_raw(this),
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).WaitForInputIdle)(
+                ::windows::core::Vtable::as_raw(this),
                 milliseconds,
                 result__.as_mut_ptr(),
             )
@@ -5993,46 +4296,11 @@ impl IWindowProvider {
         }
     }
 }
-impl ::core::convert::From<IWindowProvider> for ::windows::core::IUnknown {
-    fn from(value: IWindowProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IWindowProvider> for ::windows::core::IUnknown {
-    fn from(value: &IWindowProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for IWindowProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IUnknown> for &'a IWindowProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IUnknown> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl ::core::convert::From<IWindowProvider> for ::windows::core::IInspectable {
-    fn from(value: IWindowProvider) -> Self {
-        unsafe { ::core::mem::transmute(value) }
-    }
-}
-impl ::core::convert::From<&IWindowProvider> for ::windows::core::IInspectable {
-    fn from(value: &IWindowProvider) -> Self {
-        ::core::convert::From::from(::core::clone::Clone::clone(value))
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for IWindowProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Owned(unsafe { ::core::mem::transmute(self) })
-    }
-}
-impl<'a> ::windows::core::IntoParam<'a, ::windows::core::IInspectable> for &'a IWindowProvider {
-    fn into_param(self) -> ::windows::core::Param<'a, ::windows::core::IInspectable> {
-        ::windows::core::Param::Borrowed(unsafe { ::core::mem::transmute(self) })
-    }
-}
+::windows::core::interface_hierarchy!(
+    IWindowProvider,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
 impl ::core::clone::Clone for IWindowProvider {
     fn clone(&self) -> Self {
         Self(self.0.clone())
@@ -6057,15 +4325,17 @@ unsafe impl ::windows::core::RuntimeType for IWindowProvider {
         from.as_ref().cloned().ok_or(::windows::core::Error::OK)
     }
 }
-unsafe impl ::windows::core::Interface for IWindowProvider {
+unsafe impl ::windows::core::Vtable for IWindowProvider {
     type Vtable = IWindowProvider_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IWindowProvider {
     const IID: ::windows::core::GUID =
         ::windows::core::GUID::from_u128(0x83f1df99_9ddf_575e_a651_2ee657fd16e0);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IWindowProvider_Vtbl {
-    pub base__: ::windows::core::IInspectableVtbl,
+    pub base__: ::windows::core::IInspectable_Vtbl,
     pub IsModal: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
@@ -6102,5 +4372,198 @@ pub struct IWindowProvider_Vtbl {
         result__: *mut bool,
     ) -> ::windows::core::HRESULT,
 }
+#[doc = "*Required features: `\"UI_Xaml_Automation_Provider\"`*"]
+#[repr(transparent)]
+pub struct IRawElementProviderSimple(::windows::core::IUnknown);
+impl IRawElementProviderSimple {
+    pub fn GetValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn SetValue<'a, P0>(
+        &self,
+        dp: &super::super::DependencyProperty,
+        value: P0,
+    ) -> ::windows::core::Result<()>
+    where
+        P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
+    {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                value.into().abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ClearValue(&self, dp: &super::super::DependencyProperty) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).ClearValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+            )
+            .ok()
+        }
+    }
+    pub fn ReadLocalValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).ReadLocalValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn GetAnimationBaseValue(
+        &self,
+        dp: &super::super::DependencyProperty,
+    ) -> ::windows::core::Result<::windows::core::IInspectable> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetAnimationBaseValue)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::IInspectable>(result__)
+        }
+    }
+    pub fn RegisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        callback: &super::super::DependencyPropertyChangedCallback,
+    ) -> ::windows::core::Result<i64> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).RegisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                ::core::mem::transmute_copy(callback),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<i64>(result__)
+        }
+    }
+    pub fn UnregisterPropertyChangedCallback(
+        &self,
+        dp: &super::super::DependencyProperty,
+        token: i64,
+    ) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).UnregisterPropertyChangedCallback)(
+                ::windows::core::Vtable::as_raw(this),
+                ::core::mem::transmute_copy(dp),
+                token,
+            )
+            .ok()
+        }
+    }
+    pub fn Dispatcher(&self) -> ::windows::core::Result<::windows::UI::Core::CoreDispatcher> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Dispatcher)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::UI::Core::CoreDispatcher>(result__)
+        }
+    }
+    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
+    #[cfg(feature = "UI_Dispatching")]
+    pub fn DispatcherQueue(
+        &self,
+    ) -> ::windows::core::Result<super::super::super::Dispatching::DispatcherQueue> {
+        let this = &::windows::core::Interface::cast::<super::super::IDependencyObject>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<super::super::super::Dispatching::DispatcherQueue>(result__)
+        }
+    }
+}
+impl ::core::clone::Clone for IRawElementProviderSimple {
+    fn clone(&self) -> Self {
+        Self(self.0.clone())
+    }
+}
+impl ::core::cmp::PartialEq for IRawElementProviderSimple {
+    fn eq(&self, other: &Self) -> bool {
+        self.0 == other.0
+    }
+}
+impl ::core::cmp::Eq for IRawElementProviderSimple {}
+impl ::core::fmt::Debug for IRawElementProviderSimple {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("IRawElementProviderSimple").field(&self.0).finish()
+    }
+}
+unsafe impl ::windows::core::RuntimeType for IRawElementProviderSimple {
+    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Xaml.Automation.Provider.IRawElementProviderSimple;{f90bc239-ade2-55c9-a838-a3b0579763c5})" ) ;
+    type DefaultType = ::core::option::Option<Self>;
+    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
+        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
+    }
+}
+unsafe impl ::windows::core::Vtable for IRawElementProviderSimple {
+    type Vtable = IIRawElementProviderSimple_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IRawElementProviderSimple {
+    const IID: ::windows::core::GUID =
+        <IIRawElementProviderSimple as ::windows::core::Interface>::IID;
+}
+impl ::windows::core::RuntimeName for IRawElementProviderSimple {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Automation.Provider.IRawElementProviderSimple";
+}
+::windows::core::interface_hierarchy!(
+    IRawElementProviderSimple,
+    ::windows::core::IUnknown,
+    ::windows::core::IInspectable
+);
+impl ::core::convert::From<IRawElementProviderSimple> for super::super::DependencyObject {
+    fn from(value: IRawElementProviderSimple) -> Self {
+        ::core::convert::From::from(&value)
+    }
+}
+impl ::core::convert::From<&IRawElementProviderSimple> for super::super::DependencyObject {
+    fn from(value: &IRawElementProviderSimple) -> Self {
+        ::windows::core::Interface::cast(value).unwrap()
+    }
+}
+impl<'a> ::core::convert::From<&IRawElementProviderSimple>
+    for ::windows::core::InParam<'a, super::super::DependencyObject>
+{
+    fn from(value: &IRawElementProviderSimple) -> Self {
+        ::windows::core::InParam::owned(value.into())
+    }
+}
+unsafe impl ::core::marker::Send for IRawElementProviderSimple {}
+unsafe impl ::core::marker::Sync for IRawElementProviderSimple {}
 #[cfg(feature = "implement")]
 ::core::include!("impl.rs");

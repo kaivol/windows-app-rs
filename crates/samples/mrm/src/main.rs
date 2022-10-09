@@ -1,7 +1,6 @@
 use ::windows::core::*;
-use ::windows_app::Microsoft::Windows::ApplicationModel::Resources::*;
+use ::windows_app::Windows::ApplicationModel::Resources::*;
 use ::windows_app::*;
-use windows_app::Microsoft::MRM::MrmAllocateBuffer;
 
 fn main() -> Result<()> {
     bootstrap::initialize()?;

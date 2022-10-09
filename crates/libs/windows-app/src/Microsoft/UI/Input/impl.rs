@@ -88,7 +88,7 @@ impl IPointerPointTransform_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IPointerPointTransform,
                 OFFSET,

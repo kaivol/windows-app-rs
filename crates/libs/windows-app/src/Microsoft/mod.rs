@@ -1,3 +1,5 @@
+#[cfg(feature = "DirectWriteCore")]
+pub mod DirectWriteCore;
 #[cfg(feature = "Foundation")]
 pub mod Foundation;
 #[cfg(feature = "Graphics")]

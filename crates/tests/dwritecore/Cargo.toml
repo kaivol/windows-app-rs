@@ -11,7 +11,8 @@ path = "../../libs/windows-app-deploy"
 once_cell = "1.12.0"
 
 [dependencies.windows]
-version = "0.42.0"
+git = "https://github.com/kaivol/windows-rs"
+branch = "composable"
 
 [dependencies.windows-app]
 path = "../../libs/windows-app"

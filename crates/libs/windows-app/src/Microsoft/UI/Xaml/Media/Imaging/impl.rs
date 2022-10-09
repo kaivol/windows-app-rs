@@ -31,7 +31,7 @@ impl IXamlRenderingBackgroundTaskOverrides_Vtbl {
             this.OnRun(::core::mem::transmute(&taskinstance)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IXamlRenderingBackgroundTaskOverrides,
                 OFFSET,

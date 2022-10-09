@@ -7,6 +7,6 @@ publish = false
 [dependencies]
 rayon = "1.5.3"
 patricia_tree = "0.3.2"
-windows-metadata = { path = "../../../../windows-rs/crates/libs/metadata" }
-windows-bindgen = { path = "../../../../windows-rs/crates/libs/bindgen" }
-tool_lib = { path = "../../../../windows-rs/crates/tools/lib" }
+windows-metadata = { git = "https://github.com/kaivol/windows-rs", branch = "composable" }
+windows-bindgen = { git = "https://github.com/kaivol/windows-rs", branch = "composable" }
+tool_lib = { git = "https://github.com/kaivol/windows-rs", branch = "composable" }

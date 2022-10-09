@@ -32,7 +32,7 @@ impl IAnimationObject_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IAnimationObject, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAnimationObject, OFFSET>(),
             PopulatePropertyInfo: PopulatePropertyInfo::<Identity, Impl, OFFSET>,
         }
     }
@@ -51,7 +51,7 @@ impl ICompositionAnimationBase_Vtbl {
         const OFFSET: isize,
     >() -> ICompositionAnimationBase_Vtbl {
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICompositionAnimationBase,
                 OFFSET,
@@ -109,11 +109,10 @@ impl ICompositionSupportsSystemBackdrop_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetSystemBackdrop(::core::mem::transmute(&value))
-                .into()
+            this.SetSystemBackdrop(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICompositionSupportsSystemBackdrop,
                 OFFSET,
@@ -137,7 +136,7 @@ impl ICompositionSurface_Vtbl {
         const OFFSET: isize,
     >() -> ICompositionSurface_Vtbl {
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICompositionSurface, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICompositionSurface, OFFSET>(
             ),
         }
     }
@@ -177,7 +176,7 @@ impl ICompositionSurfaceFacade_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICompositionSurfaceFacade,
                 OFFSET,
@@ -200,7 +199,7 @@ impl IVisualElement_Vtbl {
         const OFFSET: isize,
     >() -> IVisualElement_Vtbl {
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IVisualElement, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IVisualElement, OFFSET>(),
         }
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
@@ -239,7 +238,7 @@ impl IVisualElement2_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IVisualElement2, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IVisualElement2, OFFSET>(),
             GetVisualInternal: GetVisualInternal::<Identity, Impl, OFFSET>,
         }
     }

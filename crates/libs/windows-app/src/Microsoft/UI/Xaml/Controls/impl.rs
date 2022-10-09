@@ -73,7 +73,7 @@ impl IAnimatedVisual_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IAnimatedVisual, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual, OFFSET>(),
             RootVisual: RootVisual::<Identity, Impl, OFFSET>,
             Size: Size::<Identity, Impl, OFFSET>,
             Duration: Duration::<Identity, Impl, OFFSET>,
@@ -81,6 +81,56 @@ impl IAnimatedVisual_Vtbl {
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
         iid == &<IAnimatedVisual as ::windows::core::Interface>::IID
+    }
+}
+#[cfg(feature = "UI_Composition")]
+pub trait IAnimatedVisual2_Impl:
+    Sized + IAnimatedVisual_Impl + ::windows::Foundation::IClosable_Impl
+{
+    fn CreateAnimations(&self) -> ::windows::core::Result<()>;
+    fn DestroyAnimations(&self) -> ::windows::core::Result<()>;
+}
+#[cfg(feature = "UI_Composition")]
+impl ::windows::core::RuntimeName for IAnimatedVisual2 {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisual2";
+}
+#[cfg(feature = "UI_Composition")]
+impl IAnimatedVisual2_Vtbl {
+    pub const fn new<
+        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Impl: IAnimatedVisual2_Impl,
+        const OFFSET: isize,
+    >() -> IAnimatedVisual2_Vtbl {
+        unsafe extern "system" fn CreateAnimations<
+            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Impl: IAnimatedVisual2_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+        ) -> ::windows::core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            this.CreateAnimations().into()
+        }
+        unsafe extern "system" fn DestroyAnimations<
+            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Impl: IAnimatedVisual2_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+        ) -> ::windows::core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            this.DestroyAnimations().into()
+        }
+        Self {
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual2, OFFSET>(),
+            CreateAnimations: CreateAnimations::<Identity, Impl, OFFSET>,
+            DestroyAnimations: DestroyAnimations::<Identity, Impl, OFFSET>,
+        }
+    }
+    pub fn matches(iid: &windows::core::GUID) -> bool {
+        iid == &<IAnimatedVisual2 as ::windows::core::Interface>::IID
     }
 }
 #[cfg(feature = "UI_Composition")]
@@ -127,8 +177,11 @@ impl IAnimatedVisualSource_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IAnimatedVisualSource, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IAnimatedVisualSource,
+                OFFSET,
+            >(),
             TryCreateAnimatedVisual: TryCreateAnimatedVisual::<Identity, Impl, OFFSET>,
         }
     }
@@ -197,7 +250,7 @@ impl IAnimatedVisualSource2_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IAnimatedVisualSource2,
                 OFFSET,
@@ -208,6 +261,65 @@ impl IAnimatedVisualSource2_Vtbl {
     }
     pub fn matches(iid: &windows::core::GUID) -> bool {
         iid == &<IAnimatedVisualSource2 as ::windows::core::Interface>::IID
+    }
+}
+#[cfg(feature = "UI_Composition")]
+pub trait IAnimatedVisualSource3_Impl: Sized {
+    fn TryCreateAnimatedVisual(
+        &self,
+        compositor: &::core::option::Option<super::super::Composition::Compositor>,
+        diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
+        createanimations: bool,
+    ) -> ::windows::core::Result<IAnimatedVisual2>;
+}
+#[cfg(feature = "UI_Composition")]
+impl ::windows::core::RuntimeName for IAnimatedVisualSource3 {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource3";
+}
+#[cfg(feature = "UI_Composition")]
+impl IAnimatedVisualSource3_Vtbl {
+    pub const fn new<
+        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Impl: IAnimatedVisualSource3_Impl,
+        const OFFSET: isize,
+    >() -> IAnimatedVisualSource3_Vtbl {
+        unsafe extern "system" fn TryCreateAnimatedVisual<
+            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Impl: IAnimatedVisualSource3_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+            compositor: *mut ::core::ffi::c_void,
+            diagnostics: *mut *mut ::core::ffi::c_void,
+            createanimations: bool,
+            result__: *mut *mut ::core::ffi::c_void,
+        ) -> ::windows::core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            match this.TryCreateAnimatedVisual(
+                ::core::mem::transmute(&compositor),
+                ::core::mem::transmute_copy(&diagnostics),
+                createanimations,
+            ) {
+                ::core::result::Result::Ok(ok__) => {
+                    ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
+                    ::core::mem::forget(ok__);
+                    ::windows::core::HRESULT(0)
+                }
+                ::core::result::Result::Err(err) => err.into(),
+            }
+        }
+        Self {
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IAnimatedVisualSource3,
+                OFFSET,
+            >(),
+            TryCreateAnimatedVisual: TryCreateAnimatedVisual::<Identity, Impl, OFFSET>,
+        }
+    }
+    pub fn matches(iid: &windows::core::GUID) -> bool {
+        iid == &<IAnimatedVisualSource3 as ::windows::core::Interface>::IID
     }
 }
 pub trait IAppBarOverrides_Impl: Sized {
@@ -294,7 +406,7 @@ impl IAppBarOverrides_Vtbl {
             this.OnOpening(::core::mem::transmute(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IAppBarOverrides, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAppBarOverrides, OFFSET>(),
             OnClosed: OnClosed::<Identity, Impl, OFFSET>,
             OnOpened: OnOpened::<Identity, Impl, OFFSET>,
             OnClosing: OnClosing::<Identity, Impl, OFFSET>,
@@ -353,7 +465,7 @@ impl IComboBoxOverrides_Vtbl {
             this.OnDropDownOpened(::core::mem::transmute(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IComboBoxOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IComboBoxOverrides, OFFSET>(
             ),
             OnDropDownClosed: OnDropDownClosed::<Identity, Impl, OFFSET>,
             OnDropDownOpened: OnDropDownOpened::<Identity, Impl, OFFSET>,
@@ -461,7 +573,7 @@ impl ICommandBarElement_Vtbl {
             this.SetDynamicOverflowOrder(value).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, ICommandBarElement, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICommandBarElement, OFFSET>(
             ),
             IsCompact: IsCompact::<Identity, Impl, OFFSET>,
             SetIsCompact: SetIsCompact::<Identity, Impl, OFFSET>,
@@ -558,7 +670,7 @@ impl IContentControlOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IContentControlOverrides,
                 OFFSET,
@@ -636,7 +748,7 @@ impl IContentPresenterOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IContentPresenterOverrides,
                 OFFSET,
@@ -929,8 +1041,7 @@ impl IControlOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerWheelChanged(::core::mem::transmute(&e))
-                .into()
+            this.OnPointerWheelChanged(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn OnTapped<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -990,8 +1101,7 @@ impl IControlOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationStarting(::core::mem::transmute(&e))
-                .into()
+            this.OnManipulationStarting(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn OnManipulationInertiaStarting<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1003,8 +1113,7 @@ impl IControlOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationInertiaStarting(::core::mem::transmute(&e))
-                .into()
+            this.OnManipulationInertiaStarting(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn OnManipulationStarted<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1016,8 +1125,7 @@ impl IControlOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationStarted(::core::mem::transmute(&e))
-                .into()
+            this.OnManipulationStarted(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn OnManipulationDelta<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1041,8 +1149,7 @@ impl IControlOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationCompleted(::core::mem::transmute(&e))
-                .into()
+            this.OnManipulationCompleted(::core::mem::transmute(&e)).into()
         }
         unsafe extern "system" fn OnKeyUp<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1177,7 +1284,8 @@ impl IControlOverrides_Vtbl {
             this.OnDrop(::core::mem::transmute(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IControlOverrides, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IControlOverrides, OFFSET>(
+            ),
             OnPointerEntered: OnPointerEntered::<Identity, Impl, OFFSET>,
             OnPointerPressed: OnPointerPressed::<Identity, Impl, OFFSET>,
             OnPointerMoved: OnPointerMoved::<Identity, Impl, OFFSET>,
@@ -1277,7 +1385,7 @@ impl IDataTemplateSelectorOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IDataTemplateSelectorOverrides,
                 OFFSET,
@@ -1347,11 +1455,10 @@ impl IDynamicAnimatedVisualSource_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RemoveAnimatedVisualInvalidated(::core::mem::transmute(&token))
-                .into()
+            this.RemoveAnimatedVisualInvalidated(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IDynamicAnimatedVisualSource,
                 OFFSET,
@@ -1406,7 +1513,7 @@ impl IGroupStyleSelectorOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IGroupStyleSelectorOverrides,
                 OFFSET,
@@ -1474,7 +1581,7 @@ impl IIconSourceOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IIconSourceOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IIconSourceOverrides, OFFSET>(
             ),
             CreateIconElementCore: CreateIconElementCore::<Identity, Impl, OFFSET>,
             GetIconElementPropertyCore: GetIconElementPropertyCore::<Identity, Impl, OFFSET>,
@@ -1521,7 +1628,7 @@ impl IInsertionPanel_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IInsertionPanel, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IInsertionPanel, OFFSET>(),
             GetInsertionIndexes: GetInsertionIndexes::<Identity, Impl, OFFSET>,
         }
     }
@@ -1634,8 +1741,11 @@ impl IItemContainerMapping_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IItemContainerMapping, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IItemContainerMapping,
+                OFFSET,
+            >(),
             ItemFromContainer: ItemFromContainer::<Identity, Impl, OFFSET>,
             ContainerFromItem: ContainerFromItem::<Identity, Impl, OFFSET>,
             IndexFromContainer: IndexFromContainer::<Identity, Impl, OFFSET>,
@@ -1888,7 +1998,7 @@ impl IItemsControlOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IItemsControlOverrides,
                 OFFSET,
@@ -1971,7 +2081,7 @@ impl IKeyIndexMapping_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IKeyIndexMapping, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IKeyIndexMapping, OFFSET>(),
             KeyFromIndex: KeyFromIndex::<Identity, Impl, OFFSET>,
             IndexFromKey: IndexFromKey::<Identity, Impl, OFFSET>,
         }
@@ -2027,11 +2137,10 @@ impl ILayoutContextOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetLayoutStateCore(::core::mem::transmute(&value))
-                .into()
+            this.SetLayoutStateCore(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ILayoutContextOverrides,
                 OFFSET,
@@ -2045,10 +2154,7 @@ impl ILayoutContextOverrides_Vtbl {
     }
 }
 pub trait INavigate_Impl: Sized {
-    fn Navigate(
-        &self,
-        sourcepagetype: &::windows::UI::Xaml::Interop::TypeName,
-    ) -> ::windows::core::Result<bool>;
+    fn Navigate(&self, sourcepagetype: &crate::core::TypeName) -> ::windows::core::Result<bool>;
 }
 impl ::windows::core::RuntimeName for INavigate {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.INavigate";
@@ -2065,7 +2171,7 @@ impl INavigate_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            sourcepagetype: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            sourcepagetype: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             result__: *mut bool,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
@@ -2080,7 +2186,7 @@ impl INavigate_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, INavigate, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, INavigate, OFFSET>(),
             Navigate: Navigate::<Identity, Impl, OFFSET>,
         }
     }
@@ -2122,7 +2228,7 @@ impl INonVirtualizingLayoutContextOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 INonVirtualizingLayoutContextOverrides,
                 OFFSET,
@@ -2177,8 +2283,7 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.InitializeForContextCore(::core::mem::transmute(&context))
-                .into()
+            this.InitializeForContextCore(::core::mem::transmute(&context)).into()
         }
         unsafe extern "system" fn UninitializeForContextCore<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2190,8 +2295,7 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UninitializeForContextCore(::core::mem::transmute(&context))
-                .into()
+            this.UninitializeForContextCore(::core::mem::transmute(&context)).into()
         }
         unsafe extern "system" fn MeasureOverride<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2242,7 +2346,7 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 INonVirtualizingLayoutOverrides,
                 OFFSET,
@@ -2326,7 +2430,7 @@ impl IPageOverrides_Vtbl {
             this.OnNavigatingFrom(::core::mem::transmute(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IPageOverrides, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IPageOverrides, OFFSET>(),
             OnNavigatedFrom: OnNavigatedFrom::<Identity, Impl, OFFSET>,
             OnNavigatedTo: OnNavigatedTo::<Identity, Impl, OFFSET>,
             OnNavigatingFrom: OnNavigatingFrom::<Identity, Impl, OFFSET>,
@@ -2385,8 +2489,7 @@ impl IScrollAnchorProvider_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RegisterAnchorCandidate(::core::mem::transmute(&element))
-                .into()
+            this.RegisterAnchorCandidate(::core::mem::transmute(&element)).into()
         }
         unsafe extern "system" fn UnregisterAnchorCandidate<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2398,12 +2501,14 @@ impl IScrollAnchorProvider_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UnregisterAnchorCandidate(::core::mem::transmute(&element))
-                .into()
+            this.UnregisterAnchorCandidate(::core::mem::transmute(&element)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IScrollAnchorProvider, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IScrollAnchorProvider,
+                OFFSET,
+            >(),
             CurrentAnchor: CurrentAnchor::<Identity, Impl, OFFSET>,
             RegisterAnchorCandidate: RegisterAnchorCandidate::<Identity, Impl, OFFSET>,
             UnregisterAnchorCandidate: UnregisterAnchorCandidate::<Identity, Impl, OFFSET>,
@@ -2488,8 +2593,7 @@ impl ISemanticZoomInformation_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetSemanticZoomOwner(::core::mem::transmute(&value))
-                .into()
+            this.SetSemanticZoomOwner(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn IsActiveView<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -2656,7 +2760,7 @@ impl ISemanticZoomInformation_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ISemanticZoomInformation,
                 OFFSET,
@@ -2708,10 +2812,9 @@ impl IStyleSelectorOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.SelectStyleCore(
-                ::core::mem::transmute(&item),
-                ::core::mem::transmute(&container),
-            ) {
+            match this
+                .SelectStyleCore(::core::mem::transmute(&item), ::core::mem::transmute(&container))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -2721,7 +2824,7 @@ impl IStyleSelectorOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IStyleSelectorOverrides,
                 OFFSET,
@@ -2831,7 +2934,7 @@ impl IToggleSwitchOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IToggleSwitchOverrides,
                 OFFSET,
@@ -2968,8 +3071,7 @@ impl IVirtualizingLayoutContextOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RecycleElementCore(::core::mem::transmute(&element))
-                .into()
+            this.RecycleElementCore(::core::mem::transmute(&element)).into()
         }
         unsafe extern "system" fn RecommendedAnchorIndexCore<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -3019,11 +3121,10 @@ impl IVirtualizingLayoutContextOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetLayoutOriginCore(::core::mem::transmute(&value))
-                .into()
+            this.SetLayoutOriginCore(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingLayoutContextOverrides,
                 OFFSET,
@@ -3096,8 +3197,7 @@ impl IVirtualizingLayoutOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.InitializeForContextCore(::core::mem::transmute(&context))
-                .into()
+            this.InitializeForContextCore(::core::mem::transmute(&context)).into()
         }
         unsafe extern "system" fn UninitializeForContextCore<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -3109,8 +3209,7 @@ impl IVirtualizingLayoutOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UninitializeForContextCore(::core::mem::transmute(&context))
-                .into()
+            this.UninitializeForContextCore(::core::mem::transmute(&context)).into()
         }
         unsafe extern "system" fn MeasureOverride<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -3180,7 +3279,7 @@ impl IVirtualizingLayoutOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingLayoutOverrides,
                 OFFSET,
@@ -3234,11 +3333,8 @@ impl IVirtualizingPanelOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnItemsChanged(
-                ::core::mem::transmute(&sender),
-                ::core::mem::transmute(&args),
-            )
-            .into()
+            this.OnItemsChanged(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
+                .into()
         }
         unsafe extern "system" fn OnClearChildren<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -3264,7 +3360,7 @@ impl IVirtualizingPanelOverrides_Vtbl {
             this.BringIndexIntoView(index).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingPanelOverrides,
                 OFFSET,
@@ -3305,11 +3401,10 @@ impl IVirtualizingStackPanelOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnCleanUpVirtualizedItem(::core::mem::transmute(&e))
-                .into()
+            this.OnCleanUpVirtualizedItem(::core::mem::transmute(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingStackPanelOverrides,
                 OFFSET,

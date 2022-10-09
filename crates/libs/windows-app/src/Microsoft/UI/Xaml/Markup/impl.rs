@@ -30,8 +30,7 @@ impl IComponentConnector_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.Connect(connectionid, ::core::mem::transmute(&target))
-                .into()
+            this.Connect(connectionid, ::core::mem::transmute(&target)).into()
         }
         unsafe extern "system" fn GetBindingConnector<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -55,7 +54,7 @@ impl IComponentConnector_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IComponentConnector, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IComponentConnector, OFFSET>(
             ),
             Connect: Connect::<Identity, Impl, OFFSET>,
             GetBindingConnector: GetBindingConnector::<Identity, Impl, OFFSET>,
@@ -117,7 +116,7 @@ impl IDataTemplateComponent_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IDataTemplateComponent,
                 OFFSET,
@@ -188,7 +187,7 @@ impl IMarkupExtensionOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IMarkupExtensionOverrides,
                 OFFSET,
@@ -257,7 +256,7 @@ impl IProvideValueTarget_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IProvideValueTarget, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IProvideValueTarget, OFFSET>(
             ),
             TargetObject: TargetObject::<Identity, Impl, OFFSET>,
             TargetProperty: TargetProperty::<Identity, Impl, OFFSET>,
@@ -299,7 +298,7 @@ impl IRootObjectProvider_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IRootObjectProvider, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IRootObjectProvider, OFFSET>(
             ),
             RootObject: RootObject::<Identity, Impl, OFFSET>,
         }
@@ -340,7 +339,7 @@ impl IUriContext_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IUriContext, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IUriContext, OFFSET>(),
             BaseUri: BaseUri::<Identity, Impl, OFFSET>,
         }
     }
@@ -374,7 +373,7 @@ impl IXamlBindScopeDiagnostics_Vtbl {
             this.Disable(linenumber, columnnumber).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IXamlBindScopeDiagnostics,
                 OFFSET,
@@ -557,14 +556,11 @@ impl IXamlMember_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetValue(
-                ::core::mem::transmute(&instance),
-                ::core::mem::transmute(&value),
-            )
-            .into()
+            this.SetValue(::core::mem::transmute(&instance), ::core::mem::transmute(&value))
+                .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlMember, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IXamlMember, OFFSET>(),
             IsAttachable: IsAttachable::<Identity, Impl, OFFSET>,
             IsDependencyProperty: IsDependencyProperty::<Identity, Impl, OFFSET>,
             IsReadOnly: IsReadOnly::<Identity, Impl, OFFSET>,
@@ -580,10 +576,7 @@ impl IXamlMember_Vtbl {
     }
 }
 pub trait IXamlMetadataProvider_Impl: Sized {
-    fn GetXamlType(
-        &self,
-        r#type: &::windows::UI::Xaml::Interop::TypeName,
-    ) -> ::windows::core::Result<IXamlType>;
+    fn GetXamlType(&self, r#type: &crate::core::TypeName) -> ::windows::core::Result<IXamlType>;
     fn GetXamlTypeByFullName(
         &self,
         fullname: &::windows::core::HSTRING,
@@ -607,7 +600,7 @@ impl IXamlMetadataProvider_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            r#type: ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            r#type: ::core::mem::ManuallyDrop<crate::core::TypeName>,
             result__: *mut *mut ::core::ffi::c_void,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
@@ -663,8 +656,11 @@ impl IXamlMetadataProvider_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlMetadataProvider, OFFSET>(
-            ),
+            base__: ::windows::core::IInspectable_Vtbl::new::<
+                Identity,
+                IXamlMetadataProvider,
+                OFFSET,
+            >(),
             GetXamlType: GetXamlType::<Identity, Impl, OFFSET>,
             GetXamlTypeByFullName: GetXamlTypeByFullName::<Identity, Impl, OFFSET>,
             GetXmlnsDefinitions: GetXmlnsDefinitions::<Identity, Impl, OFFSET>,
@@ -687,7 +683,7 @@ pub trait IXamlType_Impl: Sized {
     fn ItemType(&self) -> ::windows::core::Result<IXamlType>;
     fn KeyType(&self) -> ::windows::core::Result<IXamlType>;
     fn BoxedType(&self) -> ::windows::core::Result<IXamlType>;
-    fn UnderlyingType(&self) -> ::windows::core::Result<::windows::UI::Xaml::Interop::TypeName>;
+    fn UnderlyingType(&self) -> ::windows::core::Result<crate::core::TypeName>;
     fn ActivateInstance(&self) -> ::windows::core::Result<::windows::core::IInspectable>;
     fn CreateFromString(
         &self,
@@ -950,7 +946,7 @@ impl IXamlType_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            result__: *mut ::core::mem::ManuallyDrop<crate::core::TypeName>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -1033,11 +1029,8 @@ impl IXamlType_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.AddToVector(
-                ::core::mem::transmute(&instance),
-                ::core::mem::transmute(&value),
-            )
-            .into()
+            this.AddToVector(::core::mem::transmute(&instance), ::core::mem::transmute(&value))
+                .into()
         }
         unsafe extern "system" fn AddToMap<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -1070,7 +1063,7 @@ impl IXamlType_Vtbl {
             this.RunInitializer().into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlType, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IXamlType, OFFSET>(),
             BaseType: BaseType::<Identity, Impl, OFFSET>,
             ContentProperty: ContentProperty::<Identity, Impl, OFFSET>,
             FullName: FullName::<Identity, Impl, OFFSET>,
@@ -1100,7 +1093,7 @@ pub trait IXamlTypeResolver_Impl: Sized {
     fn Resolve(
         &self,
         qualifiedtypename: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<::windows::UI::Xaml::Interop::TypeName>;
+    ) -> ::windows::core::Result<crate::core::TypeName>;
 }
 impl ::windows::core::RuntimeName for IXamlTypeResolver {
     const NAME: &'static str = "Microsoft.UI.Xaml.Markup.IXamlTypeResolver";
@@ -1118,7 +1111,7 @@ impl IXamlTypeResolver_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             qualifiedtypename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::UI::Xaml::Interop::TypeName>,
+            result__: *mut ::core::mem::ManuallyDrop<crate::core::TypeName>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -1132,7 +1125,8 @@ impl IXamlTypeResolver_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlTypeResolver, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IXamlTypeResolver, OFFSET>(
+            ),
             Resolve: Resolve::<Identity, Impl, OFFSET>,
         }
     }

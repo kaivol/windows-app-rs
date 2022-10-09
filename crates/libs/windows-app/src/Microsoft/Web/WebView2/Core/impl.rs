@@ -36,10 +36,9 @@ impl ICoreWebView2DispatchAdapter_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.WrapNamedObject(
-                ::core::mem::transmute(&name),
-                ::core::mem::transmute(&adapter),
-            ) {
+            match this
+                .WrapNamedObject(::core::mem::transmute(&name), ::core::mem::transmute(&adapter))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -60,10 +59,9 @@ impl ICoreWebView2DispatchAdapter_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.WrapObject(
-                ::core::mem::transmute(&unwrapped),
-                ::core::mem::transmute(&adapter),
-            ) {
+            match this
+                .WrapObject(::core::mem::transmute(&unwrapped), ::core::mem::transmute(&adapter))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
@@ -104,7 +102,7 @@ impl ICoreWebView2DispatchAdapter_Vtbl {
             this.Clean().into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 ICoreWebView2DispatchAdapter,
                 OFFSET,

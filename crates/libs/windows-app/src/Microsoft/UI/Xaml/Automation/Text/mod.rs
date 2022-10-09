@@ -1,6 +1,6 @@
 #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TextPatternRangeEndpoint(pub i32);
 impl TextPatternRangeEndpoint {
     pub const Start: Self = Self(0i32);
@@ -22,9 +22,7 @@ unsafe impl ::windows::core::Abi for TextPatternRangeEndpoint {
 }
 impl ::core::fmt::Debug for TextPatternRangeEndpoint {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("TextPatternRangeEndpoint")
-            .field(&self.0)
-            .finish()
+        f.debug_tuple("TextPatternRangeEndpoint").field(&self.0).finish()
     }
 }
 unsafe impl ::windows::core::RuntimeType for TextPatternRangeEndpoint {
@@ -38,7 +36,7 @@ unsafe impl ::windows::core::RuntimeType for TextPatternRangeEndpoint {
 }
 #[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
 #[repr(transparent)]
-#[derive(:: core :: cmp :: PartialEq, :: core :: cmp :: Eq)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TextUnit(pub i32);
 impl TextUnit {
     pub const Character: Self = Self(0i32);

@@ -10,7 +10,6 @@ path = "../../libs/windows-app-deploy"
 [dependencies.windows]
 git = "https://github.com/kaivol/windows-rs"
 branch = "composable"
-#version = "0.42.0"
 features = [
     "Foundation",
     "Win32_UI_HiDpi",

@@ -39,7 +39,7 @@ impl IBrushOverrides_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IBrushOverrides, OFFSET>(),
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IBrushOverrides, OFFSET>(),
             PopulatePropertyInfoOverride: PopulatePropertyInfoOverride::<Identity, Impl, OFFSET>,
         }
     }
@@ -132,7 +132,7 @@ impl IGeneralTransformOverrides_Vtbl {
             }
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IGeneralTransformOverrides,
                 OFFSET,
@@ -169,11 +169,10 @@ impl ISurfaceImageSourceManagerNative_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.FlushAllSurfacesWithDevice(::core::mem::transmute(&device))
-                .into()
+            this.FlushAllSurfacesWithDevice(::core::mem::transmute(&device)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             FlushAllSurfacesWithDevice: FlushAllSurfacesWithDevice::<Identity, Impl, OFFSET>,
         }
     }
@@ -244,7 +243,7 @@ impl ISurfaceImageSourceNative_Vtbl {
             this.EndDraw().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             SetDevice: SetDevice::<Identity, Impl, OFFSET>,
             BeginDraw: BeginDraw::<Identity, Impl, OFFSET>,
             EndDraw: EndDraw::<Identity, Impl, OFFSET>,
@@ -344,7 +343,7 @@ impl ISurfaceImageSourceNativeWithD2D_Vtbl {
             this.ResumeDraw().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             SetDevice: SetDevice::<Identity, Impl, OFFSET>,
             BeginDraw: BeginDraw::<Identity, Impl, OFFSET>,
             EndDraw: EndDraw::<Identity, Impl, OFFSET>,
@@ -382,7 +381,7 @@ impl ISwapChainBackgroundPanelNative_Vtbl {
             this.SetSwapChain(::core::mem::transmute(&swapchain)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             SetSwapChain: SetSwapChain::<Identity, Impl, OFFSET>,
         }
     }
@@ -416,7 +415,7 @@ impl ISwapChainPanelNative_Vtbl {
             this.SetSwapChain(::core::mem::transmute(&swapchain)).into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             SetSwapChain: SetSwapChain::<Identity, Impl, OFFSET>,
         }
     }
@@ -447,8 +446,7 @@ impl ISwapChainPanelNative2_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetSwapChainHandle(::core::mem::transmute_copy(&swapchainhandle))
-                .into()
+            this.SetSwapChainHandle(::core::mem::transmute_copy(&swapchainhandle)).into()
         }
         Self {
             base__: ISwapChainPanelNative_Vtbl::new::<Identity, Impl, OFFSET>(),
@@ -560,8 +558,7 @@ impl IVirtualSurfaceImageSourceNative_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RegisterForUpdatesNeeded(::core::mem::transmute(&callback))
-                .into()
+            this.RegisterForUpdatesNeeded(::core::mem::transmute(&callback)).into()
         }
         unsafe extern "system" fn Resize<
             Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
@@ -617,7 +614,7 @@ impl IVirtualSurfaceUpdatesCallbackNative_Vtbl {
             this.UpdatesNeeded().into()
         }
         Self {
-            base__: ::windows::core::IUnknownVtbl::new::<Identity, OFFSET>(),
+            base__: ::windows::core::IUnknown_Vtbl::new::<Identity, OFFSET>(),
             UpdatesNeeded: UpdatesNeeded::<Identity, Impl, OFFSET>,
         }
     }
@@ -665,7 +662,7 @@ impl IXamlCompositionBrushBaseOverrides_Vtbl {
             this.OnDisconnected().into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<
+            base__: ::windows::core::IInspectable_Vtbl::new::<
                 Identity,
                 IXamlCompositionBrushBaseOverrides,
                 OFFSET,
@@ -743,11 +740,10 @@ impl IXamlLightOverrides_Vtbl {
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDisconnected(::core::mem::transmute(&oldelement))
-                .into()
+            this.OnDisconnected(::core::mem::transmute(&oldelement)).into()
         }
         Self {
-            base__: ::windows::core::IInspectableVtbl::new::<Identity, IXamlLightOverrides, OFFSET>(
+            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IXamlLightOverrides, OFFSET>(
             ),
             GetId: GetId::<Identity, Impl, OFFSET>,
             OnConnected: OnConnected::<Identity, Impl, OFFSET>,

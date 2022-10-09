@@ -14,7 +14,11 @@ use windows::Win32::UI::WindowsAndMessaging::{
 use windows_app::bootstrap;
 use windows_app::UI::Xaml::Controls::{Button, StackPanel};
 use windows_app::UI::Xaml::Media::SolidColorBrush;
-use windows_app::UI::Xaml::{Application, ApplicationInitializationCallback, HorizontalAlignment, IApplicationOverrides, IApplicationOverrides_Impl, IUIElementFactory_Vtbl, IWindowNative, LaunchActivatedEventArgs, RoutedEventHandler, UIElement, Window};
+use windows_app::UI::Xaml::{
+    Application, ApplicationInitializationCallback, HorizontalAlignment, IApplicationOverrides,
+    IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs, RoutedEventHandler,
+    Window,
+};
 
 fn main() -> windows::core::Result<()> {
     let package = unsafe {
@@ -23,8 +27,6 @@ fn main() -> windows::core::Result<()> {
     if !package {
         bootstrap::initialize()?;
     }
-
-    let appbar = windows_app::UI::Xaml::Controls::Button::compose(App::new()?);
 
     Application::Start(&ApplicationInitializationCallback::new(|_| {
         let _ = Application::compose(App::new()?)?;
