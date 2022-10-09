@@ -4,7 +4,7 @@ version = "0.0.0"
 publish = false
 edition = "2018"
 
-[build-dependencies.windows-app-deploy]
+[build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
 
 [dependencies.windows]
@@ -18,7 +18,7 @@ features = [
     "Win32_System_Com",
 ]
 
-[dependencies.windows-app]
+[dependencies.windows_app]
 path = "../../libs/windows-app"
 features = [
     "bootstrap",

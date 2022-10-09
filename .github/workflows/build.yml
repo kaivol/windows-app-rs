@@ -48,7 +48,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run cargo doc
-        run: cargo doc --no-deps -p windows-app
+        run: cargo doc --no-deps -p windows_app
 
   generation:
     strategy:
