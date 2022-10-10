@@ -23,6 +23,29 @@ pub struct IDeploymentInitializeOptions_Vtbl {
 }
 #[doc(hidden)]
 #[repr(transparent)]
+pub struct IDeploymentInitializeOptions2(::windows::core::IUnknown);
+unsafe impl ::windows::core::Vtable for IDeploymentInitializeOptions2 {
+    type Vtable = IDeploymentInitializeOptions2_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IDeploymentInitializeOptions2 {
+    const IID: ::windows::core::GUID =
+        ::windows::core::GUID::from_u128(0xad902820_149f_5e16_a566_9b2363997de2);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IDeploymentInitializeOptions2_Vtbl {
+    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub OnErrorShowUI: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows::core::HRESULT,
+    pub SetOnErrorShowUI: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: bool,
+    ) -> ::windows::core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
 pub struct IDeploymentManagerStatics(::windows::core::IUnknown);
 unsafe impl ::windows::core::Vtable for IDeploymentManagerStatics {
     type Vtable = IDeploymentManagerStatics_Vtbl;
@@ -108,6 +131,64 @@ pub struct IDeploymentResultFactory_Vtbl {
         result__: *mut *mut ::core::ffi::c_void,
     ) -> ::windows::core::HRESULT,
 }
+#[doc(hidden)]
+#[repr(transparent)]
+pub struct IReleaseInfoStatics(::windows::core::IUnknown);
+unsafe impl ::windows::core::Vtable for IReleaseInfoStatics {
+    type Vtable = IReleaseInfoStatics_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IReleaseInfoStatics {
+    const IID: ::windows::core::GUID =
+        ::windows::core::GUID::from_u128(0xed9be8ff_073c_5c66_bf97_ef0ce67405c3);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IReleaseInfoStatics_Vtbl {
+    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub Major: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut u16,
+    ) -> ::windows::core::HRESULT,
+    pub Minor: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut u16,
+    ) -> ::windows::core::HRESULT,
+    pub Patch: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut u16,
+    ) -> ::windows::core::HRESULT,
+    pub VersionTag: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+    ) -> ::windows::core::HRESULT,
+    pub AsString: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+    ) -> ::windows::core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+pub struct IRuntimeInfoStatics(::windows::core::IUnknown);
+unsafe impl ::windows::core::Vtable for IRuntimeInfoStatics {
+    type Vtable = IRuntimeInfoStatics_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IRuntimeInfoStatics {
+    const IID: ::windows::core::GUID =
+        ::windows::core::GUID::from_u128(0xe5cb9549_8951_590e_a753_8f281cd77ab5);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IRuntimeInfoStatics_Vtbl {
+    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub Version: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::ApplicationModel::PackageVersion,
+    ) -> ::windows::core::HRESULT,
+    pub AsString: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+    ) -> ::windows::core::HRESULT,
+}
 #[doc = "*Required features: `\"Windows_ApplicationModel_WindowsAppRuntime\"`*"]
 #[repr(transparent)]
 pub struct DeploymentInitializeOptions(::windows::core::IUnknown);
@@ -142,6 +223,27 @@ impl DeploymentInitializeOptions {
         let this = self;
         unsafe {
             (::windows::core::Vtable::vtable(this).SetForceDeployment)(
+                ::windows::core::Vtable::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn OnErrorShowUI(&self) -> ::windows::core::Result<bool> {
+        let this = &::windows::core::Interface::cast::<IDeploymentInitializeOptions2>(self)?;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).OnErrorShowUI)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<bool>(result__)
+        }
+    }
+    pub fn SetOnErrorShowUI(&self, value: bool) -> ::windows::core::Result<()> {
+        let this = &::windows::core::Interface::cast::<IDeploymentInitializeOptions2>(self)?;
+        unsafe {
+            (::windows::core::Vtable::vtable(this).SetOnErrorShowUI)(
                 ::windows::core::Vtable::as_raw(this),
                 value,
             )
@@ -348,6 +450,106 @@ impl ::windows::core::RuntimeName for DeploymentResult {
 );
 unsafe impl ::core::marker::Send for DeploymentResult {}
 unsafe impl ::core::marker::Sync for DeploymentResult {}
+#[doc = "*Required features: `\"Windows_ApplicationModel_WindowsAppRuntime\"`*"]
+pub struct ReleaseInfo;
+impl ReleaseInfo {
+    pub fn Major() -> ::windows::core::Result<u16> {
+        Self::IReleaseInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Major)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<u16>(result__)
+        })
+    }
+    pub fn Minor() -> ::windows::core::Result<u16> {
+        Self::IReleaseInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Minor)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<u16>(result__)
+        })
+    }
+    pub fn Patch() -> ::windows::core::Result<u16> {
+        Self::IReleaseInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Patch)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<u16>(result__)
+        })
+    }
+    pub fn VersionTag() -> ::windows::core::Result<::windows::core::HSTRING> {
+        Self::IReleaseInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).VersionTag)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::HSTRING>(result__)
+        })
+    }
+    pub fn AsString() -> ::windows::core::Result<::windows::core::HSTRING> {
+        Self::IReleaseInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).AsString)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::HSTRING>(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IReleaseInfoStatics<R, F: FnOnce(&IReleaseInfoStatics) -> ::windows::core::Result<R>>(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<ReleaseInfo, IReleaseInfoStatics> =
+            ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows::core::RuntimeName for ReleaseInfo {
+    const NAME: &'static str = "Microsoft.Windows.ApplicationModel.WindowsAppRuntime.ReleaseInfo";
+}
+#[doc = "*Required features: `\"Windows_ApplicationModel_WindowsAppRuntime\"`*"]
+pub struct RuntimeInfo;
+impl RuntimeInfo {
+    pub fn Version() -> ::windows::core::Result<::windows::ApplicationModel::PackageVersion> {
+        Self::IRuntimeInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).Version)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::ApplicationModel::PackageVersion>(result__)
+        })
+    }
+    pub fn AsString() -> ::windows::core::Result<::windows::core::HSTRING> {
+        Self::IRuntimeInfoStatics(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).AsString)(
+                ::windows::core::Vtable::as_raw(this),
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<::windows::core::HSTRING>(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IRuntimeInfoStatics<R, F: FnOnce(&IRuntimeInfoStatics) -> ::windows::core::Result<R>>(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<RuntimeInfo, IRuntimeInfoStatics> =
+            ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows::core::RuntimeName for RuntimeInfo {
+    const NAME: &'static str = "Microsoft.Windows.ApplicationModel.WindowsAppRuntime.RuntimeInfo";
+}
 #[doc = "*Required features: `\"Windows_ApplicationModel_WindowsAppRuntime\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]

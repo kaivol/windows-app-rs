@@ -68,66 +68,66 @@ pub const WASR_IDENTITY_PUBLISHER_W: &str =
     "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_ARM64_FAMILY: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-a6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-a6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_ARM64_FAMILY_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-a6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-a6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_X64_FAMILY: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_X64_FAMILY_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_X86_FAMILY: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x8-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x8-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_DDLM_X86_FAMILY_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x8-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x8-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_FRAMEWORK_FAMILY: &str =
-    "Microsoft.WindowsAppRuntime.1.2-preview1_8wekyb3d8bbwe";
+    "Microsoft.WindowsAppRuntime.1.2-preview2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_FRAMEWORK_FAMILY_W: &str =
-    "Microsoft.WindowsAppRuntime.1.2-preview1_8wekyb3d8bbwe";
+    "Microsoft.WindowsAppRuntime.1.2-preview2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_MAIN_FAMILY: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_MAIN_FAMILY_W: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_SINGLETON_FAMILY: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Singleton-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Singleton-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_PKG_SINGLETON_FAMILY_W: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Singleton-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Singleton-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WASR_VERSION_BUILD: u16 = 1413u16;
+pub const WASR_VERSION_BUILD: u16 = 7u16;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WASR_VERSION_DOTQUADSTRING: &str = "2000.609.1413.0";
+pub const WASR_VERSION_DOTQUADSTRING: &str = "2000.638.7.0";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WASR_VERSION_DOTQUADSTRING_W: &str = "2000.609.1413.0";
+pub const WASR_VERSION_DOTQUADSTRING_W: &str = "2000.638.7.0";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_VERSION_MAJOR: u16 = 2000u16;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WASR_VERSION_MINOR: u16 = 609u16;
+pub const WASR_VERSION_MINOR: u16 = 638u16;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WASR_VERSION_REVISION: u16 = 0u16;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WASR_VERSION_UINT64: u64 = 562952569148997632u64;
+pub const WASR_VERSION_UINT64: u64 = 562952693610905600u64;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WAS_RELEASE_CHANNEL: &str = "preview";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WAS_RELEASE_CHANNEL_W: &str = "preview";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_FMT_VERSION_STAG: &str = "-p1";
+pub const WAS_RELEASE_FMT_VERSION_STAG: &str = "-p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_FMT_VERSION_STAG_W: &str = "-p1";
+pub const WAS_RELEASE_FMT_VERSION_STAG_W: &str = "-p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_FMT_VERSION_TAG: &str = "-preview1";
+pub const WAS_RELEASE_FMT_VERSION_TAG: &str = "-preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_FMT_VERSION_TAG_W: &str = "-preview1";
+pub const WAS_RELEASE_FMT_VERSION_TAG_W: &str = "-preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WAS_RELEASE_MAJOR: u32 = 1u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
@@ -137,25 +137,25 @@ pub const WAS_RELEASE_MINOR: u32 = 2u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WAS_RELEASE_PATCH: u32 = 0u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_VERSION_STAG: &str = "p1";
+pub const WAS_RELEASE_VERSION_STAG: &str = "p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_VERSION_STAG_W: &str = "p1";
+pub const WAS_RELEASE_VERSION_STAG_W: &str = "p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_VERSION_TAG: &str = "preview1";
+pub const WAS_RELEASE_VERSION_TAG: &str = "preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WAS_RELEASE_VERSION_TAG_W: &str = "preview1";
+pub const WAS_RELEASE_VERSION_TAG_W: &str = "preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RELEASE_CHANNEL: &str = "preview";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RELEASE_CHANNEL_W: &str = "preview";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_SHORTTAG: &str = "-p1";
+pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_SHORTTAG: &str = "-p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_SHORTTAG_W: &str = "-p1";
+pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_SHORTTAG_W: &str = "-p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_TAG: &str = "-preview1";
+pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_TAG: &str = "-preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_TAG_W: &str = "-preview1";
+pub const WINDOWSAPPSDK_RELEASE_FORMATTED_VERSION_TAG_W: &str = "-preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RELEASE_MAJOR: u32 = 1u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
@@ -165,13 +165,13 @@ pub const WINDOWSAPPSDK_RELEASE_MINOR: u32 = 2u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RELEASE_PATCH: u32 = 0u32;
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_VERSION_SHORTTAG: &str = "p1";
+pub const WINDOWSAPPSDK_RELEASE_VERSION_SHORTTAG: &str = "p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_VERSION_SHORTTAG_W: &str = "p1";
+pub const WINDOWSAPPSDK_RELEASE_VERSION_SHORTTAG_W: &str = "p2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_VERSION_TAG: &str = "preview1";
+pub const WINDOWSAPPSDK_RELEASE_VERSION_TAG: &str = "preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RELEASE_VERSION_TAG_W: &str = "preview1";
+pub const WINDOWSAPPSDK_RELEASE_VERSION_TAG_W: &str = "preview2";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_IDENTITY_PUBLISHER: &str =
     "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US";
@@ -184,44 +184,44 @@ pub const WINDOWSAPPSDK_RUNTIME_IDENTITY_PUBLISHER_W: &str =
     "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_ARM64_PACKAGEFAMILYNAME: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-a6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-a6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_ARM64_PACKAGEFAMILYNAME_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-a6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-a6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_X64_PACKAGEFAMILYNAME: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_X64_PACKAGEFAMILYNAME_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x6-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x6-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_X86_PACKAGEFAMILYNAME: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x8-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x8-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_DDLM_X86_PACKAGEFAMILYNAME_W: &str =
-    "Microsoft.WinAppRuntime.DDLM.2000.609.1413.0-x8-p1_8wekyb3d8bbwe";
+    "Microsoft.WinAppRuntime.DDLM.2000.638.7.0-x8-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_FRAMEWORK_PACKAGEFAMILYNAME: &str =
-    "Microsoft.WindowsAppRuntime.1.2-preview1_8wekyb3d8bbwe";
+    "Microsoft.WindowsAppRuntime.1.2-preview2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_FRAMEWORK_PACKAGEFAMILYNAME_W: &str =
-    "Microsoft.WindowsAppRuntime.1.2-preview1_8wekyb3d8bbwe";
+    "Microsoft.WindowsAppRuntime.1.2-preview2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_MAIN_PACKAGEFAMILYNAME: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_MAIN_PACKAGEFAMILYNAME_W: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Main.1.2-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_SINGLETON_PACKAGEFAMILYNAME: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Singleton-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Singleton-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 pub const WINDOWSAPPSDK_RUNTIME_PACKAGE_SINGLETON_PACKAGEFAMILYNAME_W: &str =
-    "MicrosoftCorporationII.WinAppRuntime.Singleton-p1_8wekyb3d8bbwe";
+    "MicrosoftCorporationII.WinAppRuntime.Singleton-p2_8wekyb3d8bbwe";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RUNTIME_VERSION_DOTQUADSTRING: &str = "2000.609.1413.0";
+pub const WINDOWSAPPSDK_RUNTIME_VERSION_DOTQUADSTRING: &str = "2000.638.7.0";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
-pub const WINDOWSAPPSDK_RUNTIME_VERSION_DOTQUADSTRING_W: &str = "2000.609.1413.0";
+pub const WINDOWSAPPSDK_RUNTIME_VERSION_DOTQUADSTRING_W: &str = "2000.638.7.0";
 #[doc = "*Required features: `\"WindowsAppSdk_Foundation\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]

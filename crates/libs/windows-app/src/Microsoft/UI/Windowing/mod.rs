@@ -623,6 +623,26 @@ pub struct IDisplayAreaStatics_Vtbl {
 }
 #[doc(hidden)]
 #[repr(transparent)]
+pub struct IDisplayAreaStatics2(::windows::core::IUnknown);
+unsafe impl ::windows::core::Vtable for IDisplayAreaStatics2 {
+    type Vtable = IDisplayAreaStatics2_Vtbl;
+}
+unsafe impl ::windows::core::Interface for IDisplayAreaStatics2 {
+    const IID: ::windows::core::GUID =
+        ::windows::core::GUID::from_u128(0x7207ad4b_890d_5dd7_bc18_78ffd9544d8f);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IDisplayAreaStatics2_Vtbl {
+    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub GetFromDisplayId: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        displayid: super::DisplayId,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows::core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
 pub struct IDisplayAreaWatcher(::windows::core::IUnknown);
 unsafe impl ::windows::core::Vtable for IDisplayAreaWatcher {
     type Vtable = IDisplayAreaWatcher_Vtbl;
@@ -2434,11 +2454,33 @@ impl DisplayArea {
             .from_abi::<DisplayArea>(result__)
         })
     }
+    pub fn GetFromDisplayId(displayid: super::DisplayId) -> ::windows::core::Result<DisplayArea> {
+        Self::IDisplayAreaStatics2(|this| unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows::core::Vtable::vtable(this).GetFromDisplayId)(
+                ::windows::core::Vtable::as_raw(this),
+                displayid,
+                result__.as_mut_ptr(),
+            )
+            .from_abi::<DisplayArea>(result__)
+        })
+    }
     #[doc(hidden)]
     pub fn IDisplayAreaStatics<R, F: FnOnce(&IDisplayAreaStatics) -> ::windows::core::Result<R>>(
         callback: F,
     ) -> ::windows::core::Result<R> {
         static SHARED: ::windows::core::FactoryCache<DisplayArea, IDisplayAreaStatics> =
+            ::windows::core::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    #[doc(hidden)]
+    pub fn IDisplayAreaStatics2<
+        R,
+        F: FnOnce(&IDisplayAreaStatics2) -> ::windows::core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows::core::Result<R> {
+        static SHARED: ::windows::core::FactoryCache<DisplayArea, IDisplayAreaStatics2> =
             ::windows::core::FactoryCache::new();
         SHARED.call(callback)
     }
