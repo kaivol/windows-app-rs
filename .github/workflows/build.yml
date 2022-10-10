@@ -33,7 +33,6 @@ jobs:
       - name: Install clippy
         run: rustup component add clippy
       - name: Configure environment
-        shell: pwsh
         run: |
           "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64" >> $env:GITHUB_PATH
           ((Resolve-Path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\*\bin\Hostx64\x64")
@@ -85,7 +84,6 @@ jobs:
     - name: Set target
       run: rustup target add ${{ matrix.target }}
     - name: Configure environment
-      shell: pwsh
       run: |
         switch -Wildcard ("${{ matrix.target }}")
         {
@@ -105,11 +103,10 @@ jobs:
     - name: Run cargo check
       run: cargo check --target ${{ matrix.target }} -p windows_app --all-features
     - name: Install AppSDK
-      run: Invoke-webrequest -uri https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x64.exe -OutFile windowsappruntimeinstall.exe
-      shell: pwsh
-    - run: '&.\windowsappruntimeinstall.exe'
       if: ${{ startsWith(matrix.target, 'x86_64') }}
-      shell: pwsh
+      run: |
+        Invoke-webrequest -uri https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x64.exe -OutFile windowsappruntimeinstall.exe
+        &.\windowsappruntimeinstall.exe
     - name: Run tests
       if: ${{ startsWith(matrix.target, 'x86_64') }}
       run: |
