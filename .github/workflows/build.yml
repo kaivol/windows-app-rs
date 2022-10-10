@@ -112,6 +112,6 @@ jobs:
       shell: pwsh
     - name: Run tests
       if: ${{ startsWith(matrix.target, 'x86_64') }}
-      run: >
-        cargo test --target ${{ matrix.target }} -p test_interop &&
+      run: |
+        cargo test --target ${{ matrix.target }} -p test_interop 
         cargo test --target ${{ matrix.target }} -p test_dwritecore
