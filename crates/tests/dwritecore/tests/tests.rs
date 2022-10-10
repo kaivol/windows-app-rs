@@ -1,9 +1,7 @@
 #![cfg(test)]
 
-use std::ffi::{CString, OsString};
-
 use once_cell::sync::Lazy;
-use windows::core::{IUnknown, Interface, Result, HSTRING};
+use windows::core::{Interface, Result};
 use windows::w;
 use windows::Win32::Foundation::BOOL;
 use windows_app::bootstrap;
