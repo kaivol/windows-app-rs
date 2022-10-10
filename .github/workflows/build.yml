@@ -108,8 +108,10 @@ jobs:
       run: Invoke-webrequest -uri https://aka.ms/windowsappsdk/1.2/1.2.220930.4-preview2/windowsappruntimeinstall-x64.exe -OutFile windowsappruntimeinstall.exe
       shell: pwsh
     - run: '&.\windowsappruntimeinstall.exe'
+      if: ${{ startsWith(matrix.target, "x86_64") }}
       shell: pwsh
     - name: Run tests
+      if: ${{ startsWith(matrix.target, "x86_64") }}
       run: >
         cargo test --target ${{ matrix.target }} -p test_interop &&
         cargo test --target ${{ matrix.target }} -p test_dwritecore
