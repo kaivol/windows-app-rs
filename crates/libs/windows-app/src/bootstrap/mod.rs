@@ -5,12 +5,17 @@ use windows::Win32::Storage::Packaging::Appx::{PACKAGE_VERSION, PACKAGE_VERSION_
 
 use crate::Microsoft::WindowsAppSdk::Foundation::*;
 
-#[allow(clippy::identity_op)]
 /// Locates the Windows App SDK framework package compatible with the
 /// metadata-matched versioning criteria and loads it into the current process.
 ///
 /// If multiple packages meet the criteria, the best candidate is selected.
 pub fn initialize() -> windows::core::Result<()> {
+    initialize_with_options(MddBootstrapInitializeOptions_None)
+}
+
+pub fn initialize_with_options(
+    options: MddBootstrapInitializeOptions,
+) -> windows::core::Result<()> {
     unsafe {
         MddBootstrapInitialize2(
             WINDOWSAPPSDK_RELEASE_MAJORMINOR,
@@ -20,7 +25,7 @@ pub fn initialize() -> windows::core::Result<()> {
                     Version: WASR_VERSION_UINT64,
                 },
             },
-            MddBootstrapInitializeOptions_OnNoMatch_ShowUI,
+            options,
         )
     }
 }
