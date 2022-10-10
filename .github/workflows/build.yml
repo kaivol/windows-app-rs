@@ -111,5 +111,5 @@ jobs:
       shell: pwsh
     - name: Run tests
       run: >
-        cargo test --target ${{ matrix.target }} -p test_interop
+        cargo test --target ${{ matrix.target }} -p test_interop &&
         cargo test --target ${{ matrix.target }} -p test_dwritecore
