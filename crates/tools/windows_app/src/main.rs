@@ -14,7 +14,7 @@ fn main() {
         src,
     } = helper::folders("windows-app");
 
-    let _ = fs::remove_dir_all(&src.join("Microsoft"));
+    let _ = fs::remove_dir_all(src.join("Microsoft"));
 
     let files = helper::metadata_files(&workspace_root);
     let reader = Reader::new(&files);
@@ -29,7 +29,7 @@ fn main() {
 
     let deps = helper::generate_source(&reader, src.as_path(), "Microsoft", &namespace_resolver);
 
-    let mut file = fs::File::create(&crat.join("Cargo.toml")).unwrap();
+    let mut file = fs::File::create(crat.join("Cargo.toml")).unwrap();
 
     write!(file,
            r#"[package]

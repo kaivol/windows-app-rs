@@ -41,7 +41,7 @@ fn gen_bootstrap(output: &std::path::Path) {
         .create(true)
         .truncate(true)
         .write(true)
-        .open(&output)
+        .open(output)
         .unwrap()
         .write_all(tokens.to_string().as_bytes())
         .unwrap();
