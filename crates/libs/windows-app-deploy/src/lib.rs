@@ -12,6 +12,7 @@ use std::{env, fmt};
 pub fn include_bootstrap_dll<const N: usize>(targets: [LinkArgTarget; N]) {
     for path in LinkArgTarget::output_paths(&targets) {
         let file = path.path().join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
+        println!("cargo:warning={file:?}");
         File::create(file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
     }
 
@@ -98,15 +99,11 @@ impl OutputPath {
         let mut path = PathBuf::from(env::var("OUT_DIR").expect("No `OUT_DIR` env variable set"));
         path.pop();
         path.pop();
+        path.pop();
         match self {
-            Self::Deps => {}
-            Self::Root => {
-                path.pop();
-            }
-            Self::Examples => {
-                path.pop();
-                path.push("examples");
-            }
+            Self::Deps => path.push("deps"),
+            Self::Root => (),
+            Self::Examples => path.push("examples"),
         };
         path
     }
