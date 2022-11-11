@@ -110,5 +110,8 @@ jobs:
     - name: Run tests
       if: ${{ startsWith(matrix.target, 'x86_64') }}
       run: |
-        cargo test --target ${{ matrix.target }} -p test_interop 
-        cargo test --target ${{ matrix.target }} -p test_dwritecore
+        cargo test -p 'test_*'
+    - name: Compile samples
+      if: ${{ startsWith(matrix.target, 'x86_64') }}
+      run: |
+        cargo build -p 'sample_*'
