@@ -179,7 +179,7 @@ pub struct IDWriteBitmapRenderTarget_Vtbl {
         baselineoriginx: f32,
         baselineoriginy: f32,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         renderingparams: *mut ::core::ffi::c_void,
         textcolor: ::windows::Win32::Foundation::COLORREF,
         blackboxrect: *mut ::windows::Win32::Foundation::RECT,
@@ -695,7 +695,7 @@ pub struct IDWriteBitmapRenderTarget3_Vtbl {
         baselineoriginx: f32,
         baselineoriginy: f32,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         glyphimageformat: ::windows::Win32::Graphics::DirectWrite::DWRITE_GLYPH_IMAGE_FORMATS,
         textcolor: ::windows::Win32::Foundation::COLORREF,
         colorpaletteindex: u32,
@@ -706,7 +706,7 @@ pub struct IDWriteBitmapRenderTarget3_Vtbl {
         baselineoriginx: f32,
         baselineoriginy: f32,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         renderingparams: *mut ::core::ffi::c_void,
         textcolor: ::windows::Win32::Foundation::COLORREF,
         colorpaletteindex: u32,
@@ -768,7 +768,7 @@ pub struct IDWriteColorGlyphRunEnumerator_Vtbl {
     ) -> ::windows::core::HRESULT,
     pub GetCurrentRun: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN,
+        colorglyphrun: *mut *mut ::core::mem::ManuallyDrop<DWRITE_COLOR_GLYPH_RUN>,
     ) -> ::windows::core::HRESULT,
 }
 #[doc = "*Required features: `\"DirectWriteCore\"`*"]
@@ -834,7 +834,7 @@ pub struct IDWriteColorGlyphRunEnumerator1_Vtbl {
     pub base__: IDWriteColorGlyphRunEnumerator_Vtbl,
     pub GetCurrentRun2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN1,
+        colorglyphrun: *mut *mut ::core::mem::ManuallyDrop<DWRITE_COLOR_GLYPH_RUN1>,
     ) -> ::windows::core::HRESULT,
 }
 #[doc = "*Required features: `\"DirectWriteCore\"`*"]
@@ -1343,7 +1343,7 @@ pub struct IDWriteFactory_Vtbl {
     ) -> ::windows::core::HRESULT,
     pub CreateGlyphRunAnalysis: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         pixelsperdip: f32,
         transform: *const DWRITE_MATRIX,
         renderingmode: DWRITE_RENDERING_MODE,
@@ -2321,7 +2321,7 @@ pub struct IDWriteFactory2_Vtbl {
         this: *mut ::core::ffi::c_void,
         baselineoriginx: f32,
         baselineoriginy: f32,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
         worldtodevicetransform: *const DWRITE_MATRIX,
@@ -2341,7 +2341,7 @@ pub struct IDWriteFactory2_Vtbl {
     ) -> ::windows::core::HRESULT,
     pub CreateGlyphRunAnalysis2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         transform: *const DWRITE_MATRIX,
         renderingmode: DWRITE_RENDERING_MODE,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
@@ -3072,7 +3072,7 @@ pub struct IDWriteFactory3_Vtbl {
     pub base__: IDWriteFactory2_Vtbl,
     pub CreateGlyphRunAnalysis3: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         transform: *const DWRITE_MATRIX,
         renderingmode: DWRITE_RENDERING_MODE1,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
@@ -3948,7 +3948,7 @@ unsafe impl ::windows::core::Interface for IDWriteFactory4 {
 }
 #[repr(C)]
 #[doc(hidden)]
-pub struct IDWriteFactory4_Vtbl where { pub base__ : IDWriteFactory3_Vtbl , pub TranslateColorGlyphRun2 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphrun : *const DWRITE_GLYPH_RUN , glyphrundescription : *const DWRITE_GLYPH_RUN_DESCRIPTION , desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , worldanddpitransform : *const DWRITE_MATRIX , colorpaletteindex : u32 , colorlayers : *mut * mut::core::ffi::c_void , ) -> :: windows::core::HRESULT , pub ComputeGlyphOrigins :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , glyphrun : *const DWRITE_GLYPH_RUN , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphorigins : *mut ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , ) -> :: windows::core::HRESULT , pub ComputeGlyphOrigins2 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , glyphrun : *const DWRITE_GLYPH_RUN , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , worldanddpitransform : *const DWRITE_MATRIX , glyphorigins : *mut ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , ) -> :: windows::core::HRESULT , }
+pub struct IDWriteFactory4_Vtbl where { pub base__ : IDWriteFactory3_Vtbl , pub TranslateColorGlyphRun2 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphrun : *const ::core::mem::ManuallyDrop < DWRITE_GLYPH_RUN > , glyphrundescription : *const DWRITE_GLYPH_RUN_DESCRIPTION , desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , worldanddpitransform : *const DWRITE_MATRIX , colorpaletteindex : u32 , colorlayers : *mut * mut::core::ffi::c_void , ) -> :: windows::core::HRESULT , pub ComputeGlyphOrigins :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , glyphrun : *const ::core::mem::ManuallyDrop < DWRITE_GLYPH_RUN > , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphorigins : *mut ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , ) -> :: windows::core::HRESULT , pub ComputeGlyphOrigins2 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , glyphrun : *const ::core::mem::ManuallyDrop < DWRITE_GLYPH_RUN > , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , worldanddpitransform : *const DWRITE_MATRIX , glyphorigins : *mut ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , ) -> :: windows::core::HRESULT , }
 #[doc = "*Required features: `\"DirectWriteCore\"`*"]
 #[repr(transparent)]
 pub struct IDWriteFactory5(::windows::core::IUnknown);
@@ -8572,7 +8572,7 @@ unsafe impl ::windows::core::Interface for IDWriteFactory8 {
 }
 #[repr(C)]
 #[doc(hidden)]
-pub struct IDWriteFactory8_Vtbl where { pub base__ : IDWriteFactory7_Vtbl , pub TranslateColorGlyphRun3 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphrun : *const DWRITE_GLYPH_RUN , glyphrundescription : *const DWRITE_GLYPH_RUN_DESCRIPTION , desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS , paintfeaturelevel : DWRITE_PAINT_FEATURE_LEVEL , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , worldanddpitransform : *const DWRITE_MATRIX , colorpaletteindex : u32 , colorenumerator : *mut * mut::core::ffi::c_void , ) -> :: windows::core::HRESULT , }
+pub struct IDWriteFactory8_Vtbl where { pub base__ : IDWriteFactory7_Vtbl , pub TranslateColorGlyphRun3 :unsafe extern "system" fn ( this : * mut::core::ffi::c_void , baselineorigin : ::windows::Win32::Graphics::Direct2D::Common:: D2D_POINT_2F , glyphrun : *const ::core::mem::ManuallyDrop < DWRITE_GLYPH_RUN > , glyphrundescription : *const DWRITE_GLYPH_RUN_DESCRIPTION , desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS , paintfeaturelevel : DWRITE_PAINT_FEATURE_LEVEL , measuringmode : ::windows::Win32::Graphics::DirectWrite:: DWRITE_MEASURING_MODE , worldanddpitransform : *const DWRITE_MATRIX , colorpaletteindex : u32 , colorenumerator : *mut * mut::core::ffi::c_void , ) -> :: windows::core::HRESULT , }
 #[doc = "*Required features: `\"DirectWriteCore\"`*"]
 #[repr(transparent)]
 pub struct IDWriteFont(::windows::core::IUnknown);
@@ -29931,7 +29931,7 @@ pub struct IDWriteTextRenderer_Vtbl {
         baselineoriginx: f32,
         baselineoriginy: f32,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
         clientdrawingeffect: *mut ::core::ffi::c_void,
     ) -> ::windows::core::HRESULT,
@@ -30241,7 +30241,7 @@ pub struct IDWriteTextRenderer1_Vtbl {
         baselineoriginy: f32,
         orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE,
         measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-        glyphrun: *const DWRITE_GLYPH_RUN,
+        glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
         glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
         clientdrawingeffect: *mut ::core::ffi::c_void,
     ) -> ::windows::core::HRESULT,

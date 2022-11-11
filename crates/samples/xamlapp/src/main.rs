@@ -2,7 +2,7 @@ use std::cell::RefCell;
 use std::convert::TryFrom;
 
 use windows::core::{implement, IInspectable, Interface, PWSTR};
-use windows::w;
+use windows::h;
 use windows::ApplicationModel::Package;
 use windows::Win32::Foundation;
 use windows::Win32::Foundation::{HWND, RECT};
@@ -57,7 +57,7 @@ impl App {
 impl IApplicationOverrides_Impl for App {
     fn OnLaunched(&self, _: &Option<LaunchActivatedEventArgs>) -> windows::core::Result<()> {
         let window = Window::new()?;
-        window.SetTitle(w!("WinUI 3 Desktop, Unpackaged (Rust)"))?;
+        window.SetTitle(h!("WinUI 3 Desktop, Unpackaged (Rust)"))?;
 
         let mut hwnd = HWND::default();
         unsafe {

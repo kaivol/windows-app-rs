@@ -1,6 +1,5 @@
 //! Utilities for bootstrapping an app that uses the Windows App SDK.
 
-use windows::core::HSTRING;
 use windows::Win32::Storage::Packaging::Appx::{PACKAGE_VERSION, PACKAGE_VERSION_0};
 
 use crate::Microsoft::WindowsAppSdk::Foundation::*;
@@ -19,7 +18,7 @@ pub fn initialize_with_options(
     unsafe {
         MddBootstrapInitialize2(
             WINDOWSAPPSDK_RELEASE_MAJORMINOR,
-            &HSTRING::from(WINDOWSAPPSDK_RELEASE_VERSION_TAG_W),
+            WINDOWSAPPSDK_RELEASE_VERSION_TAG_W,
             PACKAGE_VERSION {
                 Anonymous: PACKAGE_VERSION_0 {
                     Version: WASR_VERSION_UINT64,

@@ -12,7 +12,7 @@ use std::{env, fmt};
 pub fn include_bootstrap_dll<const N: usize>(targets: [LinkArgTarget; N]) {
     for path in LinkArgTarget::output_paths(&targets) {
         let file = path.path().join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-        File::create(&file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
+        File::create(file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
     }
 
     // All Windows App SDK DLLs with non-COM/WinRT exports must be delay-loaded to give

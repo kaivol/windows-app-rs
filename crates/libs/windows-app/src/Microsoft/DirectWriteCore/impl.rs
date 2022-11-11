@@ -75,7 +75,7 @@ impl IDWriteBitmapRenderTarget_Vtbl {
             baselineoriginx: f32,
             baselineoriginy: f32,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             renderingparams: *mut ::core::ffi::c_void,
             textcolor: ::windows::Win32::Foundation::COLORREF,
             blackboxrect: *mut ::windows::Win32::Foundation::RECT,
@@ -346,7 +346,7 @@ impl IDWriteBitmapRenderTarget3_Vtbl {
             baselineoriginx: f32,
             baselineoriginy: f32,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphimageformat: ::windows::Win32::Graphics::DirectWrite::DWRITE_GLYPH_IMAGE_FORMATS,
             textcolor: ::windows::Win32::Foundation::COLORREF,
             colorpaletteindex: u32,
@@ -379,7 +379,7 @@ impl IDWriteBitmapRenderTarget3_Vtbl {
             baselineoriginx: f32,
             baselineoriginy: f32,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             renderingparams: *mut ::core::ffi::c_void,
             textcolor: ::windows::Win32::Foundation::COLORREF,
             colorpaletteindex: u32,
@@ -452,7 +452,7 @@ impl IDWriteColorGlyphRunEnumerator_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN,
+            colorglyphrun: *mut *mut ::core::mem::ManuallyDrop<DWRITE_COLOR_GLYPH_RUN>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -492,7 +492,7 @@ impl IDWriteColorGlyphRunEnumerator1_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            colorglyphrun: *mut *mut DWRITE_COLOR_GLYPH_RUN1,
+            colorglyphrun: *mut *mut ::core::mem::ManuallyDrop<DWRITE_COLOR_GLYPH_RUN1>,
         ) -> ::windows::core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
@@ -1070,7 +1070,7 @@ impl IDWriteFactory_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             pixelsperdip: f32,
             transform: *const DWRITE_MATRIX,
             renderingmode: DWRITE_RENDERING_MODE,
@@ -1294,7 +1294,7 @@ impl IDWriteFactory2_Vtbl {
             this: *mut ::core::ffi::c_void,
             baselineoriginx: f32,
             baselineoriginy: f32,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
             worldtodevicetransform: *const DWRITE_MATRIX,
@@ -1358,7 +1358,7 @@ impl IDWriteFactory2_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             transform: *const DWRITE_MATRIX,
             renderingmode: DWRITE_RENDERING_MODE,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
@@ -1464,7 +1464,7 @@ impl IDWriteFactory3_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             transform: *const DWRITE_MATRIX,
             renderingmode: DWRITE_RENDERING_MODE1,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
@@ -1732,7 +1732,7 @@ impl IDWriteFactory4_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             baselineorigin: ::windows::Win32::Graphics::Direct2D::Common::D2D_POINT_2F,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
             desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
@@ -1764,7 +1764,7 @@ impl IDWriteFactory4_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             baselineorigin: ::windows::Win32::Graphics::Direct2D::Common::D2D_POINT_2F,
             glyphorigins: *mut ::windows::Win32::Graphics::Direct2D::Common::D2D_POINT_2F,
         ) -> ::windows::core::HRESULT {
@@ -1787,7 +1787,7 @@ impl IDWriteFactory4_Vtbl {
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
             baselineorigin: ::windows::Win32::Graphics::Direct2D::Common::D2D_POINT_2F,
             worldanddpitransform: *const DWRITE_MATRIX,
@@ -2311,7 +2311,7 @@ impl IDWriteFactory8_Vtbl {
         >(
             this: *mut ::core::ffi::c_void,
             baselineorigin: ::windows::Win32::Graphics::Direct2D::Common::D2D_POINT_2F,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
             desiredglyphimageformats : ::windows::Win32::Graphics::DirectWrite:: DWRITE_GLYPH_IMAGE_FORMATS,
             paintfeaturelevel: DWRITE_PAINT_FEATURE_LEVEL,
@@ -12565,7 +12565,7 @@ impl IDWriteTextRenderer_Vtbl {
             baselineoriginx: f32,
             baselineoriginy: f32,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
             clientdrawingeffect: *mut ::core::ffi::c_void,
         ) -> ::windows::core::HRESULT {
@@ -12728,7 +12728,7 @@ impl IDWriteTextRenderer1_Vtbl {
             baselineoriginy: f32,
             orientationangle: DWRITE_GLYPH_ORIENTATION_ANGLE,
             measuringmode: ::windows::Win32::Graphics::DirectWrite::DWRITE_MEASURING_MODE,
-            glyphrun: *const DWRITE_GLYPH_RUN,
+            glyphrun: *const ::core::mem::ManuallyDrop<DWRITE_GLYPH_RUN>,
             glyphrundescription: *const DWRITE_GLYPH_RUN_DESCRIPTION,
             clientdrawingeffect: *mut ::core::ffi::c_void,
         ) -> ::windows::core::HRESULT {
