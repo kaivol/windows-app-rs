@@ -7,12 +7,12 @@ use std::io::Write;
 use std::path::PathBuf;
 use std::{env, fmt};
 
-/// Copies the Windows App Runtime Bootstrap dll in rustc-link-search.
-/// This is only useful when called from a build script.
+/// Copies the Windows App Runtime Bootstrap into the folder which contains the generated `.exe`.
+///
+/// Also instructs `MSVC` to `DELAYLOAD` the Windows App SDK .dll's
 pub fn include_bootstrap_dll<const N: usize>(targets: [LinkArgTarget; N]) {
     for path in LinkArgTarget::output_paths(&targets) {
         let file = path.path().join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-        println!("cargo:warning={file:?}");
         File::create(file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
     }
 
@@ -31,6 +31,7 @@ pub fn include_bootstrap_dll<const N: usize>(targets: [LinkArgTarget; N]) {
     ]);
 }
 
+/// Embed a minimal manifest into the generated `.exe`.
 pub fn embed_manifest<const N: usize>(targets: [LinkArgTarget; N]) {
     let out_dir = env::var("OUT_DIR").expect("No `OUT_DIR` env variable set");
     let manifest_file = PathBuf::from(out_dir).join("manifest.xml");
