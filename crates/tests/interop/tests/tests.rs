@@ -4,11 +4,11 @@ use std::convert::TryInto;
 
 use once_cell::sync::Lazy;
 use windows::core::Result;
-use windows::Win32::Foundation::{HINSTANCE, POINT};
+use windows::Win32::Foundation::{HMODULE, POINT};
 use windows::Win32::Graphics::Gdi::{MonitorFromPoint, MONITOR_DEFAULTTOPRIMARY};
 use windows::Win32::UI::WindowsAndMessaging::{GetDesktopWindow, LoadIconW, IDI_QUESTION};
 use windows_app::bootstrap;
-use windows_app::UI::{DisplayId, IconId, WindowId};
+use windows_app::Microsoft::UI::{DisplayId, IconId, WindowId};
 
 static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(|| bootstrap::initialize());
 
@@ -26,7 +26,7 @@ fn window() -> Result<()> {
 fn icon() -> Result<()> {
     Lazy::force(&BOOTSTRAP).clone()?;
 
-    let hicon = unsafe { LoadIconW(HINSTANCE(0), IDI_QUESTION)? };
+    let hicon = unsafe { LoadIconW(HMODULE(0), IDI_QUESTION)? };
     let icon_id: IconId = hicon.try_into()?;
     assert_eq!(hicon, icon_id.try_into()?);
     Ok(())

@@ -1,151 +1,176 @@
-#[cfg(feature = "Windows_System_Power")]
+#[cfg(feature = "Microsoft_Windows_System_Power")]
+#[doc = "Required features: `\"Microsoft_Windows_System_Power\"`"]
 pub mod Power;
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IEnvironmentManager(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IEnvironmentManager {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IEnvironmentManager(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IEnvironmentManager {
     type Vtable = IEnvironmentManager_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IEnvironmentManager {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xd1b239bb_7013_5176_b02a_63477410d986);
+unsafe impl ::windows_core::ComInterface for IEnvironmentManager {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xd1b239bb_7013_5176_b02a_63477410d986);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnvironmentManager_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub GetEnvironmentVariables: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    GetEnvironmentVariables: usize,
     pub GetEnvironmentVariable: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        name: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        name: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetEnvironmentVariable: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        name: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        name: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub AppendToPath: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        path: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        path: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub RemoveFromPath: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        path: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        path: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub AddExecutableFileExtension: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        pathext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        pathext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub RemoveExecutableFileExtension: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        pathext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        pathext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IEnvironmentManagerStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IEnvironmentManagerStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IEnvironmentManager2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IEnvironmentManager2 {
+    type Vtable = IEnvironmentManager2_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IEnvironmentManager2 {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xcfc0ad51_02b7_57ff_8ca7_e015251737cb);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IEnvironmentManager2_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub AreChangesTracked: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IEnvironmentManagerStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IEnvironmentManagerStatics {
     type Vtable = IEnvironmentManagerStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IEnvironmentManagerStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x407b1522_6156_5398_93fd_d6411c35e7b1);
+unsafe impl ::windows_core::ComInterface for IEnvironmentManagerStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x407b1522_6156_5398_93fd_d6411c35e7b1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IEnvironmentManagerStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub GetForProcess: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub GetForUser: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub GetForMachine: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsSupported: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"Windows_System\"`*"]
 #[repr(transparent)]
-pub struct EnvironmentManager(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct EnvironmentManager(::windows_core::IUnknown);
 impl EnvironmentManager {
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub fn GetEnvironmentVariables(
         &self,
-    ) -> ::windows::core::Result<
+    ) -> ::windows_core::Result<
         ::windows::Foundation::Collections::IMapView<
-            ::windows::core::HSTRING,
-            ::windows::core::HSTRING,
+            ::windows_core::HSTRING,
+            ::windows_core::HSTRING,
         >,
     > {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetEnvironmentVariables)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetEnvironmentVariables)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Collections::IMapView<
-                ::windows::core::HSTRING,
-                ::windows::core::HSTRING,
-            >>(result__)
+            .from_abi(result__)
         }
     }
     pub fn GetEnvironmentVariable(
         &self,
-        name: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<::windows::core::HSTRING> {
+        name: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetEnvironmentVariable)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetEnvironmentVariable)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(name),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetEnvironmentVariable(
         &self,
-        name: &::windows::core::HSTRING,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        name: &::windows_core::HSTRING,
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetEnvironmentVariable)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetEnvironmentVariable)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(name),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn AppendToPath(&self, path: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn AppendToPath(&self, path: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).AppendToPath)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).AppendToPath)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(path),
             )
             .ok()
         }
     }
-    pub fn RemoveFromPath(&self, path: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn RemoveFromPath(&self, path: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveFromPath)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveFromPath)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(path),
             )
             .ok()
@@ -153,12 +178,12 @@ impl EnvironmentManager {
     }
     pub fn AddExecutableFileExtension(
         &self,
-        pathext: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        pathext: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).AddExecutableFileExtension)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).AddExecutableFileExtension)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(pathext),
             )
             .ok()
@@ -166,111 +191,99 @@ impl EnvironmentManager {
     }
     pub fn RemoveExecutableFileExtension(
         &self,
-        pathext: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        pathext: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveExecutableFileExtension)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveExecutableFileExtension)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(pathext),
             )
             .ok()
         }
     }
-    pub fn GetForProcess() -> ::windows::core::Result<EnvironmentManager> {
-        Self::IEnvironmentManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetForProcess)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+    pub fn AreChangesTracked(&self) -> ::windows_core::Result<bool> {
+        let this = &::windows_core::ComInterface::cast::<IEnvironmentManager2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AreChangesTracked)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<EnvironmentManager>(result__)
+            .from_abi(result__)
+        }
+    }
+    pub fn GetForProcess() -> ::windows_core::Result<EnvironmentManager> {
+        Self::IEnvironmentManagerStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForProcess)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
         })
     }
-    pub fn GetForUser() -> ::windows::core::Result<EnvironmentManager> {
+    pub fn GetForUser() -> ::windows_core::Result<EnvironmentManager> {
         Self::IEnvironmentManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetForUser)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForUser)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<EnvironmentManager>(result__)
+            .from_abi(result__)
         })
     }
-    pub fn GetForMachine() -> ::windows::core::Result<EnvironmentManager> {
+    pub fn GetForMachine() -> ::windows_core::Result<EnvironmentManager> {
         Self::IEnvironmentManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetForMachine)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForMachine)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<EnvironmentManager>(result__)
+            .from_abi(result__)
         })
     }
-    pub fn IsSupported() -> ::windows::core::Result<bool> {
+    pub fn IsSupported() -> ::windows_core::Result<bool> {
         Self::IEnvironmentManagerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsSupported)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsSupported)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IEnvironmentManagerStatics<
         R,
-        F: FnOnce(&IEnvironmentManagerStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IEnvironmentManagerStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             EnvironmentManager,
             IEnvironmentManagerStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for EnvironmentManager {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for EnvironmentManager {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for EnvironmentManager {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for EnvironmentManager {}
-impl ::core::fmt::Debug for EnvironmentManager {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("EnvironmentManager").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for EnvironmentManager {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.Windows.System.EnvironmentManager;{d1b239bb-7013-5176-b02a-63477410d986})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for EnvironmentManager {
+unsafe impl ::windows_core::Interface for EnvironmentManager {
     type Vtable = IEnvironmentManager_Vtbl;
 }
-unsafe impl ::windows::core::Interface for EnvironmentManager {
-    const IID: ::windows::core::GUID = <IEnvironmentManager as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for EnvironmentManager {
+    const IID: ::windows_core::GUID = <IEnvironmentManager as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for EnvironmentManager {
+impl ::windows_core::RuntimeName for EnvironmentManager {
     const NAME: &'static str = "Microsoft.Windows.System.EnvironmentManager";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     EnvironmentManager,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for EnvironmentManager {}
 unsafe impl ::core::marker::Sync for EnvironmentManager {}
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

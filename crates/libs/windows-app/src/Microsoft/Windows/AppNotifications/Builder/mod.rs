@@ -1,1339 +1,1449 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationBuilder(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationBuilder {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationBuilder(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationBuilder {
     type Vtable = IAppNotificationBuilder_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationBuilder {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xe801d31f_ce03_505c_adec_8a02724ec9de);
+unsafe impl ::windows_core::ComInterface for IAppNotificationBuilder {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xe801d31f_ce03_505c_adec_8a02724ec9de);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationBuilder_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub AddArgument: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        key: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        key: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetTimeStamp: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: ::windows::Foundation::DateTime,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetTimeStamp: usize,
     pub SetDuration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         duration: AppNotificationDuration,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetScenario: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: AppNotificationScenario,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddText: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        text: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        text: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddText2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        text: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        text: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         properties: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetAttributionText: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        text: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        text: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetAttributionText2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        text: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        language: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        text: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        language: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetInlineImage: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInlineImage: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetInlineImage2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         imagecrop: AppNotificationImageCrop,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInlineImage2: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetInlineImage3: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         imagecrop: AppNotificationImageCrop,
-        alternatetext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        alternatetext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInlineImage3: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetAppLogoOverride: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetAppLogoOverride: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetAppLogoOverride2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         imagecrop: AppNotificationImageCrop,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetAppLogoOverride2: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetAppLogoOverride3: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         imagecrop: AppNotificationImageCrop,
-        alternatetext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        alternatetext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetAppLogoOverride3: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetHeroImage: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetHeroImage: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetHeroImage2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         imageuri: *mut ::core::ffi::c_void,
-        alternatetext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        alternatetext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetHeroImage2: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetAudioUri: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         audiouri: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetAudioUri: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetAudioUri2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         audiouri: *mut ::core::ffi::c_void,
         r#loop: AppNotificationAudioLooping,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetAudioUri2: usize,
     pub SetAudioEvent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         appnotificationsoundevent: AppNotificationSoundEvent,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetAudioEvent2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         appnotificationsoundevent: AppNotificationSoundEvent,
         r#loop: AppNotificationAudioLooping,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub MuteAudio: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddTextBox: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        id: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddTextBox2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        placeholdertext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        title: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        id: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        placeholdertext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        title: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddButton: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddComboBox: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub AddProgressBar: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub BuildNotification: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetTag: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetGroup: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        group: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        group: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationBuilderStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationBuilderStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationBuilderStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationBuilderStatics {
     type Vtable = IAppNotificationBuilderStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationBuilderStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xc7042d2a_d319_520e_a314_50081c8888cc);
+unsafe impl ::windows_core::ComInterface for IAppNotificationBuilderStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xc7042d2a_d319_520e_a314_50081c8888cc);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationBuilderStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub IsUrgentScenarioSupported: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationButton(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationButton {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationButton(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationButton {
     type Vtable = IAppNotificationButton_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationButton {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xa7c03031_5634_5098_aec9_47ecb60c3499);
+unsafe impl ::windows_core::ComInterface for IAppNotificationButton {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xa7c03031_5634_5098_aec9_47ecb60c3499);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationButton_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Content: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetContent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub Arguments: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    Arguments: usize,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub SetArguments: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    SetArguments: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Icon: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Icon: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetIcon: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetIcon: usize,
     pub ToolTip: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetToolTip: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub ContextMenuPlacement: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetContextMenuPlacement: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ButtonStyle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut AppNotificationButtonStyle,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetButtonStyle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: AppNotificationButtonStyle,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InputId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetInputId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub InvokeUri: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    InvokeUri: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetInvokeUri: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInvokeUri: usize,
     pub TargetAppId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetTargetAppId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub AddArgument: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        key: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        key: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetIcon2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetIcon2: usize,
     pub SetToolTip2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetContextMenuPlacement2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetButtonStyle2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: AppNotificationButtonStyle,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInputId2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetInvokeUri2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         protocoluri: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
-    pub SetInvokeUri3: unsafe extern "system" fn(
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInvokeUri2: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub SetInvokeUri2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         protocoluri: *mut ::core::ffi::c_void,
-        targetappid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        targetappid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetInvokeUri2: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationButtonFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationButtonFactory {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationButtonFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationButtonFactory {
     type Vtable = IAppNotificationButtonFactory_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationButtonFactory {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x4f109286_0a6d_5a5e_9e8f_9fe31669fbb8);
+unsafe impl ::windows_core::ComInterface for IAppNotificationButtonFactory {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x4f109286_0a6d_5a5e_9e8f_9fe31669fbb8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationButtonFactory_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CreateInstance: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        content: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        content: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationButtonStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationButtonStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationButtonStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationButtonStatics {
     type Vtable = IAppNotificationButtonStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationButtonStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xfead7c18_4144_59a4_9611_86b7e8191853);
+unsafe impl ::windows_core::ComInterface for IAppNotificationButtonStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xfead7c18_4144_59a4_9611_86b7e8191853);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationButtonStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub IsToolTipSupported: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsButtonStyleSupported: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationComboBox(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationComboBox {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationComboBox(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationComboBox {
     type Vtable = IAppNotificationComboBox_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationComboBox {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x4547c9e2_4815_538c_be26_040ce17f8b62);
+unsafe impl ::windows_core::ComInterface for IAppNotificationComboBox {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x4547c9e2_4815_538c_be26_040ce17f8b62);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationComboBox_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub Items: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    Items: usize,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub SetItems: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    SetItems: usize,
     pub Title: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SelectedItem: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetSelectedItem: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub AddItem: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        content: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        id: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        content: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetTitle2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetSelectedItem2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        id: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationComboBoxFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationComboBoxFactory {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationComboBoxFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationComboBoxFactory {
     type Vtable = IAppNotificationComboBoxFactory_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationComboBoxFactory {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x1b31b5b0_9d86_59ed_8629_a79498ab5d4b);
+unsafe impl ::windows_core::ComInterface for IAppNotificationComboBoxFactory {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x1b31b5b0_9d86_59ed_8629_a79498ab5d4b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationComboBoxFactory_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CreateInstance: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        id: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        id: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationProgressBar(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationProgressBar {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationProgressBar(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationProgressBar {
     type Vtable = IAppNotificationProgressBar_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationProgressBar {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xfced62f2_2074_5641_8630_87a14315ac86);
+unsafe impl ::windows_core::ComInterface for IAppNotificationProgressBar {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xfced62f2_2074_5641_8630_87a14315ac86);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationProgressBar_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Title: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetTitle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub Status: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetStatus: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub Value: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f64,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetValue: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f64,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ValueStringOverride: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetValueStringOverride: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetTitle2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub BindTitle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetStatus2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub BindStatus: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetValue2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f64,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub BindValue: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetValueStringOverride2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub BindValueStringOverride: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppNotificationTextProperties(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppNotificationTextProperties {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppNotificationTextProperties(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppNotificationTextProperties {
     type Vtable = IAppNotificationTextProperties_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppNotificationTextProperties {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x23a30d0b_5258_5853_932e_9521a3642afb);
+unsafe impl ::windows_core::ComInterface for IAppNotificationTextProperties {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x23a30d0b_5258_5853_932e_9521a3642afb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppNotificationTextProperties_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Language: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub SetLanguage: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub IncomingCallAlignment: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetIncomingCallAlignment: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub MaxLines: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetMaxLines: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: i32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetLanguage2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetIncomingCallAlignment2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetMaxLines2: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: i32,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
-pub struct AppNotificationBuilder(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppNotificationBuilder(::windows_core::IUnknown);
 impl AppNotificationBuilder {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationBuilder,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
     pub fn AddArgument(
         &self,
-        key: &::windows::core::HSTRING,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        key: &::windows_core::HSTRING,
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddArgument)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddArgument)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(key),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn SetTimeStamp(
         &self,
         value: ::windows::Foundation::DateTime,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetTimeStamp)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetTimeStamp)(
+                ::windows_core::Interface::as_raw(this),
                 value,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetDuration(
         &self,
         duration: AppNotificationDuration,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetDuration)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetDuration)(
+                ::windows_core::Interface::as_raw(this),
                 duration,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetScenario(
         &self,
         value: AppNotificationScenario,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetScenario)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetScenario)(
+                ::windows_core::Interface::as_raw(this),
                 value,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn AddText(
         &self,
-        text: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        text: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddText)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddText)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(text),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn AddText2(
+    pub fn AddText2<P0>(
         &self,
-        text: &::windows::core::HSTRING,
-        properties: &AppNotificationTextProperties,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        text: &::windows_core::HSTRING,
+        properties: P0,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<AppNotificationTextProperties>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddText2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddText2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(text),
-                ::core::mem::transmute_copy(properties),
-                result__.as_mut_ptr(),
+                properties.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetAttributionText(
         &self,
-        text: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        text: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAttributionText)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAttributionText)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(text),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetAttributionText2(
         &self,
-        text: &::windows::core::HSTRING,
-        language: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        text: &::windows_core::HSTRING,
+        language: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAttributionText2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAttributionText2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(text),
                 ::core::mem::transmute_copy(language),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInlineImage(
-        &self,
-        imageuri: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInlineImage<P0>(&self, imageuri: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInlineImage)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInlineImage)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInlineImage2(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInlineImage2<P0>(
         &self,
-        imageuri: &::windows::Foundation::Uri,
+        imageuri: P0,
         imagecrop: AppNotificationImageCrop,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInlineImage2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInlineImage2)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
                 imagecrop,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInlineImage3(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInlineImage3<P0>(
         &self,
-        imageuri: &::windows::Foundation::Uri,
+        imageuri: P0,
         imagecrop: AppNotificationImageCrop,
-        alternatetext: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        alternatetext: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInlineImage3)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
-                imagecrop,
-                ::core::mem::transmute_copy(alternatetext),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<AppNotificationBuilder>(result__)
-        }
-    }
-    pub fn SetAppLogoOverride(
-        &self,
-        imageuri: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAppLogoOverride)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<AppNotificationBuilder>(result__)
-        }
-    }
-    pub fn SetAppLogoOverride2(
-        &self,
-        imageuri: &::windows::Foundation::Uri,
-        imagecrop: AppNotificationImageCrop,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAppLogoOverride2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
-                imagecrop,
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<AppNotificationBuilder>(result__)
-        }
-    }
-    pub fn SetAppLogoOverride3(
-        &self,
-        imageuri: &::windows::Foundation::Uri,
-        imagecrop: AppNotificationImageCrop,
-        alternatetext: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAppLogoOverride3)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInlineImage3)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
                 imagecrop,
                 ::core::mem::transmute_copy(alternatetext),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetHeroImage(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetAppLogoOverride<P0>(
         &self,
-        imageuri: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        imageuri: P0,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetHeroImage)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAppLogoOverride)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetHeroImage2(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetAppLogoOverride2<P0>(
         &self,
-        imageuri: &::windows::Foundation::Uri,
-        alternatetext: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        imageuri: P0,
+        imagecrop: AppNotificationImageCrop,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetHeroImage2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(imageuri),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAppLogoOverride2)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                imagecrop,
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetAppLogoOverride3<P0>(
+        &self,
+        imageuri: P0,
+        imagecrop: AppNotificationImageCrop,
+        alternatetext: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAppLogoOverride3)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                imagecrop,
                 ::core::mem::transmute_copy(alternatetext),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetAudioUri(
-        &self,
-        audiouri: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetHeroImage<P0>(&self, imageuri: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAudioUri)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(audiouri),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetHeroImage)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetAudioUri2(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetHeroImage2<P0>(
         &self,
-        audiouri: &::windows::Foundation::Uri,
+        imageuri: P0,
+        alternatetext: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetHeroImage2)(
+                ::windows_core::Interface::as_raw(this),
+                imageuri.into_param().abi(),
+                ::core::mem::transmute_copy(alternatetext),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetAudioUri<P0>(&self, audiouri: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAudioUri)(
+                ::windows_core::Interface::as_raw(this),
+                audiouri.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetAudioUri2<P0>(
+        &self,
+        audiouri: P0,
         r#loop: AppNotificationAudioLooping,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAudioUri2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(audiouri),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAudioUri2)(
+                ::windows_core::Interface::as_raw(this),
+                audiouri.into_param().abi(),
                 r#loop,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetAudioEvent(
         &self,
         appnotificationsoundevent: AppNotificationSoundEvent,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAudioEvent)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAudioEvent)(
+                ::windows_core::Interface::as_raw(this),
                 appnotificationsoundevent,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetAudioEvent2(
         &self,
         appnotificationsoundevent: AppNotificationSoundEvent,
         r#loop: AppNotificationAudioLooping,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetAudioEvent2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetAudioEvent2)(
+                ::windows_core::Interface::as_raw(this),
                 appnotificationsoundevent,
                 r#loop,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn MuteAudio(&self) -> ::windows::core::Result<AppNotificationBuilder> {
+    pub fn MuteAudio(&self) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).MuteAudio)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).MuteAudio)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn AddTextBox(
         &self,
-        id: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        id: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddTextBox)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddTextBox)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(id),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn AddTextBox2(
         &self,
-        id: &::windows::core::HSTRING,
-        placeholdertext: &::windows::core::HSTRING,
-        title: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        id: &::windows_core::HSTRING,
+        placeholdertext: &::windows_core::HSTRING,
+        title: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddTextBox2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddTextBox2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(id),
                 ::core::mem::transmute_copy(placeholdertext),
                 ::core::mem::transmute_copy(title),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn AddButton(
-        &self,
-        value: &AppNotificationButton,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    pub fn AddButton<P0>(&self, value: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<AppNotificationButton>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddButton)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddButton)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn AddComboBox(
-        &self,
-        value: &AppNotificationComboBox,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    pub fn AddComboBox<P0>(&self, value: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<AppNotificationComboBox>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddComboBox)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddComboBox)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn AddProgressBar(
-        &self,
-        value: &AppNotificationProgressBar,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+    pub fn AddProgressBar<P0>(&self, value: P0) -> ::windows_core::Result<AppNotificationBuilder>
+    where
+        P0: ::windows_core::IntoParam<AppNotificationProgressBar>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddProgressBar)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddProgressBar)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn BuildNotification(&self) -> ::windows::core::Result<super::AppNotification> {
+    pub fn BuildNotification(&self) -> ::windows_core::Result<super::AppNotification> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).BuildNotification)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).BuildNotification)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<super::AppNotification>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetTag(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetTag)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetTag)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetGroup(
         &self,
-        group: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationBuilder> {
+        group: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationBuilder> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetGroup)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetGroup)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(group),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationBuilder>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn IsUrgentScenarioSupported() -> ::windows::core::Result<bool> {
+    pub fn IsUrgentScenarioSupported() -> ::windows_core::Result<bool> {
         Self::IAppNotificationBuilderStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsUrgentScenarioSupported)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsUrgentScenarioSupported)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IAppNotificationBuilderStatics<
         R,
-        F: FnOnce(&IAppNotificationBuilderStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IAppNotificationBuilderStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationBuilder,
             IAppNotificationBuilderStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for AppNotificationBuilder {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppNotificationBuilder {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppNotificationBuilder {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppNotificationBuilder {}
-impl ::core::fmt::Debug for AppNotificationBuilder {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppNotificationBuilder").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppNotificationBuilder {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppNotifications.Builder.AppNotificationBuilder;{e801d31f-ce03-505c-adec-8a02724ec9de})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppNotificationBuilder {
+unsafe impl ::windows_core::Interface for AppNotificationBuilder {
     type Vtable = IAppNotificationBuilder_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppNotificationBuilder {
-    const IID: ::windows::core::GUID = <IAppNotificationBuilder as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppNotificationBuilder {
+    const IID: ::windows_core::GUID =
+        <IAppNotificationBuilder as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppNotificationBuilder {
+impl ::windows_core::RuntimeName for AppNotificationBuilder {
     const NAME: &'static str = "Microsoft.Windows.AppNotifications.Builder.AppNotificationBuilder";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppNotificationBuilder,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppNotificationBuilder {}
 unsafe impl ::core::marker::Sync for AppNotificationBuilder {}
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
-pub struct AppNotificationButton(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppNotificationButton(::windows_core::IUnknown);
 impl AppNotificationButton {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationButton,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
-    pub fn Content(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Content(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Content)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Content)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetContent(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetContent(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetContent)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetContent)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub fn Arguments(
         &self,
-    ) -> ::windows::core::Result<
-        ::windows::Foundation::Collections::IMap<
-            ::windows::core::HSTRING,
-            ::windows::core::HSTRING,
-        >,
+    ) -> ::windows_core::Result<
+        ::windows::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>,
     > {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Arguments)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Arguments)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Collections::IMap<
-                ::windows::core::HSTRING,
-                ::windows::core::HSTRING,
-            >>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetArguments<'a, P0, E0>(&self, value: P0) -> ::windows::core::Result<()>
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub fn SetArguments<P0>(&self, value: P0) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::TryInto<
-            ::windows::core::InParam<
-                'a,
-                ::windows::Foundation::Collections::IMap<
-                    ::windows::core::HSTRING,
-                    ::windows::core::HSTRING,
-                >,
+        P0: ::windows_core::TryIntoParam<
+            ::windows::Foundation::Collections::IMap<
+                ::windows_core::HSTRING,
+                ::windows_core::HSTRING,
             >,
-            Error = E0,
         >,
-        E0: ::std::convert::Into<::windows::core::Error>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetArguments)(
-                ::windows::core::Vtable::as_raw(this),
-                value.try_into().map_err(|e| e.into())?.abi(),
+            (::windows_core::Interface::vtable(this).SetArguments)(
+                ::windows_core::Interface::as_raw(this),
+                value.try_into_param()?.abi(),
             )
             .ok()
         }
     }
-    pub fn Icon(&self) -> ::windows::core::Result<::windows::Foundation::Uri> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Icon(&self) -> ::windows_core::Result<::windows::Foundation::Uri> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Icon)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Icon)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Uri>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetIcon(&self, value: &::windows::Foundation::Uri) -> ::windows::core::Result<()> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetIcon<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetIcon)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetIcon)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ToolTip(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ToolTip)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetToolTip(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetToolTip)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn ToolTip(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ContextMenuPlacement(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ToolTip)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ContextMenuPlacement)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetToolTip(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetContextMenuPlacement(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetToolTip)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-            )
-            .ok()
-        }
-    }
-    pub fn ContextMenuPlacement(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ContextMenuPlacement)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn SetContextMenuPlacement(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetContextMenuPlacement)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetContextMenuPlacement)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn ButtonStyle(&self) -> ::windows::core::Result<AppNotificationButtonStyle> {
+    pub fn ButtonStyle(&self) -> ::windows_core::Result<AppNotificationButtonStyle> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ButtonStyle)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ButtonStyle)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButtonStyle>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetButtonStyle(&self, value: AppNotificationButtonStyle) -> ::windows::core::Result<()> {
+    pub fn SetButtonStyle(&self, value: AppNotificationButtonStyle) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetButtonStyle)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetButtonStyle)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InputId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn InputId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InputId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InputId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInputId(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetInputId(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInputId)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInputId)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn InvokeUri(&self) -> ::windows::core::Result<::windows::Foundation::Uri> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn InvokeUri(&self) -> ::windows_core::Result<::windows::Foundation::Uri> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InvokeUri)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InvokeUri)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Uri>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInvokeUri(&self, value: &::windows::Foundation::Uri) -> ::windows::core::Result<()> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInvokeUri<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInvokeUri)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
+            (::windows_core::Interface::vtable(this).SetInvokeUri)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
             )
             .ok()
         }
     }
-    pub fn TargetAppId(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn TargetAppId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TargetAppId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TargetAppId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetTargetAppId(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetTargetAppId(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetTargetAppId)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetTargetAppId)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
@@ -1341,308 +1451,294 @@ impl AppNotificationButton {
     }
     pub fn AddArgument(
         &self,
-        key: &::windows::core::HSTRING,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        key: &::windows_core::HSTRING,
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationButton> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddArgument)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddArgument)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(key),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetIcon2(
-        &self,
-        value: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetIcon2<P0>(&self, value: P0) -> ::windows_core::Result<AppNotificationButton>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetIcon2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetIcon2)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetToolTip2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationButton> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetToolTip2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetToolTip2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetContextMenuPlacement2(&self) -> ::windows::core::Result<AppNotificationButton> {
+    pub fn SetContextMenuPlacement2(&self) -> ::windows_core::Result<AppNotificationButton> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetContextMenuPlacement2)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetContextMenuPlacement2)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetButtonStyle2(
         &self,
         value: AppNotificationButtonStyle,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+    ) -> ::windows_core::Result<AppNotificationButton> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetButtonStyle2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetButtonStyle2)(
+                ::windows_core::Interface::as_raw(this),
                 value,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetInputId2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationButton> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInputId2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInputId2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInvokeUri2(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInvokeUri2<P0>(
         &self,
-        protocoluri: &::windows::Foundation::Uri,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        protocoluri: P0,
+    ) -> ::windows_core::Result<AppNotificationButton>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInvokeUri2)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(protocoluri),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInvokeUri2)(
+                ::windows_core::Interface::as_raw(this),
+                protocoluri.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInvokeUri3(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetInvokeUri2<P0>(
         &self,
-        protocoluri: &::windows::Foundation::Uri,
-        targetappid: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        protocoluri: P0,
+        targetappid: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationButton>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetInvokeUri3)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(protocoluri),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetInvokeUri2)(
+                ::windows_core::Interface::as_raw(this),
+                protocoluri.into_param().abi(),
                 ::core::mem::transmute_copy(targetappid),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         }
     }
     pub fn CreateInstance(
-        content: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationButton> {
+        content: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationButton> {
         Self::IAppNotificationButtonFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateInstance)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(content),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationButton>(result__)
+            .from_abi(result__)
         })
     }
-    pub fn IsToolTipSupported() -> ::windows::core::Result<bool> {
+    pub fn IsToolTipSupported() -> ::windows_core::Result<bool> {
         Self::IAppNotificationButtonStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsToolTipSupported)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsToolTipSupported)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         })
     }
-    pub fn IsButtonStyleSupported() -> ::windows::core::Result<bool> {
+    pub fn IsButtonStyleSupported() -> ::windows_core::Result<bool> {
         Self::IAppNotificationButtonStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsButtonStyleSupported)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsButtonStyleSupported)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IAppNotificationButtonFactory<
         R,
-        F: FnOnce(&IAppNotificationButtonFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&IAppNotificationButtonFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationButton,
             IAppNotificationButtonFactory,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IAppNotificationButtonStatics<
         R,
-        F: FnOnce(&IAppNotificationButtonStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IAppNotificationButtonStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationButton,
             IAppNotificationButtonStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for AppNotificationButton {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppNotificationButton {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppNotificationButton {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppNotificationButton {}
-impl ::core::fmt::Debug for AppNotificationButton {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppNotificationButton").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppNotificationButton {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppNotifications.Builder.AppNotificationButton;{a7c03031-5634-5098-aec9-47ecb60c3499})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppNotificationButton {
+unsafe impl ::windows_core::Interface for AppNotificationButton {
     type Vtable = IAppNotificationButton_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppNotificationButton {
-    const IID: ::windows::core::GUID = <IAppNotificationButton as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppNotificationButton {
+    const IID: ::windows_core::GUID = <IAppNotificationButton as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppNotificationButton {
+impl ::windows_core::RuntimeName for AppNotificationButton {
     const NAME: &'static str = "Microsoft.Windows.AppNotifications.Builder.AppNotificationButton";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppNotificationButton,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppNotificationButton {}
 unsafe impl ::core::marker::Sync for AppNotificationButton {}
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
-pub struct AppNotificationComboBox(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppNotificationComboBox(::windows_core::IUnknown);
 impl AppNotificationComboBox {
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub fn Items(
         &self,
-    ) -> ::windows::core::Result<
-        ::windows::Foundation::Collections::IMap<
-            ::windows::core::HSTRING,
-            ::windows::core::HSTRING,
-        >,
+    ) -> ::windows_core::Result<
+        ::windows::Foundation::Collections::IMap<::windows_core::HSTRING, ::windows_core::HSTRING>,
     > {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Items)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Items)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Collections::IMap<
-                ::windows::core::HSTRING,
-                ::windows::core::HSTRING,
-            >>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetItems<'a, P0, E0>(&self, value: P0) -> ::windows::core::Result<()>
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub fn SetItems<P0>(&self, value: P0) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::TryInto<
-            ::windows::core::InParam<
-                'a,
-                ::windows::Foundation::Collections::IMap<
-                    ::windows::core::HSTRING,
-                    ::windows::core::HSTRING,
-                >,
+        P0: ::windows_core::TryIntoParam<
+            ::windows::Foundation::Collections::IMap<
+                ::windows_core::HSTRING,
+                ::windows_core::HSTRING,
             >,
-            Error = E0,
         >,
-        E0: ::std::convert::Into<::windows::core::Error>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetItems)(
-                ::windows::core::Vtable::as_raw(this),
-                value.try_into().map_err(|e| e.into())?.abi(),
+            (::windows_core::Interface::vtable(this).SetItems)(
+                ::windows_core::Interface::as_raw(this),
+                value.try_into_param()?.abi(),
             )
             .ok()
         }
     }
-    pub fn Title(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Title(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Title)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Title)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetTitle(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetTitle(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetTitle)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetTitle)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn SelectedItem(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn SelectedItem(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SelectedItem)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SelectedItem)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetSelectedItem(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetSelectedItem(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetSelectedItem)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetSelectedItem)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
@@ -1650,219 +1746,200 @@ impl AppNotificationComboBox {
     }
     pub fn AddItem(
         &self,
-        id: &::windows::core::HSTRING,
-        content: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationComboBox> {
+        id: &::windows_core::HSTRING,
+        content: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationComboBox> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AddItem)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AddItem)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(id),
                 ::core::mem::transmute_copy(content),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationComboBox>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetTitle2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationComboBox> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationComboBox> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetTitle2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetTitle2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationComboBox>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetSelectedItem2(
         &self,
-        id: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationComboBox> {
+        id: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationComboBox> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetSelectedItem2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetSelectedItem2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(id),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationComboBox>(result__)
+            .from_abi(result__)
         }
     }
     pub fn CreateInstance(
-        id: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationComboBox> {
+        id: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationComboBox> {
         Self::IAppNotificationComboBoxFactory(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateInstance)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(id),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationComboBox>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IAppNotificationComboBoxFactory<
         R,
-        F: FnOnce(&IAppNotificationComboBoxFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&IAppNotificationComboBoxFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationComboBox,
             IAppNotificationComboBoxFactory,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for AppNotificationComboBox {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppNotificationComboBox {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppNotificationComboBox {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppNotificationComboBox {}
-impl ::core::fmt::Debug for AppNotificationComboBox {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppNotificationComboBox").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppNotificationComboBox {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppNotifications.Builder.AppNotificationComboBox;{4547c9e2-4815-538c-be26-040ce17f8b62})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppNotificationComboBox {
+unsafe impl ::windows_core::Interface for AppNotificationComboBox {
     type Vtable = IAppNotificationComboBox_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppNotificationComboBox {
-    const IID: ::windows::core::GUID =
-        <IAppNotificationComboBox as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppNotificationComboBox {
+    const IID: ::windows_core::GUID =
+        <IAppNotificationComboBox as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppNotificationComboBox {
+impl ::windows_core::RuntimeName for AppNotificationComboBox {
     const NAME: &'static str = "Microsoft.Windows.AppNotifications.Builder.AppNotificationComboBox";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppNotificationComboBox,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppNotificationComboBox {}
 unsafe impl ::core::marker::Sync for AppNotificationComboBox {}
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
-pub struct AppNotificationProgressBar(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppNotificationProgressBar(::windows_core::IUnknown);
 impl AppNotificationProgressBar {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationProgressBar,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
-    pub fn Title(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Title(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Title)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Title)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetTitle(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetTitle(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetTitle)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetTitle)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn Status(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Status(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Status)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Status)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetStatus(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetStatus(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetStatus)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetStatus)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn Value(&self) -> ::windows::core::Result<f64> {
+    pub fn Value(&self) -> ::windows_core::Result<f64> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Value)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Value)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f64>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetValue(&self, value: f64) -> ::windows::core::Result<()> {
+    pub fn SetValue(&self, value: f64) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetValue)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetValue)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn ValueStringOverride(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ValueStringOverride(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ValueStringOverride)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ValueStringOverride)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetValueStringOverride(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetValueStringOverride)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetValueStringOverride)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
@@ -1870,224 +1947,205 @@ impl AppNotificationProgressBar {
     }
     pub fn SetTitle2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationProgressBar> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetTitle2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetTitle2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn BindTitle(&self) -> ::windows::core::Result<AppNotificationProgressBar> {
+    pub fn BindTitle(&self) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).BindTitle)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).BindTitle)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetStatus2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationProgressBar> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetStatus2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetStatus2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn BindStatus(&self) -> ::windows::core::Result<AppNotificationProgressBar> {
+    pub fn BindStatus(&self) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).BindStatus)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).BindStatus)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetValue2(&self, value: f64) -> ::windows::core::Result<AppNotificationProgressBar> {
+    pub fn SetValue2(&self, value: f64) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetValue2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetValue2)(
+                ::windows_core::Interface::as_raw(this),
                 value,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn BindValue(&self) -> ::windows::core::Result<AppNotificationProgressBar> {
+    pub fn BindValue(&self) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).BindValue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).BindValue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetValueStringOverride2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationProgressBar> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetValueStringOverride2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetValueStringOverride2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn BindValueStringOverride(&self) -> ::windows::core::Result<AppNotificationProgressBar> {
+    pub fn BindValueStringOverride(&self) -> ::windows_core::Result<AppNotificationProgressBar> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).BindValueStringOverride)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).BindValueStringOverride)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationProgressBar>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for AppNotificationProgressBar {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppNotificationProgressBar {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppNotificationProgressBar {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppNotificationProgressBar {}
-impl ::core::fmt::Debug for AppNotificationProgressBar {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppNotificationProgressBar").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppNotificationProgressBar {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppNotifications.Builder.AppNotificationProgressBar;{fced62f2-2074-5641-8630-87a14315ac86})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppNotificationProgressBar {
+unsafe impl ::windows_core::Interface for AppNotificationProgressBar {
     type Vtable = IAppNotificationProgressBar_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppNotificationProgressBar {
-    const IID: ::windows::core::GUID =
-        <IAppNotificationProgressBar as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppNotificationProgressBar {
+    const IID: ::windows_core::GUID =
+        <IAppNotificationProgressBar as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppNotificationProgressBar {
+impl ::windows_core::RuntimeName for AppNotificationProgressBar {
     const NAME: &'static str =
         "Microsoft.Windows.AppNotifications.Builder.AppNotificationProgressBar";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppNotificationProgressBar,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppNotificationProgressBar {}
 unsafe impl ::core::marker::Sync for AppNotificationProgressBar {}
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
-pub struct AppNotificationTextProperties(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppNotificationTextProperties(::windows_core::IUnknown);
 impl AppNotificationTextProperties {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             AppNotificationTextProperties,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
-    pub fn Language(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Language(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Language)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Language)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetLanguage(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()> {
+    pub fn SetLanguage(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetLanguage)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetLanguage)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
             )
             .ok()
         }
     }
-    pub fn IncomingCallAlignment(&self) -> ::windows::core::Result<bool> {
+    pub fn IncomingCallAlignment(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IncomingCallAlignment)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IncomingCallAlignment)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetIncomingCallAlignment(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetIncomingCallAlignment(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetIncomingCallAlignment)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetIncomingCallAlignment)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn MaxLines(&self) -> ::windows::core::Result<i32> {
+    pub fn MaxLines(&self) -> ::windows_core::Result<i32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).MaxLines)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).MaxLines)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<i32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetMaxLines(&self, value: i32) -> ::windows::core::Result<()> {
+    pub fn SetMaxLines(&self, value: i32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetMaxLines)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetMaxLines)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
@@ -2095,90 +2153,70 @@ impl AppNotificationTextProperties {
     }
     pub fn SetLanguage2(
         &self,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppNotificationTextProperties> {
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppNotificationTextProperties> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetLanguage2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetLanguage2)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationTextProperties>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetIncomingCallAlignment2(
         &self,
-    ) -> ::windows::core::Result<AppNotificationTextProperties> {
+    ) -> ::windows_core::Result<AppNotificationTextProperties> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetIncomingCallAlignment2)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetIncomingCallAlignment2)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppNotificationTextProperties>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetMaxLines2(
         &self,
         value: i32,
-    ) -> ::windows::core::Result<AppNotificationTextProperties> {
+    ) -> ::windows_core::Result<AppNotificationTextProperties> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).SetMaxLines2)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SetMaxLines2)(
+                ::windows_core::Interface::as_raw(this),
                 value,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppNotificationTextProperties>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for AppNotificationTextProperties {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppNotificationTextProperties {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppNotificationTextProperties {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppNotificationTextProperties {}
-impl ::core::fmt::Debug for AppNotificationTextProperties {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppNotificationTextProperties").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppNotificationTextProperties {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppNotifications.Builder.AppNotificationTextProperties;{23a30d0b-5258-5853-932e-9521a3642afb})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppNotificationTextProperties {
+unsafe impl ::windows_core::Interface for AppNotificationTextProperties {
     type Vtable = IAppNotificationTextProperties_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppNotificationTextProperties {
-    const IID: ::windows::core::GUID =
-        <IAppNotificationTextProperties as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppNotificationTextProperties {
+    const IID: ::windows_core::GUID =
+        <IAppNotificationTextProperties as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppNotificationTextProperties {
+impl ::windows_core::RuntimeName for AppNotificationTextProperties {
     const NAME: &'static str =
         "Microsoft.Windows.AppNotifications.Builder.AppNotificationTextProperties";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppNotificationTextProperties,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppNotificationTextProperties {}
 unsafe impl ::core::marker::Sync for AppNotificationTextProperties {}
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationAudioLooping(pub i32);
@@ -2197,24 +2235,20 @@ impl ::core::default::Default for AppNotificationAudioLooping {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationAudioLooping {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationAudioLooping {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationAudioLooping {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationAudioLooping").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationAudioLooping {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationAudioLooping;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationAudioLooping {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationAudioLooping;i4)",
+        );
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationButtonStyle(pub i32);
@@ -2234,24 +2268,20 @@ impl ::core::default::Default for AppNotificationButtonStyle {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationButtonStyle {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationButtonStyle {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationButtonStyle {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationButtonStyle").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationButtonStyle {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationButtonStyle;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationButtonStyle {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationButtonStyle;i4)",
+        );
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationDuration(pub i32);
@@ -2270,24 +2300,20 @@ impl ::core::default::Default for AppNotificationDuration {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationDuration {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationDuration {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationDuration {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationDuration").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationDuration {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationDuration;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationDuration {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationDuration;i4)",
+        );
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationImageCrop(pub i32);
@@ -2306,24 +2332,20 @@ impl ::core::default::Default for AppNotificationImageCrop {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationImageCrop {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationImageCrop {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationImageCrop {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationImageCrop").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationImageCrop {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationImageCrop;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationImageCrop {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationImageCrop;i4)",
+        );
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationScenario(pub i32);
@@ -2345,24 +2367,20 @@ impl ::core::default::Default for AppNotificationScenario {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationScenario {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationScenario {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationScenario {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationScenario").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationScenario {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationScenario;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationScenario {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationScenario;i4)",
+        );
 }
-#[doc = "*Required features: `\"Windows_AppNotifications_Builder\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct AppNotificationSoundEvent(pub i32);
@@ -2404,22 +2422,17 @@ impl ::core::default::Default for AppNotificationSoundEvent {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for AppNotificationSoundEvent {
-    type Abi = Self;
+impl ::windows_core::TypeKind for AppNotificationSoundEvent {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for AppNotificationSoundEvent {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("AppNotificationSoundEvent").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for AppNotificationSoundEvent {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationSoundEvent;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for AppNotificationSoundEvent {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppNotifications.Builder.AppNotificationSoundEvent;i4)",
+        );
 }
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

@@ -1,191 +1,210 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IActivationRegistrationManagerStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IActivationRegistrationManagerStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IActivationRegistrationManagerStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IActivationRegistrationManagerStatics {
     type Vtable = IActivationRegistrationManagerStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IActivationRegistrationManagerStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x5ac4e92e_017b_5d68_8198_f68636ab99d3);
+unsafe impl ::windows_core::ComInterface for IActivationRegistrationManagerStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x5ac4e92e_017b_5d68_8198_f68636ab99d3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IActivationRegistrationManagerStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub RegisterForFileTypeActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         supportedFileTypes_array_size: u32,
-        supportedfiletypes: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        logo: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        displayname: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        supportedfiletypes: *const ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        logo: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        displayname: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         supportedVerbs_array_size: u32,
-        supportedverbs: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        exepath: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        supportedverbs: *const ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        exepath: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub RegisterForProtocolActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        scheme: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        logo: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        displayname: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        exepath: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        scheme: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        logo: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        displayname: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        exepath: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub RegisterForStartupActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        taskid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        exepath: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        taskid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        exepath: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub UnregisterForFileTypeActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         fileTypes_array_size: u32,
-        filetypes: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        exepath: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        filetypes: *const ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        exepath: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub UnregisterForProtocolActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        scheme: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        exepath: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        scheme: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        exepath: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub UnregisterForStartupActivation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        taskid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        taskid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppActivationArguments(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppActivationArguments {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppActivationArguments(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppActivationArguments {
     type Vtable = IAppActivationArguments_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppActivationArguments {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x14f99eaf_1580_5062_bdc8_d5d1c31138fb);
+unsafe impl ::windows_core::ComInterface for IAppActivationArguments {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x14f99eaf_1580_5062_bdc8_d5d1c31138fb);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppActivationArguments_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Kind: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ExtendedActivationKind,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Data: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppInstance(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppInstance {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppInstance(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppInstance {
     type Vtable = IAppInstance_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppInstance {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x75766ae4_0239_5a26_b9da_d5bfc75a4866);
+unsafe impl ::windows_core::ComInterface for IAppInstance {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x75766ae4_0239_5a26_b9da_d5bfc75a4866);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppInstance_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub UnregisterKey:
-        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub RedirectActivationToAsync: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         args: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RedirectActivationToAsync: usize,
     pub GetActivatedEventArgs: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Activated: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Activated: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveActivated: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveActivated: usize,
     pub Key: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub IsCurrent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ProcessId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppInstanceStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppInstanceStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppInstanceStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppInstanceStatics {
     type Vtable = IAppInstanceStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppInstanceStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x4f414b25_8330_5a9b_bbc1_8229d479649d);
+unsafe impl ::windows_core::ComInterface for IAppInstanceStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x4f414b25_8330_5a9b_bbc1_8229d479649d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppInstanceStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub GetCurrent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub GetInstances: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    GetInstances: usize,
     pub FindOrRegisterForKey: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        key: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        key: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IAppInstanceStatics2(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IAppInstanceStatics2 {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IAppInstanceStatics2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IAppInstanceStatics2 {
     type Vtable = IAppInstanceStatics2_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IAppInstanceStatics2 {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xfe9f1885_7160_5397_ba9b_5890b24fdc04);
+unsafe impl ::windows_core::ComInterface for IAppInstanceStatics2 {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xfe9f1885_7160_5397_ba9b_5890b24fdc04);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IAppInstanceStatics2_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_ApplicationModel_Core")]
     pub Restart: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        arguments: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        arguments: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut ::windows::ApplicationModel::Core::AppRestartFailureReason,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_ApplicationModel_Core"))]
+    Restart: usize,
 }
-#[doc = "*Required features: `\"Windows_AppLifecycle\"`*"]
 pub struct ActivationRegistrationManager;
 impl ActivationRegistrationManager {
     pub fn RegisterForFileTypeActivation(
-        supportedfiletypes: &[::windows::core::HSTRING],
-        logo: &::windows::core::HSTRING,
-        displayname: &::windows::core::HSTRING,
-        supportedverbs: &[::windows::core::HSTRING],
-        exepath: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        supportedfiletypes: &[::windows_core::HSTRING],
+        logo: &::windows_core::HSTRING,
+        displayname: &::windows_core::HSTRING,
+        supportedverbs: &[::windows_core::HSTRING],
+        exepath: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).RegisterForFileTypeActivation)(
-                ::windows::core::Vtable::as_raw(this),
-                supportedfiletypes.len() as u32,
+            (::windows_core::Interface::vtable(this).RegisterForFileTypeActivation)(
+                ::windows_core::Interface::as_raw(this),
+                supportedfiletypes.len().try_into().unwrap(),
                 ::core::mem::transmute(supportedfiletypes.as_ptr()),
                 ::core::mem::transmute_copy(logo),
                 ::core::mem::transmute_copy(displayname),
-                supportedverbs.len() as u32,
+                supportedverbs.len().try_into().unwrap(),
                 ::core::mem::transmute(supportedverbs.as_ptr()),
                 ::core::mem::transmute_copy(exepath),
             )
@@ -193,14 +212,14 @@ impl ActivationRegistrationManager {
         })
     }
     pub fn RegisterForProtocolActivation(
-        scheme: &::windows::core::HSTRING,
-        logo: &::windows::core::HSTRING,
-        displayname: &::windows::core::HSTRING,
-        exepath: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        scheme: &::windows_core::HSTRING,
+        logo: &::windows_core::HSTRING,
+        displayname: &::windows_core::HSTRING,
+        exepath: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).RegisterForProtocolActivation)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RegisterForProtocolActivation)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(scheme),
                 ::core::mem::transmute_copy(logo),
                 ::core::mem::transmute_copy(displayname),
@@ -210,12 +229,12 @@ impl ActivationRegistrationManager {
         })
     }
     pub fn RegisterForStartupActivation(
-        taskid: &::windows::core::HSTRING,
-        exepath: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        taskid: &::windows_core::HSTRING,
+        exepath: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).RegisterForStartupActivation)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RegisterForStartupActivation)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(taskid),
                 ::core::mem::transmute_copy(exepath),
             )
@@ -223,13 +242,13 @@ impl ActivationRegistrationManager {
         })
     }
     pub fn UnregisterForFileTypeActivation(
-        filetypes: &[::windows::core::HSTRING],
-        exepath: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        filetypes: &[::windows_core::HSTRING],
+        exepath: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).UnregisterForFileTypeActivation)(
-                ::windows::core::Vtable::as_raw(this),
-                filetypes.len() as u32,
+            (::windows_core::Interface::vtable(this).UnregisterForFileTypeActivation)(
+                ::windows_core::Interface::as_raw(this),
+                filetypes.len().try_into().unwrap(),
                 ::core::mem::transmute(filetypes.as_ptr()),
                 ::core::mem::transmute_copy(exepath),
             )
@@ -237,12 +256,12 @@ impl ActivationRegistrationManager {
         })
     }
     pub fn UnregisterForProtocolActivation(
-        scheme: &::windows::core::HSTRING,
-        exepath: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        scheme: &::windows_core::HSTRING,
+        exepath: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).UnregisterForProtocolActivation)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).UnregisterForProtocolActivation)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(scheme),
                 ::core::mem::transmute_copy(exepath),
             )
@@ -250,11 +269,11 @@ impl ActivationRegistrationManager {
         })
     }
     pub fn UnregisterForStartupActivation(
-        taskid: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()> {
+        taskid: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()> {
         Self::IActivationRegistrationManagerStatics(|this| unsafe {
-            (::windows::core::Vtable::vtable(this).UnregisterForStartupActivation)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).UnregisterForStartupActivation)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(taskid),
             )
             .ok()
@@ -263,295 +282,271 @@ impl ActivationRegistrationManager {
     #[doc(hidden)]
     pub fn IActivationRegistrationManagerStatics<
         R,
-        F: FnOnce(&IActivationRegistrationManagerStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IActivationRegistrationManagerStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             ActivationRegistrationManager,
             IActivationRegistrationManagerStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::windows::core::RuntimeName for ActivationRegistrationManager {
+impl ::windows_core::RuntimeName for ActivationRegistrationManager {
     const NAME: &'static str = "Microsoft.Windows.AppLifecycle.ActivationRegistrationManager";
 }
-#[doc = "*Required features: `\"Windows_AppLifecycle\"`*"]
 #[repr(transparent)]
-pub struct AppActivationArguments(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppActivationArguments(::windows_core::IUnknown);
 impl AppActivationArguments {
-    pub fn Kind(&self) -> ::windows::core::Result<ExtendedActivationKind> {
+    pub fn Kind(&self) -> ::windows_core::Result<ExtendedActivationKind> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Kind)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Kind)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<ExtendedActivationKind>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Data(&self) -> ::windows::core::Result<::windows::core::IInspectable> {
+    pub fn Data(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Data)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Data)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::IInspectable>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for AppActivationArguments {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppActivationArguments {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppActivationArguments {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppActivationArguments {}
-impl ::core::fmt::Debug for AppActivationArguments {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppActivationArguments").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppActivationArguments {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.Windows.AppLifecycle.AppActivationArguments;{14f99eaf-1580-5062-bdc8-d5d1c31138fb})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppActivationArguments {
+unsafe impl ::windows_core::Interface for AppActivationArguments {
     type Vtable = IAppActivationArguments_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppActivationArguments {
-    const IID: ::windows::core::GUID = <IAppActivationArguments as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppActivationArguments {
+    const IID: ::windows_core::GUID =
+        <IAppActivationArguments as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppActivationArguments {
+impl ::windows_core::RuntimeName for AppActivationArguments {
     const NAME: &'static str = "Microsoft.Windows.AppLifecycle.AppActivationArguments";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppActivationArguments,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppActivationArguments {}
 unsafe impl ::core::marker::Sync for AppActivationArguments {}
-#[doc = "*Required features: `\"Windows_AppLifecycle\"`*"]
 #[repr(transparent)]
-pub struct AppInstance(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct AppInstance(::windows_core::IUnknown);
 impl AppInstance {
-    pub fn UnregisterKey(&self) -> ::windows::core::Result<()> {
+    pub fn UnregisterKey(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).UnregisterKey)(::windows::core::Vtable::as_raw(
-                this,
-            ))
+            (::windows_core::Interface::vtable(this).UnregisterKey)(
+                ::windows_core::Interface::as_raw(this),
+            )
             .ok()
         }
     }
-    pub fn RedirectActivationToAsync(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RedirectActivationToAsync<P0>(
         &self,
-        args: &AppActivationArguments,
-    ) -> ::windows::core::Result<::windows::Foundation::IAsyncAction> {
+        args: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::IAsyncAction>
+    where
+        P0: ::windows_core::IntoParam<AppActivationArguments>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).RedirectActivationToAsync)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(args),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).RedirectActivationToAsync)(
+                ::windows_core::Interface::as_raw(this),
+                args.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::IAsyncAction>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn GetActivatedEventArgs(&self) -> ::windows::core::Result<AppActivationArguments> {
+    pub fn GetActivatedEventArgs(&self) -> ::windows_core::Result<AppActivationArguments> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetActivatedEventArgs)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetActivatedEventArgs)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppActivationArguments>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Activated(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Activated<P0>(
         &self,
-        handler: &::windows::Foundation::EventHandler<AppActivationArguments>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::EventHandler<AppActivationArguments>>,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Activated)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Activated)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveActivated(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveActivated)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveActivated)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn Key(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn Key(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Key)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Key)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn IsCurrent(&self) -> ::windows::core::Result<bool> {
+    pub fn IsCurrent(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsCurrent)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsCurrent)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn ProcessId(&self) -> ::windows::core::Result<u32> {
+    pub fn ProcessId(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ProcessId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ProcessId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<u32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn GetCurrent() -> ::windows::core::Result<AppInstance> {
+    pub fn GetCurrent() -> ::windows_core::Result<AppInstance> {
         Self::IAppInstanceStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetCurrent)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetCurrent)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<AppInstance>(result__)
+            .from_abi(result__)
         })
     }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub fn GetInstances(
-    ) -> ::windows::core::Result<::windows::Foundation::Collections::IVector<AppInstance>> {
+    ) -> ::windows_core::Result<::windows::Foundation::Collections::IVector<AppInstance>> {
         Self::IAppInstanceStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetInstances)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetInstances)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Collections::IVector<AppInstance>>(result__)
+            .from_abi(result__)
         })
     }
     pub fn FindOrRegisterForKey(
-        key: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<AppInstance> {
+        key: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<AppInstance> {
         Self::IAppInstanceStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).FindOrRegisterForKey)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).FindOrRegisterForKey)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(key),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<AppInstance>(result__)
+            .from_abi(result__)
         })
     }
+    #[doc = "Required features: `\"Windows_ApplicationModel_Core\"`"]
+    #[cfg(feature = "Windows_ApplicationModel_Core")]
     pub fn Restart(
-        arguments: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<::windows::ApplicationModel::Core::AppRestartFailureReason> {
+        arguments: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<::windows::ApplicationModel::Core::AppRestartFailureReason> {
         Self::IAppInstanceStatics2(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Restart)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Restart)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(arguments),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<::windows::ApplicationModel::Core::AppRestartFailureReason>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IAppInstanceStatics<R, F: FnOnce(&IAppInstanceStatics) -> ::windows::core::Result<R>>(
+    pub fn IAppInstanceStatics<R, F: FnOnce(&IAppInstanceStatics) -> ::windows_core::Result<R>>(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<AppInstance, IAppInstanceStatics> =
-            ::windows::core::FactoryCache::new();
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<AppInstance, IAppInstanceStatics> =
+            ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IAppInstanceStatics2<
         R,
-        F: FnOnce(&IAppInstanceStatics2) -> ::windows::core::Result<R>,
+        F: FnOnce(&IAppInstanceStatics2) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<AppInstance, IAppInstanceStatics2> =
-            ::windows::core::FactoryCache::new();
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<AppInstance, IAppInstanceStatics2> =
+            ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for AppInstance {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for AppInstance {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for AppInstance {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for AppInstance {}
-impl ::core::fmt::Debug for AppInstance {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("AppInstance").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for AppInstance {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.Windows.AppLifecycle.AppInstance;{75766ae4-0239-5a26-b9da-d5bfc75a4866})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for AppInstance {
+unsafe impl ::windows_core::Interface for AppInstance {
     type Vtable = IAppInstance_Vtbl;
 }
-unsafe impl ::windows::core::Interface for AppInstance {
-    const IID: ::windows::core::GUID = <IAppInstance as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for AppInstance {
+    const IID: ::windows_core::GUID = <IAppInstance as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for AppInstance {
+impl ::windows_core::RuntimeName for AppInstance {
     const NAME: &'static str = "Microsoft.Windows.AppLifecycle.AppInstance";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     AppInstance,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for AppInstance {}
 unsafe impl ::core::marker::Sync for AppInstance {}
-#[doc = "*Required features: `\"Windows_AppLifecycle\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct ExtendedActivationKind(pub i32);
@@ -614,22 +609,17 @@ impl ::core::default::Default for ExtendedActivationKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for ExtendedActivationKind {
-    type Abi = Self;
+impl ::windows_core::TypeKind for ExtendedActivationKind {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for ExtendedActivationKind {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("ExtendedActivationKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for ExtendedActivationKind {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.Windows.AppLifecycle.ExtendedActivationKind;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for ExtendedActivationKind {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.Windows.AppLifecycle.ExtendedActivationKind;i4)",
+        );
 }
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

@@ -1,858 +1,837 @@
+#[doc = "Required features: `\"Windows_UI_Text\"`"]
+#[cfg(feature = "Windows_UI_Text")]
 pub trait ITextCharacterFormat_Impl: Sized {
-    fn AllCaps(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetAllCaps(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn BackgroundColor(&self) -> ::windows::core::Result<::windows::UI::Color>;
-    fn SetBackgroundColor(&self, value: &::windows::UI::Color) -> ::windows::core::Result<()>;
-    fn Bold(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetBold(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn FontStretch(&self) -> ::windows::core::Result<::windows::UI::Text::FontStretch>;
-    fn SetFontStretch(
-        &self,
-        value: ::windows::UI::Text::FontStretch,
-    ) -> ::windows::core::Result<()>;
-    fn FontStyle(&self) -> ::windows::core::Result<::windows::UI::Text::FontStyle>;
-    fn SetFontStyle(&self, value: ::windows::UI::Text::FontStyle) -> ::windows::core::Result<()>;
-    fn ForegroundColor(&self) -> ::windows::core::Result<::windows::UI::Color>;
-    fn SetForegroundColor(&self, value: &::windows::UI::Color) -> ::windows::core::Result<()>;
-    fn Hidden(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetHidden(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Italic(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetItalic(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Kerning(&self) -> ::windows::core::Result<f32>;
-    fn SetKerning(&self, value: f32) -> ::windows::core::Result<()>;
-    fn LanguageTag(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn SetLanguageTag(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()>;
-    fn LinkType(&self) -> ::windows::core::Result<LinkType>;
-    fn Name(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn SetName(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()>;
-    fn Outline(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetOutline(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Position(&self) -> ::windows::core::Result<f32>;
-    fn SetPosition(&self, value: f32) -> ::windows::core::Result<()>;
-    fn ProtectedText(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetProtectedText(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Size(&self) -> ::windows::core::Result<f32>;
-    fn SetSize(&self, value: f32) -> ::windows::core::Result<()>;
-    fn SmallCaps(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetSmallCaps(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Spacing(&self) -> ::windows::core::Result<f32>;
-    fn SetSpacing(&self, value: f32) -> ::windows::core::Result<()>;
-    fn Strikethrough(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetStrikethrough(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Subscript(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetSubscript(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Superscript(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetSuperscript(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn TextScript(&self) -> ::windows::core::Result<TextScript>;
-    fn SetTextScript(&self, value: TextScript) -> ::windows::core::Result<()>;
-    fn Underline(&self) -> ::windows::core::Result<UnderlineType>;
-    fn SetUnderline(&self, value: UnderlineType) -> ::windows::core::Result<()>;
-    fn Weight(&self) -> ::windows::core::Result<i32>;
-    fn SetWeight(&self, value: i32) -> ::windows::core::Result<()>;
+    fn AllCaps(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetAllCaps(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn BackgroundColor(&self) -> ::windows_core::Result<::windows::UI::Color>;
+    fn SetBackgroundColor(&self, value: &::windows::UI::Color) -> ::windows_core::Result<()>;
+    fn Bold(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetBold(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn FontStretch(&self) -> ::windows_core::Result<::windows::UI::Text::FontStretch>;
+    fn SetFontStretch(&self, value: ::windows::UI::Text::FontStretch)
+        -> ::windows_core::Result<()>;
+    fn FontStyle(&self) -> ::windows_core::Result<::windows::UI::Text::FontStyle>;
+    fn SetFontStyle(&self, value: ::windows::UI::Text::FontStyle) -> ::windows_core::Result<()>;
+    fn ForegroundColor(&self) -> ::windows_core::Result<::windows::UI::Color>;
+    fn SetForegroundColor(&self, value: &::windows::UI::Color) -> ::windows_core::Result<()>;
+    fn Hidden(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetHidden(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Italic(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetItalic(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Kerning(&self) -> ::windows_core::Result<f32>;
+    fn SetKerning(&self, value: f32) -> ::windows_core::Result<()>;
+    fn LanguageTag(&self) -> ::windows_core::Result<::windows_core::HSTRING>;
+    fn SetLanguageTag(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()>;
+    fn LinkType(&self) -> ::windows_core::Result<LinkType>;
+    fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING>;
+    fn SetName(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()>;
+    fn Outline(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetOutline(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Position(&self) -> ::windows_core::Result<f32>;
+    fn SetPosition(&self, value: f32) -> ::windows_core::Result<()>;
+    fn ProtectedText(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetProtectedText(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Size(&self) -> ::windows_core::Result<f32>;
+    fn SetSize(&self, value: f32) -> ::windows_core::Result<()>;
+    fn SmallCaps(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetSmallCaps(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Spacing(&self) -> ::windows_core::Result<f32>;
+    fn SetSpacing(&self, value: f32) -> ::windows_core::Result<()>;
+    fn Strikethrough(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetStrikethrough(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Subscript(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetSubscript(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Superscript(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetSuperscript(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn TextScript(&self) -> ::windows_core::Result<TextScript>;
+    fn SetTextScript(&self, value: TextScript) -> ::windows_core::Result<()>;
+    fn Underline(&self) -> ::windows_core::Result<UnderlineType>;
+    fn SetUnderline(&self, value: UnderlineType) -> ::windows_core::Result<()>;
+    fn Weight(&self) -> ::windows_core::Result<i32>;
+    fn SetWeight(&self, value: i32) -> ::windows_core::Result<()>;
     fn SetClone(
         &self,
-        value: &::core::option::Option<ITextCharacterFormat>,
-    ) -> ::windows::core::Result<()>;
-    fn GetClone(&self) -> ::windows::core::Result<ITextCharacterFormat>;
+        value: ::core::option::Option<&ITextCharacterFormat>,
+    ) -> ::windows_core::Result<()>;
+    fn GetClone(&self) -> ::windows_core::Result<ITextCharacterFormat>;
     fn IsEqual(
         &self,
-        format: &::core::option::Option<ITextCharacterFormat>,
-    ) -> ::windows::core::Result<bool>;
+        format: ::core::option::Option<&ITextCharacterFormat>,
+    ) -> ::windows_core::Result<bool>;
 }
-impl ::windows::core::RuntimeName for ITextCharacterFormat {
+#[cfg(feature = "Windows_UI_Text")]
+impl ::windows_core::RuntimeName for ITextCharacterFormat {
     const NAME: &'static str = "Microsoft.UI.Text.ITextCharacterFormat";
 }
+#[cfg(feature = "Windows_UI_Text")]
 impl ITextCharacterFormat_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ITextCharacterFormat_Impl,
         const OFFSET: isize,
     >() -> ITextCharacterFormat_Vtbl {
         unsafe extern "system" fn AllCaps<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.AllCaps() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetAllCaps<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetAllCaps(value).into()
         }
         unsafe extern "system" fn BackgroundColor<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::UI::Color,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.BackgroundColor() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetBackgroundColor<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ::windows::UI::Color,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetBackgroundColor(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn Bold<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Bold() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetBold<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetBold(value).into()
         }
         unsafe extern "system" fn FontStretch<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::UI::Text::FontStretch,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.FontStretch() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetFontStretch<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ::windows::UI::Text::FontStretch,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetFontStretch(value).into()
         }
         unsafe extern "system" fn FontStyle<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::UI::Text::FontStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.FontStyle() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetFontStyle<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ::windows::UI::Text::FontStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetFontStyle(value).into()
         }
         unsafe extern "system" fn ForegroundColor<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::UI::Color,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ForegroundColor() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetForegroundColor<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ::windows::UI::Color,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetForegroundColor(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn Hidden<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Hidden() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetHidden<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetHidden(value).into()
         }
         unsafe extern "system" fn Italic<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Italic() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetItalic<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetItalic(value).into()
         }
         unsafe extern "system" fn Kerning<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Kerning() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetKerning<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetKerning(value).into()
         }
         unsafe extern "system" fn LanguageTag<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LanguageTag() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetLanguageTag<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetLanguageTag(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn LinkType<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut LinkType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LinkType() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Name<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Name() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetName<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetName(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn Outline<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Outline() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetOutline<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetOutline(value).into()
         }
         unsafe extern "system" fn Position<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Position() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetPosition<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetPosition(value).into()
         }
         unsafe extern "system" fn ProtectedText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ProtectedText() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetProtectedText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetProtectedText(value).into()
         }
         unsafe extern "system" fn Size<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Size() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSize<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSize(value).into()
         }
         unsafe extern "system" fn SmallCaps<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.SmallCaps() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSmallCaps<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSmallCaps(value).into()
         }
         unsafe extern "system" fn Spacing<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Spacing() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSpacing<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSpacing(value).into()
         }
         unsafe extern "system" fn Strikethrough<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Strikethrough() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetStrikethrough<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetStrikethrough(value).into()
         }
         unsafe extern "system" fn Subscript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Subscript() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSubscript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSubscript(value).into()
         }
         unsafe extern "system" fn Superscript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Superscript() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSuperscript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSuperscript(value).into()
         }
         unsafe extern "system" fn TextScript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut TextScript,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.TextScript() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetTextScript<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: TextScript,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetTextScript(value).into()
         }
         unsafe extern "system" fn Underline<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut UnderlineType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Underline() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetUnderline<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: UnderlineType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetUnderline(value).into()
         }
         unsafe extern "system" fn Weight<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Weight() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetWeight<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetWeight(value).into()
         }
         unsafe extern "system" fn SetClone<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetClone(::core::mem::transmute(&value)).into()
+            this.SetClone(::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn GetClone<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetClone() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn IsEqual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextCharacterFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             format: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IsEqual(::core::mem::transmute(&format)) {
+            match this.IsEqual(::windows_core::from_raw_borrowed(&format)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextCharacterFormat, OFFSET>(
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ITextCharacterFormat, OFFSET>(
             ),
             AllCaps: AllCaps::<Identity, Impl, OFFSET>,
             SetAllCaps: SetAllCaps::<Identity, Impl, OFFSET>,
@@ -906,710 +885,688 @@ impl ITextCharacterFormat_Vtbl {
             IsEqual: IsEqual::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ITextCharacterFormat as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ITextCharacterFormat as ::windows_core::ComInterface>::IID
     }
 }
 pub trait ITextParagraphFormat_Impl: Sized {
-    fn Alignment(&self) -> ::windows::core::Result<ParagraphAlignment>;
-    fn SetAlignment(&self, value: ParagraphAlignment) -> ::windows::core::Result<()>;
-    fn FirstLineIndent(&self) -> ::windows::core::Result<f32>;
-    fn KeepTogether(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetKeepTogether(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn KeepWithNext(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetKeepWithNext(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn LeftIndent(&self) -> ::windows::core::Result<f32>;
-    fn LineSpacing(&self) -> ::windows::core::Result<f32>;
-    fn LineSpacingRule(&self) -> ::windows::core::Result<LineSpacingRule>;
-    fn ListAlignment(&self) -> ::windows::core::Result<MarkerAlignment>;
-    fn SetListAlignment(&self, value: MarkerAlignment) -> ::windows::core::Result<()>;
-    fn ListLevelIndex(&self) -> ::windows::core::Result<i32>;
-    fn SetListLevelIndex(&self, value: i32) -> ::windows::core::Result<()>;
-    fn ListStart(&self) -> ::windows::core::Result<i32>;
-    fn SetListStart(&self, value: i32) -> ::windows::core::Result<()>;
-    fn ListStyle(&self) -> ::windows::core::Result<MarkerStyle>;
-    fn SetListStyle(&self, value: MarkerStyle) -> ::windows::core::Result<()>;
-    fn ListTab(&self) -> ::windows::core::Result<f32>;
-    fn SetListTab(&self, value: f32) -> ::windows::core::Result<()>;
-    fn ListType(&self) -> ::windows::core::Result<MarkerType>;
-    fn SetListType(&self, value: MarkerType) -> ::windows::core::Result<()>;
-    fn NoLineNumber(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetNoLineNumber(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn PageBreakBefore(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetPageBreakBefore(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn RightIndent(&self) -> ::windows::core::Result<f32>;
-    fn SetRightIndent(&self, value: f32) -> ::windows::core::Result<()>;
-    fn RightToLeft(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetRightToLeft(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn Style(&self) -> ::windows::core::Result<ParagraphStyle>;
-    fn SetStyle(&self, value: ParagraphStyle) -> ::windows::core::Result<()>;
-    fn SpaceAfter(&self) -> ::windows::core::Result<f32>;
-    fn SetSpaceAfter(&self, value: f32) -> ::windows::core::Result<()>;
-    fn SpaceBefore(&self) -> ::windows::core::Result<f32>;
-    fn SetSpaceBefore(&self, value: f32) -> ::windows::core::Result<()>;
-    fn WidowControl(&self) -> ::windows::core::Result<FormatEffect>;
-    fn SetWidowControl(&self, value: FormatEffect) -> ::windows::core::Result<()>;
-    fn TabCount(&self) -> ::windows::core::Result<i32>;
+    fn Alignment(&self) -> ::windows_core::Result<ParagraphAlignment>;
+    fn SetAlignment(&self, value: ParagraphAlignment) -> ::windows_core::Result<()>;
+    fn FirstLineIndent(&self) -> ::windows_core::Result<f32>;
+    fn KeepTogether(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetKeepTogether(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn KeepWithNext(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetKeepWithNext(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn LeftIndent(&self) -> ::windows_core::Result<f32>;
+    fn LineSpacing(&self) -> ::windows_core::Result<f32>;
+    fn LineSpacingRule(&self) -> ::windows_core::Result<LineSpacingRule>;
+    fn ListAlignment(&self) -> ::windows_core::Result<MarkerAlignment>;
+    fn SetListAlignment(&self, value: MarkerAlignment) -> ::windows_core::Result<()>;
+    fn ListLevelIndex(&self) -> ::windows_core::Result<i32>;
+    fn SetListLevelIndex(&self, value: i32) -> ::windows_core::Result<()>;
+    fn ListStart(&self) -> ::windows_core::Result<i32>;
+    fn SetListStart(&self, value: i32) -> ::windows_core::Result<()>;
+    fn ListStyle(&self) -> ::windows_core::Result<MarkerStyle>;
+    fn SetListStyle(&self, value: MarkerStyle) -> ::windows_core::Result<()>;
+    fn ListTab(&self) -> ::windows_core::Result<f32>;
+    fn SetListTab(&self, value: f32) -> ::windows_core::Result<()>;
+    fn ListType(&self) -> ::windows_core::Result<MarkerType>;
+    fn SetListType(&self, value: MarkerType) -> ::windows_core::Result<()>;
+    fn NoLineNumber(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetNoLineNumber(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn PageBreakBefore(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetPageBreakBefore(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn RightIndent(&self) -> ::windows_core::Result<f32>;
+    fn SetRightIndent(&self, value: f32) -> ::windows_core::Result<()>;
+    fn RightToLeft(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetRightToLeft(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn Style(&self) -> ::windows_core::Result<ParagraphStyle>;
+    fn SetStyle(&self, value: ParagraphStyle) -> ::windows_core::Result<()>;
+    fn SpaceAfter(&self) -> ::windows_core::Result<f32>;
+    fn SetSpaceAfter(&self, value: f32) -> ::windows_core::Result<()>;
+    fn SpaceBefore(&self) -> ::windows_core::Result<f32>;
+    fn SetSpaceBefore(&self, value: f32) -> ::windows_core::Result<()>;
+    fn WidowControl(&self) -> ::windows_core::Result<FormatEffect>;
+    fn SetWidowControl(&self, value: FormatEffect) -> ::windows_core::Result<()>;
+    fn TabCount(&self) -> ::windows_core::Result<i32>;
     fn AddTab(
         &self,
         position: f32,
         align: TabAlignment,
         leader: TabLeader,
-    ) -> ::windows::core::Result<()>;
-    fn ClearAllTabs(&self) -> ::windows::core::Result<()>;
-    fn DeleteTab(&self, position: f32) -> ::windows::core::Result<()>;
-    fn GetClone(&self) -> ::windows::core::Result<ITextParagraphFormat>;
+    ) -> ::windows_core::Result<()>;
+    fn ClearAllTabs(&self) -> ::windows_core::Result<()>;
+    fn DeleteTab(&self, position: f32) -> ::windows_core::Result<()>;
+    fn GetClone(&self) -> ::windows_core::Result<ITextParagraphFormat>;
     fn GetTab(
         &self,
         index: i32,
         position: &mut f32,
         align: &mut TabAlignment,
         leader: &mut TabLeader,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
     fn IsEqual(
         &self,
-        format: &::core::option::Option<ITextParagraphFormat>,
-    ) -> ::windows::core::Result<bool>;
+        format: ::core::option::Option<&ITextParagraphFormat>,
+    ) -> ::windows_core::Result<bool>;
     fn SetClone(
         &self,
-        format: &::core::option::Option<ITextParagraphFormat>,
-    ) -> ::windows::core::Result<()>;
-    fn SetIndents(&self, start: f32, left: f32, right: f32) -> ::windows::core::Result<()>;
-    fn SetLineSpacing(&self, rule: LineSpacingRule, spacing: f32) -> ::windows::core::Result<()>;
+        format: ::core::option::Option<&ITextParagraphFormat>,
+    ) -> ::windows_core::Result<()>;
+    fn SetIndents(&self, start: f32, left: f32, right: f32) -> ::windows_core::Result<()>;
+    fn SetLineSpacing(&self, rule: LineSpacingRule, spacing: f32) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for ITextParagraphFormat {
+impl ::windows_core::RuntimeName for ITextParagraphFormat {
     const NAME: &'static str = "Microsoft.UI.Text.ITextParagraphFormat";
 }
 impl ITextParagraphFormat_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ITextParagraphFormat_Impl,
         const OFFSET: isize,
     >() -> ITextParagraphFormat_Vtbl {
         unsafe extern "system" fn Alignment<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ParagraphAlignment,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Alignment() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetAlignment<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ParagraphAlignment,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetAlignment(value).into()
         }
         unsafe extern "system" fn FirstLineIndent<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.FirstLineIndent() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn KeepTogether<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.KeepTogether() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetKeepTogether<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetKeepTogether(value).into()
         }
         unsafe extern "system" fn KeepWithNext<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.KeepWithNext() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetKeepWithNext<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetKeepWithNext(value).into()
         }
         unsafe extern "system" fn LeftIndent<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LeftIndent() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn LineSpacing<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LineSpacing() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn LineSpacingRule<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut LineSpacingRule,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LineSpacingRule() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ListAlignment<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut MarkerAlignment,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListAlignment() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListAlignment<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: MarkerAlignment,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListAlignment(value).into()
         }
         unsafe extern "system" fn ListLevelIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListLevelIndex() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListLevelIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListLevelIndex(value).into()
         }
         unsafe extern "system" fn ListStart<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListStart() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListStart<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListStart(value).into()
         }
         unsafe extern "system" fn ListStyle<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut MarkerStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListStyle() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListStyle<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: MarkerStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListStyle(value).into()
         }
         unsafe extern "system" fn ListTab<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListTab() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListTab<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListTab(value).into()
         }
         unsafe extern "system" fn ListType<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut MarkerType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ListType() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetListType<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: MarkerType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetListType(value).into()
         }
         unsafe extern "system" fn NoLineNumber<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.NoLineNumber() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetNoLineNumber<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetNoLineNumber(value).into()
         }
         unsafe extern "system" fn PageBreakBefore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.PageBreakBefore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetPageBreakBefore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetPageBreakBefore(value).into()
         }
         unsafe extern "system" fn RightIndent<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.RightIndent() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetRightIndent<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetRightIndent(value).into()
         }
         unsafe extern "system" fn RightToLeft<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.RightToLeft() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetRightToLeft<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetRightToLeft(value).into()
         }
         unsafe extern "system" fn Style<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ParagraphStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Style() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetStyle<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ParagraphStyle,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetStyle(value).into()
         }
         unsafe extern "system" fn SpaceAfter<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.SpaceAfter() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSpaceAfter<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSpaceAfter(value).into()
         }
         unsafe extern "system" fn SpaceBefore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.SpaceBefore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSpaceBefore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetSpaceBefore(value).into()
         }
         unsafe extern "system" fn WidowControl<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.WidowControl() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetWidowControl<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: FormatEffect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetWidowControl(value).into()
         }
         unsafe extern "system" fn TabCount<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.TabCount() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn AddTab<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
@@ -1617,55 +1574,55 @@ impl ITextParagraphFormat_Vtbl {
             position: f32,
             align: TabAlignment,
             leader: TabLeader,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.AddTab(position, align, leader).into()
         }
         unsafe extern "system" fn ClearAllTabs<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.ClearAllTabs().into()
         }
         unsafe extern "system" fn DeleteTab<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             position: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.DeleteTab(position).into()
         }
         unsafe extern "system" fn GetClone<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetClone() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetTab<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
@@ -1674,7 +1631,7 @@ impl ITextParagraphFormat_Vtbl {
             position: *mut f32,
             align: *mut TabAlignment,
             leader: *mut TabLeader,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetTab(
@@ -1686,39 +1643,38 @@ impl ITextParagraphFormat_Vtbl {
             .into()
         }
         unsafe extern "system" fn IsEqual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             format: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IsEqual(::core::mem::transmute(&format)) {
+            match this.IsEqual(::windows_core::from_raw_borrowed(&format)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetClone<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             format: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetClone(::core::mem::transmute(&format)).into()
+            this.SetClone(::windows_core::from_raw_borrowed(&format)).into()
         }
         unsafe extern "system" fn SetIndents<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
@@ -1726,26 +1682,26 @@ impl ITextParagraphFormat_Vtbl {
             start: f32,
             left: f32,
             right: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetIndents(start, left, right).into()
         }
         unsafe extern "system" fn SetLineSpacing<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextParagraphFormat_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             rule: LineSpacingRule,
             spacing: f32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetLineSpacing(rule, spacing).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextParagraphFormat, OFFSET>(
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ITextParagraphFormat, OFFSET>(
             ),
             Alignment: Alignment::<Identity, Impl, OFFSET>,
             SetAlignment: SetAlignment::<Identity, Impl, OFFSET>,
@@ -1797,517 +1753,510 @@ impl ITextParagraphFormat_Vtbl {
             SetLineSpacing: SetLineSpacing::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ITextParagraphFormat as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ITextParagraphFormat as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation\"`, `\"Windows_Storage_Streams\"`"]
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
 pub trait ITextRange_Impl: Sized {
-    fn Character(&self) -> ::windows::core::Result<u16>;
-    fn SetCharacter(&self, value: u16) -> ::windows::core::Result<()>;
-    fn CharacterFormat(&self) -> ::windows::core::Result<ITextCharacterFormat>;
+    fn Character(&self) -> ::windows_core::Result<u16>;
+    fn SetCharacter(&self, value: u16) -> ::windows_core::Result<()>;
+    fn CharacterFormat(&self) -> ::windows_core::Result<ITextCharacterFormat>;
     fn SetCharacterFormat(
         &self,
-        value: &::core::option::Option<ITextCharacterFormat>,
-    ) -> ::windows::core::Result<()>;
-    fn FormattedText(&self) -> ::windows::core::Result<ITextRange>;
+        value: ::core::option::Option<&ITextCharacterFormat>,
+    ) -> ::windows_core::Result<()>;
+    fn FormattedText(&self) -> ::windows_core::Result<ITextRange>;
     fn SetFormattedText(
         &self,
-        value: &::core::option::Option<ITextRange>,
-    ) -> ::windows::core::Result<()>;
-    fn EndPosition(&self) -> ::windows::core::Result<i32>;
-    fn SetEndPosition(&self, value: i32) -> ::windows::core::Result<()>;
-    fn Gravity(&self) -> ::windows::core::Result<RangeGravity>;
-    fn SetGravity(&self, value: RangeGravity) -> ::windows::core::Result<()>;
-    fn Length(&self) -> ::windows::core::Result<i32>;
-    fn Link(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn SetLink(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()>;
-    fn ParagraphFormat(&self) -> ::windows::core::Result<ITextParagraphFormat>;
+        value: ::core::option::Option<&ITextRange>,
+    ) -> ::windows_core::Result<()>;
+    fn EndPosition(&self) -> ::windows_core::Result<i32>;
+    fn SetEndPosition(&self, value: i32) -> ::windows_core::Result<()>;
+    fn Gravity(&self) -> ::windows_core::Result<RangeGravity>;
+    fn SetGravity(&self, value: RangeGravity) -> ::windows_core::Result<()>;
+    fn Length(&self) -> ::windows_core::Result<i32>;
+    fn Link(&self) -> ::windows_core::Result<::windows_core::HSTRING>;
+    fn SetLink(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()>;
+    fn ParagraphFormat(&self) -> ::windows_core::Result<ITextParagraphFormat>;
     fn SetParagraphFormat(
         &self,
-        value: &::core::option::Option<ITextParagraphFormat>,
-    ) -> ::windows::core::Result<()>;
-    fn StartPosition(&self) -> ::windows::core::Result<i32>;
-    fn SetStartPosition(&self, value: i32) -> ::windows::core::Result<()>;
-    fn StoryLength(&self) -> ::windows::core::Result<i32>;
-    fn Text(&self) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn SetText(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()>;
-    fn CanPaste(&self, format: i32) -> ::windows::core::Result<bool>;
-    fn ChangeCase(&self, value: LetterCase) -> ::windows::core::Result<()>;
-    fn Collapse(&self, value: bool) -> ::windows::core::Result<()>;
-    fn Copy(&self) -> ::windows::core::Result<()>;
-    fn Cut(&self) -> ::windows::core::Result<()>;
-    fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32>;
-    fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32>;
-    fn Expand(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32>;
+        value: ::core::option::Option<&ITextParagraphFormat>,
+    ) -> ::windows_core::Result<()>;
+    fn StartPosition(&self) -> ::windows_core::Result<i32>;
+    fn SetStartPosition(&self, value: i32) -> ::windows_core::Result<()>;
+    fn StoryLength(&self) -> ::windows_core::Result<i32>;
+    fn Text(&self) -> ::windows_core::Result<::windows_core::HSTRING>;
+    fn SetText(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()>;
+    fn CanPaste(&self, format: i32) -> ::windows_core::Result<bool>;
+    fn ChangeCase(&self, value: LetterCase) -> ::windows_core::Result<()>;
+    fn Collapse(&self, value: bool) -> ::windows_core::Result<()>;
+    fn Copy(&self) -> ::windows_core::Result<()>;
+    fn Cut(&self) -> ::windows_core::Result<()>;
+    fn Delete(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32>;
+    fn EndOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32>;
+    fn Expand(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32>;
     fn FindText(
         &self,
-        value: &::windows::core::HSTRING,
+        value: &::windows_core::HSTRING,
         scanlength: i32,
         options: FindOptions,
-    ) -> ::windows::core::Result<i32>;
-    fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows::core::Result<()>;
-    fn GetClone(&self) -> ::windows::core::Result<ITextRange>;
-    fn GetIndex(&self, unit: TextRangeUnit) -> ::windows::core::Result<i32>;
+    ) -> ::windows_core::Result<i32>;
+    fn GetCharacterUtf32(&self, value: &mut u32, offset: i32) -> ::windows_core::Result<()>;
+    fn GetClone(&self) -> ::windows_core::Result<ITextRange>;
+    fn GetIndex(&self, unit: TextRangeUnit) -> ::windows_core::Result<i32>;
     fn GetPoint(
         &self,
         horizontalalign: HorizontalCharacterAlignment,
         verticalalign: VerticalCharacterAlignment,
         options: PointOptions,
         point: &mut ::windows::Foundation::Point,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
     fn GetRect(
         &self,
         options: PointOptions,
         rect: &mut ::windows::Foundation::Rect,
         hit: &mut i32,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
     fn GetText(
         &self,
         options: TextGetOptions,
-        value: &mut ::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()>;
+        value: &mut ::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()>;
     fn GetTextViaStream(
         &self,
         options: TextGetOptions,
-        value: &::core::option::Option<::windows::Storage::Streams::IRandomAccessStream>,
-    ) -> ::windows::core::Result<()>;
-    fn InRange(&self, range: &::core::option::Option<ITextRange>) -> ::windows::core::Result<bool>;
+        value: ::core::option::Option<&::windows::Storage::Streams::IRandomAccessStream>,
+    ) -> ::windows_core::Result<()>;
+    fn InRange(&self, range: ::core::option::Option<&ITextRange>) -> ::windows_core::Result<bool>;
     fn InsertImage(
         &self,
         width: i32,
         height: i32,
         ascent: i32,
         verticalalign: VerticalCharacterAlignment,
-        alternatetext: &::windows::core::HSTRING,
-        value: &::core::option::Option<::windows::Storage::Streams::IRandomAccessStream>,
-    ) -> ::windows::core::Result<()>;
-    fn InStory(&self, range: &::core::option::Option<ITextRange>) -> ::windows::core::Result<bool>;
-    fn IsEqual(&self, range: &::core::option::Option<ITextRange>) -> ::windows::core::Result<bool>;
-    fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32>;
-    fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32>;
-    fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows::core::Result<i32>;
-    fn Paste(&self, format: i32) -> ::windows::core::Result<()>;
-    fn ScrollIntoView(&self, value: PointOptions) -> ::windows::core::Result<()>;
-    fn MatchSelection(&self) -> ::windows::core::Result<()>;
-    fn SetIndex(
-        &self,
-        unit: TextRangeUnit,
-        index: i32,
-        extend: bool,
-    ) -> ::windows::core::Result<()>;
+        alternatetext: &::windows_core::HSTRING,
+        value: ::core::option::Option<&::windows::Storage::Streams::IRandomAccessStream>,
+    ) -> ::windows_core::Result<()>;
+    fn InStory(&self, range: ::core::option::Option<&ITextRange>) -> ::windows_core::Result<bool>;
+    fn IsEqual(&self, range: ::core::option::Option<&ITextRange>) -> ::windows_core::Result<bool>;
+    fn Move(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32>;
+    fn MoveEnd(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32>;
+    fn MoveStart(&self, unit: TextRangeUnit, count: i32) -> ::windows_core::Result<i32>;
+    fn Paste(&self, format: i32) -> ::windows_core::Result<()>;
+    fn ScrollIntoView(&self, value: PointOptions) -> ::windows_core::Result<()>;
+    fn MatchSelection(&self) -> ::windows_core::Result<()>;
+    fn SetIndex(&self, unit: TextRangeUnit, index: i32, extend: bool)
+        -> ::windows_core::Result<()>;
     fn SetPoint(
         &self,
         point: &::windows::Foundation::Point,
         options: PointOptions,
         extend: bool,
-    ) -> ::windows::core::Result<()>;
-    fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
+    fn SetRange(&self, startposition: i32, endposition: i32) -> ::windows_core::Result<()>;
     fn SetText2(
         &self,
         options: TextSetOptions,
-        value: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<()>;
+        value: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<()>;
     fn SetTextViaStream(
         &self,
         options: TextSetOptions,
-        value: &::core::option::Option<::windows::Storage::Streams::IRandomAccessStream>,
-    ) -> ::windows::core::Result<()>;
-    fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32>;
+        value: ::core::option::Option<&::windows::Storage::Streams::IRandomAccessStream>,
+    ) -> ::windows_core::Result<()>;
+    fn StartOf(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32>;
 }
-impl ::windows::core::RuntimeName for ITextRange {
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
+impl ::windows_core::RuntimeName for ITextRange {
     const NAME: &'static str = "Microsoft.UI.Text.ITextRange";
 }
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
 impl ITextRange_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ITextRange_Impl,
         const OFFSET: isize,
     >() -> ITextRange_Vtbl {
         unsafe extern "system" fn Character<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut u16,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Character() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetCharacter<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: u16,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetCharacter(value).into()
         }
         unsafe extern "system" fn CharacterFormat<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.CharacterFormat() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetCharacterFormat<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetCharacterFormat(::core::mem::transmute(&value)).into()
+            this.SetCharacterFormat(::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn FormattedText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.FormattedText() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetFormattedText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetFormattedText(::core::mem::transmute(&value)).into()
+            this.SetFormattedText(::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn EndPosition<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.EndPosition() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetEndPosition<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetEndPosition(value).into()
         }
         unsafe extern "system" fn Gravity<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut RangeGravity,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Gravity() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetGravity<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: RangeGravity,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetGravity(value).into()
         }
         unsafe extern "system" fn Length<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Length() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Link<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Link() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetLink<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetLink(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn ParagraphFormat<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ParagraphFormat() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetParagraphFormat<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetParagraphFormat(::core::mem::transmute(&value)).into()
+            this.SetParagraphFormat(::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn StartPosition<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.StartPosition() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetStartPosition<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetStartPosition(value).into()
         }
         unsafe extern "system" fn StoryLength<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.StoryLength() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Text<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Text() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetText(::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn CanPaste<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             format: i32,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.CanPaste(format) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ChangeCase<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: LetterCase,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.ChangeCase(value).into()
         }
         unsafe extern "system" fn Collapse<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.Collapse(value).into()
         }
         unsafe extern "system" fn Copy<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.Copy().into()
         }
         unsafe extern "system" fn Cut<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.Cut().into()
         }
         unsafe extern "system" fn Delete<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2315,20 +2264,19 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             count: i32,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Delete(unit, count) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn EndOf<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2336,114 +2284,110 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.EndOf(unit, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Expand<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             unit: TextRangeUnit,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Expand(unit) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn FindText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
             scanlength: i32,
             options: FindOptions,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.FindText(::core::mem::transmute(&value), scanlength, options) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetCharacterUtf32<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut u32,
             offset: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetCharacterUtf32(::core::mem::transmute_copy(&value), offset).into()
         }
         unsafe extern "system" fn GetClone<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetClone() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             unit: TextRangeUnit,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetIndex(unit) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetPoint<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2452,7 +2396,7 @@ impl ITextRange_Vtbl {
             verticalalign: VerticalCharacterAlignment,
             options: PointOptions,
             point: *mut ::windows::Foundation::Point,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetPoint(
@@ -2464,7 +2408,7 @@ impl ITextRange_Vtbl {
             .into()
         }
         unsafe extern "system" fn GetRect<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2472,7 +2416,7 @@ impl ITextRange_Vtbl {
             options: PointOptions,
             rect: *mut ::windows::Foundation::Rect,
             hit: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetRect(
@@ -2483,53 +2427,52 @@ impl ITextRange_Vtbl {
             .into()
         }
         unsafe extern "system" fn GetText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             options: TextGetOptions,
-            value: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetText(options, ::core::mem::transmute_copy(&value)).into()
         }
         unsafe extern "system" fn GetTextViaStream<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             options: TextGetOptions,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.GetTextViaStream(options, ::core::mem::transmute(&value)).into()
+            this.GetTextViaStream(options, ::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn InRange<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             range: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.InRange(::core::mem::transmute(&range)) {
+            match this.InRange(::windows_core::from_raw_borrowed(&range)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn InsertImage<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2538,9 +2481,9 @@ impl ITextRange_Vtbl {
             height: i32,
             ascent: i32,
             verticalalign: VerticalCharacterAlignment,
-            alternatetext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+            alternatetext: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.InsertImage(
@@ -2549,52 +2492,50 @@ impl ITextRange_Vtbl {
                 ascent,
                 verticalalign,
                 ::core::mem::transmute(&alternatetext),
-                ::core::mem::transmute(&value),
+                ::windows_core::from_raw_borrowed(&value),
             )
             .into()
         }
         unsafe extern "system" fn InStory<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             range: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.InStory(::core::mem::transmute(&range)) {
+            match this.InStory(::windows_core::from_raw_borrowed(&range)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn IsEqual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             range: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IsEqual(::core::mem::transmute(&range)) {
+            match this.IsEqual(::windows_core::from_raw_borrowed(&range)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Move<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2602,20 +2543,19 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             count: i32,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Move(unit, count) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveEnd<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2623,20 +2563,19 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             count: i32,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveEnd(unit, count) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveStart<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2644,55 +2583,54 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             count: i32,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveStart(unit, count) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Paste<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             format: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.Paste(format).into()
         }
         unsafe extern "system" fn ScrollIntoView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: PointOptions,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.ScrollIntoView(value).into()
         }
         unsafe extern "system" fn MatchSelection<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.MatchSelection().into()
         }
         unsafe extern "system" fn SetIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2700,13 +2638,13 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             index: i32,
             extend: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetIndex(unit, index, extend).into()
         }
         unsafe extern "system" fn SetPoint<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2714,52 +2652,52 @@ impl ITextRange_Vtbl {
             point: ::windows::Foundation::Point,
             options: PointOptions,
             extend: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetPoint(::core::mem::transmute(&point), options, extend).into()
         }
         unsafe extern "system" fn SetRange<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             startposition: i32,
             endposition: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetRange(startposition, endposition).into()
         }
         unsafe extern "system" fn SetText2<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             options: TextSetOptions,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetText2(options, ::core::mem::transmute(&value)).into()
         }
         unsafe extern "system" fn SetTextViaStream<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             options: TextSetOptions,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetTextViaStream(options, ::core::mem::transmute(&value)).into()
+            this.SetTextViaStream(options, ::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn StartOf<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextRange_Impl,
             const OFFSET: isize,
         >(
@@ -2767,20 +2705,19 @@ impl ITextRange_Vtbl {
             unit: TextRangeUnit,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.StartOf(unit, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextRange, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ITextRange, OFFSET>(),
             Character: Character::<Identity, Impl, OFFSET>,
             SetCharacter: SetCharacter::<Identity, Impl, OFFSET>,
             CharacterFormat: CharacterFormat::<Identity, Impl, OFFSET>,
@@ -2835,99 +2772,100 @@ impl ITextRange_Vtbl {
             StartOf: StartOf::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ITextRange as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ITextRange as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation\"`, `\"Windows_Storage_Streams\"`"]
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
 pub trait ITextSelection_Impl: Sized + ITextRange_Impl {
-    fn Options(&self) -> ::windows::core::Result<SelectionOptions>;
-    fn SetOptions(&self, value: SelectionOptions) -> ::windows::core::Result<()>;
-    fn Type(&self) -> ::windows::core::Result<SelectionType>;
-    fn EndKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32>;
-    fn HomeKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows::core::Result<i32>;
+    fn Options(&self) -> ::windows_core::Result<SelectionOptions>;
+    fn SetOptions(&self, value: SelectionOptions) -> ::windows_core::Result<()>;
+    fn Type(&self) -> ::windows_core::Result<SelectionType>;
+    fn EndKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32>;
+    fn HomeKey(&self, unit: TextRangeUnit, extend: bool) -> ::windows_core::Result<i32>;
     fn MoveDown(
         &self,
         unit: TextRangeUnit,
         count: i32,
         extend: bool,
-    ) -> ::windows::core::Result<i32>;
+    ) -> ::windows_core::Result<i32>;
     fn MoveLeft(
         &self,
         unit: TextRangeUnit,
         count: i32,
         extend: bool,
-    ) -> ::windows::core::Result<i32>;
+    ) -> ::windows_core::Result<i32>;
     fn MoveRight(
         &self,
         unit: TextRangeUnit,
         count: i32,
         extend: bool,
-    ) -> ::windows::core::Result<i32>;
-    fn MoveUp(&self, unit: TextRangeUnit, count: i32, extend: bool)
-        -> ::windows::core::Result<i32>;
-    fn TypeText(&self, value: &::windows::core::HSTRING) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<i32>;
+    fn MoveUp(&self, unit: TextRangeUnit, count: i32, extend: bool) -> ::windows_core::Result<i32>;
+    fn TypeText(&self, value: &::windows_core::HSTRING) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for ITextSelection {
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
+impl ::windows_core::RuntimeName for ITextSelection {
     const NAME: &'static str = "Microsoft.UI.Text.ITextSelection";
 }
+#[cfg(all(feature = "Windows_Foundation", feature = "Windows_Storage_Streams"))]
 impl ITextSelection_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ITextSelection_Impl,
         const OFFSET: isize,
     >() -> ITextSelection_Vtbl {
         unsafe extern "system" fn Options<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut SelectionOptions,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Options() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetOptions<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: SelectionOptions,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetOptions(value).into()
         }
         unsafe extern "system" fn Type<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut SelectionType,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Type() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn EndKey<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -2935,20 +2873,19 @@ impl ITextSelection_Vtbl {
             unit: TextRangeUnit,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.EndKey(unit, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn HomeKey<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -2956,20 +2893,19 @@ impl ITextSelection_Vtbl {
             unit: TextRangeUnit,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.HomeKey(unit, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveDown<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -2978,20 +2914,19 @@ impl ITextSelection_Vtbl {
             count: i32,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveDown(unit, count, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveLeft<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -3000,20 +2935,19 @@ impl ITextSelection_Vtbl {
             count: i32,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveLeft(unit, count, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveRight<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -3022,20 +2956,19 @@ impl ITextSelection_Vtbl {
             count: i32,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveRight(unit, count, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn MoveUp<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
@@ -3044,32 +2977,31 @@ impl ITextSelection_Vtbl {
             count: i32,
             extend: bool,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MoveUp(unit, count, extend) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn TypeText<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ITextSelection_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            value: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            value: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.TypeText(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ITextSelection, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ITextSelection, OFFSET>(),
             Options: Options::<Identity, Impl, OFFSET>,
             SetOptions: SetOptions::<Identity, Impl, OFFSET>,
             Type: Type::<Identity, Impl, OFFSET>,
@@ -3082,7 +3014,7 @@ impl ITextSelection_Vtbl {
             TypeText: TypeText::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ITextSelection as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ITextSelection as ::windows_core::ComInterface>::IID
     }
 }

@@ -2,7 +2,7 @@
 
 use windows::Win32::Storage::Packaging::Appx::{PACKAGE_VERSION, PACKAGE_VERSION_0};
 
-use crate::Microsoft::WindowsAppSdk::Foundation::*;
+use crate::Microsoft::WindowsAppRuntime::Bootstrap::*;
 
 /// Locates the Windows App SDK framework package compatible with the
 /// metadata-matched versioning criteria and loads it into the current process.

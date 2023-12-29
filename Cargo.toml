@@ -1,4 +1,5 @@
 [workspace]
+resolver = "2"
 members = [
     "crates/libs/*",
     "crates/tests/*",
@@ -6,3 +7,8 @@ members = [
     "crates/targets/*",
     "crates/samples/*",
 ]
+
+[workspace.dependencies]
+#TODO update to latest release when available
+windows = { git = "https://github.com/microsoft/windows-rs/", rev = "0a65f6cf7277d8d44b860821070e9b1d2ba7636b" }
+windows-core = { git = "https://github.com/microsoft/windows-rs/", rev = "0a65f6cf7277d8d44b860821070e9b1d2ba7636b" }

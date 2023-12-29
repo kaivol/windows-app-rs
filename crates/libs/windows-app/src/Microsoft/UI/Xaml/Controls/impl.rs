@@ -1,159 +1,178 @@
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`, `\"Windows_Foundation_Numerics\"`"]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
 pub trait IAnimatedVisual_Impl: Sized + ::windows::Foundation::IClosable_Impl {
-    fn RootVisual(&self) -> ::windows::core::Result<super::super::Composition::Visual>;
-    fn Size(&self) -> ::windows::core::Result<::windows::Foundation::Numerics::Vector2>;
-    fn Duration(&self) -> ::windows::core::Result<::windows::Foundation::TimeSpan>;
+    fn RootVisual(&self) -> ::windows_core::Result<super::super::Composition::Visual>;
+    fn Size(&self) -> ::windows_core::Result<::windows::Foundation::Numerics::Vector2>;
+    fn Duration(&self) -> ::windows_core::Result<::windows::Foundation::TimeSpan>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IAnimatedVisual {
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
+impl ::windows_core::RuntimeName for IAnimatedVisual {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisual";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
 impl IAnimatedVisual_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAnimatedVisual_Impl,
         const OFFSET: isize,
     >() -> IAnimatedVisual_Vtbl {
         unsafe extern "system" fn RootVisual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisual_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.RootVisual() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Size<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisual_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::Foundation::Numerics::Vector2,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Size() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn Duration<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisual_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::Foundation::TimeSpan,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Duration() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual, OFFSET>(),
             RootVisual: RootVisual::<Identity, Impl, OFFSET>,
             Size: Size::<Identity, Impl, OFFSET>,
             Duration: Duration::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAnimatedVisual as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAnimatedVisual as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`, `\"Windows_Foundation_Numerics\"`"]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
 pub trait IAnimatedVisual2_Impl:
     Sized + IAnimatedVisual_Impl + ::windows::Foundation::IClosable_Impl
 {
-    fn CreateAnimations(&self) -> ::windows::core::Result<()>;
-    fn DestroyAnimations(&self) -> ::windows::core::Result<()>;
+    fn CreateAnimations(&self) -> ::windows_core::Result<()>;
+    fn DestroyAnimations(&self) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IAnimatedVisual2 {
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
+impl ::windows_core::RuntimeName for IAnimatedVisual2 {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisual2";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Numerics"
+))]
 impl IAnimatedVisual2_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAnimatedVisual2_Impl,
         const OFFSET: isize,
     >() -> IAnimatedVisual2_Vtbl {
         unsafe extern "system" fn CreateAnimations<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisual2_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.CreateAnimations().into()
         }
         unsafe extern "system" fn DestroyAnimations<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisual2_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.DestroyAnimations().into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual2, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IAnimatedVisual2, OFFSET>(),
             CreateAnimations: CreateAnimations::<Identity, Impl, OFFSET>,
             DestroyAnimations: DestroyAnimations::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAnimatedVisual2 as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAnimatedVisual2 as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`"]
+#[cfg(feature = "Microsoft_UI_Composition")]
 pub trait IAnimatedVisualSource_Impl: Sized {
     fn TryCreateAnimatedVisual(
         &self,
-        compositor: &::core::option::Option<super::super::Composition::Compositor>,
-        diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<IAnimatedVisual>;
+        compositor: ::core::option::Option<&super::super::Composition::Compositor>,
+        diagnostics: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<IAnimatedVisual>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IAnimatedVisualSource {
+#[cfg(feature = "Microsoft_UI_Composition")]
+impl ::windows_core::RuntimeName for IAnimatedVisualSource {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "Microsoft_UI_Composition")]
 impl IAnimatedVisualSource_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAnimatedVisualSource_Impl,
         const OFFSET: isize,
     >() -> IAnimatedVisualSource_Vtbl {
         unsafe extern "system" fn TryCreateAnimatedVisual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisualSource_Impl,
             const OFFSET: isize,
         >(
@@ -161,86 +180,96 @@ impl IAnimatedVisualSource_Vtbl {
             compositor: *mut ::core::ffi::c_void,
             diagnostics: *mut *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.TryCreateAnimatedVisual(
-                ::core::mem::transmute(&compositor),
+                ::windows_core::from_raw_borrowed(&compositor),
                 ::core::mem::transmute_copy(&diagnostics),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
-                Identity,
-                IAnimatedVisualSource,
-                OFFSET,
-            >(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IAnimatedVisualSource, OFFSET>(
+            ),
             TryCreateAnimatedVisual: TryCreateAnimatedVisual::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAnimatedVisualSource as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAnimatedVisualSource as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`, `\"Windows_Foundation_Collections\"`, `\"Windows_UI\"`"]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Collections",
+    feature = "Windows_UI"
+))]
 pub trait IAnimatedVisualSource2_Impl: Sized + IAnimatedVisualSource_Impl {
     fn Markers(
         &self,
-    ) -> ::windows::core::Result<
-        ::windows::Foundation::Collections::IMapView<::windows::core::HSTRING, f64>,
+    ) -> ::windows_core::Result<
+        ::windows::Foundation::Collections::IMapView<::windows_core::HSTRING, f64>,
     >;
     fn SetColorProperty(
         &self,
-        propertyname: &::windows::core::HSTRING,
+        propertyname: &::windows_core::HSTRING,
         value: &::windows::UI::Color,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IAnimatedVisualSource2 {
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Collections",
+    feature = "Windows_UI"
+))]
+impl ::windows_core::RuntimeName for IAnimatedVisualSource2 {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(all(
+    feature = "Microsoft_UI_Composition",
+    feature = "Windows_Foundation_Collections",
+    feature = "Windows_UI"
+))]
 impl IAnimatedVisualSource2_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAnimatedVisualSource2_Impl,
         const OFFSET: isize,
     >() -> IAnimatedVisualSource2_Vtbl {
         unsafe extern "system" fn Markers<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisualSource2_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.Markers() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetColorProperty<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisualSource2_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            propertyname: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+            propertyname: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
             value: ::windows::UI::Color,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetColorProperty(
@@ -250,7 +279,7 @@ impl IAnimatedVisualSource2_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IAnimatedVisualSource2,
                 OFFSET,
@@ -259,32 +288,33 @@ impl IAnimatedVisualSource2_Vtbl {
             SetColorProperty: SetColorProperty::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAnimatedVisualSource2 as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAnimatedVisualSource2 as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`"]
+#[cfg(feature = "Microsoft_UI_Composition")]
 pub trait IAnimatedVisualSource3_Impl: Sized {
     fn TryCreateAnimatedVisual(
         &self,
-        compositor: &::core::option::Option<super::super::Composition::Compositor>,
-        diagnostics: &mut ::core::option::Option<::windows::core::IInspectable>,
+        compositor: ::core::option::Option<&super::super::Composition::Compositor>,
+        diagnostics: &mut ::core::option::Option<::windows_core::IInspectable>,
         createanimations: bool,
-    ) -> ::windows::core::Result<IAnimatedVisual2>;
+    ) -> ::windows_core::Result<IAnimatedVisual2>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IAnimatedVisualSource3 {
+#[cfg(feature = "Microsoft_UI_Composition")]
+impl ::windows_core::RuntimeName for IAnimatedVisualSource3 {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource3";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(feature = "Microsoft_UI_Composition")]
 impl IAnimatedVisualSource3_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAnimatedVisualSource3_Impl,
         const OFFSET: isize,
     >() -> IAnimatedVisualSource3_Vtbl {
         unsafe extern "system" fn TryCreateAnimatedVisual<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAnimatedVisualSource3_Impl,
             const OFFSET: isize,
         >(
@@ -293,24 +323,24 @@ impl IAnimatedVisualSource3_Vtbl {
             diagnostics: *mut *mut ::core::ffi::c_void,
             createanimations: bool,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.TryCreateAnimatedVisual(
-                ::core::mem::transmute(&compositor),
+                ::windows_core::from_raw_borrowed(&compositor),
                 ::core::mem::transmute_copy(&diagnostics),
                 createanimations,
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IAnimatedVisualSource3,
                 OFFSET,
@@ -318,262 +348,247 @@ impl IAnimatedVisualSource3_Vtbl {
             TryCreateAnimatedVisual: TryCreateAnimatedVisual::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAnimatedVisualSource3 as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAnimatedVisualSource3 as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IAppBarOverrides_Impl: Sized {
     fn OnClosed(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnOpened(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnClosing(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnOpening(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IAppBarOverrides {
+impl ::windows_core::RuntimeName for IAppBarOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IAppBarOverrides";
 }
 impl IAppBarOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IAppBarOverrides_Impl,
         const OFFSET: isize,
     >() -> IAppBarOverrides_Vtbl {
         unsafe extern "system" fn OnClosed<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAppBarOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnClosed(::core::mem::transmute(&e)).into()
+            this.OnClosed(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnOpened<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAppBarOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnOpened(::core::mem::transmute(&e)).into()
+            this.OnOpened(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnClosing<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAppBarOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnClosing(::core::mem::transmute(&e)).into()
+            this.OnClosing(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnOpening<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IAppBarOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnOpening(::core::mem::transmute(&e)).into()
+            this.OnOpening(::windows_core::from_raw_borrowed(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IAppBarOverrides, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IAppBarOverrides, OFFSET>(),
             OnClosed: OnClosed::<Identity, Impl, OFFSET>,
             OnOpened: OnOpened::<Identity, Impl, OFFSET>,
             OnClosing: OnClosing::<Identity, Impl, OFFSET>,
             OnOpening: OnOpening::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IAppBarOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IAppBarOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IComboBoxOverrides_Impl: Sized {
     fn OnDropDownClosed(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnDropDownOpened(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IComboBoxOverrides {
+impl ::windows_core::RuntimeName for IComboBoxOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IComboBoxOverrides";
 }
 impl IComboBoxOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IComboBoxOverrides_Impl,
         const OFFSET: isize,
     >() -> IComboBoxOverrides_Vtbl {
         unsafe extern "system" fn OnDropDownClosed<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IComboBoxOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDropDownClosed(::core::mem::transmute(&e)).into()
+            this.OnDropDownClosed(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDropDownOpened<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IComboBoxOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDropDownOpened(::core::mem::transmute(&e)).into()
+            this.OnDropDownOpened(::windows_core::from_raw_borrowed(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IComboBoxOverrides, OFFSET>(
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IComboBoxOverrides, OFFSET>(
             ),
             OnDropDownClosed: OnDropDownClosed::<Identity, Impl, OFFSET>,
             OnDropDownOpened: OnDropDownOpened::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IComboBoxOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IComboBoxOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait ICommandBarElement_Impl: Sized {
-    fn IsCompact(&self) -> ::windows::core::Result<bool>;
-    fn SetIsCompact(&self, value: bool) -> ::windows::core::Result<()>;
-    fn IsInOverflow(&self) -> ::windows::core::Result<bool>;
-    fn DynamicOverflowOrder(&self) -> ::windows::core::Result<i32>;
-    fn SetDynamicOverflowOrder(&self, value: i32) -> ::windows::core::Result<()>;
+    fn IsCompact(&self) -> ::windows_core::Result<bool>;
+    fn SetIsCompact(&self, value: bool) -> ::windows_core::Result<()>;
+    fn IsInOverflow(&self) -> ::windows_core::Result<bool>;
+    fn DynamicOverflowOrder(&self) -> ::windows_core::Result<i32>;
+    fn SetDynamicOverflowOrder(&self, value: i32) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for ICommandBarElement {
+impl ::windows_core::RuntimeName for ICommandBarElement {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.ICommandBarElement";
 }
 impl ICommandBarElement_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ICommandBarElement_Impl,
         const OFFSET: isize,
     >() -> ICommandBarElement_Vtbl {
         unsafe extern "system" fn IsCompact<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ICommandBarElement_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.IsCompact() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetIsCompact<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ICommandBarElement_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetIsCompact(value).into()
         }
         unsafe extern "system" fn IsInOverflow<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ICommandBarElement_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.IsInOverflow() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn DynamicOverflowOrder<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ICommandBarElement_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.DynamicOverflowOrder() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetDynamicOverflowOrder<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ICommandBarElement_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetDynamicOverflowOrder(value).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, ICommandBarElement, OFFSET>(
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ICommandBarElement, OFFSET>(
             ),
             IsCompact: IsCompact::<Identity, Impl, OFFSET>,
             SetIsCompact: SetIsCompact::<Identity, Impl, OFFSET>,
@@ -582,95 +597,89 @@ impl ICommandBarElement_Vtbl {
             SetDynamicOverflowOrder: SetDynamicOverflowOrder::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ICommandBarElement as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ICommandBarElement as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IContentControlOverrides_Impl: Sized {
     fn OnContentChanged(
         &self,
-        oldcontent: &::core::option::Option<::windows::core::IInspectable>,
-        newcontent: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontent: ::core::option::Option<&::windows_core::IInspectable>,
+        newcontent: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnContentTemplateChanged(
         &self,
-        oldcontenttemplate: &::core::option::Option<super::DataTemplate>,
-        newcontenttemplate: &::core::option::Option<super::DataTemplate>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontenttemplate: ::core::option::Option<&super::DataTemplate>,
+        newcontenttemplate: ::core::option::Option<&super::DataTemplate>,
+    ) -> ::windows_core::Result<()>;
     fn OnContentTemplateSelectorChanged(
         &self,
-        oldcontenttemplateselector: &::core::option::Option<DataTemplateSelector>,
-        newcontenttemplateselector: &::core::option::Option<DataTemplateSelector>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontenttemplateselector: ::core::option::Option<&DataTemplateSelector>,
+        newcontenttemplateselector: ::core::option::Option<&DataTemplateSelector>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IContentControlOverrides {
+impl ::windows_core::RuntimeName for IContentControlOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IContentControlOverrides";
 }
 impl IContentControlOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IContentControlOverrides_Impl,
         const OFFSET: isize,
     >() -> IContentControlOverrides_Vtbl {
         unsafe extern "system" fn OnContentChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IContentControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontent: *mut ::core::ffi::c_void,
             newcontent: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnContentChanged(
-                ::core::mem::transmute(&oldcontent),
-                ::core::mem::transmute(&newcontent),
+                ::windows_core::from_raw_borrowed(&oldcontent),
+                ::windows_core::from_raw_borrowed(&newcontent),
             )
             .into()
         }
         unsafe extern "system" fn OnContentTemplateChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IContentControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontenttemplate: *mut ::core::ffi::c_void,
             newcontenttemplate: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnContentTemplateChanged(
-                ::core::mem::transmute(&oldcontenttemplate),
-                ::core::mem::transmute(&newcontenttemplate),
+                ::windows_core::from_raw_borrowed(&oldcontenttemplate),
+                ::windows_core::from_raw_borrowed(&newcontenttemplate),
             )
             .into()
         }
         unsafe extern "system" fn OnContentTemplateSelectorChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IContentControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontenttemplateselector: *mut ::core::ffi::c_void,
             newcontenttemplateselector: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnContentTemplateSelectorChanged(
-                ::core::mem::transmute(&oldcontenttemplateselector),
-                ::core::mem::transmute(&newcontenttemplateselector),
+                ::windows_core::from_raw_borrowed(&oldcontenttemplateselector),
+                ::windows_core::from_raw_borrowed(&newcontenttemplateselector),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IContentControlOverrides,
                 OFFSET,
@@ -684,71 +693,67 @@ impl IContentControlOverrides_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IContentControlOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IContentControlOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IContentPresenterOverrides_Impl: Sized {
     fn OnContentTemplateChanged(
         &self,
-        oldcontenttemplate: &::core::option::Option<super::DataTemplate>,
-        newcontenttemplate: &::core::option::Option<super::DataTemplate>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontenttemplate: ::core::option::Option<&super::DataTemplate>,
+        newcontenttemplate: ::core::option::Option<&super::DataTemplate>,
+    ) -> ::windows_core::Result<()>;
     fn OnContentTemplateSelectorChanged(
         &self,
-        oldcontenttemplateselector: &::core::option::Option<DataTemplateSelector>,
-        newcontenttemplateselector: &::core::option::Option<DataTemplateSelector>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontenttemplateselector: ::core::option::Option<&DataTemplateSelector>,
+        newcontenttemplateselector: ::core::option::Option<&DataTemplateSelector>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IContentPresenterOverrides {
+impl ::windows_core::RuntimeName for IContentPresenterOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IContentPresenterOverrides";
 }
 impl IContentPresenterOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IContentPresenterOverrides_Impl,
         const OFFSET: isize,
     >() -> IContentPresenterOverrides_Vtbl {
         unsafe extern "system" fn OnContentTemplateChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IContentPresenterOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontenttemplate: *mut ::core::ffi::c_void,
             newcontenttemplate: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnContentTemplateChanged(
-                ::core::mem::transmute(&oldcontenttemplate),
-                ::core::mem::transmute(&newcontenttemplate),
+                ::windows_core::from_raw_borrowed(&oldcontenttemplate),
+                ::windows_core::from_raw_borrowed(&newcontenttemplate),
             )
             .into()
         }
         unsafe extern "system" fn OnContentTemplateSelectorChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IContentPresenterOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontenttemplateselector: *mut ::core::ffi::c_void,
             newcontenttemplateselector: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnContentTemplateSelectorChanged(
-                ::core::mem::transmute(&oldcontenttemplateselector),
-                ::core::mem::transmute(&newcontenttemplateselector),
+                ::windows_core::from_raw_borrowed(&oldcontenttemplateselector),
+                ::windows_core::from_raw_borrowed(&newcontenttemplateselector),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IContentPresenterOverrides,
                 OFFSET,
@@ -761,531 +766,475 @@ impl IContentPresenterOverrides_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IContentPresenterOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IContentPresenterOverrides as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Xaml_Input")]
+#[doc = "Required features: `\"Microsoft_UI_Xaml_Input\"`"]
+#[cfg(feature = "Microsoft_UI_Xaml_Input")]
 pub trait IControlOverrides_Impl: Sized {
     fn OnPointerEntered(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerPressed(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerMoved(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerReleased(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerExited(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerCaptureLost(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerCanceled(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPointerWheelChanged(
         &self,
-        e: &::core::option::Option<super::Input::PointerRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::PointerRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnTapped(
         &self,
-        e: &::core::option::Option<super::Input::TappedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::TappedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnDoubleTapped(
         &self,
-        e: &::core::option::Option<super::Input::DoubleTappedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::DoubleTappedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnHolding(
         &self,
-        e: &::core::option::Option<super::Input::HoldingRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::HoldingRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnRightTapped(
         &self,
-        e: &::core::option::Option<super::Input::RightTappedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::RightTappedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnManipulationStarting(
         &self,
-        e: &::core::option::Option<super::Input::ManipulationStartingRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::ManipulationStartingRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnManipulationInertiaStarting(
         &self,
-        e: &::core::option::Option<super::Input::ManipulationInertiaStartingRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::ManipulationInertiaStartingRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnManipulationStarted(
         &self,
-        e: &::core::option::Option<super::Input::ManipulationStartedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::ManipulationStartedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnManipulationDelta(
         &self,
-        e: &::core::option::Option<super::Input::ManipulationDeltaRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::ManipulationDeltaRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnManipulationCompleted(
         &self,
-        e: &::core::option::Option<super::Input::ManipulationCompletedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::ManipulationCompletedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnKeyUp(
         &self,
-        e: &::core::option::Option<super::Input::KeyRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::KeyRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnKeyDown(
         &self,
-        e: &::core::option::Option<super::Input::KeyRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::KeyRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPreviewKeyDown(
         &self,
-        e: &::core::option::Option<super::Input::KeyRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::KeyRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnPreviewKeyUp(
         &self,
-        e: &::core::option::Option<super::Input::KeyRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::KeyRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnGotFocus(
         &self,
-        e: &::core::option::Option<super::RoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::RoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnLostFocus(
         &self,
-        e: &::core::option::Option<super::RoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::RoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnCharacterReceived(
         &self,
-        e: &::core::option::Option<super::Input::CharacterReceivedRoutedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Input::CharacterReceivedRoutedEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnDragEnter(
         &self,
-        e: &::core::option::Option<super::DragEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::DragEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnDragLeave(
         &self,
-        e: &::core::option::Option<super::DragEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::DragEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnDragOver(
         &self,
-        e: &::core::option::Option<super::DragEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::DragEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnDrop(
         &self,
-        e: &::core::option::Option<super::DragEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::DragEventArgs>,
+    ) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Xaml_Input")]
-impl ::windows::core::RuntimeName for IControlOverrides {
+#[cfg(feature = "Microsoft_UI_Xaml_Input")]
+impl ::windows_core::RuntimeName for IControlOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IControlOverrides";
 }
-#[cfg(feature = "UI_Xaml_Input")]
+#[cfg(feature = "Microsoft_UI_Xaml_Input")]
 impl IControlOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IControlOverrides_Impl,
         const OFFSET: isize,
     >() -> IControlOverrides_Vtbl {
         unsafe extern "system" fn OnPointerEntered<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerEntered(::core::mem::transmute(&e)).into()
+            this.OnPointerEntered(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerPressed<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerPressed(::core::mem::transmute(&e)).into()
+            this.OnPointerPressed(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerMoved<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerMoved(::core::mem::transmute(&e)).into()
+            this.OnPointerMoved(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerReleased<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerReleased(::core::mem::transmute(&e)).into()
+            this.OnPointerReleased(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerExited<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerExited(::core::mem::transmute(&e)).into()
+            this.OnPointerExited(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerCaptureLost<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerCaptureLost(::core::mem::transmute(&e)).into()
+            this.OnPointerCaptureLost(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerCanceled<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerCanceled(::core::mem::transmute(&e)).into()
+            this.OnPointerCanceled(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPointerWheelChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPointerWheelChanged(::core::mem::transmute(&e)).into()
+            this.OnPointerWheelChanged(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnTapped<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnTapped(::core::mem::transmute(&e)).into()
+            this.OnTapped(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDoubleTapped<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDoubleTapped(::core::mem::transmute(&e)).into()
+            this.OnDoubleTapped(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnHolding<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnHolding(::core::mem::transmute(&e)).into()
+            this.OnHolding(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnRightTapped<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnRightTapped(::core::mem::transmute(&e)).into()
+            this.OnRightTapped(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnManipulationStarting<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationStarting(::core::mem::transmute(&e)).into()
+            this.OnManipulationStarting(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnManipulationInertiaStarting<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationInertiaStarting(::core::mem::transmute(&e)).into()
+            this.OnManipulationInertiaStarting(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnManipulationStarted<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationStarted(::core::mem::transmute(&e)).into()
+            this.OnManipulationStarted(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnManipulationDelta<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationDelta(::core::mem::transmute(&e)).into()
+            this.OnManipulationDelta(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnManipulationCompleted<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnManipulationCompleted(::core::mem::transmute(&e)).into()
+            this.OnManipulationCompleted(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnKeyUp<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnKeyUp(::core::mem::transmute(&e)).into()
+            this.OnKeyUp(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnKeyDown<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnKeyDown(::core::mem::transmute(&e)).into()
+            this.OnKeyDown(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPreviewKeyDown<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPreviewKeyDown(::core::mem::transmute(&e)).into()
+            this.OnPreviewKeyDown(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnPreviewKeyUp<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnPreviewKeyUp(::core::mem::transmute(&e)).into()
+            this.OnPreviewKeyUp(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnGotFocus<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnGotFocus(::core::mem::transmute(&e)).into()
+            this.OnGotFocus(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnLostFocus<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnLostFocus(::core::mem::transmute(&e)).into()
+            this.OnLostFocus(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnCharacterReceived<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnCharacterReceived(::core::mem::transmute(&e)).into()
+            this.OnCharacterReceived(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDragEnter<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDragEnter(::core::mem::transmute(&e)).into()
+            this.OnDragEnter(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDragLeave<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDragLeave(::core::mem::transmute(&e)).into()
+            this.OnDragLeave(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDragOver<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDragOver(::core::mem::transmute(&e)).into()
+            this.OnDragOver(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnDrop<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnDrop(::core::mem::transmute(&e)).into()
+            this.OnDrop(::windows_core::from_raw_borrowed(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IControlOverrides, OFFSET>(
-            ),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IControlOverrides, OFFSET>(),
             OnPointerEntered: OnPointerEntered::<Identity, Impl, OFFSET>,
             OnPointerPressed: OnPointerPressed::<Identity, Impl, OFFSET>,
             OnPointerMoved: OnPointerMoved::<Identity, Impl, OFFSET>,
@@ -1316,32 +1265,32 @@ impl IControlOverrides_Vtbl {
             OnDrop: OnDrop::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IControlOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IControlOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IDataTemplateSelectorOverrides_Impl: Sized {
     fn SelectTemplateCore(
         &self,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-        container: &::core::option::Option<super::DependencyObject>,
-    ) -> ::windows::core::Result<super::DataTemplate>;
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+        container: ::core::option::Option<&super::DependencyObject>,
+    ) -> ::windows_core::Result<super::DataTemplate>;
     fn SelectTemplateForItemCore(
         &self,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<super::DataTemplate>;
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<super::DataTemplate>;
 }
-impl ::windows::core::RuntimeName for IDataTemplateSelectorOverrides {
+impl ::windows_core::RuntimeName for IDataTemplateSelectorOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IDataTemplateSelectorOverrides";
 }
 impl IDataTemplateSelectorOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IDataTemplateSelectorOverrides_Impl,
         const OFFSET: isize,
     >() -> IDataTemplateSelectorOverrides_Vtbl {
         unsafe extern "system" fn SelectTemplateCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IDataTemplateSelectorOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -1349,43 +1298,43 @@ impl IDataTemplateSelectorOverrides_Vtbl {
             item: *mut ::core::ffi::c_void,
             container: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.SelectTemplateCore(
-                ::core::mem::transmute(&item),
-                ::core::mem::transmute(&container),
+                ::windows_core::from_raw_borrowed(&item),
+                ::windows_core::from_raw_borrowed(&container),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SelectTemplateForItemCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IDataTemplateSelectorOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.SelectTemplateForItemCore(::core::mem::transmute(&item)) {
+            match this.SelectTemplateForItemCore(::windows_core::from_raw_borrowed(&item)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IDataTemplateSelectorOverrides,
                 OFFSET,
@@ -1394,71 +1343,71 @@ impl IDataTemplateSelectorOverrides_Vtbl {
             SelectTemplateForItemCore: SelectTemplateForItemCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IDataTemplateSelectorOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IDataTemplateSelectorOverrides as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Composition")]
+#[doc = "Required features: `\"Microsoft_UI_Composition\"`, `\"Windows_Foundation\"`"]
+#[cfg(all(feature = "Microsoft_UI_Composition", feature = "Windows_Foundation"))]
 pub trait IDynamicAnimatedVisualSource_Impl: Sized + IAnimatedVisualSource_Impl {
     fn AnimatedVisualInvalidated(
         &self,
-        handler: &::core::option::Option<
-            ::windows::Foundation::TypedEventHandler<
+        handler: ::core::option::Option<
+            &::windows::Foundation::TypedEventHandler<
                 IDynamicAnimatedVisualSource,
-                ::windows::core::IInspectable,
+                ::windows_core::IInspectable,
             >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken>;
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>;
     fn RemoveAnimatedVisualInvalidated(
         &self,
         token: &::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Composition")]
-impl ::windows::core::RuntimeName for IDynamicAnimatedVisualSource {
+#[cfg(all(feature = "Microsoft_UI_Composition", feature = "Windows_Foundation"))]
+impl ::windows_core::RuntimeName for IDynamicAnimatedVisualSource {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IDynamicAnimatedVisualSource";
 }
-#[cfg(feature = "UI_Composition")]
+#[cfg(all(feature = "Microsoft_UI_Composition", feature = "Windows_Foundation"))]
 impl IDynamicAnimatedVisualSource_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IDynamicAnimatedVisualSource_Impl,
         const OFFSET: isize,
     >() -> IDynamicAnimatedVisualSource_Vtbl {
         unsafe extern "system" fn AnimatedVisualInvalidated<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IDynamicAnimatedVisualSource_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             handler: *mut ::core::ffi::c_void,
             result__: *mut ::windows::Foundation::EventRegistrationToken,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.AnimatedVisualInvalidated(::core::mem::transmute(&handler)) {
+            match this.AnimatedVisualInvalidated(::windows_core::from_raw_borrowed(&handler)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn RemoveAnimatedVisualInvalidated<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IDynamicAnimatedVisualSource_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             token: ::windows::Foundation::EventRegistrationToken,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.RemoveAnimatedVisualInvalidated(::core::mem::transmute(&token)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IDynamicAnimatedVisualSource,
                 OFFSET,
@@ -1471,28 +1420,28 @@ impl IDynamicAnimatedVisualSource_Vtbl {
             >,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IDynamicAnimatedVisualSource as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IDynamicAnimatedVisualSource as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IGroupStyleSelectorOverrides_Impl: Sized {
     fn SelectGroupStyleCore(
         &self,
-        group: &::core::option::Option<::windows::core::IInspectable>,
+        group: ::core::option::Option<&::windows_core::IInspectable>,
         level: u32,
-    ) -> ::windows::core::Result<GroupStyle>;
+    ) -> ::windows_core::Result<GroupStyle>;
 }
-impl ::windows::core::RuntimeName for IGroupStyleSelectorOverrides {
+impl ::windows_core::RuntimeName for IGroupStyleSelectorOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IGroupStyleSelectorOverrides";
 }
 impl IGroupStyleSelectorOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IGroupStyleSelectorOverrides_Impl,
         const OFFSET: isize,
     >() -> IGroupStyleSelectorOverrides_Vtbl {
         unsafe extern "system" fn SelectGroupStyleCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IGroupStyleSelectorOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -1500,20 +1449,20 @@ impl IGroupStyleSelectorOverrides_Vtbl {
             group: *mut ::core::ffi::c_void,
             level: u32,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.SelectGroupStyleCore(::core::mem::transmute(&group), level) {
+            match this.SelectGroupStyleCore(::windows_core::from_raw_borrowed(&group), level) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IGroupStyleSelectorOverrides,
                 OFFSET,
@@ -1521,95 +1470,101 @@ impl IGroupStyleSelectorOverrides_Vtbl {
             SelectGroupStyleCore: SelectGroupStyleCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IGroupStyleSelectorOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IGroupStyleSelectorOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IIconSourceOverrides_Impl: Sized {
-    fn CreateIconElementCore(&self) -> ::windows::core::Result<IconElement>;
+    fn CreateIconElementCore(&self) -> ::windows_core::Result<IconElement>;
     fn GetIconElementPropertyCore(
         &self,
-        iconsourceproperty: &::core::option::Option<super::DependencyProperty>,
-    ) -> ::windows::core::Result<super::DependencyProperty>;
+        iconsourceproperty: ::core::option::Option<&super::DependencyProperty>,
+    ) -> ::windows_core::Result<super::DependencyProperty>;
 }
-impl ::windows::core::RuntimeName for IIconSourceOverrides {
+impl ::windows_core::RuntimeName for IIconSourceOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IIconSourceOverrides";
 }
 impl IIconSourceOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IIconSourceOverrides_Impl,
         const OFFSET: isize,
     >() -> IIconSourceOverrides_Vtbl {
         unsafe extern "system" fn CreateIconElementCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IIconSourceOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.CreateIconElementCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetIconElementPropertyCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IIconSourceOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             iconsourceproperty: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.GetIconElementPropertyCore(::core::mem::transmute(&iconsourceproperty)) {
+            match this
+                .GetIconElementPropertyCore(::windows_core::from_raw_borrowed(&iconsourceproperty))
+            {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IIconSourceOverrides, OFFSET>(
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IIconSourceOverrides, OFFSET>(
             ),
             CreateIconElementCore: CreateIconElementCore::<Identity, Impl, OFFSET>,
             GetIconElementPropertyCore: GetIconElementPropertyCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IIconSourceOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IIconSourceOverrides as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation\"`"]
+#[cfg(feature = "Windows_Foundation")]
 pub trait IInsertionPanel_Impl: Sized {
     fn GetInsertionIndexes(
         &self,
         position: &::windows::Foundation::Point,
         first: &mut i32,
         second: &mut i32,
-    ) -> ::windows::core::Result<()>;
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IInsertionPanel {
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::RuntimeName for IInsertionPanel {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IInsertionPanel";
 }
+#[cfg(feature = "Windows_Foundation")]
 impl IInsertionPanel_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IInsertionPanel_Impl,
         const OFFSET: isize,
     >() -> IInsertionPanel_Vtbl {
         unsafe extern "system" fn GetInsertionIndexes<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IInsertionPanel_Impl,
             const OFFSET: isize,
         >(
@@ -1617,7 +1572,7 @@ impl IInsertionPanel_Vtbl {
             position: ::windows::Foundation::Point,
             first: *mut i32,
             second: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.GetInsertionIndexes(
@@ -1628,377 +1583,427 @@ impl IInsertionPanel_Vtbl {
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IInsertionPanel, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IInsertionPanel, OFFSET>(),
             GetInsertionIndexes: GetInsertionIndexes::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IInsertionPanel as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IInsertionPanel as ::windows_core::ComInterface>::IID
+    }
+}
+#[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+#[cfg(feature = "Windows_Foundation_Collections")]
+pub trait IItemCollectionTransitionProviderOverrides_Impl: Sized {
+    fn ShouldAnimateCore(
+        &self,
+        transition: ::core::option::Option<&ItemCollectionTransition>,
+    ) -> ::windows_core::Result<bool>;
+    fn StartTransitions(
+        &self,
+        transitions: ::core::option::Option<
+            &::windows::Foundation::Collections::IVector<ItemCollectionTransition>,
+        >,
+    ) -> ::windows_core::Result<()>;
+}
+#[cfg(feature = "Windows_Foundation_Collections")]
+impl ::windows_core::RuntimeName for IItemCollectionTransitionProviderOverrides {
+    const NAME: &'static str =
+        "Microsoft.UI.Xaml.Controls.IItemCollectionTransitionProviderOverrides";
+}
+#[cfg(feature = "Windows_Foundation_Collections")]
+impl IItemCollectionTransitionProviderOverrides_Vtbl {
+    pub const fn new<
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+        Impl: IItemCollectionTransitionProviderOverrides_Impl,
+        const OFFSET: isize,
+    >() -> IItemCollectionTransitionProviderOverrides_Vtbl {
+        unsafe extern "system" fn ShouldAnimateCore<
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+            Impl: IItemCollectionTransitionProviderOverrides_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+            transition: *mut ::core::ffi::c_void,
+            result__: *mut bool,
+        ) -> ::windows_core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            match this.ShouldAnimateCore(::windows_core::from_raw_borrowed(&transition)) {
+                ::core::result::Result::Ok(ok__) => {
+                    ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
+                    ::windows_core::HRESULT(0)
+                }
+                ::core::result::Result::Err(err) => err.into(),
+            }
+        }
+        unsafe extern "system" fn StartTransitions<
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+            Impl: IItemCollectionTransitionProviderOverrides_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+            transitions: *mut ::core::ffi::c_void,
+        ) -> ::windows_core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            this.StartTransitions(::windows_core::from_raw_borrowed(&transitions)).into()
+        }
+        Self {
+            base__: ::windows_core::IInspectable_Vtbl::new::<
+                Identity,
+                IItemCollectionTransitionProviderOverrides,
+                OFFSET,
+            >(),
+            ShouldAnimateCore: ShouldAnimateCore::<Identity, Impl, OFFSET>,
+            StartTransitions: StartTransitions::<Identity, Impl, OFFSET>,
+        }
+    }
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IItemCollectionTransitionProviderOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IItemContainerMapping_Impl: Sized {
     fn ItemFromContainer(
         &self,
-        container: &::core::option::Option<super::DependencyObject>,
-    ) -> ::windows::core::Result<::windows::core::IInspectable>;
+        container: ::core::option::Option<&super::DependencyObject>,
+    ) -> ::windows_core::Result<::windows_core::IInspectable>;
     fn ContainerFromItem(
         &self,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<super::DependencyObject>;
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<super::DependencyObject>;
     fn IndexFromContainer(
         &self,
-        container: &::core::option::Option<super::DependencyObject>,
-    ) -> ::windows::core::Result<i32>;
-    fn ContainerFromIndex(&self, index: i32) -> ::windows::core::Result<super::DependencyObject>;
+        container: ::core::option::Option<&super::DependencyObject>,
+    ) -> ::windows_core::Result<i32>;
+    fn ContainerFromIndex(&self, index: i32) -> ::windows_core::Result<super::DependencyObject>;
 }
-impl ::windows::core::RuntimeName for IItemContainerMapping {
+impl ::windows_core::RuntimeName for IItemContainerMapping {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IItemContainerMapping";
 }
 impl IItemContainerMapping_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IItemContainerMapping_Impl,
         const OFFSET: isize,
     >() -> IItemContainerMapping_Vtbl {
         unsafe extern "system" fn ItemFromContainer<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemContainerMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             container: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.ItemFromContainer(::core::mem::transmute(&container)) {
+            match this.ItemFromContainer(::windows_core::from_raw_borrowed(&container)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ContainerFromItem<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemContainerMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.ContainerFromItem(::core::mem::transmute(&item)) {
+            match this.ContainerFromItem(::windows_core::from_raw_borrowed(&item)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn IndexFromContainer<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemContainerMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             container: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IndexFromContainer(::core::mem::transmute(&container)) {
+            match this.IndexFromContainer(::windows_core::from_raw_borrowed(&container)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ContainerFromIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemContainerMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             index: i32,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ContainerFromIndex(index) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
-                Identity,
-                IItemContainerMapping,
-                OFFSET,
-            >(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IItemContainerMapping, OFFSET>(
+            ),
             ItemFromContainer: ItemFromContainer::<Identity, Impl, OFFSET>,
             ContainerFromItem: ContainerFromItem::<Identity, Impl, OFFSET>,
             IndexFromContainer: IndexFromContainer::<Identity, Impl, OFFSET>,
             ContainerFromIndex: ContainerFromIndex::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IItemContainerMapping as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IItemContainerMapping as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IItemsControlOverrides_Impl: Sized {
     fn IsItemItsOwnContainerOverride(
         &self,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<bool>;
-    fn GetContainerForItemOverride(&self) -> ::windows::core::Result<super::DependencyObject>;
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<bool>;
+    fn GetContainerForItemOverride(&self) -> ::windows_core::Result<super::DependencyObject>;
     fn ClearContainerForItemOverride(
         &self,
-        element: &::core::option::Option<super::DependencyObject>,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        element: ::core::option::Option<&super::DependencyObject>,
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn PrepareContainerForItemOverride(
         &self,
-        element: &::core::option::Option<super::DependencyObject>,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        element: ::core::option::Option<&super::DependencyObject>,
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnItemsChanged(
         &self,
-        e: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnItemContainerStyleChanged(
         &self,
-        olditemcontainerstyle: &::core::option::Option<super::Style>,
-        newitemcontainerstyle: &::core::option::Option<super::Style>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        olditemcontainerstyle: ::core::option::Option<&super::Style>,
+        newitemcontainerstyle: ::core::option::Option<&super::Style>,
+    ) -> ::windows_core::Result<()>;
     fn OnItemContainerStyleSelectorChanged(
         &self,
-        olditemcontainerstyleselector: &::core::option::Option<StyleSelector>,
-        newitemcontainerstyleselector: &::core::option::Option<StyleSelector>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        olditemcontainerstyleselector: ::core::option::Option<&StyleSelector>,
+        newitemcontainerstyleselector: ::core::option::Option<&StyleSelector>,
+    ) -> ::windows_core::Result<()>;
     fn OnItemTemplateChanged(
         &self,
-        olditemtemplate: &::core::option::Option<super::DataTemplate>,
-        newitemtemplate: &::core::option::Option<super::DataTemplate>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        olditemtemplate: ::core::option::Option<&super::DataTemplate>,
+        newitemtemplate: ::core::option::Option<&super::DataTemplate>,
+    ) -> ::windows_core::Result<()>;
     fn OnItemTemplateSelectorChanged(
         &self,
-        olditemtemplateselector: &::core::option::Option<DataTemplateSelector>,
-        newitemtemplateselector: &::core::option::Option<DataTemplateSelector>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        olditemtemplateselector: ::core::option::Option<&DataTemplateSelector>,
+        newitemtemplateselector: ::core::option::Option<&DataTemplateSelector>,
+    ) -> ::windows_core::Result<()>;
     fn OnGroupStyleSelectorChanged(
         &self,
-        oldgroupstyleselector: &::core::option::Option<GroupStyleSelector>,
-        newgroupstyleselector: &::core::option::Option<GroupStyleSelector>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldgroupstyleselector: ::core::option::Option<&GroupStyleSelector>,
+        newgroupstyleselector: ::core::option::Option<&GroupStyleSelector>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IItemsControlOverrides {
+impl ::windows_core::RuntimeName for IItemsControlOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IItemsControlOverrides";
 }
 impl IItemsControlOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IItemsControlOverrides_Impl,
         const OFFSET: isize,
     >() -> IItemsControlOverrides_Vtbl {
         unsafe extern "system" fn IsItemItsOwnContainerOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.IsItemItsOwnContainerOverride(::core::mem::transmute(&item)) {
+            match this.IsItemItsOwnContainerOverride(::windows_core::from_raw_borrowed(&item)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetContainerForItemOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetContainerForItemOverride() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ClearContainerForItemOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             element: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.ClearContainerForItemOverride(
-                ::core::mem::transmute(&element),
-                ::core::mem::transmute(&item),
+                ::windows_core::from_raw_borrowed(&element),
+                ::windows_core::from_raw_borrowed(&item),
             )
             .into()
         }
         unsafe extern "system" fn PrepareContainerForItemOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             element: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.PrepareContainerForItemOverride(
-                ::core::mem::transmute(&element),
-                ::core::mem::transmute(&item),
+                ::windows_core::from_raw_borrowed(&element),
+                ::windows_core::from_raw_borrowed(&item),
             )
             .into()
         }
         unsafe extern "system" fn OnItemsChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnItemsChanged(::core::mem::transmute(&e)).into()
+            this.OnItemsChanged(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnItemContainerStyleChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             olditemcontainerstyle: *mut ::core::ffi::c_void,
             newitemcontainerstyle: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnItemContainerStyleChanged(
-                ::core::mem::transmute(&olditemcontainerstyle),
-                ::core::mem::transmute(&newitemcontainerstyle),
+                ::windows_core::from_raw_borrowed(&olditemcontainerstyle),
+                ::windows_core::from_raw_borrowed(&newitemcontainerstyle),
             )
             .into()
         }
         unsafe extern "system" fn OnItemContainerStyleSelectorChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             olditemcontainerstyleselector: *mut ::core::ffi::c_void,
             newitemcontainerstyleselector: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnItemContainerStyleSelectorChanged(
-                ::core::mem::transmute(&olditemcontainerstyleselector),
-                ::core::mem::transmute(&newitemcontainerstyleselector),
+                ::windows_core::from_raw_borrowed(&olditemcontainerstyleselector),
+                ::windows_core::from_raw_borrowed(&newitemcontainerstyleselector),
             )
             .into()
         }
         unsafe extern "system" fn OnItemTemplateChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             olditemtemplate: *mut ::core::ffi::c_void,
             newitemtemplate: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnItemTemplateChanged(
-                ::core::mem::transmute(&olditemtemplate),
-                ::core::mem::transmute(&newitemtemplate),
+                ::windows_core::from_raw_borrowed(&olditemtemplate),
+                ::windows_core::from_raw_borrowed(&newitemtemplate),
             )
             .into()
         }
         unsafe extern "system" fn OnItemTemplateSelectorChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             olditemtemplateselector: *mut ::core::ffi::c_void,
             newitemtemplateselector: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnItemTemplateSelectorChanged(
-                ::core::mem::transmute(&olditemtemplateselector),
-                ::core::mem::transmute(&newitemtemplateselector),
+                ::windows_core::from_raw_borrowed(&olditemtemplateselector),
+                ::windows_core::from_raw_borrowed(&newitemtemplateselector),
             )
             .into()
         }
         unsafe extern "system" fn OnGroupStyleSelectorChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IItemsControlOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldgroupstyleselector: *mut ::core::ffi::c_void,
             newgroupstyleselector: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnGroupStyleSelectorChanged(
-                ::core::mem::transmute(&oldgroupstyleselector),
-                ::core::mem::transmute(&newgroupstyleselector),
+                ::windows_core::from_raw_borrowed(&oldgroupstyleselector),
+                ::windows_core::from_raw_borrowed(&newgroupstyleselector),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IItemsControlOverrides,
                 OFFSET,
@@ -2023,124 +2028,121 @@ impl IItemsControlOverrides_Vtbl {
             OnGroupStyleSelectorChanged: OnGroupStyleSelectorChanged::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IItemsControlOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IItemsControlOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IKeyIndexMapping_Impl: Sized {
-    fn KeyFromIndex(&self, index: i32) -> ::windows::core::Result<::windows::core::HSTRING>;
-    fn IndexFromKey(&self, key: &::windows::core::HSTRING) -> ::windows::core::Result<i32>;
+    fn KeyFromIndex(&self, index: i32) -> ::windows_core::Result<::windows_core::HSTRING>;
+    fn IndexFromKey(&self, key: &::windows_core::HSTRING) -> ::windows_core::Result<i32>;
 }
-impl ::windows::core::RuntimeName for IKeyIndexMapping {
+impl ::windows_core::RuntimeName for IKeyIndexMapping {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IKeyIndexMapping";
 }
 impl IKeyIndexMapping_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IKeyIndexMapping_Impl,
         const OFFSET: isize,
     >() -> IKeyIndexMapping_Vtbl {
         unsafe extern "system" fn KeyFromIndex<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IKeyIndexMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             index: i32,
-            result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.KeyFromIndex(index) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn IndexFromKey<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IKeyIndexMapping_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            key: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+            key: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.IndexFromKey(::core::mem::transmute(&key)) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IKeyIndexMapping, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IKeyIndexMapping, OFFSET>(),
             KeyFromIndex: KeyFromIndex::<Identity, Impl, OFFSET>,
             IndexFromKey: IndexFromKey::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IKeyIndexMapping as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IKeyIndexMapping as ::windows_core::ComInterface>::IID
     }
 }
 pub trait ILayoutContextOverrides_Impl: Sized {
-    fn LayoutStateCore(&self) -> ::windows::core::Result<::windows::core::IInspectable>;
+    fn LayoutStateCore(&self) -> ::windows_core::Result<::windows_core::IInspectable>;
     fn SetLayoutStateCore(
         &self,
-        value: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        value: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for ILayoutContextOverrides {
+impl ::windows_core::RuntimeName for ILayoutContextOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.ILayoutContextOverrides";
 }
 impl ILayoutContextOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ILayoutContextOverrides_Impl,
         const OFFSET: isize,
     >() -> ILayoutContextOverrides_Vtbl {
         unsafe extern "system" fn LayoutStateCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ILayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LayoutStateCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetLayoutStateCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ILayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetLayoutStateCore(::core::mem::transmute(&value)).into()
+            this.SetLayoutStateCore(::windows_core::from_raw_borrowed(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 ILayoutContextOverrides,
                 OFFSET,
@@ -2149,86 +2151,144 @@ impl ILayoutContextOverrides_Vtbl {
             SetLayoutStateCore: SetLayoutStateCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ILayoutContextOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ILayoutContextOverrides as ::windows_core::ComInterface>::IID
     }
 }
-pub trait INavigate_Impl: Sized {
-    fn Navigate(&self, sourcepagetype: &crate::core::TypeName) -> ::windows::core::Result<bool>;
+pub trait ILayoutOverrides_Impl: Sized {
+    fn CreateDefaultItemTransitionProvider(
+        &self,
+    ) -> ::windows_core::Result<ItemCollectionTransitionProvider>;
 }
-impl ::windows::core::RuntimeName for INavigate {
-    const NAME: &'static str = "Microsoft.UI.Xaml.Controls.INavigate";
+impl ::windows_core::RuntimeName for ILayoutOverrides {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Controls.ILayoutOverrides";
 }
-impl INavigate_Vtbl {
+impl ILayoutOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
-        Impl: INavigate_Impl,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+        Impl: ILayoutOverrides_Impl,
         const OFFSET: isize,
-    >() -> INavigate_Vtbl {
-        unsafe extern "system" fn Navigate<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
-            Impl: INavigate_Impl,
+    >() -> ILayoutOverrides_Vtbl {
+        unsafe extern "system" fn CreateDefaultItemTransitionProvider<
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+            Impl: ILayoutOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-            sourcepagetype: ::core::mem::ManuallyDrop<crate::core::TypeName>,
-            result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+            result__: *mut *mut ::core::ffi::c_void,
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this.Navigate(::core::mem::transmute(&sourcepagetype)) {
+            match this.CreateDefaultItemTransitionProvider() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, INavigate, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, ILayoutOverrides, OFFSET>(),
+            CreateDefaultItemTransitionProvider: CreateDefaultItemTransitionProvider::<
+                Identity,
+                Impl,
+                OFFSET,
+            >,
+        }
+    }
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ILayoutOverrides as ::windows_core::ComInterface>::IID
+    }
+}
+#[doc = "Required features: `\"Windows_UI_Xaml_Interop\"`"]
+#[cfg(feature = "Windows_UI_Xaml_Interop")]
+pub trait INavigate_Impl: Sized {
+    fn Navigate(
+        &self,
+        sourcepagetype: &super::super::super::super::Windows::UI::Xaml::Interop::TypeName,
+    ) -> ::windows_core::Result<bool>;
+}
+#[cfg(feature = "Windows_UI_Xaml_Interop")]
+impl ::windows_core::RuntimeName for INavigate {
+    const NAME: &'static str = "Microsoft.UI.Xaml.Controls.INavigate";
+}
+#[cfg(feature = "Windows_UI_Xaml_Interop")]
+impl INavigate_Vtbl {
+    pub const fn new<
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+        Impl: INavigate_Impl,
+        const OFFSET: isize,
+    >() -> INavigate_Vtbl {
+        unsafe extern "system" fn Navigate<
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
+            Impl: INavigate_Impl,
+            const OFFSET: isize,
+        >(
+            this: *mut ::core::ffi::c_void,
+            sourcepagetype: ::std::mem::MaybeUninit<
+                super::super::super::super::Windows::UI::Xaml::Interop::TypeName,
+            >,
+            result__: *mut bool,
+        ) -> ::windows_core::HRESULT {
+            let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
+            let this = (*this).get_impl();
+            match this.Navigate(::core::mem::transmute(&sourcepagetype)) {
+                ::core::result::Result::Ok(ok__) => {
+                    ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
+                    ::windows_core::HRESULT(0)
+                }
+                ::core::result::Result::Err(err) => err.into(),
+            }
+        }
+        Self {
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, INavigate, OFFSET>(),
             Navigate: Navigate::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<INavigate as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <INavigate as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+#[cfg(feature = "Windows_Foundation_Collections")]
 pub trait INonVirtualizingLayoutContextOverrides_Impl: Sized {
     fn ChildrenCore(
         &self,
-    ) -> ::windows::core::Result<::windows::Foundation::Collections::IVectorView<super::UIElement>>;
+    ) -> ::windows_core::Result<::windows::Foundation::Collections::IVectorView<super::UIElement>>;
 }
-impl ::windows::core::RuntimeName for INonVirtualizingLayoutContextOverrides {
+#[cfg(feature = "Windows_Foundation_Collections")]
+impl ::windows_core::RuntimeName for INonVirtualizingLayoutContextOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.INonVirtualizingLayoutContextOverrides";
 }
+#[cfg(feature = "Windows_Foundation_Collections")]
 impl INonVirtualizingLayoutContextOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: INonVirtualizingLayoutContextOverrides_Impl,
         const OFFSET: isize,
     >() -> INonVirtualizingLayoutContextOverrides_Vtbl {
         unsafe extern "system" fn ChildrenCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: INonVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ChildrenCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 INonVirtualizingLayoutContextOverrides,
                 OFFSET,
@@ -2236,69 +2296,71 @@ impl INonVirtualizingLayoutContextOverrides_Vtbl {
             ChildrenCore: ChildrenCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<INonVirtualizingLayoutContextOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <INonVirtualizingLayoutContextOverrides as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation\"`"]
+#[cfg(feature = "Windows_Foundation")]
 pub trait INonVirtualizingLayoutOverrides_Impl: Sized {
     fn InitializeForContextCore(
         &self,
-        context: &::core::option::Option<NonVirtualizingLayoutContext>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        context: ::core::option::Option<&NonVirtualizingLayoutContext>,
+    ) -> ::windows_core::Result<()>;
     fn UninitializeForContextCore(
         &self,
-        context: &::core::option::Option<NonVirtualizingLayoutContext>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        context: ::core::option::Option<&NonVirtualizingLayoutContext>,
+    ) -> ::windows_core::Result<()>;
     fn MeasureOverride(
         &self,
-        context: &::core::option::Option<NonVirtualizingLayoutContext>,
+        context: ::core::option::Option<&NonVirtualizingLayoutContext>,
         availablesize: &::windows::Foundation::Size,
-    ) -> ::windows::core::Result<::windows::Foundation::Size>;
+    ) -> ::windows_core::Result<::windows::Foundation::Size>;
     fn ArrangeOverride(
         &self,
-        context: &::core::option::Option<NonVirtualizingLayoutContext>,
+        context: ::core::option::Option<&NonVirtualizingLayoutContext>,
         finalsize: &::windows::Foundation::Size,
-    ) -> ::windows::core::Result<::windows::Foundation::Size>;
+    ) -> ::windows_core::Result<::windows::Foundation::Size>;
 }
-impl ::windows::core::RuntimeName for INonVirtualizingLayoutOverrides {
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::RuntimeName for INonVirtualizingLayoutOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.INonVirtualizingLayoutOverrides";
 }
+#[cfg(feature = "Windows_Foundation")]
 impl INonVirtualizingLayoutOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: INonVirtualizingLayoutOverrides_Impl,
         const OFFSET: isize,
     >() -> INonVirtualizingLayoutOverrides_Vtbl {
         unsafe extern "system" fn InitializeForContextCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: INonVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             context: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.InitializeForContextCore(::core::mem::transmute(&context)).into()
+            this.InitializeForContextCore(::windows_core::from_raw_borrowed(&context))
+                .into()
         }
         unsafe extern "system" fn UninitializeForContextCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: INonVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             context: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UninitializeForContextCore(::core::mem::transmute(&context)).into()
+            this.UninitializeForContextCore(::windows_core::from_raw_borrowed(&context))
+                .into()
         }
         unsafe extern "system" fn MeasureOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: INonVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -2306,23 +2368,22 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
             context: *mut ::core::ffi::c_void,
             availablesize: ::windows::Foundation::Size,
             result__: *mut ::windows::Foundation::Size,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MeasureOverride(
-                ::core::mem::transmute(&context),
+                ::windows_core::from_raw_borrowed(&context),
                 ::core::mem::transmute(&availablesize),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ArrangeOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: INonVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -2330,23 +2391,22 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
             context: *mut ::core::ffi::c_void,
             finalsize: ::windows::Foundation::Size,
             result__: *mut ::windows::Foundation::Size,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ArrangeOverride(
-                ::core::mem::transmute(&context),
+                ::windows_core::from_raw_borrowed(&context),
                 ::core::mem::transmute(&finalsize),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 INonVirtualizingLayoutOverrides,
                 OFFSET,
@@ -2357,410 +2417,401 @@ impl INonVirtualizingLayoutOverrides_Vtbl {
             ArrangeOverride: ArrangeOverride::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<INonVirtualizingLayoutOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <INonVirtualizingLayoutOverrides as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Xaml_Navigation")]
+#[doc = "Required features: `\"Microsoft_UI_Xaml_Navigation\"`"]
+#[cfg(feature = "Microsoft_UI_Xaml_Navigation")]
 pub trait IPageOverrides_Impl: Sized {
     fn OnNavigatedFrom(
         &self,
-        e: &::core::option::Option<super::Navigation::NavigationEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Navigation::NavigationEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnNavigatedTo(
         &self,
-        e: &::core::option::Option<super::Navigation::NavigationEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Navigation::NavigationEventArgs>,
+    ) -> ::windows_core::Result<()>;
     fn OnNavigatingFrom(
         &self,
-        e: &::core::option::Option<super::Navigation::NavigatingCancelEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&super::Navigation::NavigatingCancelEventArgs>,
+    ) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Xaml_Navigation")]
-impl ::windows::core::RuntimeName for IPageOverrides {
+#[cfg(feature = "Microsoft_UI_Xaml_Navigation")]
+impl ::windows_core::RuntimeName for IPageOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IPageOverrides";
 }
-#[cfg(feature = "UI_Xaml_Navigation")]
+#[cfg(feature = "Microsoft_UI_Xaml_Navigation")]
 impl IPageOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IPageOverrides_Impl,
         const OFFSET: isize,
     >() -> IPageOverrides_Vtbl {
         unsafe extern "system" fn OnNavigatedFrom<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IPageOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnNavigatedFrom(::core::mem::transmute(&e)).into()
+            this.OnNavigatedFrom(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnNavigatedTo<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IPageOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnNavigatedTo(::core::mem::transmute(&e)).into()
+            this.OnNavigatedTo(::windows_core::from_raw_borrowed(&e)).into()
         }
         unsafe extern "system" fn OnNavigatingFrom<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IPageOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnNavigatingFrom(::core::mem::transmute(&e)).into()
+            this.OnNavigatingFrom(::windows_core::from_raw_borrowed(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<Identity, IPageOverrides, OFFSET>(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IPageOverrides, OFFSET>(),
             OnNavigatedFrom: OnNavigatedFrom::<Identity, Impl, OFFSET>,
             OnNavigatedTo: OnNavigatedTo::<Identity, Impl, OFFSET>,
             OnNavigatingFrom: OnNavigatingFrom::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IPageOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IPageOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IScrollAnchorProvider_Impl: Sized {
-    fn CurrentAnchor(&self) -> ::windows::core::Result<super::UIElement>;
+    fn CurrentAnchor(&self) -> ::windows_core::Result<super::UIElement>;
     fn RegisterAnchorCandidate(
         &self,
-        element: &::core::option::Option<super::UIElement>,
-    ) -> ::windows::core::Result<()>;
+        element: ::core::option::Option<&super::UIElement>,
+    ) -> ::windows_core::Result<()>;
     fn UnregisterAnchorCandidate(
         &self,
-        element: &::core::option::Option<super::UIElement>,
-    ) -> ::windows::core::Result<()>;
+        element: ::core::option::Option<&super::UIElement>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IScrollAnchorProvider {
+impl ::windows_core::RuntimeName for IScrollAnchorProvider {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IScrollAnchorProvider";
 }
 impl IScrollAnchorProvider_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IScrollAnchorProvider_Impl,
         const OFFSET: isize,
     >() -> IScrollAnchorProvider_Vtbl {
         unsafe extern "system" fn CurrentAnchor<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IScrollAnchorProvider_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.CurrentAnchor() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn RegisterAnchorCandidate<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IScrollAnchorProvider_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             element: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RegisterAnchorCandidate(::core::mem::transmute(&element)).into()
+            this.RegisterAnchorCandidate(::windows_core::from_raw_borrowed(&element)).into()
         }
         unsafe extern "system" fn UnregisterAnchorCandidate<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IScrollAnchorProvider_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             element: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UnregisterAnchorCandidate(::core::mem::transmute(&element)).into()
+            this.UnregisterAnchorCandidate(::windows_core::from_raw_borrowed(&element))
+                .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
-                Identity,
-                IScrollAnchorProvider,
-                OFFSET,
-            >(),
+            base__: ::windows_core::IInspectable_Vtbl::new::<Identity, IScrollAnchorProvider, OFFSET>(
+            ),
             CurrentAnchor: CurrentAnchor::<Identity, Impl, OFFSET>,
             RegisterAnchorCandidate: RegisterAnchorCandidate::<Identity, Impl, OFFSET>,
             UnregisterAnchorCandidate: UnregisterAnchorCandidate::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IScrollAnchorProvider as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IScrollAnchorProvider as ::windows_core::ComInterface>::IID
     }
 }
 pub trait ISemanticZoomInformation_Impl: Sized {
-    fn SemanticZoomOwner(&self) -> ::windows::core::Result<SemanticZoom>;
+    fn SemanticZoomOwner(&self) -> ::windows_core::Result<SemanticZoom>;
     fn SetSemanticZoomOwner(
         &self,
-        value: &::core::option::Option<SemanticZoom>,
-    ) -> ::windows::core::Result<()>;
-    fn IsActiveView(&self) -> ::windows::core::Result<bool>;
-    fn SetIsActiveView(&self, value: bool) -> ::windows::core::Result<()>;
-    fn IsZoomedInView(&self) -> ::windows::core::Result<bool>;
-    fn SetIsZoomedInView(&self, value: bool) -> ::windows::core::Result<()>;
-    fn InitializeViewChange(&self) -> ::windows::core::Result<()>;
-    fn CompleteViewChange(&self) -> ::windows::core::Result<()>;
+        value: ::core::option::Option<&SemanticZoom>,
+    ) -> ::windows_core::Result<()>;
+    fn IsActiveView(&self) -> ::windows_core::Result<bool>;
+    fn SetIsActiveView(&self, value: bool) -> ::windows_core::Result<()>;
+    fn IsZoomedInView(&self) -> ::windows_core::Result<bool>;
+    fn SetIsZoomedInView(&self, value: bool) -> ::windows_core::Result<()>;
+    fn InitializeViewChange(&self) -> ::windows_core::Result<()>;
+    fn CompleteViewChange(&self) -> ::windows_core::Result<()>;
     fn MakeVisible(
         &self,
-        item: &::core::option::Option<SemanticZoomLocation>,
-    ) -> ::windows::core::Result<()>;
+        item: ::core::option::Option<&SemanticZoomLocation>,
+    ) -> ::windows_core::Result<()>;
     fn StartViewChangeFrom(
         &self,
-        source: &::core::option::Option<SemanticZoomLocation>,
-        destination: &::core::option::Option<SemanticZoomLocation>,
-    ) -> ::windows::core::Result<()>;
+        source: ::core::option::Option<&SemanticZoomLocation>,
+        destination: ::core::option::Option<&SemanticZoomLocation>,
+    ) -> ::windows_core::Result<()>;
     fn StartViewChangeTo(
         &self,
-        source: &::core::option::Option<SemanticZoomLocation>,
-        destination: &::core::option::Option<SemanticZoomLocation>,
-    ) -> ::windows::core::Result<()>;
+        source: ::core::option::Option<&SemanticZoomLocation>,
+        destination: ::core::option::Option<&SemanticZoomLocation>,
+    ) -> ::windows_core::Result<()>;
     fn CompleteViewChangeFrom(
         &self,
-        source: &::core::option::Option<SemanticZoomLocation>,
-        destination: &::core::option::Option<SemanticZoomLocation>,
-    ) -> ::windows::core::Result<()>;
+        source: ::core::option::Option<&SemanticZoomLocation>,
+        destination: ::core::option::Option<&SemanticZoomLocation>,
+    ) -> ::windows_core::Result<()>;
     fn CompleteViewChangeTo(
         &self,
-        source: &::core::option::Option<SemanticZoomLocation>,
-        destination: &::core::option::Option<SemanticZoomLocation>,
-    ) -> ::windows::core::Result<()>;
+        source: ::core::option::Option<&SemanticZoomLocation>,
+        destination: ::core::option::Option<&SemanticZoomLocation>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for ISemanticZoomInformation {
+impl ::windows_core::RuntimeName for ISemanticZoomInformation {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.ISemanticZoomInformation";
 }
 impl ISemanticZoomInformation_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: ISemanticZoomInformation_Impl,
         const OFFSET: isize,
     >() -> ISemanticZoomInformation_Vtbl {
         unsafe extern "system" fn SemanticZoomOwner<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.SemanticZoomOwner() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetSemanticZoomOwner<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.SetSemanticZoomOwner(::core::mem::transmute(&value)).into()
+            this.SetSemanticZoomOwner(::windows_core::from_raw_borrowed(&value)).into()
         }
         unsafe extern "system" fn IsActiveView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.IsActiveView() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetIsActiveView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetIsActiveView(value).into()
         }
         unsafe extern "system" fn IsZoomedInView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.IsZoomedInView() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetIsZoomedInView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: bool,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetIsZoomedInView(value).into()
         }
         unsafe extern "system" fn InitializeViewChange<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.InitializeViewChange().into()
         }
         unsafe extern "system" fn CompleteViewChange<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.CompleteViewChange().into()
         }
         unsafe extern "system" fn MakeVisible<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             item: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.MakeVisible(::core::mem::transmute(&item)).into()
+            this.MakeVisible(::windows_core::from_raw_borrowed(&item)).into()
         }
         unsafe extern "system" fn StartViewChangeFrom<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             source: *mut ::core::ffi::c_void,
             destination: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.StartViewChangeFrom(
-                ::core::mem::transmute(&source),
-                ::core::mem::transmute(&destination),
+                ::windows_core::from_raw_borrowed(&source),
+                ::windows_core::from_raw_borrowed(&destination),
             )
             .into()
         }
         unsafe extern "system" fn StartViewChangeTo<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             source: *mut ::core::ffi::c_void,
             destination: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.StartViewChangeTo(
-                ::core::mem::transmute(&source),
-                ::core::mem::transmute(&destination),
+                ::windows_core::from_raw_borrowed(&source),
+                ::windows_core::from_raw_borrowed(&destination),
             )
             .into()
         }
         unsafe extern "system" fn CompleteViewChangeFrom<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             source: *mut ::core::ffi::c_void,
             destination: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.CompleteViewChangeFrom(
-                ::core::mem::transmute(&source),
-                ::core::mem::transmute(&destination),
+                ::windows_core::from_raw_borrowed(&source),
+                ::windows_core::from_raw_borrowed(&destination),
             )
             .into()
         }
         unsafe extern "system" fn CompleteViewChangeTo<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: ISemanticZoomInformation_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             source: *mut ::core::ffi::c_void,
             destination: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.CompleteViewChangeTo(
-                ::core::mem::transmute(&source),
-                ::core::mem::transmute(&destination),
+                ::windows_core::from_raw_borrowed(&source),
+                ::windows_core::from_raw_borrowed(&destination),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 ISemanticZoomInformation,
                 OFFSET,
@@ -2780,28 +2831,28 @@ impl ISemanticZoomInformation_Vtbl {
             CompleteViewChangeTo: CompleteViewChangeTo::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<ISemanticZoomInformation as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <ISemanticZoomInformation as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IStyleSelectorOverrides_Impl: Sized {
     fn SelectStyleCore(
         &self,
-        item: &::core::option::Option<::windows::core::IInspectable>,
-        container: &::core::option::Option<super::DependencyObject>,
-    ) -> ::windows::core::Result<super::Style>;
+        item: ::core::option::Option<&::windows_core::IInspectable>,
+        container: ::core::option::Option<&super::DependencyObject>,
+    ) -> ::windows_core::Result<super::Style>;
 }
-impl ::windows::core::RuntimeName for IStyleSelectorOverrides {
+impl ::windows_core::RuntimeName for IStyleSelectorOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IStyleSelectorOverrides";
 }
 impl IStyleSelectorOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IStyleSelectorOverrides_Impl,
         const OFFSET: isize,
     >() -> IStyleSelectorOverrides_Vtbl {
         unsafe extern "system" fn SelectStyleCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IStyleSelectorOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -2809,22 +2860,23 @@ impl IStyleSelectorOverrides_Vtbl {
             item: *mut ::core::ffi::c_void,
             container: *mut ::core::ffi::c_void,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            match this
-                .SelectStyleCore(::core::mem::transmute(&item), ::core::mem::transmute(&container))
-            {
+            match this.SelectStyleCore(
+                ::windows_core::from_raw_borrowed(&item),
+                ::windows_core::from_raw_borrowed(&container),
+            ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IStyleSelectorOverrides,
                 OFFSET,
@@ -2832,109 +2884,101 @@ impl IStyleSelectorOverrides_Vtbl {
             SelectStyleCore: SelectStyleCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IStyleSelectorOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IStyleSelectorOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IToggleSwitchOverrides_Impl: Sized {
-    fn OnToggled(&self) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+    fn OnToggled(&self) -> ::windows_core::Result<()>;
     fn OnOnContentChanged(
         &self,
-        oldcontent: &::core::option::Option<::windows::core::IInspectable>,
-        newcontent: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontent: ::core::option::Option<&::windows_core::IInspectable>,
+        newcontent: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnOffContentChanged(
         &self,
-        oldcontent: &::core::option::Option<::windows::core::IInspectable>,
-        newcontent: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontent: ::core::option::Option<&::windows_core::IInspectable>,
+        newcontent: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
     fn OnHeaderChanged(
         &self,
-        oldcontent: &::core::option::Option<::windows::core::IInspectable>,
-        newcontent: &::core::option::Option<::windows::core::IInspectable>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        oldcontent: ::core::option::Option<&::windows_core::IInspectable>,
+        newcontent: ::core::option::Option<&::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IToggleSwitchOverrides {
+impl ::windows_core::RuntimeName for IToggleSwitchOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IToggleSwitchOverrides";
 }
 impl IToggleSwitchOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IToggleSwitchOverrides_Impl,
         const OFFSET: isize,
     >() -> IToggleSwitchOverrides_Vtbl {
         unsafe extern "system" fn OnToggled<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IToggleSwitchOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnToggled().into()
         }
         unsafe extern "system" fn OnOnContentChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IToggleSwitchOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontent: *mut ::core::ffi::c_void,
             newcontent: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnOnContentChanged(
-                ::core::mem::transmute(&oldcontent),
-                ::core::mem::transmute(&newcontent),
+                ::windows_core::from_raw_borrowed(&oldcontent),
+                ::windows_core::from_raw_borrowed(&newcontent),
             )
             .into()
         }
         unsafe extern "system" fn OnOffContentChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IToggleSwitchOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontent: *mut ::core::ffi::c_void,
             newcontent: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnOffContentChanged(
-                ::core::mem::transmute(&oldcontent),
-                ::core::mem::transmute(&newcontent),
+                ::windows_core::from_raw_borrowed(&oldcontent),
+                ::windows_core::from_raw_borrowed(&newcontent),
             )
             .into()
         }
         unsafe extern "system" fn OnHeaderChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IToggleSwitchOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             oldcontent: *mut ::core::ffi::c_void,
             newcontent: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnHeaderChanged(
-                ::core::mem::transmute(&oldcontent),
-                ::core::mem::transmute(&newcontent),
+                ::windows_core::from_raw_borrowed(&oldcontent),
+                ::windows_core::from_raw_borrowed(&newcontent),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IToggleSwitchOverrides,
                 OFFSET,
@@ -2945,103 +2989,101 @@ impl IToggleSwitchOverrides_Vtbl {
             OnHeaderChanged: OnHeaderChanged::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IToggleSwitchOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IToggleSwitchOverrides as ::windows_core::ComInterface>::IID
     }
 }
+#[doc = "Required features: `\"Windows_Foundation\"`"]
+#[cfg(feature = "Windows_Foundation")]
 pub trait IVirtualizingLayoutContextOverrides_Impl: Sized {
-    fn ItemCountCore(&self) -> ::windows::core::Result<i32>;
-    fn GetItemAtCore(&self, index: i32) -> ::windows::core::Result<::windows::core::IInspectable>;
-    fn RealizationRectCore(&self) -> ::windows::core::Result<::windows::Foundation::Rect>;
+    fn ItemCountCore(&self) -> ::windows_core::Result<i32>;
+    fn GetItemAtCore(&self, index: i32) -> ::windows_core::Result<::windows_core::IInspectable>;
+    fn RealizationRectCore(&self) -> ::windows_core::Result<::windows::Foundation::Rect>;
     fn GetOrCreateElementAtCore(
         &self,
         index: i32,
         options: ElementRealizationOptions,
-    ) -> ::windows::core::Result<super::UIElement>;
+    ) -> ::windows_core::Result<super::UIElement>;
     fn RecycleElementCore(
         &self,
-        element: &::core::option::Option<super::UIElement>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
-    fn RecommendedAnchorIndexCore(&self) -> ::windows::core::Result<i32>;
-    fn LayoutOriginCore(&self) -> ::windows::core::Result<::windows::Foundation::Point>;
+        element: ::core::option::Option<&super::UIElement>,
+    ) -> ::windows_core::Result<()>;
+    fn RecommendedAnchorIndexCore(&self) -> ::windows_core::Result<i32>;
+    fn LayoutOriginCore(&self) -> ::windows_core::Result<::windows::Foundation::Point>;
     fn SetLayoutOriginCore(
         &self,
         value: &::windows::Foundation::Point,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IVirtualizingLayoutContextOverrides {
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::RuntimeName for IVirtualizingLayoutContextOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IVirtualizingLayoutContextOverrides";
 }
+#[cfg(feature = "Windows_Foundation")]
 impl IVirtualizingLayoutContextOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IVirtualizingLayoutContextOverrides_Impl,
         const OFFSET: isize,
     >() -> IVirtualizingLayoutContextOverrides_Vtbl {
         unsafe extern "system" fn ItemCountCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ItemCountCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetItemAtCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             index: i32,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetItemAtCore(index) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn RealizationRectCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::Foundation::Rect,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.RealizationRectCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn GetOrCreateElementAtCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -3049,82 +3091,80 @@ impl IVirtualizingLayoutContextOverrides_Vtbl {
             index: i32,
             options: ElementRealizationOptions,
             result__: *mut *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.GetOrCreateElementAtCore(index, options) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
                     ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn RecycleElementCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             element: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.RecycleElementCore(::core::mem::transmute(&element)).into()
+            this.RecycleElementCore(::windows_core::from_raw_borrowed(&element)).into()
         }
         unsafe extern "system" fn RecommendedAnchorIndexCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.RecommendedAnchorIndexCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn LayoutOriginCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             result__: *mut ::windows::Foundation::Point,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.LayoutOriginCore() {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn SetLayoutOriginCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutContextOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             value: ::windows::Foundation::Point,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.SetLayoutOriginCore(::core::mem::transmute(&value)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingLayoutContextOverrides,
                 OFFSET,
@@ -3139,80 +3179,77 @@ impl IVirtualizingLayoutContextOverrides_Vtbl {
             SetLayoutOriginCore: SetLayoutOriginCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IVirtualizingLayoutContextOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IVirtualizingLayoutContextOverrides as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Xaml_Interop")]
+#[doc = "Required features: `\"Microsoft_UI_Xaml_Interop\"`, `\"Windows_Foundation\"`"]
+#[cfg(all(feature = "Microsoft_UI_Xaml_Interop", feature = "Windows_Foundation"))]
 pub trait IVirtualizingLayoutOverrides_Impl: Sized {
     fn InitializeForContextCore(
         &self,
-        context: &::core::option::Option<VirtualizingLayoutContext>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        context: ::core::option::Option<&VirtualizingLayoutContext>,
+    ) -> ::windows_core::Result<()>;
     fn UninitializeForContextCore(
         &self,
-        context: &::core::option::Option<VirtualizingLayoutContext>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        context: ::core::option::Option<&VirtualizingLayoutContext>,
+    ) -> ::windows_core::Result<()>;
     fn MeasureOverride(
         &self,
-        context: &::core::option::Option<VirtualizingLayoutContext>,
+        context: ::core::option::Option<&VirtualizingLayoutContext>,
         availablesize: &::windows::Foundation::Size,
-    ) -> ::windows::core::Result<::windows::Foundation::Size>;
+    ) -> ::windows_core::Result<::windows::Foundation::Size>;
     fn ArrangeOverride(
         &self,
-        context: &::core::option::Option<VirtualizingLayoutContext>,
+        context: ::core::option::Option<&VirtualizingLayoutContext>,
         finalsize: &::windows::Foundation::Size,
-    ) -> ::windows::core::Result<::windows::Foundation::Size>;
+    ) -> ::windows_core::Result<::windows::Foundation::Size>;
     fn OnItemsChangedCore(
         &self,
-        context: &::core::option::Option<VirtualizingLayoutContext>,
-        source: &::core::option::Option<::windows::core::IInspectable>,
-        args: &::core::option::Option<super::Interop::NotifyCollectionChangedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        context: ::core::option::Option<&VirtualizingLayoutContext>,
+        source: ::core::option::Option<&::windows_core::IInspectable>,
+        args: ::core::option::Option<&super::Interop::NotifyCollectionChangedEventArgs>,
+    ) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Xaml_Interop")]
-impl ::windows::core::RuntimeName for IVirtualizingLayoutOverrides {
+#[cfg(all(feature = "Microsoft_UI_Xaml_Interop", feature = "Windows_Foundation"))]
+impl ::windows_core::RuntimeName for IVirtualizingLayoutOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IVirtualizingLayoutOverrides";
 }
-#[cfg(feature = "UI_Xaml_Interop")]
+#[cfg(all(feature = "Microsoft_UI_Xaml_Interop", feature = "Windows_Foundation"))]
 impl IVirtualizingLayoutOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IVirtualizingLayoutOverrides_Impl,
         const OFFSET: isize,
     >() -> IVirtualizingLayoutOverrides_Vtbl {
         unsafe extern "system" fn InitializeForContextCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             context: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.InitializeForContextCore(::core::mem::transmute(&context)).into()
+            this.InitializeForContextCore(::windows_core::from_raw_borrowed(&context))
+                .into()
         }
         unsafe extern "system" fn UninitializeForContextCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             context: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.UninitializeForContextCore(::core::mem::transmute(&context)).into()
+            this.UninitializeForContextCore(::windows_core::from_raw_borrowed(&context))
+                .into()
         }
         unsafe extern "system" fn MeasureOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -3220,23 +3257,22 @@ impl IVirtualizingLayoutOverrides_Vtbl {
             context: *mut ::core::ffi::c_void,
             availablesize: ::windows::Foundation::Size,
             result__: *mut ::windows::Foundation::Size,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.MeasureOverride(
-                ::core::mem::transmute(&context),
+                ::windows_core::from_raw_borrowed(&context),
                 ::core::mem::transmute(&availablesize),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn ArrangeOverride<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -3244,23 +3280,22 @@ impl IVirtualizingLayoutOverrides_Vtbl {
             context: *mut ::core::ffi::c_void,
             finalsize: ::windows::Foundation::Size,
             result__: *mut ::windows::Foundation::Size,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             match this.ArrangeOverride(
-                ::core::mem::transmute(&context),
+                ::windows_core::from_raw_borrowed(&context),
                 ::core::mem::transmute(&finalsize),
             ) {
                 ::core::result::Result::Ok(ok__) => {
                     ::core::ptr::write(result__, ::core::mem::transmute_copy(&ok__));
-                    ::core::mem::forget(ok__);
-                    ::windows::core::HRESULT(0)
+                    ::windows_core::HRESULT(0)
                 }
                 ::core::result::Result::Err(err) => err.into(),
             }
         }
         unsafe extern "system" fn OnItemsChangedCore<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingLayoutOverrides_Impl,
             const OFFSET: isize,
         >(
@@ -3268,18 +3303,18 @@ impl IVirtualizingLayoutOverrides_Vtbl {
             context: *mut ::core::ffi::c_void,
             source: *mut ::core::ffi::c_void,
             args: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnItemsChangedCore(
-                ::core::mem::transmute(&context),
-                ::core::mem::transmute(&source),
-                ::core::mem::transmute(&args),
+                ::windows_core::from_raw_borrowed(&context),
+                ::windows_core::from_raw_borrowed(&source),
+                ::windows_core::from_raw_borrowed(&args),
             )
             .into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingLayoutOverrides,
                 OFFSET,
@@ -3291,76 +3326,74 @@ impl IVirtualizingLayoutOverrides_Vtbl {
             OnItemsChangedCore: OnItemsChangedCore::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IVirtualizingLayoutOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IVirtualizingLayoutOverrides as ::windows_core::ComInterface>::IID
     }
 }
-#[cfg(feature = "UI_Xaml_Controls_Primitives")]
+#[doc = "Required features: `\"Microsoft_UI_Xaml_Controls_Primitives\"`"]
+#[cfg(feature = "Microsoft_UI_Xaml_Controls_Primitives")]
 pub trait IVirtualizingPanelOverrides_Impl: Sized {
     fn OnItemsChanged(
         &self,
-        sender: &::core::option::Option<::windows::core::IInspectable>,
-        args: &::core::option::Option<Primitives::ItemsChangedEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
-    fn OnClearChildren(&self) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
-    fn BringIndexIntoView(&self, index: i32) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        sender: ::core::option::Option<&::windows_core::IInspectable>,
+        args: ::core::option::Option<&Primitives::ItemsChangedEventArgs>,
+    ) -> ::windows_core::Result<()>;
+    fn OnClearChildren(&self) -> ::windows_core::Result<()>;
+    fn BringIndexIntoView(&self, index: i32) -> ::windows_core::Result<()>;
 }
-#[cfg(feature = "UI_Xaml_Controls_Primitives")]
-impl ::windows::core::RuntimeName for IVirtualizingPanelOverrides {
+#[cfg(feature = "Microsoft_UI_Xaml_Controls_Primitives")]
+impl ::windows_core::RuntimeName for IVirtualizingPanelOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IVirtualizingPanelOverrides";
 }
-#[cfg(feature = "UI_Xaml_Controls_Primitives")]
+#[cfg(feature = "Microsoft_UI_Xaml_Controls_Primitives")]
 impl IVirtualizingPanelOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IVirtualizingPanelOverrides_Impl,
         const OFFSET: isize,
     >() -> IVirtualizingPanelOverrides_Vtbl {
         unsafe extern "system" fn OnItemsChanged<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingPanelOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             sender: *mut ::core::ffi::c_void,
             args: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnItemsChanged(::core::mem::transmute(&sender), ::core::mem::transmute(&args))
-                .into()
+            this.OnItemsChanged(
+                ::windows_core::from_raw_borrowed(&sender),
+                ::windows_core::from_raw_borrowed(&args),
+            )
+            .into()
         }
         unsafe extern "system" fn OnClearChildren<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingPanelOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.OnClearChildren().into()
         }
         unsafe extern "system" fn BringIndexIntoView<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingPanelOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             index: i32,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
             this.BringIndexIntoView(index).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingPanelOverrides,
                 OFFSET,
@@ -3370,41 +3403,39 @@ impl IVirtualizingPanelOverrides_Vtbl {
             BringIndexIntoView: BringIndexIntoView::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IVirtualizingPanelOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IVirtualizingPanelOverrides as ::windows_core::ComInterface>::IID
     }
 }
 pub trait IVirtualizingStackPanelOverrides_Impl: Sized {
     fn OnCleanUpVirtualizedItem(
         &self,
-        e: &::core::option::Option<CleanUpVirtualizedItemEventArgs>,
-    ) -> ::windows::core::Result<()> {
-        ::core::result::Result::Ok(())
-    }
+        e: ::core::option::Option<&CleanUpVirtualizedItemEventArgs>,
+    ) -> ::windows_core::Result<()>;
 }
-impl ::windows::core::RuntimeName for IVirtualizingStackPanelOverrides {
+impl ::windows_core::RuntimeName for IVirtualizingStackPanelOverrides {
     const NAME: &'static str = "Microsoft.UI.Xaml.Controls.IVirtualizingStackPanelOverrides";
 }
 impl IVirtualizingStackPanelOverrides_Vtbl {
     pub const fn new<
-        Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+        Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
         Impl: IVirtualizingStackPanelOverrides_Impl,
         const OFFSET: isize,
     >() -> IVirtualizingStackPanelOverrides_Vtbl {
         unsafe extern "system" fn OnCleanUpVirtualizedItem<
-            Identity: ::windows::core::IUnknownImpl<Impl = Impl>,
+            Identity: ::windows_core::IUnknownImpl<Impl = Impl>,
             Impl: IVirtualizingStackPanelOverrides_Impl,
             const OFFSET: isize,
         >(
             this: *mut ::core::ffi::c_void,
             e: *mut ::core::ffi::c_void,
-        ) -> ::windows::core::HRESULT {
+        ) -> ::windows_core::HRESULT {
             let this = (this as *const *const ()).offset(OFFSET) as *const Identity;
             let this = (*this).get_impl();
-            this.OnCleanUpVirtualizedItem(::core::mem::transmute(&e)).into()
+            this.OnCleanUpVirtualizedItem(::windows_core::from_raw_borrowed(&e)).into()
         }
         Self {
-            base__: ::windows::core::IInspectable_Vtbl::new::<
+            base__: ::windows_core::IInspectable_Vtbl::new::<
                 Identity,
                 IVirtualizingStackPanelOverrides,
                 OFFSET,
@@ -3412,7 +3443,7 @@ impl IVirtualizingStackPanelOverrides_Vtbl {
             OnCleanUpVirtualizedItem: OnCleanUpVirtualizedItem::<Identity, Impl, OFFSET>,
         }
     }
-    pub fn matches(iid: &windows::core::GUID) -> bool {
-        iid == &<IVirtualizingStackPanelOverrides as ::windows::core::Interface>::IID
+    pub unsafe fn matches(iid: *const ::windows_core::GUID) -> bool {
+        *iid == <IVirtualizingStackPanelOverrides as ::windows_core::ComInterface>::IID
     }
 }

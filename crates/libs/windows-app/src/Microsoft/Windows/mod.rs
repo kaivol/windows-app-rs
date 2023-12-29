@@ -1,14 +1,21 @@
-#[cfg(feature = "Windows_AppLifecycle")]
+#[cfg(feature = "Microsoft_Windows_AppLifecycle")]
+#[doc = "Required features: `\"Microsoft_Windows_AppLifecycle\"`"]
 pub mod AppLifecycle;
-#[cfg(feature = "Windows_AppNotifications")]
+#[cfg(feature = "Microsoft_Windows_AppNotifications")]
+#[doc = "Required features: `\"Microsoft_Windows_AppNotifications\"`"]
 pub mod AppNotifications;
-#[cfg(feature = "Windows_ApplicationModel")]
+#[cfg(feature = "Microsoft_Windows_ApplicationModel")]
+#[doc = "Required features: `\"Microsoft_Windows_ApplicationModel\"`"]
 pub mod ApplicationModel;
-#[cfg(feature = "Windows_PushNotifications")]
+#[cfg(feature = "Microsoft_Windows_PushNotifications")]
+#[doc = "Required features: `\"Microsoft_Windows_PushNotifications\"`"]
 pub mod PushNotifications;
-#[cfg(feature = "Windows_Security")]
+#[cfg(feature = "Microsoft_Windows_Security")]
+#[doc = "Required features: `\"Microsoft_Windows_Security\"`"]
 pub mod Security;
-#[cfg(feature = "Windows_System")]
+#[cfg(feature = "Microsoft_Windows_System")]
+#[doc = "Required features: `\"Microsoft_Windows_System\"`"]
 pub mod System;
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");
+#[cfg(feature = "Microsoft_Windows_Widgets")]
+#[doc = "Required features: `\"Microsoft_Windows_Widgets\"`"]
+pub mod Widgets;

@@ -8,8 +8,8 @@ use windows::Win32::UI::WindowsAndMessaging::{
     DispatchMessageW, GetMessageW, GetSystemMetrics, GetWindowRect, PostQuitMessage, SetWindowPos,
     TranslateMessage, MSG, SM_CXSCREEN, SM_CYSCREEN, SWP_NOMOVE, SWP_NOSIZE,
 };
-use windows_app::UI::Windowing::*;
-use windows_app::*;
+use windows_app::bootstrap;
+use windows_app::Microsoft::UI::Windowing::{AppWindow, OverlappedPresenter};
 
 fn main() -> Result<()> {
     bootstrap::initialize()?;
@@ -27,7 +27,7 @@ fn sample_main() -> Result<()> {
     presenter.SetBorderAndTitleBar(true, true)?;
 
     let window = AppWindow::CreateWithPresenter(&presenter)?;
-    window.SetTitle(&HSTRING::from("Hello, world!"))?;
+    window.SetTitle(h!("Hello, world!"))?;
 
     window.Destroying(&TypedEventHandler::new(|_, __| unsafe {
         PostQuitMessage(0);
@@ -35,9 +35,8 @@ fn sample_main() -> Result<()> {
     }))?;
 
     let hwnd = window.Id()?.try_into()?;
-    resize_window(hwnd, 800, 600).then(|| {
-        center_window(hwnd);
-    });
+    resize_window(hwnd, 800, 600)?;
+    center_window(hwnd)?;
 
     window.Show()?;
 
@@ -53,7 +52,7 @@ fn sample_main() -> Result<()> {
     Ok(())
 }
 
-pub fn resize_window(handle: HWND, width: u32, height: u32) -> bool {
+pub fn resize_window(handle: HWND, width: u32, height: u32) -> Result<()> {
     let scale_factor = unsafe { GetDpiForWindow(handle) } / 96;
     let width = width * scale_factor;
     let height = height * scale_factor;
@@ -67,28 +66,24 @@ pub fn resize_window(handle: HWND, width: u32, height: u32) -> bool {
             height as i32,
             SWP_NOMOVE,
         )
-        .into()
     }
 }
 
-pub fn center_window(handle: HWND) -> bool {
+pub fn center_window(handle: HWND) -> Result<()> {
     let mut rect = RECT::default();
     unsafe {
-        if GetWindowRect(handle, &mut rect).as_bool() {
-            let screen_width = GetSystemMetrics(SM_CXSCREEN);
-            let screen_height = GetSystemMetrics(SM_CYSCREEN);
-            SetWindowPos(
-                handle,
-                HWND(0),
-                (screen_width / 2) - (rect.right - rect.left) / 2,
-                (screen_height / 2) - (rect.bottom - rect.top) / 2,
-                0, // cx
-                0, // cy
-                SWP_NOSIZE,
-            )
-            .into()
-        } else {
-            false
-        }
+        GetWindowRect(handle, &mut rect)?;
+
+        let screen_width = GetSystemMetrics(SM_CXSCREEN);
+        let screen_height = GetSystemMetrics(SM_CYSCREEN);
+        SetWindowPos(
+            handle,
+            HWND(0),
+            (screen_width / 2) - (rect.right - rect.left) / 2,
+            (screen_height / 2) - (rect.bottom - rect.top) / 2,
+            0, // cx
+            0, // cy
+            SWP_NOSIZE,
+        )
     }
 }

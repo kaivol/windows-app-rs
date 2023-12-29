@@ -2,27 +2,26 @@
 name = "sample_appwindow"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
 [build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
 
+[dependencies.windows_app]
+path = "../../libs/windows-app"
+features = [
+    "bootstrap",
+    "Microsoft_UI_Windowing",
+    "Windows_Foundation",
+    "Windows_Win32_Foundation",
+]
+
 [dependencies.windows]
-git = "https://github.com/kaivol/windows-rs"
-branch = "composable"
+workspace = true
 features = [
     "Foundation",
     "Win32_Foundation",
     "Win32_UI_HiDpi",
     "Win32_UI_WindowsAndMessaging",
     "Win32_System_Com",
-]
-
-[dependencies.windows_app]
-path = "../../libs/windows-app"
-features = [
-    "bootstrap",
-    "interop",
-    "WindowsAppSdk_Foundation",
-    "UI_Windowing",
 ]

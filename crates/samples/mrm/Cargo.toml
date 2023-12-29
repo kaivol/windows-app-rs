@@ -2,20 +2,19 @@
 name = "sample_mrm"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
 [build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
-
-[dependencies.windows]
-git = "https://github.com/kaivol/windows-rs"
-branch = "composable"
 
 [dependencies.windows_app]
 path = "../../libs/windows-app"
 features = [
     "bootstrap",
     "MRM",
-    "WindowsAppSdk_Foundation",
-    "Windows_ApplicationModel_Resources",
+    "Microsoft_Windows_ApplicationModel_Resources",
+    "Windows_Foundation_Collections",
 ]
+
+[dependencies.windows]
+workspace = true

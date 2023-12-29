@@ -1,2485 +1,3632 @@
-#[cfg(feature = "UI_Input_Interop")]
+#[cfg(feature = "Microsoft_UI_Input_DragDrop")]
+#[doc = "Required features: `\"Microsoft_UI_Input_DragDrop\"`"]
+pub mod DragDrop;
+#[cfg(feature = "Microsoft_UI_Input_Interop")]
+#[doc = "Required features: `\"Microsoft_UI_Input_Interop\"`"]
 pub mod Interop;
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICrossSlidingEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ICrossSlidingEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICharacterReceivedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICharacterReceivedEventArgs {
+    type Vtable = ICharacterReceivedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ICharacterReceivedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x36122718_9263_592b_8d87_8f86543ffc95);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct ICharacterReceivedEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub Handled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: bool,
+    ) -> ::windows_core::HRESULT,
+    pub KeyCode: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut u32,
+    ) -> ::windows_core::HRESULT,
+    pub KeyStatus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut PhysicalKeyStatus,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IContextMenuKeyEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IContextMenuKeyEventArgs {
+    type Vtable = IContextMenuKeyEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IContextMenuKeyEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf6025762_9426_541a_b647_037abdbecefc);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IContextMenuKeyEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub Handled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: bool,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICrossSlidingEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICrossSlidingEventArgs {
     type Vtable = ICrossSlidingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ICrossSlidingEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x7679641f_ba9f_543c_a7c8_6229a98f89ef);
+unsafe impl ::windows_core::ComInterface for ICrossSlidingEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x7679641f_ba9f_543c_a7c8_6229a98f89ef);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICrossSlidingEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CrossSlidingState: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut CrossSlidingState,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IDraggingEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IDraggingEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IDraggingEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IDraggingEventArgs {
     type Vtable = IDraggingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IDraggingEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x3efb1b75_3d3b_550e_963d_0828ca76128a);
+unsafe impl ::windows_core::ComInterface for IDraggingEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x3efb1b75_3d3b_550e_963d_0828ca76128a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IDraggingEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub DraggingState: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut DraggingState,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IGestureRecognizer(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IGestureRecognizer {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IFocusChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IFocusChangedEventArgs {
+    type Vtable = IFocusChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IFocusChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xa039b115_dbdf_594c_9b86_da6aa05c9fa2);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IFocusChangedEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub Handled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: bool,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IGestureRecognizer(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IGestureRecognizer {
     type Vtable = IGestureRecognizer_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IGestureRecognizer {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xcda89afc_6bd0_595c_ba37_545fce5bf016);
+unsafe impl ::windows_core::ComInterface for IGestureRecognizer {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xcda89afc_6bd0_595c_ba37_545fce5bf016);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IGestureRecognizer_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub AutoProcessInertia: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetAutoProcessInertia: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CrossSlideExact: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetCrossSlideExact: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CrossSlideHorizontally: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetCrossSlideHorizontally: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CrossSlideThresholds: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut CrossSlideThresholds,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetCrossSlideThresholds: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: CrossSlideThresholds,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub GestureSettings: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut GestureSettings,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetGestureSettings: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: GestureSettings,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsActive: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsInertial: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub PivotCenter: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PivotCenter: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetPivotCenter: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetPivotCenter: usize,
     pub PivotRadius: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetPivotRadius: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InertiaExpansionDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaExpansionDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InertiaExpansion: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaExpansion: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InertiaRotationAngle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaRotationAngle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InertiaRotationDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaRotationDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub InertiaTranslationDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaTranslationDeceleration: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
     )
-        -> ::windows::core::HRESULT,
+        -> ::windows_core::HRESULT,
     pub InertiaTranslationDisplacement: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetInertiaTranslationDisplacement: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
     )
-        -> ::windows::core::HRESULT,
+        -> ::windows_core::HRESULT,
     pub ManipulationExact: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetManipulationExact: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub MouseWheelParameters: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ShowGestureFeedback: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetShowGestureFeedback: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CanBeDoubleTap: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CompleteGesture:
-        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ProcessDownEvent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub ProcessMoveEvents: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    ProcessMoveEvents: usize,
     pub ProcessMouseWheelEvent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
         isshiftkeydown: bool,
         iscontrolkeydown: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ProcessInertia:
-        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
     pub ProcessUpEvent: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Tapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Tapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveTapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveTapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RightTapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RightTapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveRightTapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveRightTapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Holding: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Holding: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveHolding: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveHolding: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Dragging: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Dragging: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveDragging: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveDragging: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub ManipulationStarted: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ManipulationStarted: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveManipulationStarted: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveManipulationStarted: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub ManipulationUpdated: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ManipulationUpdated: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveManipulationUpdated: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveManipulationUpdated: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub ManipulationInertiaStarting: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ManipulationInertiaStarting: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveManipulationInertiaStarting: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
     )
-        -> ::windows::core::HRESULT,
+        -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveManipulationInertiaStarting: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub ManipulationCompleted: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ManipulationCompleted: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveManipulationCompleted: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveManipulationCompleted: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub CrossSliding: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    CrossSliding: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveCrossSliding: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveCrossSliding: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IHoldingEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IHoldingEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IHoldingEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IHoldingEventArgs {
     type Vtable = IHoldingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IHoldingEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x8e449e85_d223_533c_b0b2_bf7c6d10c2db);
+unsafe impl ::windows_core::ComInterface for IHoldingEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x8e449e85_d223_533c_b0b2_bf7c6d10c2db);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IHoldingEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub HoldingState: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut HoldingState,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputActivationListener(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputActivationListener {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputActivationListener(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputActivationListener {
     type Vtable = IInputActivationListener_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputActivationListener {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x3b818627_6ce7_5e0d_a0f5_6684fd1aec78);
+unsafe impl ::windows_core::ComInterface for IInputActivationListener {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x3b818627_6ce7_5e0d_a0f5_6684fd1aec78);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputActivationListener_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub State: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut InputActivationState,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub InputActivationChanged: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    InputActivationChanged: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveInputActivationChanged: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveInputActivationChanged: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputActivationListenerActivationChangedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputActivationListenerActivationChangedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputActivationListenerActivationChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputActivationListenerActivationChangedEventArgs {
     type Vtable = IInputActivationListenerActivationChangedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputActivationListenerActivationChangedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x7978526b_00b6_5303_8f7d_55bef36da786);
+unsafe impl ::windows_core::ComInterface for IInputActivationListenerActivationChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x7978526b_00b6_5303_8f7d_55bef36da786);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputActivationListenerActivationChangedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputActivationListenerStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputActivationListenerStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputActivationListenerStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputActivationListenerStatics {
     type Vtable = IInputActivationListenerStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputActivationListenerStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xc4249843_f053_5c99_9d51_720ade94224d);
+unsafe impl ::windows_core::ComInterface for IInputActivationListenerStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xc4249843_f053_5c99_9d51_720ade94224d);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputActivationListenerStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub GetForWindowId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         windowid: super::WindowId,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputCursor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputCursor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputActivationListenerStatics2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputActivationListenerStatics2 {
+    type Vtable = IInputActivationListenerStatics2_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputActivationListenerStatics2 {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x7ea26120_9636_5292_a7b1_56544ac51a22);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputActivationListenerStatics2_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub GetForIsland: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        island: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Content"))]
+    GetForIsland: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputCursor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputCursor {
     type Vtable = IInputCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputCursor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x359b15f9_19c2_5714_8432_75176826406b);
+unsafe impl ::windows_core::ComInterface for IInputCursor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x359b15f9_19c2_5714_8432_75176826406b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputCursor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputCursorFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputCursorFactory {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputCursorFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputCursorFactory {
     type Vtable = IInputCursorFactory_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputCursorFactory {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x2f47647b_4be0_53e9_be7e_c38d5459db6b);
+unsafe impl ::windows_core::ComInterface for IInputCursorFactory {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x2f47647b_4be0_53e9_be7e_c38d5459db6b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputCursorFactory_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputCursorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputCursorStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputCursorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputCursorStatics {
     type Vtable = IInputCursorStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputCursorStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x92f6a552_099f_55fb_8c31_e450284c9643);
+unsafe impl ::windows_core::ComInterface for IInputCursorStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x92f6a552_099f_55fb_8c31_e450284c9643);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputCursorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_UI_Core")]
     pub CreateFromCoreCursor: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         cursor: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_UI_Core"))]
+    CreateFromCoreCursor: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputCustomCursor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputCustomCursor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputCustomCursor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputCustomCursor {
     type Vtable = IInputCustomCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputCustomCursor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x5486f042_7e1a_5dc8_8041_e47b609a5ba1);
+unsafe impl ::windows_core::ComInterface for IInputCustomCursor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x5486f042_7e1a_5dc8_8041_e47b609a5ba1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputCustomCursor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputCustomCursorFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputCustomCursorFactory {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputCustomCursorFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputCustomCursorFactory {
     type Vtable = IInputCustomCursorFactory_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputCustomCursorFactory {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x6f402882_66e0_57d3_89d0_aa5e2ff917bc);
+unsafe impl ::windows_core::ComInterface for IInputCustomCursorFactory {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x6f402882_66e0_57d3_89d0_aa5e2ff917bc);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputCustomCursorFactory_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputDesktopNamedResourceCursor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputDesktopNamedResourceCursor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputDesktopNamedResourceCursor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputDesktopNamedResourceCursor {
     type Vtable = IInputDesktopNamedResourceCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputDesktopNamedResourceCursor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xf40ea93b_0ed7_5b3a_bfe2_14e2b5ad88a3);
+unsafe impl ::windows_core::ComInterface for IInputDesktopNamedResourceCursor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf40ea93b_0ed7_5b3a_bfe2_14e2b5ad88a3);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputDesktopNamedResourceCursor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub ModuleName: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub ResourceName: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputDesktopNamedResourceCursorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputDesktopNamedResourceCursorStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputDesktopNamedResourceCursorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputDesktopNamedResourceCursorStatics {
     type Vtable = IInputDesktopNamedResourceCursorStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputDesktopNamedResourceCursorStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xe8b6d5aa_898b_5e69_b01f_383a0943e3e4);
+unsafe impl ::windows_core::ComInterface for IInputDesktopNamedResourceCursorStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xe8b6d5aa_898b_5e69_b01f_383a0943e3e4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputDesktopNamedResourceCursorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Create: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        resourcename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        resourcename: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CreateFromModule: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        modulename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-        resourcename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        modulename: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+        resourcename: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputDesktopResourceCursor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputDesktopResourceCursor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputDesktopResourceCursor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputDesktopResourceCursor {
     type Vtable = IInputDesktopResourceCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputDesktopResourceCursor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x1df2777f_7c90_58fc_a7a3_d5736c6510fd);
+unsafe impl ::windows_core::ComInterface for IInputDesktopResourceCursor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x1df2777f_7c90_58fc_a7a3_d5736c6510fd);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputDesktopResourceCursor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub ModuleName: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub ResourceId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputDesktopResourceCursorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputDesktopResourceCursorStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputDesktopResourceCursorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputDesktopResourceCursorStatics {
     type Vtable = IInputDesktopResourceCursorStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputDesktopResourceCursorStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xf440dc37_a0b6_56eb_bcec_b024f2233d47);
+unsafe impl ::windows_core::ComInterface for IInputDesktopResourceCursorStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf440dc37_a0b6_56eb_bcec_b024f2233d47);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputDesktopResourceCursorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Create: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         resourceid: u32,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub CreateFromModule: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        modulename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        modulename: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         resourceid: u32,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputKeyboardSource(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputKeyboardSource {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputFocusChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputFocusChangedEventArgs {
+    type Vtable = IInputFocusChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputFocusChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xd85b1b7a_045d_5a1b_9966_ebc0b3d47567);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputFocusChangedEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputFocusController(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputFocusController {
+    type Vtable = IInputFocusController_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputFocusController {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x8dfdc26c_8b8d_515d_8ddd_4685b3a540e9);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputFocusController_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub HasFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    pub TrySetFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
+    pub GotFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    GotFocus: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveGotFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveGotFocus: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub LostFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    LostFocus: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveLostFocus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveLostFocus: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputFocusControllerStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputFocusControllerStatics {
+    type Vtable = IInputFocusControllerStatics_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputFocusControllerStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xaeb311da_da9b_5a1b_92f4_83ddde933e00);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputFocusControllerStatics_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub GetForIsland: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        island: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Content"))]
+    GetForIsland: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputKeyboardSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputKeyboardSource {
     type Vtable = IInputKeyboardSource_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputKeyboardSource {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xed61b906_16ad_5df7_a550_5e6f7d2229f7);
+unsafe impl ::windows_core::ComInterface for IInputKeyboardSource {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xed61b906_16ad_5df7_a550_5e6f7d2229f7);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputKeyboardSource_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputKeyboardSourceStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputKeyboardSourceStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputKeyboardSource2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputKeyboardSource2 {
+    type Vtable = IInputKeyboardSource2_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputKeyboardSource2 {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x79d1c9b6_b3c9_5ec2_8a5b_707088787f78);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputKeyboardSource2_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_System")]
+    pub GetCurrentKeyState: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        virtualkey: ::windows::System::VirtualKey,
+        result__: *mut VirtualKeyStates,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_System"))]
+    GetCurrentKeyState: usize,
+    #[cfg(feature = "Windows_System")]
+    pub GetKeyState: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        virtualkey: ::windows::System::VirtualKey,
+        result__: *mut VirtualKeyStates,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_System"))]
+    GetKeyState: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub CharacterReceived: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    CharacterReceived: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveCharacterReceived: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveCharacterReceived: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub ContextMenuKey: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ContextMenuKey: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveContextMenuKey: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveContextMenuKey: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub KeyDown: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    KeyDown: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveKeyDown: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveKeyDown: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub KeyUp: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    KeyUp: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveKeyUp: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveKeyUp: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub SystemKeyDown: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SystemKeyDown: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveSystemKeyDown: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveSystemKeyDown: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub SystemKeyUp: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SystemKeyUp: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveSystemKeyUp: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveSystemKeyUp: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputKeyboardSourceStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputKeyboardSourceStatics {
     type Vtable = IInputKeyboardSourceStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputKeyboardSourceStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xf4e1563d_8c2e_5bcd_b784_47adeaa3cd7e);
+unsafe impl ::windows_core::ComInterface for IInputKeyboardSourceStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf4e1563d_8c2e_5bcd_b784_47adeaa3cd7e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputKeyboardSourceStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(all(feature = "Windows_System", feature = "Windows_UI_Core"))]
     pub GetKeyStateForCurrentThread: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         virtualkey: ::windows::System::VirtualKey,
         result__: *mut ::windows::UI::Core::CoreVirtualKeyStates,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(all(feature = "Windows_System", feature = "Windows_UI_Core")))]
+    GetKeyStateForCurrentThread: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputLightDismissAction(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputLightDismissAction {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputKeyboardSourceStatics2(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputKeyboardSourceStatics2 {
+    type Vtable = IInputKeyboardSourceStatics2_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputKeyboardSourceStatics2 {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x8857518c_2899_5f11_9b64_0ad83234824b);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputKeyboardSourceStatics2_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub GetForIsland: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        island: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Content"))]
+    GetForIsland: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputLightDismissAction(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputLightDismissAction {
     type Vtable = IInputLightDismissAction_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputLightDismissAction {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xe8a39502_a860_502f_8c10_3646d43aecf1);
+unsafe impl ::windows_core::ComInterface for IInputLightDismissAction {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xe8a39502_a860_502f_8c10_3646d43aecf1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputLightDismissAction_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub Dismissed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Dismissed: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveDismissed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveDismissed: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputLightDismissActionStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputLightDismissActionStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputLightDismissActionStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputLightDismissActionStatics {
     type Vtable = IInputLightDismissActionStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputLightDismissActionStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xed9b8def_6496_5169_984d_d44b4e690623);
+unsafe impl ::windows_core::ComInterface for IInputLightDismissActionStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xed9b8def_6496_5169_984d_d44b4e690623);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputLightDismissActionStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub GetForWindowId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         windowid: super::WindowId,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputLightDismissEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputLightDismissEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputLightDismissEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputLightDismissEventArgs {
     type Vtable = IInputLightDismissEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputLightDismissEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x078660ee_07ca_5808_b982_e6e899cf098c);
+unsafe impl ::windows_core::ComInterface for IInputLightDismissEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x078660ee_07ca_5808_b982_e6e899cf098c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputLightDismissEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputObject(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputObject {
-    type Vtable = IInputObject_Vtbl;
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputNonClientPointerSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputNonClientPointerSource {
+    type Vtable = IInputNonClientPointerSource_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputObject {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x42edbc88_d386_544d_b1b8_68617fe68282);
+unsafe impl ::windows_core::ComInterface for IInputNonClientPointerSource {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x471732b4_3d07_5104_b192_ebacf71e86df);
 }
 #[repr(C)]
 #[doc(hidden)]
-pub struct IInputObject_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
-    #[cfg(feature = "UI_Dispatching")]
+pub struct IInputNonClientPointerSource_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
     pub DispatcherQueue: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
-    #[cfg(not(feature = "UI_Dispatching"))]
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Dispatching"))]
     DispatcherQueue: usize,
-}
-#[doc(hidden)]
-#[repr(transparent)]
-pub struct IInputObjectFactory(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputObjectFactory {
-    type Vtable = IInputObjectFactory_Vtbl;
-}
-unsafe impl ::windows::core::Interface for IInputObjectFactory {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xf7786bc2_b0b8_5961_9a57_ae199d452106);
-}
-#[repr(C)]
-#[doc(hidden)]
-pub struct IInputObjectFactory_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
-}
-#[doc(hidden)]
-#[repr(transparent)]
-pub struct IInputPointerSource(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputPointerSource {
-    type Vtable = IInputPointerSource_Vtbl;
-}
-unsafe impl ::windows::core::Interface for IInputPointerSource {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x6a6c2764_c3f4_5be5_8447_c9a98766c240);
-}
-#[repr(C)]
-#[doc(hidden)]
-pub struct IInputPointerSource_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
-    pub Cursor: unsafe extern "system" fn(
+    pub ClearAllRegionRects:
+        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    pub ClearRegionRects: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
-    pub SetCursor: unsafe extern "system" fn(
+        region: NonClientRegionKind,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Graphics")]
+    pub GetRegionRects: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        value: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
-    pub DeviceKinds: unsafe extern "system" fn(
+        region: NonClientRegionKind,
+        result_size__: *mut u32,
+        result__: *mut *mut ::windows::Graphics::RectInt32,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Graphics"))]
+    GetRegionRects: usize,
+    #[cfg(feature = "Windows_Graphics")]
+    pub SetRegionRects: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
-        result__: *mut InputPointerSourceDeviceKinds,
-    ) -> ::windows::core::HRESULT,
-    pub PointerCaptureLost: unsafe extern "system" fn(
+        region: NonClientRegionKind,
+        rects_array_size: u32,
+        rects: *const ::windows::Graphics::RectInt32,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Graphics"))]
+    SetRegionRects: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub CaptionTapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
-    pub RemovePointerCaptureLost: unsafe extern "system" fn(
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    CaptionTapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveCaptionTapped: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveCaptionTapped: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerEntered: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerEntered: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerEntered: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerEntered: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerExited: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerExited: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerExited: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerExited: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerMoved: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerMoved: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerMoved: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerMoved: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerPressed: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerPressed: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerReleased: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerReleased: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RegionsChanged: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RegionsChanged: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemoveRegionsChanged: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveRegionsChanged: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputNonClientPointerSourceStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputNonClientPointerSourceStatics {
+    type Vtable = IInputNonClientPointerSourceStatics_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputNonClientPointerSourceStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x7d0b775c_1903_5dc7_bd2f_7a4b31f0cff2);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputNonClientPointerSourceStatics_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub GetForWindowId: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        windowid: super::WindowId,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputObject(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputObject {
+    type Vtable = IInputObject_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputObject {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x42edbc88_d386_544d_b1b8_68617fe68282);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputObject_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub DispatcherQueue: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Dispatching"))]
+    DispatcherQueue: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputObjectFactory(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputObjectFactory {
+    type Vtable = IInputObjectFactory_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputObjectFactory {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf7786bc2_b0b8_5961_9a57_ae199d452106);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputObjectFactory_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputPointerSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputPointerSource {
+    type Vtable = IInputPointerSource_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputPointerSource {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x6a6c2764_c3f4_5be5_8447_c9a98766c240);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputPointerSource_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub Cursor: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    pub SetCursor: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    pub DeviceKinds: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut InputPointerSourceDeviceKinds,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerCaptureLost: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerCaptureLost: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerCaptureLost: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerCaptureLost: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerEntered: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerEntered: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerEntered: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerEntered: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerExited: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerExited: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerExited: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerExited: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerMoved: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerMoved: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerMoved: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerMoved: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerPressed: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerPressed: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerPressed: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerPressed: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub PointerReleased: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        handler: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
+    pub RemovePointerReleased: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerRoutedAway: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerRoutedAway: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerRoutedAway: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerRoutedAway: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerRoutedReleased: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerRoutedReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerRoutedReleased: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerRoutedReleased: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerRoutedTo: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerRoutedTo: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerRoutedTo: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerRoutedTo: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub PointerWheelChanged: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PointerWheelChanged: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemovePointerWheelChanged: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemovePointerWheelChanged: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputSystemCursor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputSystemCursor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputPointerSourceStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputPointerSourceStatics {
+    type Vtable = IInputPointerSourceStatics_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputPointerSourceStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xe8a19fd1_a914_533f_9b0f_6bf0065e6781);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputPointerSourceStatics_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub GetForIsland: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        island: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Content"))]
+    GetForIsland: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputPreTranslateKeyboardSource(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputPreTranslateKeyboardSource {
+    type Vtable = IInputPreTranslateKeyboardSource_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputPreTranslateKeyboardSource {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x2f327feb_b7e7_5e37_a0cc_37dcabe76588);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputPreTranslateKeyboardSource_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputPreTranslateKeyboardSourceStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputPreTranslateKeyboardSourceStatics {
+    type Vtable = IInputPreTranslateKeyboardSourceStatics_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IInputPreTranslateKeyboardSourceStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x23d584d2_af8c_5a8a_806f_2ba9c5b1a5ec);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IInputPreTranslateKeyboardSourceStatics_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub GetForIsland: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        island: *mut ::core::ffi::c_void,
+        result__: *mut *mut ::core::ffi::c_void,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Microsoft_UI_Content"))]
+    GetForIsland: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputSystemCursor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputSystemCursor {
     type Vtable = IInputSystemCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputSystemCursor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x59f538e7_c500_59ab_8b54_0bc6100fd49e);
+unsafe impl ::windows_core::ComInterface for IInputSystemCursor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x59f538e7_c500_59ab_8b54_0bc6100fd49e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputSystemCursor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CursorShape: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut InputSystemCursorShape,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IInputSystemCursorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IInputSystemCursorStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IInputSystemCursorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IInputSystemCursorStatics {
     type Vtable = IInputSystemCursorStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IInputSystemCursorStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xd3860bb6_698a_5814_aedd_c2fa8bba5a02);
+unsafe impl ::windows_core::ComInterface for IInputSystemCursorStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xd3860bb6_698a_5814_aedd_c2fa8bba5a02);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IInputSystemCursorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Create: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         r#type: InputSystemCursorShape,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IManipulationCompletedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IManipulationCompletedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IKeyEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IKeyEventArgs {
+    type Vtable = IKeyEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for IKeyEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x40d5bb74_977e_5194_8039_9f6c44427bbb);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct IKeyEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub Handled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+    pub SetHandled: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        value: bool,
+    ) -> ::windows_core::HRESULT,
+    pub KeyStatus: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut PhysicalKeyStatus,
+    ) -> ::windows_core::HRESULT,
+    pub Timestamp: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut u64,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_System")]
+    pub VirtualKey: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::System::VirtualKey,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_System"))]
+    VirtualKey: usize,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IManipulationCompletedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IManipulationCompletedEventArgs {
     type Vtable = IManipulationCompletedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IManipulationCompletedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x0e0249d4_46e4_5559_aee3_fa45ce2a7f56);
+unsafe impl ::windows_core::ComInterface for IManipulationCompletedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x0e0249d4_46e4_5559_aee3_fa45ce2a7f56);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IManipulationCompletedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub Cumulative: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Cumulative: usize,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Velocities: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationVelocities,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Velocities: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IManipulationInertiaStartingEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IManipulationInertiaStartingEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IManipulationInertiaStartingEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IManipulationInertiaStartingEventArgs {
     type Vtable = IManipulationInertiaStartingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IManipulationInertiaStartingEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xacf9ef71_6e15_56ab_9260_f0d3ce5f66e8);
+unsafe impl ::windows_core::ComInterface for IManipulationInertiaStartingEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xacf9ef71_6e15_56ab_9260_f0d3ce5f66e8);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IManipulationInertiaStartingEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub Cumulative: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Cumulative: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Delta: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Delta: usize,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Velocities: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationVelocities,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Velocities: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IManipulationStartedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IManipulationStartedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IManipulationStartedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IManipulationStartedEventArgs {
     type Vtable = IManipulationStartedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IManipulationStartedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x4a616613_eef1_5f1b_a768_0775478d49d4);
+unsafe impl ::windows_core::ComInterface for IManipulationStartedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x4a616613_eef1_5f1b_a768_0775478d49d4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IManipulationStartedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub Cumulative: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Cumulative: usize,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IManipulationUpdatedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IManipulationUpdatedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IManipulationUpdatedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IManipulationUpdatedEventArgs {
     type Vtable = IManipulationUpdatedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IManipulationUpdatedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x406e1961_0c98_5fc0_b3d8_116492ef0053);
+unsafe impl ::windows_core::ComInterface for IManipulationUpdatedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x406e1961_0c98_5fc0_b3d8_116492ef0053);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IManipulationUpdatedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub Cumulative: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Cumulative: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Delta: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationDelta,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Delta: usize,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub Velocities: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ManipulationVelocities,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Velocities: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IMouseWheelParameters(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IMouseWheelParameters {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IMouseWheelParameters(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IMouseWheelParameters {
     type Vtable = IMouseWheelParameters_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IMouseWheelParameters {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x6d98be40_1d56_51d1_aa0d_f325439cd009);
+unsafe impl ::windows_core::ComInterface for IMouseWheelParameters {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x6d98be40_1d56_51d1_aa0d_f325439cd009);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IMouseWheelParameters_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub CharTranslation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    CharTranslation: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetCharTranslation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetCharTranslation: usize,
     pub DeltaScale: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetDeltaScale: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub DeltaRotationAngle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetDeltaRotationAngle: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub PageTranslation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PageTranslation: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetPageTranslation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetPageTranslation: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPointerEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IPointerEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct INonClientCaptionTappedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for INonClientCaptionTappedEventArgs {
+    type Vtable = INonClientCaptionTappedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for INonClientCaptionTappedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x3d173531_991f_5753_b7e0_14a121c3cd2d);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct INonClientCaptionTappedEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
+    pub Point: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::Point,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Point: usize,
+    pub PointerDeviceType: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut PointerDeviceType,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct INonClientPointerEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for INonClientPointerEventArgs {
+    type Vtable = INonClientPointerEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for INonClientPointerEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xa5b44aec_b797_505a_a129_ae4e5271c73c);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct INonClientPointerEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
+    pub Point: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut ::windows::Foundation::Point,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Point: usize,
+    pub PointerDeviceType: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut PointerDeviceType,
+    ) -> ::windows_core::HRESULT,
+    pub RegionKind: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut NonClientRegionKind,
+    ) -> ::windows_core::HRESULT,
+    pub IsPointInRegion: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result__: *mut bool,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct INonClientRegionsChangedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for INonClientRegionsChangedEventArgs {
+    type Vtable = INonClientRegionsChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for INonClientRegionsChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xfe97ee95_1824_51b2_b8eb_10ff0665ce23);
+}
+#[repr(C)]
+#[doc(hidden)]
+pub struct INonClientRegionsChangedEventArgs_Vtbl {
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    pub ChangedRegions: unsafe extern "system" fn(
+        this: *mut ::core::ffi::c_void,
+        result_size__: *mut u32,
+        result__: *mut *mut NonClientRegionKind,
+    ) -> ::windows_core::HRESULT,
+}
+#[doc(hidden)]
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPointerEventArgs {
     type Vtable = IPointerEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x865b188c_2ed5_5df8_829f_ac0701d5c51a);
+unsafe impl ::windows_core::ComInterface for IPointerEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x865b188c_2ed5_5df8_829f_ac0701d5c51a);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CurrentPoint: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Handled: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub SetHandled: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_System")]
     pub KeyModifiers: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::System::VirtualKeyModifiers,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_System"))]
+    KeyModifiers: usize,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub GetIntermediatePoints: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    GetIntermediatePoints: usize,
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub GetIntermediateTransformedPoints: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         transform: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    )
-        -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation_Collections"))]
+    GetIntermediateTransformedPoints: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPointerPoint(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IPointerPoint {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerPoint(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPointerPoint {
     type Vtable = IPointerPoint_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerPoint {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x0d430ee6_252c_59a4_b2a2_d44264dc6a40);
+unsafe impl ::windows_core::ComInterface for IPointerPoint {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x0d430ee6_252c_59a4_b2a2_d44264dc6a40);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerPoint_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub FrameId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsInContact: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerId: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
     pub Properties: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Timestamp: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u64,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub GetTransformedPoint: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         transform: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPointerPointProperties(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IPointerPointProperties {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerPointProperties(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPointerPointProperties {
     type Vtable = IPointerPointProperties_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerPointProperties {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xd760ed77_4b10_57a5_b3cc_d9bf3413e996);
+unsafe impl ::windows_core::ComInterface for IPointerPointProperties {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xd760ed77_4b10_57a5_b3cc_d9bf3413e996);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerPointProperties_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub ContactRect: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Rect,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    ContactRect: usize,
     pub IsBarrelButtonPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsCanceled: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsEraser: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsHorizontalMouseWheel: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsInRange: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsInverted: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsLeftButtonPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsMiddleButtonPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsPrimary: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsRightButtonPressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsXButton1Pressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub IsXButton2Pressed: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub MouseWheelDelta: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut i32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Orientation: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub PointerUpdateKind: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerUpdateKind,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Pressure: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub TouchConfidence: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Twist: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub XTilt: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub YTilt: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut f32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct IPointerPointTransform(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerPointTransform(::windows_core::IUnknown);
 impl IPointerPointTransform {
-    pub fn Inverse(&self) -> ::windows::core::Result<IPointerPointTransform> {
+    pub fn Inverse(&self) -> ::windows_core::Result<IPointerPointTransform> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Inverse)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Inverse)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<IPointerPointTransform>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn TryTransform(
         &self,
         inpoint: ::windows::Foundation::Point,
         outpoint: &mut ::windows::Foundation::Point,
-    ) -> ::windows::core::Result<bool> {
+    ) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TryTransform)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TryTransform)(
+                ::windows_core::Interface::as_raw(this),
                 inpoint,
                 outpoint,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn TryTransformBounds(
         &self,
         inrect: ::windows::Foundation::Rect,
         outrect: &mut ::windows::Foundation::Rect,
-    ) -> ::windows::core::Result<bool> {
+    ) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TryTransformBounds)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TryTransformBounds)(
+                ::windows_core::Interface::as_raw(this),
                 inrect,
                 outrect,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     IPointerPointTransform,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::clone::Clone for IPointerPointTransform {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for IPointerPointTransform {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_interface::<Self>();
 }
-impl ::core::cmp::PartialEq for IPointerPointTransform {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for IPointerPointTransform {}
-impl ::core::fmt::Debug for IPointerPointTransform {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("IPointerPointTransform").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for IPointerPointTransform {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"{db4791bc-994d-54c7-92ef-66ea1de9b43c}");
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for IPointerPointTransform {
+unsafe impl ::windows_core::Interface for IPointerPointTransform {
     type Vtable = IPointerPointTransform_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerPointTransform {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xdb4791bc_994d_54c7_92ef_66ea1de9b43c);
+unsafe impl ::windows_core::ComInterface for IPointerPointTransform {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xdb4791bc_994d_54c7_92ef_66ea1de9b43c);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerPointTransform_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Inverse: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub TryTransform: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         inpoint: ::windows::Foundation::Point,
         outpoint: *mut ::windows::Foundation::Point,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    TryTransform: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub TryTransformBounds: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         inrect: ::windows::Foundation::Rect,
         outrect: *mut ::windows::Foundation::Rect,
         result__: *mut bool,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    TryTransformBounds: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPointerPredictor(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IPointerPredictor {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerPredictor(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPointerPredictor {
     type Vtable = IPointerPredictor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerPredictor {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x12c100ec_2100_565f_a60c_f1187f438828);
+unsafe impl ::windows_core::ComInterface for IPointerPredictor {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x12c100ec_2100_565f_a60c_f1187f438828);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerPredictor_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
+    #[cfg(feature = "Windows_Foundation")]
     pub PredictionTime: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::TimeSpan,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    PredictionTime: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub SetPredictionTime: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         value: ::windows::Foundation::TimeSpan,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    SetPredictionTime: usize,
     pub GetPredictedPoints: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         point: *mut ::core::ffi::c_void,
         result_size__: *mut u32,
         result__: *mut *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IPointerPredictorStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IPointerPredictorStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IPointerPredictorStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IPointerPredictorStatics {
     type Vtable = IPointerPredictorStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IPointerPredictorStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x78a8ef30_3e5c_55cd_8f85_65ac09b1a987);
+unsafe impl ::windows_core::ComInterface for IPointerPredictorStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x78a8ef30_3e5c_55cd_8f85_65ac09b1a987);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IPointerPredictorStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub CreateForInputPointerSource: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         inputpointersource: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct IRightTappedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for IRightTappedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct IRightTappedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for IRightTappedEventArgs {
     type Vtable = IRightTappedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for IRightTappedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x8ff73b39_887e_50a4_8500_77953039dcb4);
+unsafe impl ::windows_core::ComInterface for IRightTappedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x8ff73b39_887e_50a4_8500_77953039dcb4);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct IRightTappedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ITappedEventArgs(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ITappedEventArgs {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ITappedEventArgs(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ITappedEventArgs {
     type Vtable = ITappedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ITappedEventArgs {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xc3a01bb5_6076_5e0f_871a_9d94a6a8f82b);
+unsafe impl ::windows_core::ComInterface for ITappedEventArgs {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xc3a01bb5_6076_5e0f_871a_9d94a6a8f82b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ITappedEventArgs_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub PointerDeviceType: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut PointerDeviceType,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub Position: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::Point,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    Position: usize,
     pub TapCount: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut u32,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct CrossSlidingEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct CharacterReceivedEventArgs(::windows_core::IUnknown);
+impl CharacterReceivedEventArgs {
+    pub fn Handled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Handled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetHandled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetHandled)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn KeyCode(&self) -> ::windows_core::Result<u32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyCode)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn KeyStatus(&self) -> ::windows_core::Result<PhysicalKeyStatus> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyStatus)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for CharacterReceivedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for CharacterReceivedEventArgs {
+    type Vtable = ICharacterReceivedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for CharacterReceivedEventArgs {
+    const IID: ::windows_core::GUID =
+        <ICharacterReceivedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for CharacterReceivedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.CharacterReceivedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    CharacterReceivedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for CharacterReceivedEventArgs {}
+unsafe impl ::core::marker::Sync for CharacterReceivedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ContextMenuKeyEventArgs(::windows_core::IUnknown);
+impl ContextMenuKeyEventArgs {
+    pub fn Handled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Handled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetHandled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetHandled)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+}
+impl ::windows_core::RuntimeType for ContextMenuKeyEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for ContextMenuKeyEventArgs {
+    type Vtable = IContextMenuKeyEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ContextMenuKeyEventArgs {
+    const IID: ::windows_core::GUID =
+        <IContextMenuKeyEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for ContextMenuKeyEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.ContextMenuKeyEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    ContextMenuKeyEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for ContextMenuKeyEventArgs {}
+unsafe impl ::core::marker::Sync for ContextMenuKeyEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct CrossSlidingEventArgs(::windows_core::IUnknown);
 impl CrossSlidingEventArgs {
-    pub fn CrossSlidingState(&self) -> ::windows::core::Result<CrossSlidingState> {
+    pub fn CrossSlidingState(&self) -> ::windows_core::Result<CrossSlidingState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CrossSlidingState)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CrossSlidingState)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<CrossSlidingState>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<PointerDeviceType>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for CrossSlidingEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for CrossSlidingEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for CrossSlidingEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for CrossSlidingEventArgs {}
-impl ::core::fmt::Debug for CrossSlidingEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("CrossSlidingEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for CrossSlidingEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.CrossSlidingEventArgs;{7679641f-ba9f-543c-a7c8-6229a98f89ef})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for CrossSlidingEventArgs {
+unsafe impl ::windows_core::Interface for CrossSlidingEventArgs {
     type Vtable = ICrossSlidingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for CrossSlidingEventArgs {
-    const IID: ::windows::core::GUID = <ICrossSlidingEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for CrossSlidingEventArgs {
+    const IID: ::windows_core::GUID = <ICrossSlidingEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for CrossSlidingEventArgs {
+impl ::windows_core::RuntimeName for CrossSlidingEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.CrossSlidingEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     CrossSlidingEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for CrossSlidingEventArgs {}
 unsafe impl ::core::marker::Sync for CrossSlidingEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct DraggingEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct DraggingEventArgs(::windows_core::IUnknown);
 impl DraggingEventArgs {
-    pub fn DraggingState(&self) -> ::windows::core::Result<DraggingState> {
+    pub fn DraggingState(&self) -> ::windows_core::Result<DraggingState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DraggingState)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DraggingState)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<DraggingState>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<PointerDeviceType>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for DraggingEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for DraggingEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for DraggingEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for DraggingEventArgs {}
-impl ::core::fmt::Debug for DraggingEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("DraggingEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for DraggingEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.DraggingEventArgs;{3efb1b75-3d3b-550e-963d-0828ca76128a})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for DraggingEventArgs {
+unsafe impl ::windows_core::Interface for DraggingEventArgs {
     type Vtable = IDraggingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for DraggingEventArgs {
-    const IID: ::windows::core::GUID = <IDraggingEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for DraggingEventArgs {
+    const IID: ::windows_core::GUID = <IDraggingEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for DraggingEventArgs {
+impl ::windows_core::RuntimeName for DraggingEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.DraggingEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     DraggingEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for DraggingEventArgs {}
 unsafe impl ::core::marker::Sync for DraggingEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct GestureRecognizer(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct FocusChangedEventArgs(::windows_core::IUnknown);
+impl FocusChangedEventArgs {
+    pub fn Handled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Handled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetHandled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetHandled)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+}
+impl ::windows_core::RuntimeType for FocusChangedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for FocusChangedEventArgs {
+    type Vtable = IFocusChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for FocusChangedEventArgs {
+    const IID: ::windows_core::GUID = <IFocusChangedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for FocusChangedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.FocusChangedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    FocusChangedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for FocusChangedEventArgs {}
+unsafe impl ::core::marker::Sync for FocusChangedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct GestureRecognizer(::windows_core::IUnknown);
 impl GestureRecognizer {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             GestureRecognizer,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
-    pub fn AutoProcessInertia(&self) -> ::windows::core::Result<bool> {
+    pub fn AutoProcessInertia(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).AutoProcessInertia)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).AutoProcessInertia)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetAutoProcessInertia(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetAutoProcessInertia(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetAutoProcessInertia)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetAutoProcessInertia)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn CrossSlideExact(&self) -> ::windows::core::Result<bool> {
+    pub fn CrossSlideExact(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CrossSlideExact)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CrossSlideExact)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetCrossSlideExact(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetCrossSlideExact(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetCrossSlideExact)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetCrossSlideExact)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn CrossSlideHorizontally(&self) -> ::windows::core::Result<bool> {
+    pub fn CrossSlideHorizontally(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CrossSlideHorizontally)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CrossSlideHorizontally)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetCrossSlideHorizontally(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetCrossSlideHorizontally(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetCrossSlideHorizontally)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetCrossSlideHorizontally)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn CrossSlideThresholds(&self) -> ::windows::core::Result<CrossSlideThresholds> {
+    pub fn CrossSlideThresholds(&self) -> ::windows_core::Result<CrossSlideThresholds> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CrossSlideThresholds)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CrossSlideThresholds)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<CrossSlideThresholds>(result__)
+            .from_abi(result__)
         }
     }
     pub fn SetCrossSlideThresholds(
         &self,
         value: CrossSlideThresholds,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetCrossSlideThresholds)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetCrossSlideThresholds)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn GestureSettings(&self) -> ::windows::core::Result<GestureSettings> {
+    pub fn GestureSettings(&self) -> ::windows_core::Result<GestureSettings> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GestureSettings)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GestureSettings)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<GestureSettings>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetGestureSettings(&self, value: GestureSettings) -> ::windows::core::Result<()> {
+    pub fn SetGestureSettings(&self, value: GestureSettings) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetGestureSettings)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetGestureSettings)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn IsActive(&self) -> ::windows::core::Result<bool> {
+    pub fn IsActive(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsActive)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsActive)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn IsInertial(&self) -> ::windows::core::Result<bool> {
+    pub fn IsInertial(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsInertial)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsInertial)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn PivotCenter(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PivotCenter(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PivotCenter)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PivotCenter)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn SetPivotCenter(
         &self,
         value: ::windows::Foundation::Point,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetPivotCenter)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetPivotCenter)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn PivotRadius(&self) -> ::windows::core::Result<f32> {
+    pub fn PivotRadius(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PivotRadius)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PivotRadius)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetPivotRadius(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetPivotRadius(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetPivotRadius)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetPivotRadius)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaExpansionDeceleration(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaExpansionDeceleration(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaExpansionDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaExpansionDeceleration)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaExpansionDeceleration(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaExpansionDeceleration(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaExpansionDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaExpansionDeceleration)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaExpansion(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaExpansion(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaExpansion)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaExpansion)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaExpansion(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaExpansion(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaExpansion)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaExpansion)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaRotationAngle(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaRotationAngle(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaRotationAngle)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaRotationAngle)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaRotationAngle(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaRotationAngle(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaRotationAngle)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaRotationAngle)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaRotationDeceleration(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaRotationDeceleration(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaRotationDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaRotationDeceleration)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaRotationDeceleration(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaRotationDeceleration(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaRotationDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaRotationDeceleration)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaTranslationDeceleration(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaTranslationDeceleration(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaTranslationDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaTranslationDeceleration)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaTranslationDeceleration(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaTranslationDeceleration(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaTranslationDeceleration)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaTranslationDeceleration)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn InertiaTranslationDisplacement(&self) -> ::windows::core::Result<f32> {
+    pub fn InertiaTranslationDisplacement(&self) -> ::windows_core::Result<f32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InertiaTranslationDisplacement)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InertiaTranslationDisplacement)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<f32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetInertiaTranslationDisplacement(&self, value: f32) -> ::windows::core::Result<()> {
+    pub fn SetInertiaTranslationDisplacement(&self, value: f32) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetInertiaTranslationDisplacement)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetInertiaTranslationDisplacement)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn ManipulationExact(&self) -> ::windows::core::Result<bool> {
+    pub fn ManipulationExact(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ManipulationExact)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ManipulationExact)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetManipulationExact(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetManipulationExact(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetManipulationExact)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetManipulationExact)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn MouseWheelParameters(&self) -> ::windows::core::Result<MouseWheelParameters> {
+    pub fn MouseWheelParameters(&self) -> ::windows_core::Result<MouseWheelParameters> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).MouseWheelParameters)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).MouseWheelParameters)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<MouseWheelParameters>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn ShowGestureFeedback(&self) -> ::windows::core::Result<bool> {
+    pub fn ShowGestureFeedback(&self) -> ::windows_core::Result<bool> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ShowGestureFeedback)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ShowGestureFeedback)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<bool>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn SetShowGestureFeedback(&self, value: bool) -> ::windows::core::Result<()> {
+    pub fn SetShowGestureFeedback(&self, value: bool) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).SetShowGestureFeedback)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).SetShowGestureFeedback)(
+                ::windows_core::Interface::as_raw(this),
                 value,
             )
             .ok()
         }
     }
-    pub fn CanBeDoubleTap(&self, value: &PointerPoint) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CanBeDoubleTap)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn CompleteGesture(&self) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).CompleteGesture)(
-                ::windows::core::Vtable::as_raw(this),
-            )
-            .ok()
-        }
-    }
-    pub fn ProcessDownEvent(&self, value: &PointerPoint) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).ProcessDownEvent)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
-            )
-            .ok()
-        }
-    }
-    pub fn ProcessMoveEvents<'a, P0, E0>(&self, value: P0) -> ::windows::core::Result<()>
+    pub fn CanBeDoubleTap<P0>(&self, value: P0) -> ::windows_core::Result<bool>
     where
-        P0: ::std::convert::TryInto<
-            ::windows::core::InParam<'a, ::windows::Foundation::Collections::IVector<PointerPoint>>,
-            Error = E0,
-        >,
-        E0: ::std::convert::Into<::windows::core::Error>,
+        P0: ::windows_core::IntoParam<PointerPoint>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ProcessMoveEvents)(
-                ::windows::core::Vtable::as_raw(this),
-                value.try_into().map_err(|e| e.into())?.abi(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CanBeDoubleTap)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn CompleteGesture(&self) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).CompleteGesture)(
+                ::windows_core::Interface::as_raw(this),
             )
             .ok()
         }
     }
-    pub fn ProcessMouseWheelEvent(
-        &self,
-        value: &PointerPoint,
-        isshiftkeydown: bool,
-        iscontrolkeydown: bool,
-    ) -> ::windows::core::Result<()> {
+    pub fn ProcessDownEvent<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::IntoParam<PointerPoint>,
+    {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ProcessMouseWheelEvent)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
+            (::windows_core::Interface::vtable(this).ProcessDownEvent)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub fn ProcessMoveEvents<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::TryIntoParam<::windows::Foundation::Collections::IVector<PointerPoint>>,
+    {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).ProcessMoveEvents)(
+                ::windows_core::Interface::as_raw(this),
+                value.try_into_param()?.abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn ProcessMouseWheelEvent<P0>(
+        &self,
+        value: P0,
+        isshiftkeydown: bool,
+        iscontrolkeydown: bool,
+    ) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::IntoParam<PointerPoint>,
+    {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).ProcessMouseWheelEvent)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
                 isshiftkeydown,
                 iscontrolkeydown,
             )
             .ok()
         }
     }
-    pub fn ProcessInertia(&self) -> ::windows::core::Result<()> {
+    pub fn ProcessInertia(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ProcessInertia)(::windows::core::Vtable::as_raw(
-                this,
-            ))
-            .ok()
-        }
-    }
-    pub fn ProcessUpEvent(&self, value: &PointerPoint) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).ProcessUpEvent)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(value),
+            (::windows_core::Interface::vtable(this).ProcessInertia)(
+                ::windows_core::Interface::as_raw(this),
             )
             .ok()
         }
     }
-    pub fn Tapped(
+    pub fn ProcessUpEvent<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::IntoParam<PointerPoint>,
+    {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).ProcessUpEvent)(
+                ::windows_core::Interface::as_raw(this),
+                value.into_param().abi(),
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Tapped<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<GestureRecognizer, TappedEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<GestureRecognizer, TappedEventArgs>,
+        >,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Tapped)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Tapped)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveTapped(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveTapped)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveTapped)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn RightTapped(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RightTapped<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<GestureRecognizer, RightTappedEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<GestureRecognizer, RightTappedEventArgs>,
+        >,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).RightTapped)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).RightTapped)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveRightTapped(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveRightTapped)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveRightTapped)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn Holding(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Holding<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<GestureRecognizer, HoldingEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<GestureRecognizer, HoldingEventArgs>,
+        >,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Holding)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Holding)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveHolding(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveHolding)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveHolding)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn Dragging(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Dragging<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<GestureRecognizer, DraggingEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<GestureRecognizer, DraggingEventArgs>,
+        >,
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Dragging)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Dragging)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveDragging(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveDragging)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveDragging)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn ManipulationStarted(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ManipulationStarted<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            GestureRecognizer,
-            ManipulationStartedEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                GestureRecognizer,
+                ManipulationStartedEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ManipulationStarted)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ManipulationStarted)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveManipulationStarted(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveManipulationStarted)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveManipulationStarted)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn ManipulationUpdated(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ManipulationUpdated<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            GestureRecognizer,
-            ManipulationUpdatedEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                GestureRecognizer,
+                ManipulationUpdatedEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ManipulationUpdated)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ManipulationUpdated)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveManipulationUpdated(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveManipulationUpdated)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveManipulationUpdated)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn ManipulationInertiaStarting(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ManipulationInertiaStarting<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            GestureRecognizer,
-            ManipulationInertiaStartingEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                GestureRecognizer,
+                ManipulationInertiaStartingEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ManipulationInertiaStarting)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ManipulationInertiaStarting)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveManipulationInertiaStarting(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveManipulationInertiaStarting)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveManipulationInertiaStarting)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn ManipulationCompleted(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ManipulationCompleted<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            GestureRecognizer,
-            ManipulationCompletedEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                GestureRecognizer,
+                ManipulationCompletedEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ManipulationCompleted)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ManipulationCompleted)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveManipulationCompleted(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveManipulationCompleted)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveManipulationCompleted)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
-    pub fn CrossSliding(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn CrossSliding<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            GestureRecognizer,
-            CrossSlidingEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<GestureRecognizer, CrossSlidingEventArgs>,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CrossSliding)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CrossSliding)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveCrossSliding(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveCrossSliding)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveCrossSliding)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
 }
-impl ::core::clone::Clone for GestureRecognizer {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for GestureRecognizer {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for GestureRecognizer {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for GestureRecognizer {}
-impl ::core::fmt::Debug for GestureRecognizer {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("GestureRecognizer").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for GestureRecognizer {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.GestureRecognizer;{cda89afc-6bd0-595c-ba37-545fce5bf016})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for GestureRecognizer {
+unsafe impl ::windows_core::Interface for GestureRecognizer {
     type Vtable = IGestureRecognizer_Vtbl;
 }
-unsafe impl ::windows::core::Interface for GestureRecognizer {
-    const IID: ::windows::core::GUID = <IGestureRecognizer as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for GestureRecognizer {
+    const IID: ::windows_core::GUID = <IGestureRecognizer as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for GestureRecognizer {
+impl ::windows_core::RuntimeName for GestureRecognizer {
     const NAME: &'static str = "Microsoft.UI.Input.GestureRecognizer";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     GestureRecognizer,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for GestureRecognizer {}
 unsafe impl ::core::marker::Sync for GestureRecognizer {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct HoldingEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct HoldingEventArgs(::windows_core::IUnknown);
 impl HoldingEventArgs {
-    pub fn HoldingState(&self) -> ::windows::core::Result<HoldingState> {
+    pub fn HoldingState(&self) -> ::windows_core::Result<HoldingState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).HoldingState)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).HoldingState)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<HoldingState>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<PointerDeviceType>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for HoldingEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for HoldingEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for HoldingEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for HoldingEventArgs {}
-impl ::core::fmt::Debug for HoldingEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("HoldingEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for HoldingEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.HoldingEventArgs;{8e449e85-d223-533c-b0b2-bf7c6d10c2db})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for HoldingEventArgs {
+unsafe impl ::windows_core::Interface for HoldingEventArgs {
     type Vtable = IHoldingEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for HoldingEventArgs {
-    const IID: ::windows::core::GUID = <IHoldingEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for HoldingEventArgs {
+    const IID: ::windows_core::GUID = <IHoldingEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for HoldingEventArgs {
+impl ::windows_core::RuntimeName for HoldingEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.HoldingEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     HoldingEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for HoldingEventArgs {}
 unsafe impl ::core::marker::Sync for HoldingEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputActivationListener(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputActivationListener(::windows_core::IUnknown);
 impl InputActivationListener {
-    pub fn State(&self) -> ::windows::core::Result<InputActivationState> {
+    pub fn State(&self) -> ::windows_core::Result<InputActivationState> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).State)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).State)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<InputActivationState>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn InputActivationChanged(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn InputActivationChanged<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            InputActivationListener,
-            InputActivationListenerActivationChangedEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputActivationListener,
+                InputActivationListenerActivationChangedEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).InputActivationChanged)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).InputActivationChanged)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveInputActivationChanged(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveInputActivationChanged)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveInputActivationChanged)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
@@ -2487,774 +3634,1004 @@ impl InputActivationListener {
     }
     pub fn GetForWindowId(
         windowid: super::WindowId,
-    ) -> ::windows::core::Result<InputActivationListener> {
+    ) -> ::windows_core::Result<InputActivationListener> {
         Self::IInputActivationListenerStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetForWindowId)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForWindowId)(
+                ::windows_core::Interface::as_raw(this),
                 windowid,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputActivationListener>(result__)
+            .from_abi(result__)
         })
     }
-    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(&self) -> ::windows::core::Result<super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<IInputObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+    #[doc = "Required features: `\"Microsoft_UI_Content\"`"]
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub fn GetForIsland<P0>(island: P0) -> ::windows_core::Result<InputActivationListener>
+    where
+        P0: ::windows_core::TryIntoParam<super::Content::ContentIsland>,
+    {
+        Self::IInputActivationListenerStatics2(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForIsland)(
+                ::windows_core::Interface::as_raw(this),
+                island.try_into_param()?.abi(),
+                &mut result__,
             )
-            .from_abi::<super::Dispatching::DispatcherQueue>(result__)
+            .from_abi(result__)
+        })
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
         }
     }
     #[doc(hidden)]
     pub fn IInputActivationListenerStatics<
         R,
-        F: FnOnce(&IInputActivationListenerStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IInputActivationListenerStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             InputActivationListener,
             IInputActivationListenerStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    #[doc(hidden)]
+    pub fn IInputActivationListenerStatics2<
+        R,
+        F: FnOnce(&IInputActivationListenerStatics2) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputActivationListener,
+            IInputActivationListenerStatics2,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputActivationListener {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputActivationListener {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputActivationListener {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputActivationListener {}
-impl ::core::fmt::Debug for InputActivationListener {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputActivationListener").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputActivationListener {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputActivationListener;{3b818627-6ce7-5e0d-a0f5-6684fd1aec78})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputActivationListener {
+unsafe impl ::windows_core::Interface for InputActivationListener {
     type Vtable = IInputActivationListener_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputActivationListener {
-    const IID: ::windows::core::GUID =
-        <IInputActivationListener as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputActivationListener {
+    const IID: ::windows_core::GUID =
+        <IInputActivationListener as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputActivationListener {
+impl ::windows_core::RuntimeName for InputActivationListener {
     const NAME: &'static str = "Microsoft.UI.Input.InputActivationListener";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputActivationListener,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::From<InputActivationListener> for InputObject {
-    fn from(value: InputActivationListener) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputActivationListener> for InputObject {
-    fn from(value: &InputActivationListener) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputActivationListener>
-    for ::windows::core::InParam<'a, InputObject>
-{
-    fn from(value: &InputActivationListener) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+impl ::windows_core::CanTryInto<InputObject> for InputActivationListener {}
 unsafe impl ::core::marker::Send for InputActivationListener {}
 unsafe impl ::core::marker::Sync for InputActivationListener {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputActivationListenerActivationChangedEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputActivationListenerActivationChangedEventArgs(::windows_core::IUnknown);
 impl InputActivationListenerActivationChangedEventArgs {}
-impl ::core::clone::Clone for InputActivationListenerActivationChangedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputActivationListenerActivationChangedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputActivationListenerActivationChangedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputActivationListenerActivationChangedEventArgs {}
-impl ::core::fmt::Debug for InputActivationListenerActivationChangedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputActivationListenerActivationChangedEventArgs")
-            .field(&self.0)
-            .finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputActivationListenerActivationChangedEventArgs {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.InputActivationListenerActivationChangedEventArgs;{7978526b-00b6-5303-8f7d-55bef36da786})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputActivationListenerActivationChangedEventArgs {
+unsafe impl ::windows_core::Interface for InputActivationListenerActivationChangedEventArgs {
     type Vtable = IInputActivationListenerActivationChangedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputActivationListenerActivationChangedEventArgs {
-    const IID: ::windows::core::GUID =
-        <IInputActivationListenerActivationChangedEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputActivationListenerActivationChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        <IInputActivationListenerActivationChangedEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputActivationListenerActivationChangedEventArgs {
+impl ::windows_core::RuntimeName for InputActivationListenerActivationChangedEventArgs {
     const NAME: &'static str =
         "Microsoft.UI.Input.InputActivationListenerActivationChangedEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputActivationListenerActivationChangedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for InputActivationListenerActivationChangedEventArgs {}
 unsafe impl ::core::marker::Sync for InputActivationListenerActivationChangedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputCursor(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputCursor(::windows_core::IUnknown);
 impl InputCursor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
     }
-    pub fn CreateFromCoreCursor(
-        cursor: &::windows::UI::Core::CoreCursor,
-    ) -> ::windows::core::Result<InputCursor> {
+    #[doc = "Required features: `\"Windows_UI_Core\"`"]
+    #[cfg(feature = "Windows_UI_Core")]
+    pub fn CreateFromCoreCursor<P0>(cursor: P0) -> ::windows_core::Result<InputCursor>
+    where
+        P0: ::windows_core::IntoParam<::windows::UI::Core::CoreCursor>,
+    {
         Self::IInputCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateFromCoreCursor)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(cursor),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateFromCoreCursor)(
+                ::windows_core::Interface::as_raw(this),
+                cursor.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<InputCursor>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
-    pub fn IInputCursorStatics<R, F: FnOnce(&IInputCursorStatics) -> ::windows::core::Result<R>>(
+    pub fn IInputCursorStatics<R, F: FnOnce(&IInputCursorStatics) -> ::windows_core::Result<R>>(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<InputCursor, IInputCursorStatics> =
-            ::windows::core::FactoryCache::new();
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<InputCursor, IInputCursorStatics> =
+            ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputCursor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputCursor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputCursor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputCursor {}
-impl ::core::fmt::Debug for InputCursor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputCursor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputCursor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputCursor;{359b15f9-19c2-5714-8432-75176826406b})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputCursor {
+unsafe impl ::windows_core::Interface for InputCursor {
     type Vtable = IInputCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputCursor {
-    const IID: ::windows::core::GUID = <IInputCursor as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputCursor {
+    const IID: ::windows_core::GUID = <IInputCursor as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputCursor {
+impl ::windows_core::RuntimeName for InputCursor {
     const NAME: &'static str = "Microsoft.UI.Input.InputCursor";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputCursor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<InputCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InputCursor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&InputCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputCursor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&InputCursor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputCursor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for InputCursor {}
 unsafe impl ::core::marker::Send for InputCursor {}
 unsafe impl ::core::marker::Sync for InputCursor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputCustomCursor(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputCustomCursor(::windows_core::IUnknown);
 impl InputCustomCursor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
     }
 }
-impl ::core::clone::Clone for InputCustomCursor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputCustomCursor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputCustomCursor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputCustomCursor {}
-impl ::core::fmt::Debug for InputCustomCursor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputCustomCursor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputCustomCursor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputCustomCursor;{5486f042-7e1a-5dc8-8041-e47b609a5ba1})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputCustomCursor {
+unsafe impl ::windows_core::Interface for InputCustomCursor {
     type Vtable = IInputCustomCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputCustomCursor {
-    const IID: ::windows::core::GUID = <IInputCustomCursor as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputCustomCursor {
+    const IID: ::windows_core::GUID = <IInputCustomCursor as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputCustomCursor {
+impl ::windows_core::RuntimeName for InputCustomCursor {
     const NAME: &'static str = "Microsoft.UI.Input.InputCustomCursor";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputCustomCursor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<InputCustomCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InputCustomCursor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&InputCustomCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputCustomCursor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&InputCustomCursor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputCustomCursor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
-impl ::core::convert::From<InputCustomCursor> for InputCursor {
-    fn from(value: InputCustomCursor) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputCustomCursor> for InputCursor {
-    fn from(value: &InputCustomCursor) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputCustomCursor> for ::windows::core::InParam<'a, InputCursor> {
-    fn from(value: &InputCustomCursor) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for InputCustomCursor {}
+impl ::windows_core::CanTryInto<InputCursor> for InputCustomCursor {}
 unsafe impl ::core::marker::Send for InputCustomCursor {}
 unsafe impl ::core::marker::Sync for InputCustomCursor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputDesktopNamedResourceCursor(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputDesktopNamedResourceCursor(::windows_core::IUnknown);
 impl InputDesktopNamedResourceCursor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
     }
-    pub fn ModuleName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ModuleName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ModuleName)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ModuleName)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn ResourceName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ResourceName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ResourceName)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ResourceName)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
     pub fn Create(
-        resourcename: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<InputDesktopNamedResourceCursor> {
+        resourcename: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<InputDesktopNamedResourceCursor> {
         Self::IInputDesktopNamedResourceCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Create)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(resourcename),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputDesktopNamedResourceCursor>(result__)
+            .from_abi(result__)
         })
     }
     pub fn CreateFromModule(
-        modulename: &::windows::core::HSTRING,
-        resourcename: &::windows::core::HSTRING,
-    ) -> ::windows::core::Result<InputDesktopNamedResourceCursor> {
+        modulename: &::windows_core::HSTRING,
+        resourcename: &::windows_core::HSTRING,
+    ) -> ::windows_core::Result<InputDesktopNamedResourceCursor> {
         Self::IInputDesktopNamedResourceCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateFromModule)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateFromModule)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(modulename),
                 ::core::mem::transmute_copy(resourcename),
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputDesktopNamedResourceCursor>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IInputDesktopNamedResourceCursorStatics<
         R,
-        F: FnOnce(&IInputDesktopNamedResourceCursorStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IInputDesktopNamedResourceCursorStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             InputDesktopNamedResourceCursor,
             IInputDesktopNamedResourceCursorStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputDesktopNamedResourceCursor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputDesktopNamedResourceCursor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputDesktopNamedResourceCursor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputDesktopNamedResourceCursor {}
-impl ::core::fmt::Debug for InputDesktopNamedResourceCursor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputDesktopNamedResourceCursor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputDesktopNamedResourceCursor {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.InputDesktopNamedResourceCursor;{f40ea93b-0ed7-5b3a-bfe2-14e2b5ad88a3})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputDesktopNamedResourceCursor {
+unsafe impl ::windows_core::Interface for InputDesktopNamedResourceCursor {
     type Vtable = IInputDesktopNamedResourceCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputDesktopNamedResourceCursor {
-    const IID: ::windows::core::GUID =
-        <IInputDesktopNamedResourceCursor as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputDesktopNamedResourceCursor {
+    const IID: ::windows_core::GUID =
+        <IInputDesktopNamedResourceCursor as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputDesktopNamedResourceCursor {
+impl ::windows_core::RuntimeName for InputDesktopNamedResourceCursor {
     const NAME: &'static str = "Microsoft.UI.Input.InputDesktopNamedResourceCursor";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputDesktopNamedResourceCursor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<InputDesktopNamedResourceCursor>
-    for ::windows::Foundation::IClosable
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable>
+    for InputDesktopNamedResourceCursor
 {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InputDesktopNamedResourceCursor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
 }
-impl ::core::convert::TryFrom<&InputDesktopNamedResourceCursor>
-    for ::windows::Foundation::IClosable
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputDesktopNamedResourceCursor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&InputDesktopNamedResourceCursor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputDesktopNamedResourceCursor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
-impl ::core::convert::From<InputDesktopNamedResourceCursor> for InputCursor {
-    fn from(value: InputDesktopNamedResourceCursor) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputDesktopNamedResourceCursor> for InputCursor {
-    fn from(value: &InputDesktopNamedResourceCursor) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputDesktopNamedResourceCursor>
-    for ::windows::core::InParam<'a, InputCursor>
-{
-    fn from(value: &InputDesktopNamedResourceCursor) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+impl ::windows_core::CanTryInto<InputCursor> for InputDesktopNamedResourceCursor {}
 unsafe impl ::core::marker::Send for InputDesktopNamedResourceCursor {}
 unsafe impl ::core::marker::Sync for InputDesktopNamedResourceCursor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputDesktopResourceCursor(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputDesktopResourceCursor(::windows_core::IUnknown);
 impl InputDesktopResourceCursor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
     }
-    pub fn ModuleName(&self) -> ::windows::core::Result<::windows::core::HSTRING> {
+    pub fn ModuleName(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ModuleName)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ModuleName)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn ResourceId(&self) -> ::windows::core::Result<u32> {
+    pub fn ResourceId(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ResourceId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ResourceId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<u32>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Create(resourceid: u32) -> ::windows::core::Result<InputDesktopResourceCursor> {
+    pub fn Create(resourceid: u32) -> ::windows_core::Result<InputDesktopResourceCursor> {
         Self::IInputDesktopResourceCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Create)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(
+                ::windows_core::Interface::as_raw(this),
                 resourceid,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputDesktopResourceCursor>(result__)
+            .from_abi(result__)
         })
     }
     pub fn CreateFromModule(
-        modulename: &::windows::core::HSTRING,
+        modulename: &::windows_core::HSTRING,
         resourceid: u32,
-    ) -> ::windows::core::Result<InputDesktopResourceCursor> {
+    ) -> ::windows_core::Result<InputDesktopResourceCursor> {
         Self::IInputDesktopResourceCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateFromModule)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateFromModule)(
+                ::windows_core::Interface::as_raw(this),
                 ::core::mem::transmute_copy(modulename),
                 resourceid,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputDesktopResourceCursor>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IInputDesktopResourceCursorStatics<
         R,
-        F: FnOnce(&IInputDesktopResourceCursorStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IInputDesktopResourceCursorStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             InputDesktopResourceCursor,
             IInputDesktopResourceCursorStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputDesktopResourceCursor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputDesktopResourceCursor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputDesktopResourceCursor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputDesktopResourceCursor {}
-impl ::core::fmt::Debug for InputDesktopResourceCursor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputDesktopResourceCursor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputDesktopResourceCursor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputDesktopResourceCursor;{1df2777f-7c90-58fc-a7a3-d5736c6510fd})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputDesktopResourceCursor {
+unsafe impl ::windows_core::Interface for InputDesktopResourceCursor {
     type Vtable = IInputDesktopResourceCursor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputDesktopResourceCursor {
-    const IID: ::windows::core::GUID =
-        <IInputDesktopResourceCursor as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputDesktopResourceCursor {
+    const IID: ::windows_core::GUID =
+        <IInputDesktopResourceCursor as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputDesktopResourceCursor {
+impl ::windows_core::RuntimeName for InputDesktopResourceCursor {
     const NAME: &'static str = "Microsoft.UI.Input.InputDesktopResourceCursor";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputDesktopResourceCursor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<InputDesktopResourceCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InputDesktopResourceCursor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&InputDesktopResourceCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputDesktopResourceCursor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&InputDesktopResourceCursor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputDesktopResourceCursor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
-impl ::core::convert::From<InputDesktopResourceCursor> for InputCursor {
-    fn from(value: InputDesktopResourceCursor) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputDesktopResourceCursor> for InputCursor {
-    fn from(value: &InputDesktopResourceCursor) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputDesktopResourceCursor>
-    for ::windows::core::InParam<'a, InputCursor>
-{
-    fn from(value: &InputDesktopResourceCursor) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for InputDesktopResourceCursor {}
+impl ::windows_core::CanTryInto<InputCursor> for InputDesktopResourceCursor {}
 unsafe impl ::core::marker::Send for InputDesktopResourceCursor {}
 unsafe impl ::core::marker::Sync for InputDesktopResourceCursor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputKeyboardSource(::windows::core::IUnknown);
-impl InputKeyboardSource {
-    pub fn GetKeyStateForCurrentThread(
-        virtualkey: ::windows::System::VirtualKey,
-    ) -> ::windows::core::Result<::windows::UI::Core::CoreVirtualKeyStates> {
-        Self::IInputKeyboardSourceStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetKeyStateForCurrentThread)(
-                ::windows::core::Vtable::as_raw(this),
-                virtualkey,
-                result__.as_mut_ptr(),
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputFocusChangedEventArgs(::windows_core::IUnknown);
+impl InputFocusChangedEventArgs {}
+impl ::windows_core::RuntimeType for InputFocusChangedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputFocusChangedEventArgs {
+    type Vtable = IInputFocusChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputFocusChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        <IInputFocusChangedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputFocusChangedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.InputFocusChangedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputFocusChangedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for InputFocusChangedEventArgs {}
+unsafe impl ::core::marker::Sync for InputFocusChangedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputFocusController(::windows_core::IUnknown);
+impl InputFocusController {
+    pub fn HasFocus(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).HasFocus)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::UI::Core::CoreVirtualKeyStates>(result__)
+            .from_abi(result__)
+        }
+    }
+    pub fn TrySetFocus(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TrySetFocus)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn GotFocus<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputFocusController, FocusChangedEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GotFocus)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveGotFocus(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveGotFocus)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn LostFocus<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputFocusController, FocusChangedEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).LostFocus)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveLostFocus(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveLostFocus)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Content\"`"]
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub fn GetForIsland<P0>(island: P0) -> ::windows_core::Result<InputFocusController>
+    where
+        P0: ::windows_core::TryIntoParam<super::Content::ContentIsland>,
+    {
+        Self::IInputFocusControllerStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForIsland)(
+                ::windows_core::Interface::as_raw(this),
+                island.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
         })
     }
-    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(&self) -> ::windows::core::Result<super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<IInputObject>(self)?;
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<super::Dispatching::DispatcherQueue>(result__)
+            .from_abi(result__)
+        }
+    }
+    #[doc(hidden)]
+    pub fn IInputFocusControllerStatics<
+        R,
+        F: FnOnce(&IInputFocusControllerStatics) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputFocusController,
+            IInputFocusControllerStatics,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows_core::RuntimeType for InputFocusController {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputFocusController {
+    type Vtable = IInputFocusController_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputFocusController {
+    const IID: ::windows_core::GUID = <IInputFocusController as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputFocusController {
+    const NAME: &'static str = "Microsoft.UI.Input.InputFocusController";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputFocusController,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+impl ::windows_core::CanTryInto<InputObject> for InputFocusController {}
+unsafe impl ::core::marker::Send for InputFocusController {}
+unsafe impl ::core::marker::Sync for InputFocusController {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputKeyboardSource(::windows_core::IUnknown);
+impl InputKeyboardSource {
+    #[doc = "Required features: `\"Windows_System\"`"]
+    #[cfg(feature = "Windows_System")]
+    pub fn GetCurrentKeyState(
+        &self,
+        virtualkey: ::windows::System::VirtualKey,
+    ) -> ::windows_core::Result<VirtualKeyStates> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetCurrentKeyState)(
+                ::windows_core::Interface::as_raw(this),
+                virtualkey,
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_System\"`"]
+    #[cfg(feature = "Windows_System")]
+    pub fn GetKeyState(
+        &self,
+        virtualkey: ::windows::System::VirtualKey,
+    ) -> ::windows_core::Result<VirtualKeyStates> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetKeyState)(
+                ::windows_core::Interface::as_raw(this),
+                virtualkey,
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn CharacterReceived<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputKeyboardSource,
+                CharacterReceivedEventArgs,
+            >,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CharacterReceived)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveCharacterReceived(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveCharacterReceived)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ContextMenuKey<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputKeyboardSource, ContextMenuKeyEventArgs>,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ContextMenuKey)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveContextMenuKey(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveContextMenuKey)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn KeyDown<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputKeyboardSource, KeyEventArgs>,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyDown)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveKeyDown(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveKeyDown)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn KeyUp<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputKeyboardSource, KeyEventArgs>,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyUp)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveKeyUp(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveKeyUp)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SystemKeyDown<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputKeyboardSource, KeyEventArgs>,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SystemKeyDown)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveSystemKeyDown(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveSystemKeyDown)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SystemKeyUp<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputKeyboardSource, KeyEventArgs>,
+        >,
+    {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).SystemKeyUp)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveSystemKeyUp(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<IInputKeyboardSource2>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveSystemKeyUp)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_System\"`, `\"Windows_UI_Core\"`"]
+    #[cfg(all(feature = "Windows_System", feature = "Windows_UI_Core"))]
+    pub fn GetKeyStateForCurrentThread(
+        virtualkey: ::windows::System::VirtualKey,
+    ) -> ::windows_core::Result<::windows::UI::Core::CoreVirtualKeyStates> {
+        Self::IInputKeyboardSourceStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetKeyStateForCurrentThread)(
+                ::windows_core::Interface::as_raw(this),
+                virtualkey,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Content\"`"]
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub fn GetForIsland<P0>(island: P0) -> ::windows_core::Result<InputKeyboardSource>
+    where
+        P0: ::windows_core::TryIntoParam<super::Content::ContentIsland>,
+    {
+        Self::IInputKeyboardSourceStatics2(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForIsland)(
+                ::windows_core::Interface::as_raw(this),
+                island.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
         }
     }
     #[doc(hidden)]
     pub fn IInputKeyboardSourceStatics<
         R,
-        F: FnOnce(&IInputKeyboardSourceStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IInputKeyboardSourceStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             InputKeyboardSource,
             IInputKeyboardSourceStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    #[doc(hidden)]
+    pub fn IInputKeyboardSourceStatics2<
+        R,
+        F: FnOnce(&IInputKeyboardSourceStatics2) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputKeyboardSource,
+            IInputKeyboardSourceStatics2,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputKeyboardSource {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputKeyboardSource {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputKeyboardSource {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputKeyboardSource {}
-impl ::core::fmt::Debug for InputKeyboardSource {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputKeyboardSource").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputKeyboardSource {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputKeyboardSource;{ed61b906-16ad-5df7-a550-5e6f7d2229f7})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputKeyboardSource {
+unsafe impl ::windows_core::Interface for InputKeyboardSource {
     type Vtable = IInputKeyboardSource_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputKeyboardSource {
-    const IID: ::windows::core::GUID = <IInputKeyboardSource as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputKeyboardSource {
+    const IID: ::windows_core::GUID = <IInputKeyboardSource as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputKeyboardSource {
+impl ::windows_core::RuntimeName for InputKeyboardSource {
     const NAME: &'static str = "Microsoft.UI.Input.InputKeyboardSource";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputKeyboardSource,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::From<InputKeyboardSource> for InputObject {
-    fn from(value: InputKeyboardSource) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputKeyboardSource> for InputObject {
-    fn from(value: &InputKeyboardSource) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputKeyboardSource> for ::windows::core::InParam<'a, InputObject> {
-    fn from(value: &InputKeyboardSource) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+impl ::windows_core::CanTryInto<InputObject> for InputKeyboardSource {}
 unsafe impl ::core::marker::Send for InputKeyboardSource {}
 unsafe impl ::core::marker::Sync for InputKeyboardSource {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputLightDismissAction(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputLightDismissAction(::windows_core::IUnknown);
 impl InputLightDismissAction {
-    pub fn Dismissed(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Dismissed<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            InputLightDismissAction,
-            InputLightDismissEventArgs,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputLightDismissAction,
+                InputLightDismissEventArgs,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Dismissed)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Dismissed)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveDismissed(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveDismissed)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveDismissed)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
@@ -3262,2054 +4639,2536 @@ impl InputLightDismissAction {
     }
     pub fn GetForWindowId(
         windowid: super::WindowId,
-    ) -> ::windows::core::Result<InputLightDismissAction> {
+    ) -> ::windows_core::Result<InputLightDismissAction> {
         Self::IInputLightDismissActionStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetForWindowId)(
-                ::windows::core::Vtable::as_raw(this),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForWindowId)(
+                ::windows_core::Interface::as_raw(this),
                 windowid,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<InputLightDismissAction>(result__)
+            .from_abi(result__)
         })
     }
-    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(&self) -> ::windows::core::Result<super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<IInputObject>(self)?;
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<super::Dispatching::DispatcherQueue>(result__)
+            .from_abi(result__)
         }
     }
     #[doc(hidden)]
     pub fn IInputLightDismissActionStatics<
         R,
-        F: FnOnce(&IInputLightDismissActionStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IInputLightDismissActionStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             InputLightDismissAction,
             IInputLightDismissActionStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for InputLightDismissAction {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputLightDismissAction {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputLightDismissAction {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputLightDismissAction {}
-impl ::core::fmt::Debug for InputLightDismissAction {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputLightDismissAction").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputLightDismissAction {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputLightDismissAction;{e8a39502-a860-502f-8c10-3646d43aecf1})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputLightDismissAction {
+unsafe impl ::windows_core::Interface for InputLightDismissAction {
     type Vtable = IInputLightDismissAction_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputLightDismissAction {
-    const IID: ::windows::core::GUID =
-        <IInputLightDismissAction as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputLightDismissAction {
+    const IID: ::windows_core::GUID =
+        <IInputLightDismissAction as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputLightDismissAction {
+impl ::windows_core::RuntimeName for InputLightDismissAction {
     const NAME: &'static str = "Microsoft.UI.Input.InputLightDismissAction";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputLightDismissAction,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::From<InputLightDismissAction> for InputObject {
-    fn from(value: InputLightDismissAction) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputLightDismissAction> for InputObject {
-    fn from(value: &InputLightDismissAction) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputLightDismissAction>
-    for ::windows::core::InParam<'a, InputObject>
-{
-    fn from(value: &InputLightDismissAction) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
+impl ::windows_core::CanTryInto<InputObject> for InputLightDismissAction {}
 unsafe impl ::core::marker::Send for InputLightDismissAction {}
 unsafe impl ::core::marker::Sync for InputLightDismissAction {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputLightDismissEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputLightDismissEventArgs(::windows_core::IUnknown);
 impl InputLightDismissEventArgs {}
-impl ::core::clone::Clone for InputLightDismissEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for InputLightDismissEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for InputLightDismissEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputLightDismissEventArgs {}
-impl ::core::fmt::Debug for InputLightDismissEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputLightDismissEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputLightDismissEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputLightDismissEventArgs;{078660ee-07ca-5808-b982-e6e899cf098c})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputLightDismissEventArgs {
+unsafe impl ::windows_core::Interface for InputLightDismissEventArgs {
     type Vtable = IInputLightDismissEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for InputLightDismissEventArgs {
-    const IID: ::windows::core::GUID =
-        <IInputLightDismissEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for InputLightDismissEventArgs {
+    const IID: ::windows_core::GUID =
+        <IInputLightDismissEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for InputLightDismissEventArgs {
+impl ::windows_core::RuntimeName for InputLightDismissEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.InputLightDismissEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     InputLightDismissEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for InputLightDismissEventArgs {}
 unsafe impl ::core::marker::Sync for InputLightDismissEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct InputObject(::windows::core::IUnknown);
-impl InputObject {
-    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(&self) -> ::windows::core::Result<super::Dispatching::DispatcherQueue> {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputNonClientPointerSource(::windows_core::IUnknown);
+impl InputNonClientPointerSource {
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<super::Dispatching::DispatcherQueue>(result__)
+            .from_abi(result__)
         }
     }
-}
-impl ::core::clone::Clone for InputObject {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for InputObject {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputObject {}
-impl ::core::fmt::Debug for InputObject {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputObject").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputObject {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputObject;{42edbc88-d386-544d-b1b8-68617fe68282})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputObject {
-    type Vtable = IInputObject_Vtbl;
-}
-unsafe impl ::windows::core::Interface for InputObject {
-    const IID: ::windows::core::GUID = <IInputObject as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for InputObject {
-    const NAME: &'static str = "Microsoft.UI.Input.InputObject";
-}
-::windows::core::interface_hierarchy!(
-    InputObject,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for InputObject {}
-unsafe impl ::core::marker::Sync for InputObject {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct InputPointerSource(::windows::core::IUnknown);
-impl InputPointerSource {
-    #[doc = "*Required features: `\"UI_Dispatching\"`*"]
-    #[cfg(feature = "UI_Dispatching")]
-    pub fn DispatcherQueue(&self) -> ::windows::core::Result<super::Dispatching::DispatcherQueue> {
-        let this = &::windows::core::Interface::cast::<IInputObject>(self)?;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DispatcherQueue)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<super::Dispatching::DispatcherQueue>(result__)
-        }
-    }
-    pub fn Cursor(&self) -> ::windows::core::Result<InputCursor> {
+    pub fn ClearAllRegionRects(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Cursor)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<InputCursor>(result__)
-        }
-    }
-    pub fn SetCursor<'a, P0>(&self, value: P0) -> ::windows::core::Result<()>
-    where
-        P0: ::std::convert::Into<::windows::core::InParam<'a, InputCursor>>,
-    {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetCursor)(
-                ::windows::core::Vtable::as_raw(this),
-                value.into().abi(),
+            (::windows_core::Interface::vtable(this).ClearAllRegionRects)(
+                ::windows_core::Interface::as_raw(this),
             )
             .ok()
         }
     }
-    pub fn DeviceKinds(&self) -> ::windows::core::Result<InputPointerSourceDeviceKinds> {
+    pub fn ClearRegionRects(&self, region: NonClientRegionKind) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DeviceKinds)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<InputPointerSourceDeviceKinds>(result__)
-        }
-    }
-    pub fn PointerCaptureLost(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerCaptureLost)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerCaptureLost(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerCaptureLost)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
+            (::windows_core::Interface::vtable(this).ClearRegionRects)(
+                ::windows_core::Interface::as_raw(this),
+                region,
             )
             .ok()
         }
     }
-    pub fn PointerEntered(
+    #[doc = "Required features: `\"Windows_Graphics\"`"]
+    #[cfg(feature = "Windows_Graphics")]
+    pub fn GetRegionRects(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+        region: NonClientRegionKind,
+    ) -> ::windows_core::Result<::windows_core::Array<::windows::Graphics::RectInt32>> {
         let this = self;
         unsafe {
             let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerEntered)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerEntered(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerEntered)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerExited(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerExited)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerExited(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerExited)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerMoved(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerMoved)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerMoved(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerMoved)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerPressed(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerPressed(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerReleased(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerReleased)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerReleased(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerReleased)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerRoutedAway(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerRoutedAway)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerRoutedAway(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerRoutedAway)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerRoutedReleased(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerRoutedReleased)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerRoutedReleased(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerRoutedReleased)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerRoutedTo(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerRoutedTo)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerRoutedTo(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerRoutedTo)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-    pub fn PointerWheelChanged(
-        &self,
-        handler: &::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerWheelChanged)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
-        }
-    }
-    pub fn RemovePointerWheelChanged(
-        &self,
-        token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).RemovePointerWheelChanged)(
-                ::windows::core::Vtable::as_raw(this),
-                token,
-            )
-            .ok()
-        }
-    }
-}
-impl ::core::clone::Clone for InputPointerSource {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for InputPointerSource {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputPointerSource {}
-impl ::core::fmt::Debug for InputPointerSource {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputPointerSource").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputPointerSource {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputPointerSource;{6a6c2764-c3f4-5be5-8447-c9a98766c240})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputPointerSource {
-    type Vtable = IInputPointerSource_Vtbl;
-}
-unsafe impl ::windows::core::Interface for InputPointerSource {
-    const IID: ::windows::core::GUID = <IInputPointerSource as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for InputPointerSource {
-    const NAME: &'static str = "Microsoft.UI.Input.InputPointerSource";
-}
-::windows::core::interface_hierarchy!(
-    InputPointerSource,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-impl ::core::convert::From<InputPointerSource> for InputObject {
-    fn from(value: InputPointerSource) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputPointerSource> for InputObject {
-    fn from(value: &InputPointerSource) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputPointerSource> for ::windows::core::InParam<'a, InputObject> {
-    fn from(value: &InputPointerSource) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
-unsafe impl ::core::marker::Send for InputPointerSource {}
-unsafe impl ::core::marker::Sync for InputPointerSource {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct InputSystemCursor(::windows::core::IUnknown);
-impl InputSystemCursor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
-                .ok()
-        }
-    }
-    pub fn CursorShape(&self) -> ::windows::core::Result<InputSystemCursorShape> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CursorShape)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<InputSystemCursorShape>(result__)
-        }
-    }
-    pub fn Create(r#type: InputSystemCursorShape) -> ::windows::core::Result<InputSystemCursor> {
-        Self::IInputSystemCursorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Create)(
-                ::windows::core::Vtable::as_raw(this),
-                r#type,
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<InputSystemCursor>(result__)
-        })
-    }
-    #[doc(hidden)]
-    pub fn IInputSystemCursorStatics<
-        R,
-        F: FnOnce(&IInputSystemCursorStatics) -> ::windows::core::Result<R>,
-    >(
-        callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<InputSystemCursor, IInputSystemCursorStatics> =
-            ::windows::core::FactoryCache::new();
-        SHARED.call(callback)
-    }
-}
-impl ::core::clone::Clone for InputSystemCursor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for InputSystemCursor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for InputSystemCursor {}
-impl ::core::fmt::Debug for InputSystemCursor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("InputSystemCursor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for InputSystemCursor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.InputSystemCursor;{59f538e7-c500-59ab-8b54-0bc6100fd49e})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for InputSystemCursor {
-    type Vtable = IInputSystemCursor_Vtbl;
-}
-unsafe impl ::windows::core::Interface for InputSystemCursor {
-    const IID: ::windows::core::GUID = <IInputSystemCursor as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for InputSystemCursor {
-    const NAME: &'static str = "Microsoft.UI.Input.InputSystemCursor";
-}
-::windows::core::interface_hierarchy!(
-    InputSystemCursor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-impl ::core::convert::TryFrom<InputSystemCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: InputSystemCursor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&InputSystemCursor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputSystemCursor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&InputSystemCursor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &InputSystemCursor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
-impl ::core::convert::From<InputSystemCursor> for InputCursor {
-    fn from(value: InputSystemCursor) -> Self {
-        ::core::convert::From::from(&value)
-    }
-}
-impl ::core::convert::From<&InputSystemCursor> for InputCursor {
-    fn from(value: &InputSystemCursor) -> Self {
-        ::windows::core::Interface::cast(value).unwrap()
-    }
-}
-impl<'a> ::core::convert::From<&InputSystemCursor> for ::windows::core::InParam<'a, InputCursor> {
-    fn from(value: &InputSystemCursor) -> Self {
-        ::windows::core::InParam::owned(value.into())
-    }
-}
-unsafe impl ::core::marker::Send for InputSystemCursor {}
-unsafe impl ::core::marker::Sync for InputSystemCursor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct ManipulationCompletedEventArgs(::windows::core::IUnknown);
-impl ManipulationCompletedEventArgs {
-    pub fn Cumulative(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Cumulative)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerDeviceType>(result__)
-        }
-    }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn Velocities(&self) -> ::windows::core::Result<ManipulationVelocities> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Velocities)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationVelocities>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for ManipulationCompletedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for ManipulationCompletedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for ManipulationCompletedEventArgs {}
-impl ::core::fmt::Debug for ManipulationCompletedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ManipulationCompletedEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for ManipulationCompletedEventArgs {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.ManipulationCompletedEventArgs;{0e0249d4-46e4-5559-aee3-fa45ce2a7f56})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for ManipulationCompletedEventArgs {
-    type Vtable = IManipulationCompletedEventArgs_Vtbl;
-}
-unsafe impl ::windows::core::Interface for ManipulationCompletedEventArgs {
-    const IID: ::windows::core::GUID =
-        <IManipulationCompletedEventArgs as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for ManipulationCompletedEventArgs {
-    const NAME: &'static str = "Microsoft.UI.Input.ManipulationCompletedEventArgs";
-}
-::windows::core::interface_hierarchy!(
-    ManipulationCompletedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for ManipulationCompletedEventArgs {}
-unsafe impl ::core::marker::Sync for ManipulationCompletedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct ManipulationInertiaStartingEventArgs(::windows::core::IUnknown);
-impl ManipulationInertiaStartingEventArgs {
-    pub fn Cumulative(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Cumulative)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn Delta(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Delta)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerDeviceType>(result__)
-        }
-    }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn Velocities(&self) -> ::windows::core::Result<ManipulationVelocities> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Velocities)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationVelocities>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for ManipulationInertiaStartingEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for ManipulationInertiaStartingEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for ManipulationInertiaStartingEventArgs {}
-impl ::core::fmt::Debug for ManipulationInertiaStartingEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ManipulationInertiaStartingEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for ManipulationInertiaStartingEventArgs {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.ManipulationInertiaStartingEventArgs;{acf9ef71-6e15-56ab-9260-f0d3ce5f66e8})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for ManipulationInertiaStartingEventArgs {
-    type Vtable = IManipulationInertiaStartingEventArgs_Vtbl;
-}
-unsafe impl ::windows::core::Interface for ManipulationInertiaStartingEventArgs {
-    const IID: ::windows::core::GUID =
-        <IManipulationInertiaStartingEventArgs as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for ManipulationInertiaStartingEventArgs {
-    const NAME: &'static str = "Microsoft.UI.Input.ManipulationInertiaStartingEventArgs";
-}
-::windows::core::interface_hierarchy!(
-    ManipulationInertiaStartingEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for ManipulationInertiaStartingEventArgs {}
-unsafe impl ::core::marker::Sync for ManipulationInertiaStartingEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct ManipulationStartedEventArgs(::windows::core::IUnknown);
-impl ManipulationStartedEventArgs {
-    pub fn Cumulative(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Cumulative)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerDeviceType>(result__)
-        }
-    }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for ManipulationStartedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for ManipulationStartedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for ManipulationStartedEventArgs {}
-impl ::core::fmt::Debug for ManipulationStartedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ManipulationStartedEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for ManipulationStartedEventArgs {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.ManipulationStartedEventArgs;{4a616613-eef1-5f1b-a768-0775478d49d4})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for ManipulationStartedEventArgs {
-    type Vtable = IManipulationStartedEventArgs_Vtbl;
-}
-unsafe impl ::windows::core::Interface for ManipulationStartedEventArgs {
-    const IID: ::windows::core::GUID =
-        <IManipulationStartedEventArgs as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for ManipulationStartedEventArgs {
-    const NAME: &'static str = "Microsoft.UI.Input.ManipulationStartedEventArgs";
-}
-::windows::core::interface_hierarchy!(
-    ManipulationStartedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for ManipulationStartedEventArgs {}
-unsafe impl ::core::marker::Sync for ManipulationStartedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct ManipulationUpdatedEventArgs(::windows::core::IUnknown);
-impl ManipulationUpdatedEventArgs {
-    pub fn Cumulative(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Cumulative)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn Delta(&self) -> ::windows::core::Result<ManipulationDelta> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Delta)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationDelta>(result__)
-        }
-    }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerDeviceType>(result__)
-        }
-    }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn Velocities(&self) -> ::windows::core::Result<ManipulationVelocities> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Velocities)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<ManipulationVelocities>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for ManipulationUpdatedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for ManipulationUpdatedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for ManipulationUpdatedEventArgs {}
-impl ::core::fmt::Debug for ManipulationUpdatedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("ManipulationUpdatedEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for ManipulationUpdatedEventArgs {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Input.ManipulationUpdatedEventArgs;{406e1961-0c98-5fc0-b3d8-116492ef0053})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for ManipulationUpdatedEventArgs {
-    type Vtable = IManipulationUpdatedEventArgs_Vtbl;
-}
-unsafe impl ::windows::core::Interface for ManipulationUpdatedEventArgs {
-    const IID: ::windows::core::GUID =
-        <IManipulationUpdatedEventArgs as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for ManipulationUpdatedEventArgs {
-    const NAME: &'static str = "Microsoft.UI.Input.ManipulationUpdatedEventArgs";
-}
-::windows::core::interface_hierarchy!(
-    ManipulationUpdatedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for ManipulationUpdatedEventArgs {}
-unsafe impl ::core::marker::Sync for ManipulationUpdatedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct MouseWheelParameters(::windows::core::IUnknown);
-impl MouseWheelParameters {
-    pub fn CharTranslation(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CharTranslation)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn SetCharTranslation(
-        &self,
-        value: ::windows::Foundation::Point,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetCharTranslation)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    pub fn DeltaScale(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DeltaScale)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn SetDeltaScale(&self, value: f32) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetDeltaScale)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    pub fn DeltaRotationAngle(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).DeltaRotationAngle)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn SetDeltaRotationAngle(&self, value: f32) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetDeltaRotationAngle)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    pub fn PageTranslation(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PageTranslation)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn SetPageTranslation(
-        &self,
-        value: ::windows::Foundation::Point,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetPageTranslation)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-}
-impl ::core::clone::Clone for MouseWheelParameters {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for MouseWheelParameters {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for MouseWheelParameters {}
-impl ::core::fmt::Debug for MouseWheelParameters {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("MouseWheelParameters").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for MouseWheelParameters {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.MouseWheelParameters;{6d98be40-1d56-51d1-aa0d-f325439cd009})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for MouseWheelParameters {
-    type Vtable = IMouseWheelParameters_Vtbl;
-}
-unsafe impl ::windows::core::Interface for MouseWheelParameters {
-    const IID: ::windows::core::GUID = <IMouseWheelParameters as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for MouseWheelParameters {
-    const NAME: &'static str = "Microsoft.UI.Input.MouseWheelParameters";
-}
-::windows::core::interface_hierarchy!(
-    MouseWheelParameters,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for MouseWheelParameters {}
-unsafe impl ::core::marker::Sync for MouseWheelParameters {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct PointerEventArgs(::windows::core::IUnknown);
-impl PointerEventArgs {
-    pub fn CurrentPoint(&self) -> ::windows::core::Result<PointerPoint> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CurrentPoint)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerPoint>(result__)
-        }
-    }
-    pub fn Handled(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Handled)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn SetHandled(&self, value: bool) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetHandled)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    pub fn KeyModifiers(&self) -> ::windows::core::Result<::windows::System::VirtualKeyModifiers> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).KeyModifiers)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::System::VirtualKeyModifiers>(result__)
-        }
-    }
-    pub fn GetIntermediatePoints(
-        &self,
-    ) -> ::windows::core::Result<::windows::Foundation::Collections::IVector<PointerPoint>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetIntermediatePoints)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Collections::IVector<PointerPoint>>(result__)
-        }
-    }
-    pub fn GetIntermediateTransformedPoints<'a, P0, E0>(
-        &self,
-        transform: P0,
-    ) -> ::windows::core::Result<::windows::Foundation::Collections::IVector<PointerPoint>>
-    where
-        P0: ::std::convert::TryInto<
-            ::windows::core::InParam<'a, IPointerPointTransform>,
-            Error = E0,
-        >,
-        E0: ::std::convert::Into<::windows::core::Error>,
-    {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetIntermediateTransformedPoints)(
-                ::windows::core::Vtable::as_raw(this),
-                transform.try_into().map_err(|e| e.into())?.abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Collections::IVector<PointerPoint>>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for PointerEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for PointerEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for PointerEventArgs {}
-impl ::core::fmt::Debug for PointerEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("PointerEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for PointerEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.PointerEventArgs;{865b188c-2ed5-5df8-829f-ac0701d5c51a})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for PointerEventArgs {
-    type Vtable = IPointerEventArgs_Vtbl;
-}
-unsafe impl ::windows::core::Interface for PointerEventArgs {
-    const IID: ::windows::core::GUID = <IPointerEventArgs as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for PointerEventArgs {
-    const NAME: &'static str = "Microsoft.UI.Input.PointerEventArgs";
-}
-::windows::core::interface_hierarchy!(
-    PointerEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for PointerEventArgs {}
-unsafe impl ::core::marker::Sync for PointerEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct PointerPoint(::windows::core::IUnknown);
-impl PointerPoint {
-    pub fn FrameId(&self) -> ::windows::core::Result<u32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).FrameId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<u32>(result__)
-        }
-    }
-    pub fn IsInContact(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsInContact)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerDeviceType>(result__)
-        }
-    }
-    pub fn PointerId(&self) -> ::windows::core::Result<u32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerId)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<u32>(result__)
-        }
-    }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Point>(result__)
-        }
-    }
-    pub fn Properties(&self) -> ::windows::core::Result<PointerPointProperties> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Properties)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerPointProperties>(result__)
-        }
-    }
-    pub fn Timestamp(&self) -> ::windows::core::Result<u64> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Timestamp)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<u64>(result__)
-        }
-    }
-    pub fn GetTransformedPoint<'a, P0, E0>(
-        &self,
-        transform: P0,
-    ) -> ::windows::core::Result<PointerPoint>
-    where
-        P0: ::std::convert::TryInto<
-            ::windows::core::InParam<'a, IPointerPointTransform>,
-            Error = E0,
-        >,
-        E0: ::std::convert::Into<::windows::core::Error>,
-    {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetTransformedPoint)(
-                ::windows::core::Vtable::as_raw(this),
-                transform.try_into().map_err(|e| e.into())?.abi(),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerPoint>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for PointerPoint {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for PointerPoint {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for PointerPoint {}
-impl ::core::fmt::Debug for PointerPoint {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("PointerPoint").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for PointerPoint {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.PointerPoint;{0d430ee6-252c-59a4-b2a2-d44264dc6a40})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for PointerPoint {
-    type Vtable = IPointerPoint_Vtbl;
-}
-unsafe impl ::windows::core::Interface for PointerPoint {
-    const IID: ::windows::core::GUID = <IPointerPoint as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for PointerPoint {
-    const NAME: &'static str = "Microsoft.UI.Input.PointerPoint";
-}
-::windows::core::interface_hierarchy!(
-    PointerPoint,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for PointerPoint {}
-unsafe impl ::core::marker::Sync for PointerPoint {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct PointerPointProperties(::windows::core::IUnknown);
-impl PointerPointProperties {
-    pub fn ContactRect(&self) -> ::windows::core::Result<::windows::Foundation::Rect> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).ContactRect)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::Rect>(result__)
-        }
-    }
-    pub fn IsBarrelButtonPressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsBarrelButtonPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsCanceled(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsCanceled)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsEraser(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsEraser)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsHorizontalMouseWheel(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsHorizontalMouseWheel)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsInRange(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsInRange)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsInverted(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsInverted)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsLeftButtonPressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsLeftButtonPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsMiddleButtonPressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsMiddleButtonPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsPrimary(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsPrimary)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsRightButtonPressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsRightButtonPressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsXButton1Pressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsXButton1Pressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn IsXButton2Pressed(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).IsXButton2Pressed)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn MouseWheelDelta(&self) -> ::windows::core::Result<i32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).MouseWheelDelta)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<i32>(result__)
-        }
-    }
-    pub fn Orientation(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Orientation)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn PointerUpdateKind(&self) -> ::windows::core::Result<PointerUpdateKind> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerUpdateKind)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<PointerUpdateKind>(result__)
-        }
-    }
-    pub fn Pressure(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Pressure)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn TouchConfidence(&self) -> ::windows::core::Result<bool> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TouchConfidence)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<bool>(result__)
-        }
-    }
-    pub fn Twist(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Twist)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn XTilt(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).XTilt)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-    pub fn YTilt(&self) -> ::windows::core::Result<f32> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).YTilt)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<f32>(result__)
-        }
-    }
-}
-impl ::core::clone::Clone for PointerPointProperties {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
-}
-impl ::core::cmp::PartialEq for PointerPointProperties {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for PointerPointProperties {}
-impl ::core::fmt::Debug for PointerPointProperties {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("PointerPointProperties").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for PointerPointProperties {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.PointerPointProperties;{d760ed77-4b10-57a5-b3cc-d9bf3413e996})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for PointerPointProperties {
-    type Vtable = IPointerPointProperties_Vtbl;
-}
-unsafe impl ::windows::core::Interface for PointerPointProperties {
-    const IID: ::windows::core::GUID = <IPointerPointProperties as ::windows::core::Interface>::IID;
-}
-impl ::windows::core::RuntimeName for PointerPointProperties {
-    const NAME: &'static str = "Microsoft.UI.Input.PointerPointProperties";
-}
-::windows::core::interface_hierarchy!(
-    PointerPointProperties,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
-);
-unsafe impl ::core::marker::Send for PointerPointProperties {}
-unsafe impl ::core::marker::Sync for PointerPointProperties {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
-#[repr(transparent)]
-pub struct PointerPredictor(::windows::core::IUnknown);
-impl PointerPredictor {
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
-                .ok()
-        }
-    }
-    pub fn PredictionTime(&self) -> ::windows::core::Result<::windows::Foundation::TimeSpan> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PredictionTime)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
-            )
-            .from_abi::<::windows::Foundation::TimeSpan>(result__)
-        }
-    }
-    pub fn SetPredictionTime(
-        &self,
-        value: ::windows::Foundation::TimeSpan,
-    ) -> ::windows::core::Result<()> {
-        let this = self;
-        unsafe {
-            (::windows::core::Vtable::vtable(this).SetPredictionTime)(
-                ::windows::core::Vtable::as_raw(this),
-                value,
-            )
-            .ok()
-        }
-    }
-    pub fn GetPredictedPoints(
-        &self,
-        point: &PointerPoint,
-    ) -> ::windows::core::Result<::windows::core::Array<PointerPoint>> {
-        let this = self;
-        unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetPredictedPoints)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(point),
-                ::windows::core::Array::<PointerPoint>::set_abi_len(result__.assume_init_mut()),
+            (::windows_core::Interface::vtable(this).GetRegionRects)(
+                ::windows_core::Interface::as_raw(this),
+                region,
+                ::windows_core::Array::<::windows::Graphics::RectInt32>::set_abi_len(
+                    ::std::mem::transmute(&mut result__),
+                ),
                 result__.as_mut_ptr() as *mut _ as _,
             )
             .and_then(|| result__.assume_init())
         }
     }
-    pub fn CreateForInputPointerSource(
-        inputpointersource: &InputPointerSource,
-    ) -> ::windows::core::Result<PointerPredictor> {
-        Self::IPointerPredictorStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CreateForInputPointerSource)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(inputpointersource),
-                result__.as_mut_ptr(),
+    #[doc = "Required features: `\"Windows_Graphics\"`"]
+    #[cfg(feature = "Windows_Graphics")]
+    pub fn SetRegionRects(
+        &self,
+        region: NonClientRegionKind,
+        rects: &[::windows::Graphics::RectInt32],
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetRegionRects)(
+                ::windows_core::Interface::as_raw(this),
+                region,
+                rects.len().try_into().unwrap(),
+                rects.as_ptr(),
             )
-            .from_abi::<PointerPredictor>(result__)
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn CaptionTapped<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientCaptionTappedEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CaptionTapped)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveCaptionTapped(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveCaptionTapped)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerEntered<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientPointerEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerEntered)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerEntered(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerEntered)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerExited<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientPointerEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerExited)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerExited(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerExited)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerMoved<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientPointerEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerMoved)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerMoved(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerMoved)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerPressed<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientPointerEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerPressed)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerPressed(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerPressed)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerReleased<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientPointerEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerReleased)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerReleased(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerReleased)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RegionsChanged<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                InputNonClientPointerSource,
+                NonClientRegionsChangedEventArgs,
+            >,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).RegionsChanged)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemoveRegionsChanged(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemoveRegionsChanged)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    pub fn GetForWindowId(
+        windowid: super::WindowId,
+    ) -> ::windows_core::Result<InputNonClientPointerSource> {
+        Self::IInputNonClientPointerSourceStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForWindowId)(
+                ::windows_core::Interface::as_raw(this),
+                windowid,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IInputNonClientPointerSourceStatics<
+        R,
+        F: FnOnce(&IInputNonClientPointerSourceStatics) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputNonClientPointerSource,
+            IInputNonClientPointerSourceStatics,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows_core::RuntimeType for InputNonClientPointerSource {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputNonClientPointerSource {
+    type Vtable = IInputNonClientPointerSource_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputNonClientPointerSource {
+    const IID: ::windows_core::GUID =
+        <IInputNonClientPointerSource as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputNonClientPointerSource {
+    const NAME: &'static str = "Microsoft.UI.Input.InputNonClientPointerSource";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputNonClientPointerSource,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for InputNonClientPointerSource {}
+unsafe impl ::core::marker::Sync for InputNonClientPointerSource {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputObject(::windows_core::IUnknown);
+impl InputObject {
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for InputObject {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputObject {
+    type Vtable = IInputObject_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputObject {
+    const IID: ::windows_core::GUID = <IInputObject as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputObject {
+    const NAME: &'static str = "Microsoft.UI.Input.InputObject";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputObject,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for InputObject {}
+unsafe impl ::core::marker::Sync for InputObject {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputPointerSource(::windows_core::IUnknown);
+impl InputPointerSource {
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Cursor(&self) -> ::windows_core::Result<InputCursor> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Cursor)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetCursor<P0>(&self, value: P0) -> ::windows_core::Result<()>
+    where
+        P0: ::windows_core::TryIntoParam<InputCursor>,
+    {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetCursor)(
+                ::windows_core::Interface::as_raw(this),
+                value.try_into_param()?.abi(),
+            )
+            .ok()
+        }
+    }
+    pub fn DeviceKinds(&self) -> ::windows_core::Result<InputPointerSourceDeviceKinds> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DeviceKinds)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerCaptureLost<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerCaptureLost)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerCaptureLost(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerCaptureLost)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerEntered<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerEntered)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerEntered(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerEntered)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerExited<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerExited)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerExited(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerExited)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerMoved<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerMoved)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerMoved(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerMoved)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerPressed<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerPressed)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerPressed(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerPressed)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerReleased<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerReleased)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerReleased(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerReleased)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerRoutedAway<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerRoutedAway)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerRoutedAway(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerRoutedAway)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerRoutedReleased<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerRoutedReleased)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerRoutedReleased(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerRoutedReleased)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerRoutedTo<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerRoutedTo)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerRoutedTo(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerRoutedTo)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PointerWheelChanged<P0>(
+        &self,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<InputPointerSource, PointerEventArgs>,
+        >,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerWheelChanged)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn RemovePointerWheelChanged(
+        &self,
+        token: ::windows::Foundation::EventRegistrationToken,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).RemovePointerWheelChanged)(
+                ::windows_core::Interface::as_raw(this),
+                token,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Content\"`"]
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub fn GetForIsland<P0>(island: P0) -> ::windows_core::Result<InputPointerSource>
+    where
+        P0: ::windows_core::TryIntoParam<super::Content::ContentIsland>,
+    {
+        Self::IInputPointerSourceStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForIsland)(
+                ::windows_core::Interface::as_raw(this),
+                island.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IInputPointerSourceStatics<
+        R,
+        F: FnOnce(&IInputPointerSourceStatics) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputPointerSource,
+            IInputPointerSourceStatics,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows_core::RuntimeType for InputPointerSource {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputPointerSource {
+    type Vtable = IInputPointerSource_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputPointerSource {
+    const IID: ::windows_core::GUID = <IInputPointerSource as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputPointerSource {
+    const NAME: &'static str = "Microsoft.UI.Input.InputPointerSource";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputPointerSource,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+impl ::windows_core::CanTryInto<InputObject> for InputPointerSource {}
+unsafe impl ::core::marker::Send for InputPointerSource {}
+unsafe impl ::core::marker::Sync for InputPointerSource {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputPreTranslateKeyboardSource(::windows_core::IUnknown);
+impl InputPreTranslateKeyboardSource {
+    #[doc = "Required features: `\"Microsoft_UI_Dispatching\"`"]
+    #[cfg(feature = "Microsoft_UI_Dispatching")]
+    pub fn DispatcherQueue(&self) -> ::windows_core::Result<super::Dispatching::DispatcherQueue> {
+        let this = &::windows_core::ComInterface::cast::<IInputObject>(self)?;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DispatcherQueue)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Microsoft_UI_Content\"`"]
+    #[cfg(feature = "Microsoft_UI_Content")]
+    pub fn GetForIsland<P0>(island: P0) -> ::windows_core::Result<InputPreTranslateKeyboardSource>
+    where
+        P0: ::windows_core::TryIntoParam<super::Content::ContentIsland>,
+    {
+        Self::IInputPreTranslateKeyboardSourceStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetForIsland)(
+                ::windows_core::Interface::as_raw(this),
+                island.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IInputPreTranslateKeyboardSourceStatics<
+        R,
+        F: FnOnce(&IInputPreTranslateKeyboardSourceStatics) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputPreTranslateKeyboardSource,
+            IInputPreTranslateKeyboardSourceStatics,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows_core::RuntimeType for InputPreTranslateKeyboardSource {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputPreTranslateKeyboardSource {
+    type Vtable = IInputPreTranslateKeyboardSource_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputPreTranslateKeyboardSource {
+    const IID: ::windows_core::GUID =
+        <IInputPreTranslateKeyboardSource as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputPreTranslateKeyboardSource {
+    const NAME: &'static str = "Microsoft.UI.Input.InputPreTranslateKeyboardSource";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputPreTranslateKeyboardSource,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+impl ::windows_core::CanTryInto<InputObject> for InputPreTranslateKeyboardSource {}
+unsafe impl ::core::marker::Send for InputPreTranslateKeyboardSource {}
+unsafe impl ::core::marker::Sync for InputPreTranslateKeyboardSource {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct InputSystemCursor(::windows_core::IUnknown);
+impl InputSystemCursor {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
+                .ok()
+        }
+    }
+    pub fn CursorShape(&self) -> ::windows_core::Result<InputSystemCursorShape> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CursorShape)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Create(r#type: InputSystemCursorShape) -> ::windows_core::Result<InputSystemCursor> {
+        Self::IInputSystemCursorStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Create)(
+                ::windows_core::Interface::as_raw(this),
+                r#type,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IInputSystemCursorStatics<
+        R,
+        F: FnOnce(&IInputSystemCursorStatics) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            InputSystemCursor,
+            IInputSystemCursorStatics,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
+impl ::windows_core::RuntimeType for InputSystemCursor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for InputSystemCursor {
+    type Vtable = IInputSystemCursor_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for InputSystemCursor {
+    const IID: ::windows_core::GUID = <IInputSystemCursor as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for InputSystemCursor {
+    const NAME: &'static str = "Microsoft.UI.Input.InputSystemCursor";
+}
+::windows_core::imp::interface_hierarchy!(
+    InputSystemCursor,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for InputSystemCursor {}
+impl ::windows_core::CanTryInto<InputCursor> for InputSystemCursor {}
+unsafe impl ::core::marker::Send for InputSystemCursor {}
+unsafe impl ::core::marker::Sync for InputSystemCursor {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct KeyEventArgs(::windows_core::IUnknown);
+impl KeyEventArgs {
+    pub fn Handled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Handled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetHandled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetHandled)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn KeyStatus(&self) -> ::windows_core::Result<PhysicalKeyStatus> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyStatus)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Timestamp(&self) -> ::windows_core::Result<u64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_System\"`"]
+    #[cfg(feature = "Windows_System")]
+    pub fn VirtualKey(&self) -> ::windows_core::Result<::windows::System::VirtualKey> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).VirtualKey)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for KeyEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for KeyEventArgs {
+    type Vtable = IKeyEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for KeyEventArgs {
+    const IID: ::windows_core::GUID = <IKeyEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for KeyEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.KeyEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    KeyEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for KeyEventArgs {}
+unsafe impl ::core::marker::Sync for KeyEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ManipulationCompletedEventArgs(::windows_core::IUnknown);
+impl ManipulationCompletedEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Cumulative(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Cumulative)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Velocities(&self) -> ::windows_core::Result<ManipulationVelocities> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Velocities)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for ManipulationCompletedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for ManipulationCompletedEventArgs {
+    type Vtable = IManipulationCompletedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ManipulationCompletedEventArgs {
+    const IID: ::windows_core::GUID =
+        <IManipulationCompletedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for ManipulationCompletedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.ManipulationCompletedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    ManipulationCompletedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for ManipulationCompletedEventArgs {}
+unsafe impl ::core::marker::Sync for ManipulationCompletedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ManipulationInertiaStartingEventArgs(::windows_core::IUnknown);
+impl ManipulationInertiaStartingEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Cumulative(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Cumulative)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Delta(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Delta)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Velocities(&self) -> ::windows_core::Result<ManipulationVelocities> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Velocities)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for ManipulationInertiaStartingEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for ManipulationInertiaStartingEventArgs {
+    type Vtable = IManipulationInertiaStartingEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ManipulationInertiaStartingEventArgs {
+    const IID: ::windows_core::GUID =
+        <IManipulationInertiaStartingEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for ManipulationInertiaStartingEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.ManipulationInertiaStartingEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    ManipulationInertiaStartingEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for ManipulationInertiaStartingEventArgs {}
+unsafe impl ::core::marker::Sync for ManipulationInertiaStartingEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ManipulationStartedEventArgs(::windows_core::IUnknown);
+impl ManipulationStartedEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Cumulative(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Cumulative)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for ManipulationStartedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for ManipulationStartedEventArgs {
+    type Vtable = IManipulationStartedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ManipulationStartedEventArgs {
+    const IID: ::windows_core::GUID =
+        <IManipulationStartedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for ManipulationStartedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.ManipulationStartedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    ManipulationStartedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for ManipulationStartedEventArgs {}
+unsafe impl ::core::marker::Sync for ManipulationStartedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ManipulationUpdatedEventArgs(::windows_core::IUnknown);
+impl ManipulationUpdatedEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Cumulative(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Cumulative)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Delta(&self) -> ::windows_core::Result<ManipulationDelta> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Delta)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Velocities(&self) -> ::windows_core::Result<ManipulationVelocities> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Velocities)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for ManipulationUpdatedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for ManipulationUpdatedEventArgs {
+    type Vtable = IManipulationUpdatedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for ManipulationUpdatedEventArgs {
+    const IID: ::windows_core::GUID =
+        <IManipulationUpdatedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for ManipulationUpdatedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.ManipulationUpdatedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    ManipulationUpdatedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for ManipulationUpdatedEventArgs {}
+unsafe impl ::core::marker::Sync for ManipulationUpdatedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct MouseWheelParameters(::windows_core::IUnknown);
+impl MouseWheelParameters {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn CharTranslation(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CharTranslation)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetCharTranslation(
+        &self,
+        value: ::windows::Foundation::Point,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetCharTranslation)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn DeltaScale(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DeltaScale)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetDeltaScale(&self, value: f32) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetDeltaScale)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn DeltaRotationAngle(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).DeltaRotationAngle)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetDeltaRotationAngle(&self, value: f32) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetDeltaRotationAngle)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PageTranslation(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PageTranslation)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetPageTranslation(
+        &self,
+        value: ::windows::Foundation::Point,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetPageTranslation)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+}
+impl ::windows_core::RuntimeType for MouseWheelParameters {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for MouseWheelParameters {
+    type Vtable = IMouseWheelParameters_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for MouseWheelParameters {
+    const IID: ::windows_core::GUID = <IMouseWheelParameters as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for MouseWheelParameters {
+    const NAME: &'static str = "Microsoft.UI.Input.MouseWheelParameters";
+}
+::windows_core::imp::interface_hierarchy!(
+    MouseWheelParameters,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for MouseWheelParameters {}
+unsafe impl ::core::marker::Sync for MouseWheelParameters {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct NonClientCaptionTappedEventArgs(::windows_core::IUnknown);
+impl NonClientCaptionTappedEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Point(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Point)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for NonClientCaptionTappedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for NonClientCaptionTappedEventArgs {
+    type Vtable = INonClientCaptionTappedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for NonClientCaptionTappedEventArgs {
+    const IID: ::windows_core::GUID =
+        <INonClientCaptionTappedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for NonClientCaptionTappedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.NonClientCaptionTappedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    NonClientCaptionTappedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for NonClientCaptionTappedEventArgs {}
+unsafe impl ::core::marker::Sync for NonClientCaptionTappedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct NonClientPointerEventArgs(::windows_core::IUnknown);
+impl NonClientPointerEventArgs {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Point(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Point)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn RegionKind(&self) -> ::windows_core::Result<NonClientRegionKind> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).RegionKind)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsPointInRegion(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsPointInRegion)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for NonClientPointerEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for NonClientPointerEventArgs {
+    type Vtable = INonClientPointerEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for NonClientPointerEventArgs {
+    const IID: ::windows_core::GUID =
+        <INonClientPointerEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for NonClientPointerEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.NonClientPointerEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    NonClientPointerEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for NonClientPointerEventArgs {}
+unsafe impl ::core::marker::Sync for NonClientPointerEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct NonClientRegionsChangedEventArgs(::windows_core::IUnknown);
+impl NonClientRegionsChangedEventArgs {
+    pub fn ChangedRegions(
+        &self,
+    ) -> ::windows_core::Result<::windows_core::Array<NonClientRegionKind>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows_core::Interface::vtable(this).ChangedRegions)(
+                ::windows_core::Interface::as_raw(this),
+                ::windows_core::Array::<NonClientRegionKind>::set_abi_len(::std::mem::transmute(
+                    &mut result__,
+                )),
+                result__.as_mut_ptr() as *mut _ as _,
+            )
+            .and_then(|| result__.assume_init())
+        }
+    }
+}
+impl ::windows_core::RuntimeType for NonClientRegionsChangedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for NonClientRegionsChangedEventArgs {
+    type Vtable = INonClientRegionsChangedEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for NonClientRegionsChangedEventArgs {
+    const IID: ::windows_core::GUID =
+        <INonClientRegionsChangedEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for NonClientRegionsChangedEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.NonClientRegionsChangedEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    NonClientRegionsChangedEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for NonClientRegionsChangedEventArgs {}
+unsafe impl ::core::marker::Sync for NonClientRegionsChangedEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct PointerEventArgs(::windows_core::IUnknown);
+impl PointerEventArgs {
+    pub fn CurrentPoint(&self) -> ::windows_core::Result<PointerPoint> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CurrentPoint)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Handled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Handled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn SetHandled(&self, value: bool) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetHandled)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_System\"`"]
+    #[cfg(feature = "Windows_System")]
+    pub fn KeyModifiers(&self) -> ::windows_core::Result<::windows::System::VirtualKeyModifiers> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).KeyModifiers)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub fn GetIntermediatePoints(
+        &self,
+    ) -> ::windows_core::Result<::windows::Foundation::Collections::IVector<PointerPoint>> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetIntermediatePoints)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub fn GetIntermediateTransformedPoints<P0>(
+        &self,
+        transform: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::Collections::IVector<PointerPoint>>
+    where
+        P0: ::windows_core::TryIntoParam<IPointerPointTransform>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetIntermediateTransformedPoints)(
+                ::windows_core::Interface::as_raw(this),
+                transform.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for PointerEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for PointerEventArgs {
+    type Vtable = IPointerEventArgs_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for PointerEventArgs {
+    const IID: ::windows_core::GUID = <IPointerEventArgs as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for PointerEventArgs {
+    const NAME: &'static str = "Microsoft.UI.Input.PointerEventArgs";
+}
+::windows_core::imp::interface_hierarchy!(
+    PointerEventArgs,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for PointerEventArgs {}
+unsafe impl ::core::marker::Sync for PointerEventArgs {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct PointerPoint(::windows_core::IUnknown);
+impl PointerPoint {
+    pub fn FrameId(&self) -> ::windows_core::Result<u32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).FrameId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsInContact(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsInContact)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerId(&self) -> ::windows_core::Result<u32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerId)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Properties(&self) -> ::windows_core::Result<PointerPointProperties> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Properties)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Timestamp(&self) -> ::windows_core::Result<u64> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Timestamp)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn GetTransformedPoint<P0>(&self, transform: P0) -> ::windows_core::Result<PointerPoint>
+    where
+        P0: ::windows_core::TryIntoParam<IPointerPointTransform>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetTransformedPoint)(
+                ::windows_core::Interface::as_raw(this),
+                transform.try_into_param()?.abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for PointerPoint {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for PointerPoint {
+    type Vtable = IPointerPoint_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for PointerPoint {
+    const IID: ::windows_core::GUID = <IPointerPoint as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for PointerPoint {
+    const NAME: &'static str = "Microsoft.UI.Input.PointerPoint";
+}
+::windows_core::imp::interface_hierarchy!(
+    PointerPoint,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for PointerPoint {}
+unsafe impl ::core::marker::Sync for PointerPoint {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct PointerPointProperties(::windows_core::IUnknown);
+impl PointerPointProperties {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn ContactRect(&self) -> ::windows_core::Result<::windows::Foundation::Rect> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).ContactRect)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsBarrelButtonPressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsBarrelButtonPressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsCanceled(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsCanceled)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsEraser(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsEraser)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsHorizontalMouseWheel(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsHorizontalMouseWheel)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsInRange(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsInRange)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsInverted(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsInverted)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsLeftButtonPressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsLeftButtonPressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsMiddleButtonPressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsMiddleButtonPressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsPrimary(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsPrimary)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsRightButtonPressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsRightButtonPressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsXButton1Pressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsXButton1Pressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn IsXButton2Pressed(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).IsXButton2Pressed)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn MouseWheelDelta(&self) -> ::windows_core::Result<i32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).MouseWheelDelta)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Orientation(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Orientation)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn PointerUpdateKind(&self) -> ::windows_core::Result<PointerUpdateKind> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerUpdateKind)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Pressure(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Pressure)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn TouchConfidence(&self) -> ::windows_core::Result<bool> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TouchConfidence)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn Twist(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Twist)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn XTilt(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).XTilt)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    pub fn YTilt(&self) -> ::windows_core::Result<f32> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).YTilt)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+}
+impl ::windows_core::RuntimeType for PointerPointProperties {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
+}
+unsafe impl ::windows_core::Interface for PointerPointProperties {
+    type Vtable = IPointerPointProperties_Vtbl;
+}
+unsafe impl ::windows_core::ComInterface for PointerPointProperties {
+    const IID: ::windows_core::GUID =
+        <IPointerPointProperties as ::windows_core::ComInterface>::IID;
+}
+impl ::windows_core::RuntimeName for PointerPointProperties {
+    const NAME: &'static str = "Microsoft.UI.Input.PointerPointProperties";
+}
+::windows_core::imp::interface_hierarchy!(
+    PointerPointProperties,
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
+);
+unsafe impl ::core::marker::Send for PointerPointProperties {}
+unsafe impl ::core::marker::Sync for PointerPointProperties {}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct PointerPredictor(::windows_core::IUnknown);
+impl PointerPredictor {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
+        unsafe {
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
+                .ok()
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn PredictionTime(&self) -> ::windows_core::Result<::windows::Foundation::TimeSpan> {
+        let this = self;
+        unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PredictionTime)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
+            )
+            .from_abi(result__)
+        }
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn SetPredictionTime(
+        &self,
+        value: ::windows::Foundation::TimeSpan,
+    ) -> ::windows_core::Result<()> {
+        let this = self;
+        unsafe {
+            (::windows_core::Interface::vtable(this).SetPredictionTime)(
+                ::windows_core::Interface::as_raw(this),
+                value,
+            )
+            .ok()
+        }
+    }
+    pub fn GetPredictedPoints<P0>(
+        &self,
+        point: P0,
+    ) -> ::windows_core::Result<::windows_core::Array<PointerPoint>>
+    where
+        P0: ::windows_core::IntoParam<PointerPoint>,
+    {
+        let this = self;
+        unsafe {
+            let mut result__ = ::core::mem::MaybeUninit::zeroed();
+            (::windows_core::Interface::vtable(this).GetPredictedPoints)(
+                ::windows_core::Interface::as_raw(this),
+                point.into_param().abi(),
+                ::windows_core::Array::<PointerPoint>::set_abi_len(::std::mem::transmute(
+                    &mut result__,
+                )),
+                result__.as_mut_ptr() as *mut _ as _,
+            )
+            .and_then(|| result__.assume_init())
+        }
+    }
+    pub fn CreateForInputPointerSource<P0>(
+        inputpointersource: P0,
+    ) -> ::windows_core::Result<PointerPredictor>
+    where
+        P0: ::windows_core::IntoParam<InputPointerSource>,
+    {
+        Self::IPointerPredictorStatics(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateForInputPointerSource)(
+                ::windows_core::Interface::as_raw(this),
+                inputpointersource.into_param().abi(),
+                &mut result__,
+            )
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn IPointerPredictorStatics<
         R,
-        F: FnOnce(&IPointerPredictorStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&IPointerPredictorStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<PointerPredictor, IPointerPredictorStatics> =
-            ::windows::core::FactoryCache::new();
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            PointerPredictor,
+            IPointerPredictorStatics,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for PointerPredictor {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for PointerPredictor {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for PointerPredictor {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for PointerPredictor {}
-impl ::core::fmt::Debug for PointerPredictor {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("PointerPredictor").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for PointerPredictor {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.PointerPredictor;{12c100ec-2100-565f-a60c-f1187f438828})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for PointerPredictor {
+unsafe impl ::windows_core::Interface for PointerPredictor {
     type Vtable = IPointerPredictor_Vtbl;
 }
-unsafe impl ::windows::core::Interface for PointerPredictor {
-    const IID: ::windows::core::GUID = <IPointerPredictor as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for PointerPredictor {
+    const IID: ::windows_core::GUID = <IPointerPredictor as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for PointerPredictor {
+impl ::windows_core::RuntimeName for PointerPredictor {
     const NAME: &'static str = "Microsoft.UI.Input.PointerPredictor";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     PointerPredictor,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<PointerPredictor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: PointerPredictor) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&PointerPredictor> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &PointerPredictor) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&PointerPredictor>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &PointerPredictor) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for PointerPredictor {}
 unsafe impl ::core::marker::Send for PointerPredictor {}
 unsafe impl ::core::marker::Sync for PointerPredictor {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct RightTappedEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct RightTappedEventArgs(::windows_core::IUnknown);
 impl RightTappedEventArgs {
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<PointerDeviceType>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for RightTappedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for RightTappedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for RightTappedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for RightTappedEventArgs {}
-impl ::core::fmt::Debug for RightTappedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("RightTappedEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for RightTappedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.RightTappedEventArgs;{8ff73b39-887e-50a4-8500-77953039dcb4})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for RightTappedEventArgs {
+unsafe impl ::windows_core::Interface for RightTappedEventArgs {
     type Vtable = IRightTappedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for RightTappedEventArgs {
-    const IID: ::windows::core::GUID = <IRightTappedEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for RightTappedEventArgs {
+    const IID: ::windows_core::GUID = <IRightTappedEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for RightTappedEventArgs {
+impl ::windows_core::RuntimeName for RightTappedEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.RightTappedEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     RightTappedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for RightTappedEventArgs {}
 unsafe impl ::core::marker::Sync for RightTappedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
-pub struct TappedEventArgs(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct TappedEventArgs(::windows_core::IUnknown);
 impl TappedEventArgs {
-    pub fn PointerDeviceType(&self) -> ::windows::core::Result<PointerDeviceType> {
+    pub fn PointerDeviceType(&self) -> ::windows_core::Result<PointerDeviceType> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).PointerDeviceType)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).PointerDeviceType)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<PointerDeviceType>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Position(&self) -> ::windows::core::Result<::windows::Foundation::Point> {
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Position(&self) -> ::windows_core::Result<::windows::Foundation::Point> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Position)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Position)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::Point>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn TapCount(&self) -> ::windows::core::Result<u32> {
+    pub fn TapCount(&self) -> ::windows_core::Result<u32> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TapCount)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TapCount)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<u32>(result__)
+            .from_abi(result__)
         }
     }
 }
-impl ::core::clone::Clone for TappedEventArgs {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for TappedEventArgs {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for TappedEventArgs {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for TappedEventArgs {}
-impl ::core::fmt::Debug for TappedEventArgs {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("TappedEventArgs").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for TappedEventArgs {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"rc(Microsoft.UI.Input.TappedEventArgs;{c3a01bb5-6076-5e0f-871a-9d94a6a8f82b})",
-    );
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for TappedEventArgs {
+unsafe impl ::windows_core::Interface for TappedEventArgs {
     type Vtable = ITappedEventArgs_Vtbl;
 }
-unsafe impl ::windows::core::Interface for TappedEventArgs {
-    const IID: ::windows::core::GUID = <ITappedEventArgs as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for TappedEventArgs {
+    const IID: ::windows_core::GUID = <ITappedEventArgs as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for TappedEventArgs {
+impl ::windows_core::RuntimeName for TappedEventArgs {
     const NAME: &'static str = "Microsoft.UI.Input.TappedEventArgs";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     TappedEventArgs,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for TappedEventArgs {}
 unsafe impl ::core::marker::Sync for TappedEventArgs {}
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct CrossSlidingState(pub i32);
@@ -5333,23 +7192,20 @@ impl ::core::default::Default for CrossSlidingState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CrossSlidingState {
-    type Abi = Self;
+impl ::windows_core::TypeKind for CrossSlidingState {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for CrossSlidingState {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("CrossSlidingState").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for CrossSlidingState {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.CrossSlidingState;i4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for CrossSlidingState {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.CrossSlidingState;i4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct DraggingState(pub i32);
@@ -5369,23 +7225,18 @@ impl ::core::default::Default for DraggingState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for DraggingState {
-    type Abi = Self;
+impl ::windows_core::TypeKind for DraggingState {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for DraggingState {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("DraggingState").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for DraggingState {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.DraggingState;i4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for DraggingState {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.DraggingState;i4)");
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct GestureSettings(pub u32);
@@ -5420,12 +7271,17 @@ impl ::core::default::Default for GestureSettings {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for GestureSettings {
-    type Abi = Self;
+impl ::windows_core::TypeKind for GestureSettings {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for GestureSettings {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("GestureSettings").field(&self.0).finish()
+    }
+}
+impl GestureSettings {
+    pub const fn contains(&self, other: Self) -> bool {
+        self.0 & other.0 == other.0
     }
 }
 impl ::core::ops::BitOr for GestureSettings {
@@ -5456,15 +7312,12 @@ impl ::core::ops::Not for GestureSettings {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for GestureSettings {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.GestureSettings;u4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for GestureSettings {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.GestureSettings;u4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct HoldingState(pub i32);
@@ -5484,23 +7337,18 @@ impl ::core::default::Default for HoldingState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for HoldingState {
-    type Abi = Self;
+impl ::windows_core::TypeKind for HoldingState {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for HoldingState {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("HoldingState").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for HoldingState {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.HoldingState;i4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for HoldingState {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.HoldingState;i4)");
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct InputActivationState(pub i32);
@@ -5520,24 +7368,20 @@ impl ::core::default::Default for InputActivationState {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InputActivationState {
-    type Abi = Self;
+impl ::windows_core::TypeKind for InputActivationState {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for InputActivationState {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("InputActivationState").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InputActivationState {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Input.InputActivationState;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for InputActivationState {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.InputActivationState;i4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct InputPointerSourceDeviceKinds(pub u32);
@@ -5558,12 +7402,17 @@ impl ::core::default::Default for InputPointerSourceDeviceKinds {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InputPointerSourceDeviceKinds {
-    type Abi = Self;
+impl ::windows_core::TypeKind for InputPointerSourceDeviceKinds {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for InputPointerSourceDeviceKinds {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("InputPointerSourceDeviceKinds").field(&self.0).finish()
+    }
+}
+impl InputPointerSourceDeviceKinds {
+    pub const fn contains(&self, other: Self) -> bool {
+        self.0 & other.0 == other.0
     }
 }
 impl ::core::ops::BitOr for InputPointerSourceDeviceKinds {
@@ -5594,16 +7443,12 @@ impl ::core::ops::Not for InputPointerSourceDeviceKinds {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for InputPointerSourceDeviceKinds {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Input.InputPointerSourceDeviceKinds;u4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for InputPointerSourceDeviceKinds {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.InputPointerSourceDeviceKinds;u4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct InputSystemCursorShape(pub i32);
@@ -5636,24 +7481,60 @@ impl ::core::default::Default for InputSystemCursorShape {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for InputSystemCursorShape {
-    type Abi = Self;
+impl ::windows_core::TypeKind for InputSystemCursorShape {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for InputSystemCursorShape {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("InputSystemCursorShape").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for InputSystemCursorShape {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Input.InputSystemCursorShape;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
+impl ::windows_core::RuntimeType for InputSystemCursorShape {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.InputSystemCursorShape;i4)",
+        );
+}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct NonClientRegionKind(pub i32);
+impl NonClientRegionKind {
+    pub const Close: Self = Self(0i32);
+    pub const Maximize: Self = Self(1i32);
+    pub const Minimize: Self = Self(2i32);
+    pub const Icon: Self = Self(3i32);
+    pub const Caption: Self = Self(4i32);
+    pub const TopBorder: Self = Self(5i32);
+    pub const LeftBorder: Self = Self(6i32);
+    pub const BottomBorder: Self = Self(7i32);
+    pub const RightBorder: Self = Self(8i32);
+    pub const Passthrough: Self = Self(9i32);
+}
+impl ::core::marker::Copy for NonClientRegionKind {}
+impl ::core::clone::Clone for NonClientRegionKind {
+    fn clone(&self) -> Self {
+        *self
     }
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
+impl ::core::default::Default for NonClientRegionKind {
+    fn default() -> Self {
+        Self(0)
+    }
+}
+impl ::windows_core::TypeKind for NonClientRegionKind {
+    type TypeKind = ::windows_core::CopyType;
+}
+impl ::core::fmt::Debug for NonClientRegionKind {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("NonClientRegionKind").field(&self.0).finish()
+    }
+}
+impl ::windows_core::RuntimeType for NonClientRegionKind {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.NonClientRegionKind;i4)",
+        );
+}
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct PointerDeviceType(pub i32);
@@ -5674,23 +7555,20 @@ impl ::core::default::Default for PointerDeviceType {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PointerDeviceType {
-    type Abi = Self;
+impl ::windows_core::TypeKind for PointerDeviceType {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for PointerDeviceType {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("PointerDeviceType").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PointerDeviceType {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.PointerDeviceType;i4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for PointerDeviceType {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.PointerDeviceType;i4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Input\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct PointerUpdateKind(pub i32);
@@ -5718,24 +7596,87 @@ impl ::core::default::Default for PointerUpdateKind {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for PointerUpdateKind {
-    type Abi = Self;
+impl ::windows_core::TypeKind for PointerUpdateKind {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for PointerUpdateKind {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("PointerUpdateKind").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for PointerUpdateKind {
-    const SIGNATURE: ::windows::core::ConstBuffer =
-        ::windows::core::ConstBuffer::from_slice(b"enum(Microsoft.UI.Input.PointerUpdateKind;i4)");
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
+impl ::windows_core::RuntimeType for PointerUpdateKind {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.PointerUpdateKind;i4)",
+        );
+}
+#[repr(transparent)]
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
+pub struct VirtualKeyStates(pub u32);
+impl VirtualKeyStates {
+    pub const None: Self = Self(0u32);
+    pub const Down: Self = Self(1u32);
+    pub const Locked: Self = Self(2u32);
+}
+impl ::core::marker::Copy for VirtualKeyStates {}
+impl ::core::clone::Clone for VirtualKeyStates {
+    fn clone(&self) -> Self {
+        *self
     }
 }
+impl ::core::default::Default for VirtualKeyStates {
+    fn default() -> Self {
+        Self(0)
+    }
+}
+impl ::windows_core::TypeKind for VirtualKeyStates {
+    type TypeKind = ::windows_core::CopyType;
+}
+impl ::core::fmt::Debug for VirtualKeyStates {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_tuple("VirtualKeyStates").field(&self.0).finish()
+    }
+}
+impl VirtualKeyStates {
+    pub const fn contains(&self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+impl ::core::ops::BitOr for VirtualKeyStates {
+    type Output = Self;
+    fn bitor(self, other: Self) -> Self {
+        Self(self.0 | other.0)
+    }
+}
+impl ::core::ops::BitAnd for VirtualKeyStates {
+    type Output = Self;
+    fn bitand(self, other: Self) -> Self {
+        Self(self.0 & other.0)
+    }
+}
+impl ::core::ops::BitOrAssign for VirtualKeyStates {
+    fn bitor_assign(&mut self, other: Self) {
+        self.0.bitor_assign(other.0)
+    }
+}
+impl ::core::ops::BitAndAssign for VirtualKeyStates {
+    fn bitand_assign(&mut self, other: Self) {
+        self.0.bitand_assign(other.0)
+    }
+}
+impl ::core::ops::Not for VirtualKeyStates {
+    type Output = Self;
+    fn not(self) -> Self {
+        Self(self.0.not())
+    }
+}
+impl ::windows_core::RuntimeType for VirtualKeyStates {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Input.VirtualKeyStates;u4)",
+        );
+}
 #[repr(C)]
-#[doc = "*Required features: `\"UI_Input\"`*"]
 pub struct CrossSlideThresholds {
     pub SelectionStart: f32,
     pub SpeedBumpStart: f32,
@@ -5758,27 +7699,21 @@ impl ::core::fmt::Debug for CrossSlideThresholds {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for CrossSlideThresholds {
-    type Abi = Self;
+impl ::windows_core::TypeKind for CrossSlideThresholds {
+    type TypeKind = ::windows_core::CopyType;
 }
-unsafe impl ::windows::core::RuntimeType for CrossSlideThresholds {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"struct(Microsoft.UI.Input.CrossSlideThresholds;f4;f4;f4;f4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for CrossSlideThresholds {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"struct(Microsoft.UI.Input.CrossSlideThresholds;f4;f4;f4;f4)",
+        );
 }
 impl ::core::cmp::PartialEq for CrossSlideThresholds {
     fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            ::windows::core::memcmp(
-                self as *const _ as _,
-                other as *const _ as _,
-                core::mem::size_of::<CrossSlideThresholds>(),
-            ) == 0
-        }
+        self.SelectionStart == other.SelectionStart
+            && self.SpeedBumpStart == other.SpeedBumpStart
+            && self.SpeedBumpEnd == other.SpeedBumpEnd
+            && self.RearrangeStart == other.RearrangeStart
     }
 }
 impl ::core::cmp::Eq for CrossSlideThresholds {}
@@ -5788,19 +7723,23 @@ impl ::core::default::Default for CrossSlideThresholds {
     }
 }
 #[repr(C)]
-#[doc = "*Required features: `\"UI_Input\"`*"]
+#[doc = "Required features: `\"Windows_Foundation\"`"]
+#[cfg(feature = "Windows_Foundation")]
 pub struct ManipulationDelta {
     pub Translation: ::windows::Foundation::Point,
     pub Scale: f32,
     pub Rotation: f32,
     pub Expansion: f32,
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::marker::Copy for ManipulationDelta {}
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::clone::Clone for ManipulationDelta {
     fn clone(&self) -> Self {
         *self
     }
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::fmt::Debug for ManipulationDelta {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ManipulationDelta")
@@ -5811,46 +7750,48 @@ impl ::core::fmt::Debug for ManipulationDelta {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ManipulationDelta {
-    type Abi = Self;
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::TypeKind for ManipulationDelta {
+    type TypeKind = ::windows_core::CopyType;
 }
-unsafe impl ::windows::core::RuntimeType for ManipulationDelta {
-    const SIGNATURE : ::windows::core::ConstBuffer =::windows::core::ConstBuffer::from_slice ( b"struct(Microsoft.UI.Input.ManipulationDelta;struct(Windows.Foundation.Point;f4;f4);f4;f4;f4)" ) ;
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::RuntimeType for ManipulationDelta {
+    const SIGNATURE : ::windows_core::imp::ConstBuffer =::windows_core::imp::ConstBuffer::from_slice ( b"struct(Microsoft.UI.Input.ManipulationDelta;struct(Windows.Foundation.Point;f4;f4);f4;f4;f4)" ) ;
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::cmp::PartialEq for ManipulationDelta {
     fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            ::windows::core::memcmp(
-                self as *const _ as _,
-                other as *const _ as _,
-                core::mem::size_of::<ManipulationDelta>(),
-            ) == 0
-        }
+        self.Translation == other.Translation
+            && self.Scale == other.Scale
+            && self.Rotation == other.Rotation
+            && self.Expansion == other.Expansion
     }
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::cmp::Eq for ManipulationDelta {}
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::default::Default for ManipulationDelta {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }
 }
 #[repr(C)]
-#[doc = "*Required features: `\"UI_Input\"`*"]
+#[doc = "Required features: `\"Windows_Foundation\"`"]
+#[cfg(feature = "Windows_Foundation")]
 pub struct ManipulationVelocities {
     pub Linear: ::windows::Foundation::Point,
     pub Angular: f32,
     pub Expansion: f32,
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::marker::Copy for ManipulationVelocities {}
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::clone::Clone for ManipulationVelocities {
     fn clone(&self) -> Self {
         *self
     }
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::fmt::Debug for ManipulationVelocities {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_struct("ManipulationVelocities")
@@ -5860,29 +7801,78 @@ impl ::core::fmt::Debug for ManipulationVelocities {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for ManipulationVelocities {
-    type Abi = Self;
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::TypeKind for ManipulationVelocities {
+    type TypeKind = ::windows_core::CopyType;
 }
-unsafe impl ::windows::core::RuntimeType for ManipulationVelocities {
-    const SIGNATURE : ::windows::core::ConstBuffer =::windows::core::ConstBuffer::from_slice ( b"struct(Microsoft.UI.Input.ManipulationVelocities;struct(Windows.Foundation.Point;f4;f4);f4;f4)" ) ;
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::RuntimeType for ManipulationVelocities {
+    const SIGNATURE : ::windows_core::imp::ConstBuffer =::windows_core::imp::ConstBuffer::from_slice ( b"struct(Microsoft.UI.Input.ManipulationVelocities;struct(Windows.Foundation.Point;f4;f4);f4;f4)" ) ;
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::cmp::PartialEq for ManipulationVelocities {
     fn eq(&self, other: &Self) -> bool {
-        unsafe {
-            ::windows::core::memcmp(
-                self as *const _ as _,
-                other as *const _ as _,
-                core::mem::size_of::<ManipulationVelocities>(),
-            ) == 0
-        }
+        self.Linear == other.Linear
+            && self.Angular == other.Angular
+            && self.Expansion == other.Expansion
     }
 }
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::cmp::Eq for ManipulationVelocities {}
+#[cfg(feature = "Windows_Foundation")]
 impl ::core::default::Default for ManipulationVelocities {
+    fn default() -> Self {
+        unsafe { ::core::mem::zeroed() }
+    }
+}
+#[repr(C)]
+pub struct PhysicalKeyStatus {
+    pub RepeatCount: u32,
+    pub ScanCode: u32,
+    pub IsExtendedKey: bool,
+    pub IsMenuKeyDown: bool,
+    pub WasKeyDown: bool,
+    pub IsKeyReleased: bool,
+}
+impl ::core::marker::Copy for PhysicalKeyStatus {}
+impl ::core::clone::Clone for PhysicalKeyStatus {
+    fn clone(&self) -> Self {
+        *self
+    }
+}
+impl ::core::fmt::Debug for PhysicalKeyStatus {
+    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
+        f.debug_struct("PhysicalKeyStatus")
+            .field("RepeatCount", &self.RepeatCount)
+            .field("ScanCode", &self.ScanCode)
+            .field("IsExtendedKey", &self.IsExtendedKey)
+            .field("IsMenuKeyDown", &self.IsMenuKeyDown)
+            .field("WasKeyDown", &self.WasKeyDown)
+            .field("IsKeyReleased", &self.IsKeyReleased)
+            .finish()
+    }
+}
+impl ::windows_core::TypeKind for PhysicalKeyStatus {
+    type TypeKind = ::windows_core::CopyType;
+}
+impl ::windows_core::RuntimeType for PhysicalKeyStatus {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"struct(Microsoft.UI.Input.PhysicalKeyStatus;u4;u4;b1;b1;b1;b1)",
+        );
+}
+impl ::core::cmp::PartialEq for PhysicalKeyStatus {
+    fn eq(&self, other: &Self) -> bool {
+        self.RepeatCount == other.RepeatCount
+            && self.ScanCode == other.ScanCode
+            && self.IsExtendedKey == other.IsExtendedKey
+            && self.IsMenuKeyDown == other.IsMenuKeyDown
+            && self.WasKeyDown == other.WasKeyDown
+            && self.IsKeyReleased == other.IsKeyReleased
+    }
+}
+impl ::core::cmp::Eq for PhysicalKeyStatus {}
+impl ::core::default::Default for PhysicalKeyStatus {
     fn default() -> Self {
         unsafe { ::core::mem::zeroed() }
     }

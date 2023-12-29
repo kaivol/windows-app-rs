@@ -1,186 +1,171 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICompositorController(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ICompositorController {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICompositorController(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICompositorController {
     type Vtable = ICompositorController_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ICompositorController {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xcc107cdc_558f_5d1a_96a5_a735ac04386b);
+unsafe impl ::windows_core::ComInterface for ICompositorController {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xcc107cdc_558f_5d1a_96a5_a735ac04386b);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositorController_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Compositor: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub Commit:
-        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT,
+        unsafe extern "system" fn(this: *mut ::core::ffi::c_void) -> ::windows_core::HRESULT,
+    #[cfg(feature = "Windows_Foundation")]
     pub EnsurePreviousCommitCompletedAsync: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
     )
-        -> ::windows::core::HRESULT,
+        -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    EnsurePreviousCommitCompletedAsync: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub CommitNeeded: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         handler: *mut ::core::ffi::c_void,
         result__: *mut ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    CommitNeeded: usize,
+    #[cfg(feature = "Windows_Foundation")]
     pub RemoveCommitNeeded: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
+    #[cfg(not(feature = "Windows_Foundation"))]
+    RemoveCommitNeeded: usize,
 }
-#[doc = "*Required features: `\"UI_Composition_Core\"`*"]
 #[repr(transparent)]
-pub struct CompositorController(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct CompositorController(::windows_core::IUnknown);
 impl CompositorController {
-    pub fn new() -> ::windows::core::Result<Self> {
+    pub fn new() -> ::windows_core::Result<Self> {
         Self::IActivationFactory(|f| f.ActivateInstance::<Self>())
     }
     fn IActivationFactory<
         R,
-        F: FnOnce(&::windows::core::IGenericFactory) -> ::windows::core::Result<R>,
+        F: FnOnce(&::windows_core::imp::IGenericFactory) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             CompositorController,
-            ::windows::core::IGenericFactory,
-        > = ::windows::core::FactoryCache::new();
+            ::windows_core::imp::IGenericFactory,
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
-    pub fn Close(&self) -> ::windows::core::Result<()> {
-        let this = &::windows::core::Interface::cast::<::windows::Foundation::IClosable>(self)?;
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn Close(&self) -> ::windows_core::Result<()> {
+        let this = &::windows_core::ComInterface::cast::<::windows::Foundation::IClosable>(self)?;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Close)(::windows::core::Vtable::as_raw(this))
+            (::windows_core::Interface::vtable(this).Close)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
     }
-    pub fn Compositor(&self) -> ::windows::core::Result<super::Compositor> {
+    pub fn Compositor(&self) -> ::windows_core::Result<super::Compositor> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).Compositor)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).Compositor)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<super::Compositor>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn Commit(&self) -> ::windows::core::Result<()> {
+    pub fn Commit(&self) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Commit)(::windows::core::Vtable::as_raw(this))
-                .ok()
+            (::windows_core::Interface::vtable(this).Commit)(::windows_core::Interface::as_raw(
+                this,
+            ))
+            .ok()
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn EnsurePreviousCommitCompletedAsync(
         &self,
-    ) -> ::windows::core::Result<::windows::Foundation::IAsyncAction> {
+    ) -> ::windows_core::Result<::windows::Foundation::IAsyncAction> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).EnsurePreviousCommitCompletedAsync)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).EnsurePreviousCommitCompletedAsync)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::IAsyncAction>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn CommitNeeded(
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub fn CommitNeeded<P0>(
         &self,
-        handler: &::windows::Foundation::TypedEventHandler<
-            CompositorController,
-            ::windows::core::IInspectable,
+        handler: P0,
+    ) -> ::windows_core::Result<::windows::Foundation::EventRegistrationToken>
+    where
+        P0: ::windows_core::IntoParam<
+            ::windows::Foundation::TypedEventHandler<
+                CompositorController,
+                ::windows_core::IInspectable,
+            >,
         >,
-    ) -> ::windows::core::Result<::windows::Foundation::EventRegistrationToken> {
+    {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).CommitNeeded)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(handler),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CommitNeeded)(
+                ::windows_core::Interface::as_raw(this),
+                handler.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<::windows::Foundation::EventRegistrationToken>(result__)
+            .from_abi(result__)
         }
     }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
     pub fn RemoveCommitNeeded(
         &self,
         token: ::windows::Foundation::EventRegistrationToken,
-    ) -> ::windows::core::Result<()> {
+    ) -> ::windows_core::Result<()> {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).RemoveCommitNeeded)(
-                ::windows::core::Vtable::as_raw(this),
+            (::windows_core::Interface::vtable(this).RemoveCommitNeeded)(
+                ::windows_core::Interface::as_raw(this),
                 token,
             )
             .ok()
         }
     }
 }
-impl ::core::clone::Clone for CompositorController {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for CompositorController {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for CompositorController {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for CompositorController {}
-impl ::core::fmt::Debug for CompositorController {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("CompositorController").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for CompositorController {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Composition.Core.CompositorController;{cc107cdc-558f-5d1a-96a5-a735ac04386b})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for CompositorController {
+unsafe impl ::windows_core::Interface for CompositorController {
     type Vtable = ICompositorController_Vtbl;
 }
-unsafe impl ::windows::core::Interface for CompositorController {
-    const IID: ::windows::core::GUID = <ICompositorController as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for CompositorController {
+    const IID: ::windows_core::GUID = <ICompositorController as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for CompositorController {
+impl ::windows_core::RuntimeName for CompositorController {
     const NAME: &'static str = "Microsoft.UI.Composition.Core.CompositorController";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     CompositorController,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
-impl ::core::convert::TryFrom<CompositorController> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: CompositorController) -> ::windows::core::Result<Self> {
-        ::core::convert::TryFrom::try_from(&value)
-    }
-}
-impl ::core::convert::TryFrom<&CompositorController> for ::windows::Foundation::IClosable {
-    type Error = ::windows::core::Error;
-    fn try_from(value: &CompositorController) -> ::windows::core::Result<Self> {
-        ::windows::core::Interface::cast(value)
-    }
-}
-impl<'a> ::core::convert::TryFrom<&CompositorController>
-    for ::windows::core::InParam<'a, ::windows::Foundation::IClosable>
-{
-    type Error = ::windows::core::Error;
-    fn try_from(value: &CompositorController) -> ::windows::core::Result<Self> {
-        let item = ::std::convert::TryInto::try_into(value)?;
-        Ok(::windows::core::InParam::owned(item))
-    }
-}
+#[cfg(feature = "Windows_Foundation")]
+impl ::windows_core::CanTryInto<::windows::Foundation::IClosable> for CompositorController {}
 unsafe impl ::core::marker::Send for CompositorController {}
 unsafe impl ::core::marker::Sync for CompositorController {}
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

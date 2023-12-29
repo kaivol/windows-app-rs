@@ -1,4 +1,3 @@
-#[cfg(feature = "Windows_Security_AccessControl")]
+#[cfg(feature = "Microsoft_Windows_Security_AccessControl")]
+#[doc = "Required features: `\"Microsoft_Windows_Security_AccessControl\"`"]
 pub mod AccessControl;
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

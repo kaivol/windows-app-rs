@@ -1,71 +1,72 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ISecurityDescriptorHelpersStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ISecurityDescriptorHelpersStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ISecurityDescriptorHelpersStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ISecurityDescriptorHelpersStatics {
     type Vtable = ISecurityDescriptorHelpersStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ISecurityDescriptorHelpersStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x14fa9e8d_59f0_5017_852f_3ae24fd5ebb1);
+unsafe impl ::windows_core::ComInterface for ISecurityDescriptorHelpersStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x14fa9e8d_59f0_5017_852f_3ae24fd5ebb1);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ISecurityDescriptorHelpersStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub GetSddlForAppContainerNames: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         accessRequests_array_size: u32,
-        accessrequests: *const ::core::mem::ManuallyDrop<AppContainerNameAndAccess>,
-        principalstringsid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+        accessrequests: *const ::std::mem::MaybeUninit<AppContainerNameAndAccess>,
+        principalstringsid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         principalaccessmask: u32,
-        result__: *mut ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
-    ) -> ::windows::core::HRESULT,
+        result__: *mut ::std::mem::MaybeUninit<::windows_core::HSTRING>,
+    ) -> ::windows_core::HRESULT,
     pub GetSecurityDescriptorBytesFromAppContainerNames:
         unsafe extern "system" fn(
             this: *mut ::core::ffi::c_void,
             accessRequests_array_size: u32,
-            accessrequests: *const ::core::mem::ManuallyDrop<AppContainerNameAndAccess>,
-            principalstringsid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>,
+            accessrequests: *const ::std::mem::MaybeUninit<AppContainerNameAndAccess>,
+            principalstringsid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
             principalaccessmask: u32,
             result_size__: *mut u32,
             result__: *mut *mut u8,
-        ) -> ::windows::core::HRESULT,
+        ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"Windows_Security_AccessControl\"`*"]
 pub struct SecurityDescriptorHelpers;
 impl SecurityDescriptorHelpers {
     pub fn GetSddlForAppContainerNames(
         accessrequests: &[AppContainerNameAndAccess],
-        principalstringsid: &::windows::core::HSTRING,
+        principalstringsid: &::windows_core::HSTRING,
         principalaccessmask: u32,
-    ) -> ::windows::core::Result<::windows::core::HSTRING> {
+    ) -> ::windows_core::Result<::windows_core::HSTRING> {
         Self::ISecurityDescriptorHelpersStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetSddlForAppContainerNames)(
-                ::windows::core::Vtable::as_raw(this),
-                accessrequests.len() as u32,
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).GetSddlForAppContainerNames)(
+                ::windows_core::Interface::as_raw(this),
+                accessrequests.len().try_into().unwrap(),
                 ::core::mem::transmute(accessrequests.as_ptr()),
                 ::core::mem::transmute_copy(principalstringsid),
                 principalaccessmask,
-                result__.as_mut_ptr(),
+                &mut result__,
             )
-            .from_abi::<::windows::core::HSTRING>(result__)
+            .from_abi(result__)
         })
     }
     pub fn GetSecurityDescriptorBytesFromAppContainerNames(
         accessrequests: &[AppContainerNameAndAccess],
-        principalstringsid: &::windows::core::HSTRING,
+        principalstringsid: &::windows_core::HSTRING,
         principalaccessmask: u32,
-    ) -> ::windows::core::Result<::windows::core::Array<u8>> {
+    ) -> ::windows_core::Result<::windows_core::Array<u8>> {
         Self::ISecurityDescriptorHelpersStatics(|this| unsafe {
             let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).GetSecurityDescriptorBytesFromAppContainerNames)(
-                ::windows::core::Vtable::as_raw(this),
-                accessrequests.len() as u32,
+            (::windows_core::Interface::vtable(this)
+                .GetSecurityDescriptorBytesFromAppContainerNames)(
+                ::windows_core::Interface::as_raw(this),
+                accessrequests.len().try_into().unwrap(),
                 ::core::mem::transmute(accessrequests.as_ptr()),
                 ::core::mem::transmute_copy(principalstringsid),
                 principalaccessmask,
-                ::windows::core::Array::<u8>::set_abi_len(result__.assume_init_mut()),
+                ::windows_core::Array::<u8>::set_abi_len(::std::mem::transmute(&mut result__)),
                 result__.as_mut_ptr() as *mut _ as _,
             )
             .and_then(|| result__.assume_init())
@@ -74,24 +75,23 @@ impl SecurityDescriptorHelpers {
     #[doc(hidden)]
     pub fn ISecurityDescriptorHelpersStatics<
         R,
-        F: FnOnce(&ISecurityDescriptorHelpersStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&ISecurityDescriptorHelpersStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             SecurityDescriptorHelpers,
             ISecurityDescriptorHelpersStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::windows::core::RuntimeName for SecurityDescriptorHelpers {
+impl ::windows_core::RuntimeName for SecurityDescriptorHelpers {
     const NAME: &'static str = "Microsoft.Windows.Security.AccessControl.SecurityDescriptorHelpers";
 }
 #[repr(C)]
-#[doc = "*Required features: `\"Windows_Security_AccessControl\"`*"]
 pub struct AppContainerNameAndAccess {
-    pub appContainerName: ::windows::core::HSTRING,
+    pub appContainerName: ::windows_core::HSTRING,
     pub accessMask: u32,
 }
 impl ::core::clone::Clone for AppContainerNameAndAccess {
@@ -110,17 +110,14 @@ impl ::core::fmt::Debug for AppContainerNameAndAccess {
             .finish()
     }
 }
-unsafe impl ::windows::core::Abi for AppContainerNameAndAccess {
-    type Abi = ::core::mem::ManuallyDrop<Self>;
+impl ::windows_core::TypeKind for AppContainerNameAndAccess {
+    type TypeKind = ::windows_core::ValueType;
 }
-unsafe impl ::windows::core::RuntimeType for AppContainerNameAndAccess {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"struct(Microsoft.Windows.Security.AccessControl.AppContainerNameAndAccess;string;u4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(from.clone())
-    }
+impl ::windows_core::RuntimeType for AppContainerNameAndAccess {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"struct(Microsoft.Windows.Security.AccessControl.AppContainerNameAndAccess;string;u4)",
+        );
 }
 impl ::core::cmp::PartialEq for AppContainerNameAndAccess {
     fn eq(&self, other: &Self) -> bool {
@@ -133,5 +130,3 @@ impl ::core::default::Default for AppContainerNameAndAccess {
         unsafe { ::core::mem::zeroed() }
     }
 }
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

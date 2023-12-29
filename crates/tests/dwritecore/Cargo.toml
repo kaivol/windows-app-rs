@@ -2,7 +2,7 @@
 name = "test_dwritecore"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
 [build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
@@ -10,14 +10,13 @@ path = "../../libs/windows-app-deploy"
 [dependencies]
 once_cell = "1.12.0"
 
-[dependencies.windows]
-git = "https://github.com/kaivol/windows-rs"
-branch = "composable"
-
 [dependencies.windows_app]
 path = "../../libs/windows-app"
 features = [
     "bootstrap",
-    "WindowsAppSdk_Foundation",
-    "DirectWriteCore"
+    "DWriteCore",
+    "Windows_Win32_Foundation",
 ]
+
+[dependencies.windows]
+workspace = true

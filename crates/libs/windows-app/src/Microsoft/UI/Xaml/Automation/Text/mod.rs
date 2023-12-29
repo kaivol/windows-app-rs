@@ -1,4 +1,3 @@
-#[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TextPatternRangeEndpoint(pub i32);
@@ -17,24 +16,20 @@ impl ::core::default::Default for TextPatternRangeEndpoint {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextPatternRangeEndpoint {
-    type Abi = Self;
+impl ::windows_core::TypeKind for TextPatternRangeEndpoint {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for TextPatternRangeEndpoint {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("TextPatternRangeEndpoint").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextPatternRangeEndpoint {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Xaml.Automation.Text.TextPatternRangeEndpoint;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for TextPatternRangeEndpoint {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Xaml.Automation.Text.TextPatternRangeEndpoint;i4)",
+        );
 }
-#[doc = "*Required features: `\"UI_Xaml_Automation_Text\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct TextUnit(pub i32);
@@ -58,22 +53,17 @@ impl ::core::default::Default for TextUnit {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for TextUnit {
-    type Abi = Self;
+impl ::windows_core::TypeKind for TextUnit {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for TextUnit {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("TextUnit").field(&self.0).finish()
     }
 }
-unsafe impl ::windows::core::RuntimeType for TextUnit {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Xaml.Automation.Text.TextUnit;i4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for TextUnit {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Xaml.Automation.Text.TextUnit;i4)",
+        );
 }
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

@@ -1,6 +1,6 @@
 use ::windows::core::*;
 use ::windows_app::*;
-use windows_app::UI::{ColorHelper, Colors};
+use windows_app::Microsoft::UI::{ColorHelper, Colors};
 
 fn main() -> Result<()> {
     bootstrap::initialize()?;

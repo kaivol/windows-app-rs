@@ -1,6 +1,6 @@
-#[cfg(feature = "Graphics_DirectX")]
+#[cfg(feature = "Microsoft_Graphics_DirectX")]
+#[doc = "Required features: `\"Microsoft_Graphics_DirectX\"`"]
 pub mod DirectX;
-#[cfg(feature = "Graphics_Display")]
+#[cfg(feature = "Microsoft_Graphics_Display")]
+#[doc = "Required features: `\"Microsoft_Graphics_Display\"`"]
 pub mod Display;
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

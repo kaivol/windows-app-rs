@@ -1,259 +1,224 @@
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICompositionDebugHeatMaps(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ICompositionDebugHeatMaps {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICompositionDebugHeatMaps(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICompositionDebugHeatMaps {
     type Vtable = ICompositionDebugHeatMaps_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ICompositionDebugHeatMaps {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0x815016b8_f645_5c55_87b5_fe2167282b6f);
+unsafe impl ::windows_core::ComInterface for ICompositionDebugHeatMaps {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0x815016b8_f645_5c55_87b5_fe2167282b6f);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositionDebugHeatMaps_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub Hide: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         subtree: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ShowMemoryUsage: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         subtree: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ShowOverdraw: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         subtree: *mut ::core::ffi::c_void,
         contentkinds: CompositionDebugOverdrawContentKinds,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
     pub ShowRedraw: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         subtree: *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICompositionDebugSettings(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ICompositionDebugSettings {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICompositionDebugSettings(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICompositionDebugSettings {
     type Vtable = ICompositionDebugSettings_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ICompositionDebugSettings {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xf4c0c0f6_7f5f_5014_a0d6_c8c7eeecace6);
+unsafe impl ::windows_core::ComInterface for ICompositionDebugSettings {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xf4c0c0f6_7f5f_5014_a0d6_c8c7eeecace6);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositionDebugSettings_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub HeatMaps: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
 #[doc(hidden)]
 #[repr(transparent)]
-pub struct ICompositionDebugSettingsStatics(::windows::core::IUnknown);
-unsafe impl ::windows::core::Vtable for ICompositionDebugSettingsStatics {
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct ICompositionDebugSettingsStatics(::windows_core::IUnknown);
+unsafe impl ::windows_core::Interface for ICompositionDebugSettingsStatics {
     type Vtable = ICompositionDebugSettingsStatics_Vtbl;
 }
-unsafe impl ::windows::core::Interface for ICompositionDebugSettingsStatics {
-    const IID: ::windows::core::GUID =
-        ::windows::core::GUID::from_u128(0xb56f8aab_2b8c_51aa_b974_10e5c517f50e);
+unsafe impl ::windows_core::ComInterface for ICompositionDebugSettingsStatics {
+    const IID: ::windows_core::GUID =
+        ::windows_core::GUID::from_u128(0xb56f8aab_2b8c_51aa_b974_10e5c517f50e);
 }
 #[repr(C)]
 #[doc(hidden)]
 pub struct ICompositionDebugSettingsStatics_Vtbl {
-    pub base__: ::windows::core::IInspectable_Vtbl,
+    pub base__: ::windows_core::IInspectable_Vtbl,
     pub TryGetSettings: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         compositor: *mut ::core::ffi::c_void,
         result__: *mut *mut ::core::ffi::c_void,
-    ) -> ::windows::core::HRESULT,
+    ) -> ::windows_core::HRESULT,
 }
-#[doc = "*Required features: `\"UI_Composition_Diagnostics\"`*"]
 #[repr(transparent)]
-pub struct CompositionDebugHeatMaps(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct CompositionDebugHeatMaps(::windows_core::IUnknown);
 impl CompositionDebugHeatMaps {
-    pub fn Hide<'a, P0>(&self, subtree: P0) -> ::windows::core::Result<()>
+    pub fn Hide<P0>(&self, subtree: P0) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Visual>>,
+        P0: ::windows_core::TryIntoParam<super::Visual>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).Hide)(
-                ::windows::core::Vtable::as_raw(this),
-                subtree.into().abi(),
+            (::windows_core::Interface::vtable(this).Hide)(
+                ::windows_core::Interface::as_raw(this),
+                subtree.try_into_param()?.abi(),
             )
             .ok()
         }
     }
-    pub fn ShowMemoryUsage<'a, P0>(&self, subtree: P0) -> ::windows::core::Result<()>
+    pub fn ShowMemoryUsage<P0>(&self, subtree: P0) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Visual>>,
+        P0: ::windows_core::TryIntoParam<super::Visual>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ShowMemoryUsage)(
-                ::windows::core::Vtable::as_raw(this),
-                subtree.into().abi(),
+            (::windows_core::Interface::vtable(this).ShowMemoryUsage)(
+                ::windows_core::Interface::as_raw(this),
+                subtree.try_into_param()?.abi(),
             )
             .ok()
         }
     }
-    pub fn ShowOverdraw<'a, P0>(
+    pub fn ShowOverdraw<P0>(
         &self,
         subtree: P0,
         contentkinds: CompositionDebugOverdrawContentKinds,
-    ) -> ::windows::core::Result<()>
+    ) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Visual>>,
+        P0: ::windows_core::TryIntoParam<super::Visual>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ShowOverdraw)(
-                ::windows::core::Vtable::as_raw(this),
-                subtree.into().abi(),
+            (::windows_core::Interface::vtable(this).ShowOverdraw)(
+                ::windows_core::Interface::as_raw(this),
+                subtree.try_into_param()?.abi(),
                 contentkinds,
             )
             .ok()
         }
     }
-    pub fn ShowRedraw<'a, P0>(&self, subtree: P0) -> ::windows::core::Result<()>
+    pub fn ShowRedraw<P0>(&self, subtree: P0) -> ::windows_core::Result<()>
     where
-        P0: ::std::convert::Into<::windows::core::InParam<'a, super::Visual>>,
+        P0: ::windows_core::TryIntoParam<super::Visual>,
     {
         let this = self;
         unsafe {
-            (::windows::core::Vtable::vtable(this).ShowRedraw)(
-                ::windows::core::Vtable::as_raw(this),
-                subtree.into().abi(),
+            (::windows_core::Interface::vtable(this).ShowRedraw)(
+                ::windows_core::Interface::as_raw(this),
+                subtree.try_into_param()?.abi(),
             )
             .ok()
         }
     }
 }
-impl ::core::clone::Clone for CompositionDebugHeatMaps {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for CompositionDebugHeatMaps {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for CompositionDebugHeatMaps {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for CompositionDebugHeatMaps {}
-impl ::core::fmt::Debug for CompositionDebugHeatMaps {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("CompositionDebugHeatMaps").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for CompositionDebugHeatMaps {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Composition.Diagnostics.CompositionDebugHeatMaps;{815016b8-f645-5c55-87b5-fe2167282b6f})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for CompositionDebugHeatMaps {
+unsafe impl ::windows_core::Interface for CompositionDebugHeatMaps {
     type Vtable = ICompositionDebugHeatMaps_Vtbl;
 }
-unsafe impl ::windows::core::Interface for CompositionDebugHeatMaps {
-    const IID: ::windows::core::GUID =
-        <ICompositionDebugHeatMaps as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for CompositionDebugHeatMaps {
+    const IID: ::windows_core::GUID =
+        <ICompositionDebugHeatMaps as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for CompositionDebugHeatMaps {
+impl ::windows_core::RuntimeName for CompositionDebugHeatMaps {
     const NAME: &'static str = "Microsoft.UI.Composition.Diagnostics.CompositionDebugHeatMaps";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     CompositionDebugHeatMaps,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for CompositionDebugHeatMaps {}
 unsafe impl ::core::marker::Sync for CompositionDebugHeatMaps {}
-#[doc = "*Required features: `\"UI_Composition_Diagnostics\"`*"]
 #[repr(transparent)]
-pub struct CompositionDebugSettings(::windows::core::IUnknown);
+#[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
+pub struct CompositionDebugSettings(::windows_core::IUnknown);
 impl CompositionDebugSettings {
-    pub fn HeatMaps(&self) -> ::windows::core::Result<CompositionDebugHeatMaps> {
+    pub fn HeatMaps(&self) -> ::windows_core::Result<CompositionDebugHeatMaps> {
         let this = self;
         unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).HeatMaps)(
-                ::windows::core::Vtable::as_raw(this),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).HeatMaps)(
+                ::windows_core::Interface::as_raw(this),
+                &mut result__,
             )
-            .from_abi::<CompositionDebugHeatMaps>(result__)
+            .from_abi(result__)
         }
     }
-    pub fn TryGetSettings(
-        compositor: &super::Compositor,
-    ) -> ::windows::core::Result<CompositionDebugSettings> {
+    pub fn TryGetSettings<P0>(compositor: P0) -> ::windows_core::Result<CompositionDebugSettings>
+    where
+        P0: ::windows_core::IntoParam<super::Compositor>,
+    {
         Self::ICompositionDebugSettingsStatics(|this| unsafe {
-            let mut result__ = ::core::mem::MaybeUninit::zeroed();
-            (::windows::core::Vtable::vtable(this).TryGetSettings)(
-                ::windows::core::Vtable::as_raw(this),
-                ::core::mem::transmute_copy(compositor),
-                result__.as_mut_ptr(),
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).TryGetSettings)(
+                ::windows_core::Interface::as_raw(this),
+                compositor.into_param().abi(),
+                &mut result__,
             )
-            .from_abi::<CompositionDebugSettings>(result__)
+            .from_abi(result__)
         })
     }
     #[doc(hidden)]
     pub fn ICompositionDebugSettingsStatics<
         R,
-        F: FnOnce(&ICompositionDebugSettingsStatics) -> ::windows::core::Result<R>,
+        F: FnOnce(&ICompositionDebugSettingsStatics) -> ::windows_core::Result<R>,
     >(
         callback: F,
-    ) -> ::windows::core::Result<R> {
-        static SHARED: ::windows::core::FactoryCache<
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
             CompositionDebugSettings,
             ICompositionDebugSettingsStatics,
-        > = ::windows::core::FactoryCache::new();
+        > = ::windows_core::imp::FactoryCache::new();
         SHARED.call(callback)
     }
 }
-impl ::core::clone::Clone for CompositionDebugSettings {
-    fn clone(&self) -> Self {
-        Self(self.0.clone())
-    }
+impl ::windows_core::RuntimeType for CompositionDebugSettings {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::for_class::<Self>();
 }
-impl ::core::cmp::PartialEq for CompositionDebugSettings {
-    fn eq(&self, other: &Self) -> bool {
-        self.0 == other.0
-    }
-}
-impl ::core::cmp::Eq for CompositionDebugSettings {}
-impl ::core::fmt::Debug for CompositionDebugSettings {
-    fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
-        f.debug_tuple("CompositionDebugSettings").field(&self.0).finish()
-    }
-}
-unsafe impl ::windows::core::RuntimeType for CompositionDebugSettings {
-    const SIGNATURE : ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice ( b"rc(Microsoft.UI.Composition.Diagnostics.CompositionDebugSettings;{f4c0c0f6-7f5f-5014-a0d6-c8c7eeecace6})" ) ;
-    type DefaultType = ::core::option::Option<Self>;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        from.as_ref().cloned().ok_or(::windows::core::Error::OK)
-    }
-}
-unsafe impl ::windows::core::Vtable for CompositionDebugSettings {
+unsafe impl ::windows_core::Interface for CompositionDebugSettings {
     type Vtable = ICompositionDebugSettings_Vtbl;
 }
-unsafe impl ::windows::core::Interface for CompositionDebugSettings {
-    const IID: ::windows::core::GUID =
-        <ICompositionDebugSettings as ::windows::core::Interface>::IID;
+unsafe impl ::windows_core::ComInterface for CompositionDebugSettings {
+    const IID: ::windows_core::GUID =
+        <ICompositionDebugSettings as ::windows_core::ComInterface>::IID;
 }
-impl ::windows::core::RuntimeName for CompositionDebugSettings {
+impl ::windows_core::RuntimeName for CompositionDebugSettings {
     const NAME: &'static str = "Microsoft.UI.Composition.Diagnostics.CompositionDebugSettings";
 }
-::windows::core::interface_hierarchy!(
+::windows_core::imp::interface_hierarchy!(
     CompositionDebugSettings,
-    ::windows::core::IUnknown,
-    ::windows::core::IInspectable
+    ::windows_core::IUnknown,
+    ::windows_core::IInspectable
 );
 unsafe impl ::core::marker::Send for CompositionDebugSettings {}
 unsafe impl ::core::marker::Sync for CompositionDebugSettings {}
-#[doc = "*Required features: `\"UI_Composition_Diagnostics\"`*"]
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq)]
 pub struct CompositionDebugOverdrawContentKinds(pub u32);
@@ -279,12 +244,17 @@ impl ::core::default::Default for CompositionDebugOverdrawContentKinds {
         Self(0)
     }
 }
-unsafe impl ::windows::core::Abi for CompositionDebugOverdrawContentKinds {
-    type Abi = Self;
+impl ::windows_core::TypeKind for CompositionDebugOverdrawContentKinds {
+    type TypeKind = ::windows_core::CopyType;
 }
 impl ::core::fmt::Debug for CompositionDebugOverdrawContentKinds {
     fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
         f.debug_tuple("CompositionDebugOverdrawContentKinds").field(&self.0).finish()
+    }
+}
+impl CompositionDebugOverdrawContentKinds {
+    pub const fn contains(&self, other: Self) -> bool {
+        self.0 & other.0 == other.0
     }
 }
 impl ::core::ops::BitOr for CompositionDebugOverdrawContentKinds {
@@ -315,14 +285,9 @@ impl ::core::ops::Not for CompositionDebugOverdrawContentKinds {
         Self(self.0.not())
     }
 }
-unsafe impl ::windows::core::RuntimeType for CompositionDebugOverdrawContentKinds {
-    const SIGNATURE: ::windows::core::ConstBuffer = ::windows::core::ConstBuffer::from_slice(
-        b"enum(Microsoft.UI.Composition.Diagnostics.CompositionDebugOverdrawContentKinds;u4)",
-    );
-    type DefaultType = Self;
-    fn from_default(from: &Self::DefaultType) -> ::windows::core::Result<Self> {
-        Ok(*from)
-    }
+impl ::windows_core::RuntimeType for CompositionDebugOverdrawContentKinds {
+    const SIGNATURE: ::windows_core::imp::ConstBuffer =
+        ::windows_core::imp::ConstBuffer::from_slice(
+            b"enum(Microsoft.UI.Composition.Diagnostics.CompositionDebugOverdrawContentKinds;u4)",
+        );
 }
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");

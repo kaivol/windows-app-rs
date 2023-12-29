@@ -1,18 +1,18 @@
-#[cfg(feature = "DirectWriteCore")]
-pub mod DirectWriteCore;
-#[cfg(feature = "Foundation")]
+#[cfg(feature = "Microsoft_Foundation")]
+#[doc = "Required features: `\"Microsoft_Foundation\"`"]
 pub mod Foundation;
-#[cfg(feature = "Graphics")]
+#[cfg(feature = "Microsoft_Graphics")]
+#[doc = "Required features: `\"Microsoft_Graphics\"`"]
 pub mod Graphics;
-#[cfg(feature = "MRM")]
-pub mod MRM;
-#[cfg(feature = "UI")]
+#[cfg(feature = "Microsoft_UI")]
+#[doc = "Required features: `\"Microsoft_UI\"`"]
 pub mod UI;
-#[cfg(feature = "Web")]
+#[cfg(feature = "Microsoft_Web")]
+#[doc = "Required features: `\"Microsoft_Web\"`"]
 pub mod Web;
-#[cfg(feature = "Windows")]
+#[cfg(feature = "Microsoft_Windows")]
+#[doc = "Required features: `\"Microsoft_Windows\"`"]
 pub mod Windows;
-#[cfg(feature = "WindowsAppSdk")]
-pub mod WindowsAppSdk;
-#[cfg(feature = "implement")]
-::core::include!("impl.rs");
+#[cfg(feature = "Microsoft_WindowsAppRuntime")]
+#[doc = "Required features: `\"Microsoft_WindowsAppRuntime\"`"]
+pub mod WindowsAppRuntime;

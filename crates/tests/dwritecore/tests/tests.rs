@@ -1,11 +1,10 @@
 #![cfg(test)]
 
 use once_cell::sync::Lazy;
-use windows::core::{Interface, Result};
-use windows::w;
+use windows::core::{w, ComInterface, Result};
 use windows::Win32::Foundation::BOOL;
 use windows_app::bootstrap;
-use windows_app::DirectWriteCore::*;
+use windows_app::DWriteCore::*;
 
 static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(|| bootstrap::initialize());
 

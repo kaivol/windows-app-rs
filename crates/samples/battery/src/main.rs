@@ -1,5 +1,5 @@
 use ::windows_app::bootstrap;
-use ::windows_app::Windows::System::Power::*;
+use ::windows_app::Microsoft::Windows::System::Power::PowerManager;
 
 fn main() -> ::windows::core::Result<()> {
     bootstrap::initialize()?;

@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Project Sdk="Microsoft.Windows.WinmdGenerator/0.34.8-preview ">
+<Project Sdk="Microsoft.Windows.WinmdGenerator/0.56.13-preview">
 
     <PropertyGroup Label="Globals">
-        <OutputWinmd>../winmd/Microsoft.WindowsAppSdk.Generated.winmd</OutputWinmd>
-        <WinmdVersion>4.0.0</WinmdVersion>
-        <ExcludeFromCrossarch>Microsoft.MRM;Microsoft.UI.Xaml;Microsoft.UI.Xaml.Hosting;Microsoft.UI.Xaml.Media;Microsoft.WindowsAppSdk.Foundation;Microsoft.DirectWriteCore</ExcludeFromCrossarch>
+        <OutputWinmd>../winmd/Microsoft.winmd</OutputWinmd>
+        <WinmdVersion>255.255.255.255</WinmdVersion>
     </PropertyGroup>
 
     <Target Name="CopyMetadata" AfterTargets="Build">
         <ItemGroup>
-            <WinSdkMetadata Include="$(PkgMicrosoft_Windows_SDK_Contracts)\ref\netstandard2.0\*.winmd" />
-        </ItemGroup>
-        <ItemGroup>
-            <Win32Metadata Include="$(PkgMicrosoft_Windows_SDK_Win32Metadata)\Windows.Win32.winmd" />
-        </ItemGroup>
-        <ItemGroup>
             <WindowsAppSdkMetadata Include="$(PkgMicrosoft_WindowsAppSDK)\lib\uap10.0\*.winmd" />
             <WindowsAppSdkMetadata Include="$(PkgMicrosoft_WindowsAppSDK)\lib\uap10.0.18362\*.winmd" />
         </ItemGroup>
-        <Copy SourceFiles="@(WinSdkMetadata)" DestinationFolder="../winmd" />
-        <Copy SourceFiles="@(Win32Metadata)" DestinationFolder="../winmd" />
         <Copy SourceFiles="@(WindowsAppSdkMetadata)" DestinationFolder="../winmd" />
     </Target>
 
@@ -47,52 +38,55 @@
     </Target>
 
     <ItemGroup>
-        <MuxHeaders Include="$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.*.h" />
-        <MuxHostingHeaders Include="$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.hosting.*.h" />
-        <MuxMediaHeaders Include="$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.media.*.h" />
-        <DirectWriteHeaders Include="$(PkgMicrosoft_WindowsAppSDK)\include\dwrite*.h" />
+        <ImportLibs
+            Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-*\*.lib" />
 
-        <ImportLibs Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-*\*.lib" />
+        <DirectWriteHeaders
+            Include="$(PkgMicrosoft_WindowsAppSDK)\include\dwrite*.h" />
+        <Partition Include="dwritecore.cpp">
+            <TraverseFiles>@(DirectWriteHeaders)</TraverseFiles>
+            <Namespace>DWriteCore</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="mrm.cpp">
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\mrm.h</TraverseFiles>
+            <Namespace>MRM</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
 
         <Partition Include="microsoft.ui.xaml.cpp">
-            <TraverseFiles>@(MuxHeaders)</TraverseFiles>
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.window.h</TraverseFiles>
             <Namespace>Microsoft.UI.Xaml</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
         </Partition>
 
         <Partition Include="microsoft.ui.xaml.hosting.cpp">
-            <TraverseFiles>@(MuxHostingHeaders)</TraverseFiles>
+            <TraverseFiles>
+                $(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.hosting.desktopwindowxamlsource.h;
+                $(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.hosting.referencetracker.h
+            </TraverseFiles>
             <Namespace>Microsoft.UI.Xaml.Hosting</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
         </Partition>
 
         <Partition Include="microsoft.ui.xaml.media.cpp">
-            <TraverseFiles>@(MuxMediaHeaders)</TraverseFiles>
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.media.dxinterop.h</TraverseFiles>
             <Namespace>Microsoft.UI.Xaml.Media</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
         </Partition>
 
-        <Partition Include="microsoft.mrm.cpp">
-            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\mrm.h</TraverseFiles>
-            <Namespace>Microsoft.MRM</Namespace>
-        </Partition>
-
-        <Partition Include="microsoft.directwritecore.cpp">
-            <TraverseFiles>@(DirectWriteHeaders)</TraverseFiles>
-            <Namespace>Microsoft.DirectWriteCore</Namespace>
-        </Partition>
-
-        <Partition Include="microsoft.was.foundation.cpp">
+        <Partition Include="microsoft.windowsappruntime.bootstrap.cpp">
             <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\MddBootstrap.h;$(PkgMicrosoft_WindowsAppSDK)\include\WindowsAppSDK-VersionInfo.h</TraverseFiles>
-            <Namespace>Microsoft.WindowsAppSdk.Foundation</Namespace>
+            <Namespace>Microsoft.WindowsAppRuntime.Bootstrap</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
         </Partition>
 
-        <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.2" GeneratePathProperty="true">
+        <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.2428" GeneratePathProperty="true">
             <IncludeAssets>none</IncludeAssets>
         </PackageReference>
 
-<!--         <PackageReference Include="Microsoft.Windows.SDK.Win32Metadata" Version="34.0.8-preview" GeneratePathProperty="true"> -->
-<!--             <IncludeAssets>none</IncludeAssets> -->
-<!--         </PackageReference> -->
-
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.220930.4-preview2" GeneratePathProperty="true">
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000" GeneratePathProperty="true">
             <IncludeAssets>none</IncludeAssets>
         </PackageReference>
 

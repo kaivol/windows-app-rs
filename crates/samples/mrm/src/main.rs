@@ -1,6 +1,7 @@
-use ::windows::core::*;
-use ::windows_app::Windows::ApplicationModel::Resources::*;
-use ::windows_app::*;
+use ::windows::core::Result;
+use windows::core::h;
+use ::windows_app::Microsoft::Windows::ApplicationModel::Resources::*;
+use windows_app::bootstrap;
 
 fn main() -> Result<()> {
     bootstrap::initialize()?;

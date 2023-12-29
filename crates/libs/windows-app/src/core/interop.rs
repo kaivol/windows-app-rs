@@ -1,40 +1,21 @@
 #![allow(non_snake_case)]
 
-use std::convert::TryFrom;
 use std::marker::PhantomData;
 use std::mem;
 use std::ptr::null_mut;
 use std::sync::atomic::{AtomicPtr, Ordering};
 
-use windows::core::{Error as WinError, Result as WinResult, HRESULT, PCSTR};
-use windows::Win32::Foundation::HWND;
-use windows::Win32::Graphics::Gdi::HMONITOR;
-use windows::Win32::System::LibraryLoader::{FreeLibrary, GetProcAddress, LoadLibraryA};
-use windows::Win32::UI::WindowsAndMessaging::HICON;
+use windows::core::{s, Error as WinError, Result as WinResult, HRESULT, PCSTR};
 
-use crate::Microsoft::UI::{DisplayId, IconId, WindowId};
-
-static GetWindowIdFromWindow: FunctionCache<HWND, WindowId> =
-    FunctionCache::new(b"Windowing_GetWindowIdFromWindow\0");
-static GetWindowFromWindowId: FunctionCache<WindowId, HWND> =
-    FunctionCache::new(b"Windowing_GetWindowFromWindowId\0");
-static GetDisplayIdFromMonitor: FunctionCache<HMONITOR, DisplayId> =
-    FunctionCache::new(b"Windowing_GetDisplayIdFromMonitor\0");
-static GetMonitorFromDisplayId: FunctionCache<DisplayId, HMONITOR> =
-    FunctionCache::new(b"Windowing_GetMonitorFromDisplayId\0");
-static GetIconIdFromIcon: FunctionCache<HICON, IconId> =
-    FunctionCache::new(b"Windowing_GetIconIdFromIcon\0");
-static GetIconFromIconId: FunctionCache<IconId, HICON> =
-    FunctionCache::new(b"Windowing_GetIconFromIconId\0");
-
+unsafe impl<T1, T2: Default> Sync for FunctionCache<T1, T2> {}
 struct FunctionCache<T1, T2: Default> {
     function: AtomicPtr<()>,
-    name: &'static [u8],
+    name: PCSTR,
     _phantom: PhantomData<(T1, T2)>,
 }
 
 impl<T1, T2: Default> FunctionCache<T1, T2> {
-    const fn new(name: &'static [u8]) -> FunctionCache<T1, T2> {
+    const fn new(name: PCSTR) -> FunctionCache<T1, T2> {
         Self {
             function: AtomicPtr::new(null_mut()),
             name,
@@ -42,88 +23,123 @@ impl<T1, T2: Default> FunctionCache<T1, T2> {
         }
     }
 
-    fn get(&self) -> windows::core::Result<extern "system" fn(T1, *mut T2) -> HRESULT> {
-        let function = self.function.load(Ordering::Acquire);
-        if !(function.is_null()) {
-            Ok(unsafe { mem::transmute(function) })
+    fn call(&self, value: T1) -> WinResult<T2> {
+        let function = self.function.load(Ordering::Relaxed);
+        let function: extern "system" fn(T1, *mut T2) -> HRESULT = if !(function.is_null()) {
+            unsafe { mem::transmute(function) }
         } else {
             unsafe {
-                delay_load(b"Microsoft.Internal.FrameworkUdk.dll\0", self.name)
-                    .map(|f| mem::transmute(f))
+                let function = windows::core::imp::delay_load(
+                    s!("Microsoft.Internal.FrameworkUdk.dll"),
+                    self.name,
+                )
+                .ok_or_else(|| {
+                    WinError::new(
+                        HRESULT(0x80004005u32 as i32),
+                        format!("Could not load load function {}", self.name.display()).into(),
+                    )
+                })?;
+                self.function.store(function as *mut _, Ordering::Relaxed);
+                function
             }
+        };
+        let mut result = T2::default();
+        function(value, &mut result).and_then(|| result)
+    }
+}
+
+#[cfg(all(feature = "Microsoft_UI", feature = "Windows_Win32_Foundation"))]
+mod window {
+    use windows::core::Error as WinError;
+    use windows::Win32::Foundation::HWND;
+    use windows_core::s;
+
+    use super::FunctionCache;
+    use crate::Microsoft::UI::WindowId;
+
+    static GetWindowIdFromWindow: FunctionCache<HWND, WindowId> =
+        FunctionCache::new(s!("Windowing_GetWindowIdFromWindow"));
+    static GetWindowFromWindowId: FunctionCache<WindowId, HWND> =
+        FunctionCache::new(s!("Windowing_GetWindowFromWindowId"));
+
+    impl TryFrom<HWND> for WindowId {
+        type Error = WinError;
+
+        fn try_from(hwnd: HWND) -> Result<Self, Self::Error> {
+            GetWindowIdFromWindow.call(hwnd)
         }
     }
 
-    fn call(&self, value: T1) -> WinResult<T2> {
-        let mut result = T2::default();
-        (self.get()?)(value, &mut result).and_then(|| result)
+    impl TryFrom<WindowId> for HWND {
+        type Error = WinError;
+
+        fn try_from(window: WindowId) -> Result<Self, Self::Error> {
+            GetWindowFromWindowId.call(window)
+        }
     }
 }
 
-/// Copied from windows::core::delay_load
-///
-/// Load a function from a given library.
-///
-/// This is a small wrapper around `LoadLibrary` and `GetProcAddress`.
-///
-/// # Safety
-///
-/// * Both the library and function names must be valid PCSTR representations
-unsafe fn delay_load(library: &[u8], function: &[u8]) -> WinResult<*mut core::ffi::c_void> {
-    let library = LoadLibraryA(PCSTR(library.as_ptr()))?;
+#[cfg(all(
+    feature = "Microsoft_UI",
+    feature = "Windows_Win32_UI_WindowsAndMessaging"
+))]
+mod icon {
+    use windows::core::Error as WinError;
+    use windows::Win32::UI::WindowsAndMessaging::HICON;
+    use windows_core::s;
 
-    if let Some(address) = GetProcAddress(library, PCSTR(function.as_ptr())) {
-        Ok(address as _)
-    } else {
-        FreeLibrary(library);
-        Err(WinError::from_win32())
+    use super::FunctionCache;
+    use crate::Microsoft::UI::IconId;
+
+    static GetIconIdFromIcon: FunctionCache<HICON, IconId> =
+        FunctionCache::new(s!("Windowing_GetIconIdFromIcon"));
+    static GetIconFromIconId: FunctionCache<IconId, HICON> =
+        FunctionCache::new(s!("Windowing_GetIconFromIconId"));
+
+    impl TryFrom<HICON> for IconId {
+        type Error = WinError;
+
+        fn try_from(hwnd: HICON) -> Result<Self, Self::Error> {
+            GetIconIdFromIcon.call(hwnd)
+        }
+    }
+
+    impl TryFrom<IconId> for HICON {
+        type Error = WinError;
+
+        fn try_from(window: IconId) -> Result<Self, Self::Error> {
+            GetIconFromIconId.call(window)
+        }
     }
 }
 
-impl TryFrom<HWND> for WindowId {
-    type Error = windows::core::Error;
+#[cfg(all(feature = "Microsoft_UI", feature = "Windows_Win32_Graphics_Gdi"))]
+mod monitor {
+    use windows::core::Error as WinError;
+    use windows::Win32::Graphics::Gdi::HMONITOR;
+    use windows_core::s;
 
-    fn try_from(hwnd: HWND) -> Result<Self, Self::Error> {
-        GetWindowIdFromWindow.call(hwnd)
+    use super::FunctionCache;
+    use crate::Microsoft::UI::DisplayId;
+
+    static GetDisplayIdFromMonitor: FunctionCache<HMONITOR, DisplayId> =
+        FunctionCache::new(s!("Windowing_GetDisplayIdFromMonitor"));
+    static GetMonitorFromDisplayId: FunctionCache<DisplayId, HMONITOR> =
+        FunctionCache::new(s!("Windowing_GetMonitorFromDisplayId"));
+
+    impl TryFrom<HMONITOR> for DisplayId {
+        type Error = WinError;
+
+        fn try_from(hwnd: HMONITOR) -> Result<Self, Self::Error> {
+            GetDisplayIdFromMonitor.call(hwnd)
+        }
     }
-}
 
-impl TryFrom<WindowId> for HWND {
-    type Error = windows::core::Error;
+    impl TryFrom<DisplayId> for HMONITOR {
+        type Error = WinError;
 
-    fn try_from(window: WindowId) -> Result<Self, Self::Error> {
-        GetWindowFromWindowId.call(window)
-    }
-}
-
-impl TryFrom<HICON> for IconId {
-    type Error = windows::core::Error;
-
-    fn try_from(hwnd: HICON) -> Result<Self, Self::Error> {
-        GetIconIdFromIcon.call(hwnd)
-    }
-}
-
-impl TryFrom<IconId> for HICON {
-    type Error = windows::core::Error;
-
-    fn try_from(window: IconId) -> Result<Self, Self::Error> {
-        GetIconFromIconId.call(window)
-    }
-}
-
-impl TryFrom<HMONITOR> for DisplayId {
-    type Error = windows::core::Error;
-
-    fn try_from(hwnd: HMONITOR) -> Result<Self, Self::Error> {
-        GetDisplayIdFromMonitor.call(hwnd)
-    }
-}
-
-impl TryFrom<DisplayId> for HMONITOR {
-    type Error = windows::core::Error;
-
-    fn try_from(window: DisplayId) -> Result<Self, Self::Error> {
-        GetMonitorFromDisplayId.call(window)
+        fn try_from(window: DisplayId) -> Result<Self, Self::Error> {
+            GetMonitorFromDisplayId.call(window)
+        }
     }
 }

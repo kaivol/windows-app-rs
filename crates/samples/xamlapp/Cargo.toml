@@ -2,27 +2,37 @@
 name = "sample_xamlapp"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
 [build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
-
-[dependencies.windows]
-git = "https://github.com/kaivol/windows-rs"
-branch = "composable"
-features = [
-    "Foundation",
-    "Win32_UI_HiDpi",
-    "Win32_UI_WindowsAndMessaging",
-]
 
 [dependencies.windows_app]
 path = "../../libs/windows-app"
 features = [
     "implement",
     "bootstrap",
-    "WindowsAppSdk_Foundation",
-    "UI_Xaml_Controls_Primitives",
-    "UI_Xaml_Controls",
-    "UI_Xaml_Media",
+    "Microsoft_UI_Xaml_Controls_Primitives",
+    "Microsoft_UI_Xaml_Controls",
+    "Microsoft_UI_Xaml_Markup",
+    "Microsoft_UI_Xaml_Media",
+    "Microsoft_UI_Xaml_XamlTypeInfo",
+    "Windows_UI",
+    "Windows_Win32_Foundation",
+    "Windows_Foundation",
+    "Windows_Foundation_Collections",
+    "Windows_UI_Xaml_Interop",
+]
+
+[dependencies.windows]
+workspace = true
+features = [
+    "implement",
+    "Foundation",
+    "ApplicationModel",
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Storage",
+    "Win32_UI_HiDpi",
+    "Win32_UI_WindowsAndMessaging",
 ]

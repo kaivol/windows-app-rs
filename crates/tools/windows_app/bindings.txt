@@ -1,0 +1,11 @@
+--in winmd
+--out crates/libs/windows-app/src/lib.rs
+--config package
+
+--external windows=Windows,!Windows.AI.MachineLearning.Preview,!Windows.ApplicationModel.SocialInfo,!Windows.Devices.AllJoyn,!Windows.Devices.Perception,!Windows.Security.Authentication.Identity.Provider,!Windows.Services.Cortana,!Windows.System.Power.Diagnostics,!Windows.System.Preview,!Windows.UI.Xaml,!Windows.Win32.Foundation.Metadata,!Windows.Win32.System.Diagnostics.Debug.WebApp,!Windows.Win32.System.WinRT.Xaml,!Windows.Win32.UI.Xaml,!Windows.Win32.Web.MsHtml
+
+--filter
+    DWriteCore
+    Microsoft
+    MRM
+    Windows.UI.Xaml.Interop

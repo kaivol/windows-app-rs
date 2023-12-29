@@ -11,11 +11,16 @@
 
 extern crate windows;
 
-pub mod core;
-
-#[rustfmt::skip]
-mod Microsoft;
-pub use Microsoft::*;
-
 #[cfg(feature = "bootstrap")]
 pub mod bootstrap;
+
+pub mod core;
+
+#[cfg(feature = "DWriteCore")]
+pub mod DWriteCore;
+#[cfg(feature = "MRM")]
+pub mod MRM;
+#[cfg(feature = "Microsoft")]
+pub mod Microsoft;
+#[cfg(feature = "Windows")]
+pub mod Windows;
