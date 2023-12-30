@@ -1,4 +1,4 @@
-name: test
+name: Tests
 
 on:
   pull_request:
@@ -15,32 +15,33 @@ jobs:
   test:
     name: Test
     runs-on: windows-2022
-
     strategy:
       matrix:
-        include:
-          - version: stable
-            target: x86_64-pc-windows-msvc
-          - version: nightly
-            target: i686-pc-windows-msvc
-
+        channel: [stable, nightly]
+        target: [
+          {
+            rust: x86_64-pc-windows-msvc,
+            sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x64.exe',
+          },
+          {
+            rust: i686-pc-windows-msvc,
+            sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x86.exe',
+          },
+        ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Update toolchain
-        run: rustup update --no-self-update ${{ matrix.version }} && rustup default ${{ matrix.version }}-${{ matrix.target }}
-      - name: Add toolchain target
-        run: rustup target add ${{ matrix.target }}
-      - name: Install clippy
-        run: rustup component add clippy
-      - name: Test
+        run: rustup update --no-self-update ${{ matrix.channel }} && rustup default ${{ matrix.channel }}-${{ matrix.target.rust }}
+      - name: Set target
+        run: rustup target add ${{ matrix.target.rust }}
+      - name: Install AppSDK
+        run: |
+          Invoke-webrequest -uri ${{ matrix.target.sdk_uri }} -OutFile windowsappruntimeinstall.exe
+          &.\windowsappruntimeinstall.exe
+      - name: Run cargo check windows_app
+        run: cargo check -p windows_app --all-features
+      - name: Run tests
         run: >
-          cargo test -p windows_app &&
-          cargo test -p windows_app_deploy &&
-          cargo test -p sample_appwindow &&
-          cargo test -p sample_battery &&
-          cargo test -p sample_colors &&
-          cargo test -p sample_mrm &&
-          cargo test -p sample_xamlapp &&
-          cargo test -p test_dwritecore &&
-          cargo test -p test_interop
+          cargo test -p sample_* &&
+          cargo test -p test_*
