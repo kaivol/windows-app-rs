@@ -26,6 +26,7 @@ jobs:
       - name: Run generation
         run: cargo run -p tool_${{ matrix.tool }}
       - name: Check
+        shell: bash
         run: |
           git add -N .
           git diff --exit-code || (echo '::error::Generated `tool_${{ matrix.tool }}` is out-of-date. Please run `cargo run -p tool_${{ matrix.tool }}`'; exit 1)
@@ -40,6 +41,7 @@ jobs:
         working-directory: ./metadata
         run: dotnet build
       - name: Check
+        shell: bash
         run: |
           git add -N .
           git diff --exit-code || (echo '::error::Generated Windows metadata is out-of-date. Please run `dotnet build` in `./metadata`'; exit 1)
