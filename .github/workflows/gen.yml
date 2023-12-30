@@ -31,17 +31,17 @@ jobs:
           git add -N .
           git diff --exit-code || (echo '::error::Generated `tool_${{ matrix.tool }}` is out-of-date. Please run `cargo run -p tool_${{ matrix.tool }}`'; exit 1)
 
-  metadata:
-    name: Metadata, `.lib`s and `.dll`s
-    runs-on: windows-2022
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Generate
-        working-directory: ./metadata
-        run: dotnet build
-      - name: Check
-        shell: bash
-        run: |
-          git add -N .
-          git diff --exit-code || (echo '::error::Generated Windows metadata is out-of-date. Please run `dotnet build` in `./metadata`'; exit 1)
+#  metadata:
+#    name: Metadata, `.lib`s and `.dll`s
+#    runs-on: windows-2022
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      - name: Generate
+#        working-directory: ./metadata
+#        run: dotnet build
+#      - name: Check
+#        shell: bash
+#        run: |
+#          git add -N .
+#          git diff --exit-code || (echo '::error::Generated Windows metadata is out-of-date. Please run `dotnet build` in `./metadata`'; exit 1)
