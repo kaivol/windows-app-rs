@@ -2,7 +2,7 @@ use windows_app_deploy::*;
 
 fn main() {
     std::process::Command::new("makepri")
-        .args(&[
+        .args([
             "new",
             "/cf",
             "priconfig.xml",
