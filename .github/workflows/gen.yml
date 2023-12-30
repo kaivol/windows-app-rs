@@ -14,6 +14,7 @@ env:
 jobs:
   rust:
     strategy:
+      fail-fast: false
       matrix:
         tool: [windows_app, targets]
     name: '`tool_${{ matrix.tool }}`'
