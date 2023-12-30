@@ -15086,7 +15086,7 @@ impl CoreWebView2Profile {
     }
     #[doc = "Required features: `\"Windows_Foundation\"`"]
     #[cfg(feature = "Windows_Foundation")]
-    pub fn ClearBrowsingDataAsync2(
+    pub fn ClearBrowsingDataAsync3(
         &self,
         datakinds: CoreWebView2BrowsingDataKinds,
     ) -> ::windows_core::Result<::windows::Foundation::IAsyncAction> {

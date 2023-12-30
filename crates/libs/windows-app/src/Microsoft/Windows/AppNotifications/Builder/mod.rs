@@ -371,14 +371,14 @@ pub struct IAppNotificationButton_Vtbl {
     #[cfg(not(feature = "Windows_Foundation"))]
     SetInvokeUri2: usize,
     #[cfg(feature = "Windows_Foundation")]
-    pub SetInvokeUri22: unsafe extern "system" fn(
+    pub SetInvokeUri3: unsafe extern "system" fn(
         this: *mut ::core::ffi::c_void,
         protocoluri: *mut ::core::ffi::c_void,
         targetappid: ::std::mem::MaybeUninit<::windows_core::HSTRING>,
         result__: *mut *mut ::core::ffi::c_void,
     ) -> ::windows_core::HRESULT,
     #[cfg(not(feature = "Windows_Foundation"))]
-    SetInvokeUri22: usize,
+    SetInvokeUri3: usize,
 }
 #[doc(hidden)]
 #[repr(transparent)]
@@ -1561,7 +1561,7 @@ impl AppNotificationButton {
     }
     #[doc = "Required features: `\"Windows_Foundation\"`"]
     #[cfg(feature = "Windows_Foundation")]
-    pub fn SetInvokeUri22<P0>(
+    pub fn SetInvokeUri3<P0>(
         &self,
         protocoluri: P0,
         targetappid: &::windows_core::HSTRING,
@@ -1572,7 +1572,7 @@ impl AppNotificationButton {
         let this = self;
         unsafe {
             let mut result__ = ::std::mem::zeroed();
-            (::windows_core::Interface::vtable(this).SetInvokeUri22)(
+            (::windows_core::Interface::vtable(this).SetInvokeUri3)(
                 ::windows_core::Interface::as_raw(this),
                 protocoluri.into_param().abi(),
                 ::core::mem::transmute_copy(targetappid),
