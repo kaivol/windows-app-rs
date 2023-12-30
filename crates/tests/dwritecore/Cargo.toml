@@ -8,7 +8,7 @@ edition = "2021"
 path = "../../libs/windows-app-deploy"
 
 [dependencies]
-once_cell = "1.12.0"
+once_cell = "1.19.0"
 
 [dependencies.windows_app]
 path = "../../libs/windows-app"

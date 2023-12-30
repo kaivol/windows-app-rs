@@ -4795,6 +4795,24 @@ impl KeyboardAccelerator {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<KeyboardAccelerator>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IKeyboardAcceleratorFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn KeyProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IKeyboardAcceleratorStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -4834,6 +4852,19 @@ impl KeyboardAccelerator {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IKeyboardAcceleratorFactory<
+        R,
+        F: FnOnce(&IKeyboardAcceleratorFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            KeyboardAccelerator,
+            IKeyboardAcceleratorFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IKeyboardAcceleratorStatics<
@@ -5867,6 +5898,24 @@ impl ManipulationStartedRoutedEventArgs {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ManipulationStartedRoutedEventArgs>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IManipulationStartedRoutedEventArgsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn OriginalSource(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::ComInterface::cast::<super::IRoutedEventArgs>(self)?;
         unsafe {
@@ -5877,6 +5926,19 @@ impl ManipulationStartedRoutedEventArgs {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IManipulationStartedRoutedEventArgsFactory<
+        R,
+        F: FnOnce(&IManipulationStartedRoutedEventArgsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ManipulationStartedRoutedEventArgs,
+            IManipulationStartedRoutedEventArgsFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for ManipulationStartedRoutedEventArgs {
@@ -6752,6 +6814,44 @@ impl StandardUICommand {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<StandardUICommand>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IStandardUICommandFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    pub unsafe fn CreateInstanceWithKind<P0>(
+        kind: StandardUICommandKind,
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<StandardUICommand>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IStandardUICommandFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithKind)(
+                ::windows_core::Interface::as_raw(this),
+                kind,
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn KindProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IStandardUICommandStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -6975,6 +7075,19 @@ impl StandardUICommand {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IStandardUICommandFactory<
+        R,
+        F: FnOnce(&IStandardUICommandFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            StandardUICommand,
+            IStandardUICommandFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IStandardUICommandStatics<
@@ -7547,6 +7660,24 @@ impl XamlUICommand {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<XamlUICommand>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IXamlUICommandFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn LabelProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IXamlUICommandStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -7606,6 +7737,17 @@ impl XamlUICommand {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IXamlUICommandFactory<
+        R,
+        F: FnOnce(&IXamlUICommandFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<XamlUICommand, IXamlUICommandFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IXamlUICommandStatics<

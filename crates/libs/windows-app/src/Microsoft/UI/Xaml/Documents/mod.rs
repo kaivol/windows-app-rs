@@ -2189,6 +2189,24 @@ impl Block {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Block>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IBlockFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn TextAlignmentProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IBlockStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -3034,6 +3052,14 @@ impl Block {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IBlockFactory<R, F: FnOnce(&IBlockFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Block, IBlockFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IBlockStatics<R, F: FnOnce(&IBlockStatics) -> ::windows_core::Result<R>>(
@@ -10931,6 +10957,24 @@ impl Inline {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Inline>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IInlineFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::ComInterface::cast::<ITextElement>(self)?;
         unsafe {
@@ -11583,6 +11627,14 @@ impl Inline {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IInlineFactory<R, F: FnOnce(&IInlineFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Inline, IInlineFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for Inline {
@@ -16509,6 +16561,24 @@ impl Span {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Span>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISpanFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn Name(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::ComInterface::cast::<ITextElement>(self)?;
         unsafe {
@@ -17161,6 +17231,14 @@ impl Span {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn ISpanFactory<R, F: FnOnce(&ISpanFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Span, ISpanFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for Span {
@@ -18272,6 +18350,24 @@ impl TextHighlighter {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<TextHighlighter>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ITextHighlighterFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ForegroundProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::ITextHighlighterStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -18291,6 +18387,17 @@ impl TextHighlighter {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn ITextHighlighterFactory<
+        R,
+        F: FnOnce(&ITextHighlighterFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<TextHighlighter, ITextHighlighterFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn ITextHighlighterStatics<

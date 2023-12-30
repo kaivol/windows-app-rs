@@ -1,5 +1,5 @@
 [package]
-name = "windows_app_deploy"
+name = "windows_app-deploy"
 version = "0.5.0"
 authors = [""]
 edition = "2021"

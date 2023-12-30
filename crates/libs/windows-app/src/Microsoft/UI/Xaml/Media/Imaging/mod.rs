@@ -1475,6 +1475,24 @@ impl BitmapSource {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<BitmapSource>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IBitmapSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn PixelWidthProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IBitmapSourceStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -1637,6 +1655,17 @@ impl BitmapSource {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IBitmapSourceFactory<
+        R,
+        F: FnOnce(&IBitmapSourceFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<BitmapSource, IBitmapSourceFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IBitmapSourceStatics<
@@ -2383,6 +2412,65 @@ impl SurfaceImageSource {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstanceWithDimensions<P0>(
+        pixelwidth: i32,
+        pixelheight: i32,
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<SurfaceImageSource>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISurfaceImageSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithDimensions)(
+                ::windows_core::Interface::as_raw(this),
+                pixelwidth,
+                pixelheight,
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    pub unsafe fn CreateInstanceWithDimensionsAndOpacity<P0>(
+        pixelwidth: i32,
+        pixelheight: i32,
+        isopaque: bool,
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<SurfaceImageSource>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISurfaceImageSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithDimensionsAndOpacity)(
+                ::windows_core::Interface::as_raw(this),
+                pixelwidth,
+                pixelheight,
+                isopaque,
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn ISurfaceImageSourceFactory<
+        R,
+        F: FnOnce(&ISurfaceImageSourceFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            SurfaceImageSource,
+            ISurfaceImageSourceFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for SurfaceImageSource {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -2717,6 +2805,47 @@ impl SvgImageSource {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<SvgImageSource>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISvgImageSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc = "Required features: `\"Windows_Foundation\"`"]
+    #[cfg(feature = "Windows_Foundation")]
+    pub unsafe fn CreateInstanceWithUriSource<P0, P1>(
+        urisource: P0,
+        baseinterface: P1,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<SvgImageSource>
+    where
+        P0: ::windows_core::IntoParam<::windows::Foundation::Uri>,
+        P1: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISvgImageSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithUriSource)(
+                ::windows_core::Interface::as_raw(this),
+                urisource.into_param().abi(),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn UriSourceProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::ISvgImageSourceStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -2748,6 +2877,17 @@ impl SvgImageSource {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn ISvgImageSourceFactory<
+        R,
+        F: FnOnce(&ISvgImageSourceFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<SvgImageSource, ISvgImageSourceFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn ISvgImageSourceStatics<
@@ -3342,6 +3482,24 @@ unsafe impl ::core::marker::Sync for WriteableBitmap {}
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct XamlRenderingBackgroundTask(::windows_core::IUnknown);
 impl XamlRenderingBackgroundTask {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<XamlRenderingBackgroundTask>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IXamlRenderingBackgroundTaskFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     #[doc = "Required features: `\"Windows_ApplicationModel_Background\"`"]
     #[cfg(feature = "Windows_ApplicationModel_Background")]
     pub fn OnRun<P0>(&self, taskinstance: P0) -> ::windows_core::Result<()>
@@ -3359,6 +3517,19 @@ impl XamlRenderingBackgroundTask {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IXamlRenderingBackgroundTaskFactory<
+        R,
+        F: FnOnce(&IXamlRenderingBackgroundTaskFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            XamlRenderingBackgroundTask,
+            IXamlRenderingBackgroundTaskFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for XamlRenderingBackgroundTask {

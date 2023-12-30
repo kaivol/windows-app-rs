@@ -346,6 +346,37 @@ impl FrameNavigationOptions {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<FrameNavigationOptions>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IFrameNavigationOptionsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IFrameNavigationOptionsFactory<
+        R,
+        F: FnOnce(&IFrameNavigationOptionsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            FrameNavigationOptions,
+            IFrameNavigationOptionsFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for FrameNavigationOptions {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =

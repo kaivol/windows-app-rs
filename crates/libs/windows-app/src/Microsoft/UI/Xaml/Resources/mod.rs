@@ -88,6 +88,24 @@ pub struct ICustomXamlResourceLoaderStatics_Vtbl {
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct CustomXamlResourceLoader(::windows_core::IUnknown);
 impl CustomXamlResourceLoader {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<CustomXamlResourceLoader>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ICustomXamlResourceLoaderFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn GetResource(
         &self,
         resourceid: &::windows_core::HSTRING,
@@ -130,6 +148,19 @@ impl CustomXamlResourceLoader {
             )
             .ok()
         })
+    }
+    #[doc(hidden)]
+    pub fn ICustomXamlResourceLoaderFactory<
+        R,
+        F: FnOnce(&ICustomXamlResourceLoaderFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            CustomXamlResourceLoader,
+            ICustomXamlResourceLoaderFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn ICustomXamlResourceLoaderStatics<

@@ -801,6 +801,49 @@ impl NotifyCollectionChangedEventArgs {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstanceWithAllParameters<P0, P1, P2>(
+        action: NotifyCollectionChangedAction,
+        newitems: P0,
+        olditems: P1,
+        newindex: i32,
+        oldindex: i32,
+        baseinterface: P2,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<NotifyCollectionChangedEventArgs>
+    where
+        P0: ::windows_core::TryIntoParam<IBindableVector>,
+        P1: ::windows_core::TryIntoParam<IBindableVector>,
+        P2: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::INotifyCollectionChangedEventArgsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithAllParameters)(
+                ::windows_core::Interface::as_raw(this),
+                action,
+                newitems.try_into_param()?.abi(),
+                olditems.try_into_param()?.abi(),
+                newindex,
+                oldindex,
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn INotifyCollectionChangedEventArgsFactory<
+        R,
+        F: FnOnce(&INotifyCollectionChangedEventArgsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            NotifyCollectionChangedEventArgs,
+            INotifyCollectionChangedEventArgsFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for NotifyCollectionChangedEventArgs {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =

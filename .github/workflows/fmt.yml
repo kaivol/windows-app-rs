@@ -1,0 +1,24 @@
+name: fmt
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+    branches:
+      - master
+
+env:
+  RUSTFLAGS: -Dwarnings
+
+jobs:
+  fmt:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update toolchain
+        run: rustup update --no-self-update nightly && rustup default nightly
+      - name: Check
+        run: cargo fmt --all -- --check

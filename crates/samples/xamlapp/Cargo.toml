@@ -7,6 +7,9 @@ edition = "2021"
 [build-dependencies.windows_app_deploy]
 path = "../../libs/windows-app-deploy"
 
+[dependencies.windows-implement]
+workspace = true
+
 [dependencies.windows_app]
 path = "../../libs/windows-app"
 features = [

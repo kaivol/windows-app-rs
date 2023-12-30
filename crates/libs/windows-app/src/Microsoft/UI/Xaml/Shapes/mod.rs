@@ -12121,6 +12121,24 @@ impl Path {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Path>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IPathFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn DataProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IPathStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -15921,6 +15939,14 @@ impl Path {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IPathFactory<R, F: FnOnce(&IPathFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Path, IPathFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IPathStatics<R, F: FnOnce(&IPathStatics) -> ::windows_core::Result<R>>(
@@ -32891,6 +32917,24 @@ impl Shape {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Shape>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IShapeFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn FillProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IShapeStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -36476,6 +36520,14 @@ impl Shape {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IShapeFactory<R, F: FnOnce(&IShapeFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Shape, IShapeFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IShapeStatics<R, F: FnOnce(&IShapeStatics) -> ::windows_core::Result<R>>(

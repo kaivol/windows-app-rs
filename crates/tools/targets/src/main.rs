@@ -14,7 +14,6 @@ fn main() {
         temp
     };
     let libs = workspace_root.join("crates/libs/");
-
     let windows_app_deploy = libs.join("windows-app-deploy/");
     gen_bootstrap(&windows_app_deploy);
 }

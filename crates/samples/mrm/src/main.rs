@@ -1,6 +1,6 @@
 use ::windows::core::Result;
-use windows::core::h;
 use ::windows_app::Microsoft::Windows::ApplicationModel::Resources::*;
+use windows::core::h;
 use windows_app::bootstrap;
 
 fn main() -> Result<()> {

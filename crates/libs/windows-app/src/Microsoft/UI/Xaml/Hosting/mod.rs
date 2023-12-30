@@ -1093,6 +1093,37 @@ impl DesktopWindowXamlSource {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DesktopWindowXamlSource>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDesktopWindowXamlSourceFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IDesktopWindowXamlSourceFactory<
+        R,
+        F: FnOnce(&IDesktopWindowXamlSourceFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            DesktopWindowXamlSource,
+            IDesktopWindowXamlSourceFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for DesktopWindowXamlSource {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =

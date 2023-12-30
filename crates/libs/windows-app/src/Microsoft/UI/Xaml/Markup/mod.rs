@@ -1386,6 +1386,24 @@ pub struct IXamlTypeResolver_Vtbl {
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct MarkupExtension(::windows_core::IUnknown);
 impl MarkupExtension {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<MarkupExtension>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IMarkupExtensionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ProvideValue(&self) -> ::windows_core::Result<::windows_core::IInspectable> {
         let this = &::windows_core::ComInterface::cast::<IMarkupExtensionOverrides>(self)?;
         unsafe {
@@ -1414,6 +1432,17 @@ impl MarkupExtension {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IMarkupExtensionFactory<
+        R,
+        F: FnOnce(&IMarkupExtensionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<MarkupExtension, IMarkupExtensionFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for MarkupExtension {

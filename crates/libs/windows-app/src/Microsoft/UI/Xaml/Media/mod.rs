@@ -4644,6 +4644,24 @@ impl AcrylicBrush {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<AcrylicBrush>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IAcrylicBrushFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn TintColorProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IAcrylicBrushStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -5020,6 +5038,17 @@ impl AcrylicBrush {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IAcrylicBrushFactory<
+        R,
+        F: FnOnce(&IAcrylicBrushFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<AcrylicBrush, IAcrylicBrushFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IAcrylicBrushStatics<
@@ -6006,6 +6035,24 @@ impl Brush {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Brush>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IBrushFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     #[doc = "Required features: `\"Microsoft_UI_Composition\"`"]
     #[cfg(feature = "Microsoft_UI_Composition")]
     pub fn PopulatePropertyInfoOverride<P0>(
@@ -6198,6 +6245,14 @@ impl Brush {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IBrushFactory<R, F: FnOnce(&IBrushFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Brush, IBrushFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IBrushStatics<R, F: FnOnce(&IBrushStatics) -> ::windows_core::Result<R>>(
@@ -6506,6 +6561,24 @@ unsafe impl ::core::marker::Sync for BrushCollection {}
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct CacheMode(::windows_core::IUnknown);
 impl CacheMode {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<CacheMode>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ICacheModeFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn GetValue<P0>(&self, dp: P0) -> ::windows_core::Result<::windows_core::IInspectable>
     where
         P0: ::windows_core::IntoParam<super::DependencyProperty>,
@@ -6648,6 +6721,14 @@ impl CacheMode {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn ICacheModeFactory<R, F: FnOnce(&ICacheModeFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<CacheMode, ICacheModeFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for CacheMode {
@@ -7555,6 +7636,24 @@ impl DesktopAcrylicBackdrop {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DesktopAcrylicBackdrop>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDesktopAcrylicBackdropFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     #[doc = "Required features: `\"Microsoft_UI_Composition_SystemBackdrops\"`"]
     #[cfg(feature = "Microsoft_UI_Composition_SystemBackdrops")]
     pub fn GetDefaultSystemBackdropConfiguration<P0, P1>(
@@ -7644,6 +7743,19 @@ impl DesktopAcrylicBackdrop {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IDesktopAcrylicBackdropFactory<
+        R,
+        F: FnOnce(&IDesktopAcrylicBackdropFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            DesktopAcrylicBackdrop,
+            IDesktopAcrylicBackdropFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for DesktopAcrylicBackdrop {
@@ -8267,6 +8379,26 @@ impl FontFamily {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstanceWithName<P0>(
+        familyname: &::windows_core::HSTRING,
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<FontFamily>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IFontFamilyFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithName)(
+                ::windows_core::Interface::as_raw(this),
+                ::core::mem::transmute_copy(familyname),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn XamlAutoFontFamily() -> ::windows_core::Result<FontFamily> {
         Self::IFontFamilyStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -8276,6 +8408,14 @@ impl FontFamily {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IFontFamilyFactory<R, F: FnOnce(&IFontFamilyFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<FontFamily, IFontFamilyFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IFontFamilyStatics<R, F: FnOnce(&IFontFamilyStatics) -> ::windows_core::Result<R>>(
@@ -8517,6 +8657,24 @@ impl GeneralTransform {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<GeneralTransform>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IGeneralTransformFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn InverseCore(&self) -> ::windows_core::Result<GeneralTransform> {
         let this = &::windows_core::ComInterface::cast::<IGeneralTransformOverrides>(self)?;
         unsafe {
@@ -8563,6 +8721,19 @@ impl GeneralTransform {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IGeneralTransformFactory<
+        R,
+        F: FnOnce(&IGeneralTransformFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            GeneralTransform,
+            IGeneralTransformFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for GeneralTransform {
@@ -9754,6 +9925,24 @@ impl GradientBrush {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<GradientBrush>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IGradientBrushFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn SpreadMethodProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IGradientBrushStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -9793,6 +9982,17 @@ impl GradientBrush {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IGradientBrushFactory<
+        R,
+        F: FnOnce(&IGradientBrushFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<GradientBrush, IGradientBrushFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IGradientBrushStatics<
@@ -13191,6 +13391,24 @@ impl MicaBackdrop {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<MicaBackdrop>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IMicaBackdropFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn KindProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IMicaBackdropStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -13290,6 +13508,17 @@ impl MicaBackdrop {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IMicaBackdropFactory<
+        R,
+        F: FnOnce(&IMicaBackdropFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<MicaBackdrop, IMicaBackdropFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IMicaBackdropStatics<
@@ -16385,6 +16614,32 @@ impl Projection {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Projection>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IProjectionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IProjectionFactory<R, F: FnOnce(&IProjectionFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Projection, IProjectionFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for Projection {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -17117,6 +17372,24 @@ impl RadialGradientBrush {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<RadialGradientBrush>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IRadialGradientBrushFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn CenterProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::IRadialGradientBrushStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -17259,6 +17532,19 @@ impl RadialGradientBrush {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IRadialGradientBrushFactory<
+        R,
+        F: FnOnce(&IRadialGradientBrushFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            RadialGradientBrush,
+            IRadialGradientBrushFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IRadialGradientBrushStatics<
@@ -19626,6 +19912,24 @@ impl SystemBackdrop {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<SystemBackdrop>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ISystemBackdropFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     #[doc = "Required features: `\"Microsoft_UI_Composition\"`"]
     #[cfg(feature = "Microsoft_UI_Composition")]
     pub fn OnTargetConnected<P0, P1>(
@@ -19688,6 +19992,17 @@ impl SystemBackdrop {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn ISystemBackdropFactory<
+        R,
+        F: FnOnce(&ISystemBackdropFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<SystemBackdrop, ISystemBackdropFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for SystemBackdrop {
@@ -19870,6 +20185,32 @@ impl ThemeShadow {
             )
             .from_abi(result__)
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ThemeShadow>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IThemeShadowFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IThemeShadowFactory<R, F: FnOnce(&IThemeShadowFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<ThemeShadow, IThemeShadowFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for ThemeShadow {
@@ -20215,6 +20556,24 @@ impl TileBrush {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<TileBrush>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ITileBrushFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn AlignmentXProperty() -> ::windows_core::Result<super::DependencyProperty> {
         Self::ITileBrushStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -20244,6 +20603,14 @@ impl TileBrush {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn ITileBrushFactory<R, F: FnOnce(&ITileBrushFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<TileBrush, ITileBrushFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn ITileBrushStatics<R, F: FnOnce(&ITileBrushStatics) -> ::windows_core::Result<R>>(
@@ -22067,6 +22434,24 @@ impl XamlCompositionBrushBase {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<XamlCompositionBrushBase>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IXamlCompositionBrushBaseFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn OnConnected(&self) -> ::windows_core::Result<()> {
         let this = &::windows_core::ComInterface::cast::<IXamlCompositionBrushBaseOverrides>(self)?;
         unsafe {
@@ -22124,6 +22509,19 @@ impl XamlCompositionBrushBase {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IXamlCompositionBrushBaseFactory<
+        R,
+        F: FnOnce(&IXamlCompositionBrushBaseFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            XamlCompositionBrushBase,
+            IXamlCompositionBrushBaseFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IXamlCompositionBrushBaseStatics<
@@ -22314,6 +22712,24 @@ impl XamlLight {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<XamlLight>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IXamlLightFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn GetId(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::ComInterface::cast::<IXamlLightOverrides>(self)?;
         unsafe {
@@ -22444,6 +22860,14 @@ impl XamlLight {
             )
             .ok()
         })
+    }
+    #[doc(hidden)]
+    pub fn IXamlLightFactory<R, F: FnOnce(&IXamlLightFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<XamlLight, IXamlLightFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IXamlLightStatics<R, F: FnOnce(&IXamlLightStatics) -> ::windows_core::Result<R>>(

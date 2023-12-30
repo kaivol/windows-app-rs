@@ -4810,7 +4810,39 @@ unsafe impl ::core::marker::Sync for BackEase {}
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct BasicConnectedAnimationConfiguration(::windows_core::IUnknown);
-impl BasicConnectedAnimationConfiguration {}
+impl BasicConnectedAnimationConfiguration {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<BasicConnectedAnimationConfiguration>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IBasicConnectedAnimationConfigurationFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IBasicConnectedAnimationConfigurationFactory<
+        R,
+        F: FnOnce(&IBasicConnectedAnimationConfigurationFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            BasicConnectedAnimationConfiguration,
+            IBasicConnectedAnimationConfigurationFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
 impl ::windows_core::RuntimeType for BasicConnectedAnimationConfiguration {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
         ::windows_core::imp::ConstBuffer::for_class::<Self>();
@@ -6619,6 +6651,24 @@ impl ColorKeyFrame {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ColorKeyFrame>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IColorKeyFrameFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ValueProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IColorKeyFrameStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -6781,6 +6831,17 @@ impl ColorKeyFrame {
             )
             .from_abi(result__)
         }
+    }
+    #[doc(hidden)]
+    pub fn IColorKeyFrameFactory<
+        R,
+        F: FnOnce(&IColorKeyFrameFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<ColorKeyFrame, IColorKeyFrameFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IColorKeyFrameStatics<
@@ -8587,7 +8648,39 @@ unsafe impl ::core::marker::Sync for CubicEase {}
 #[repr(transparent)]
 #[derive(::core::cmp::PartialEq, ::core::cmp::Eq, ::core::fmt::Debug, ::core::clone::Clone)]
 pub struct DirectConnectedAnimationConfiguration(::windows_core::IUnknown);
-impl DirectConnectedAnimationConfiguration {}
+impl DirectConnectedAnimationConfiguration {
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DirectConnectedAnimationConfiguration>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDirectConnectedAnimationConfigurationFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IDirectConnectedAnimationConfigurationFactory<
+        R,
+        F: FnOnce(&IDirectConnectedAnimationConfigurationFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            DirectConnectedAnimationConfiguration,
+            IDirectConnectedAnimationConfigurationFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+}
 impl ::windows_core::RuntimeType for DirectConnectedAnimationConfiguration {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
         ::windows_core::imp::ConstBuffer::for_class::<Self>();
@@ -10730,6 +10823,24 @@ impl DoubleKeyFrame {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DoubleKeyFrame>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDoubleKeyFrameFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ValueProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IDoubleKeyFrameStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -10749,6 +10860,17 @@ impl DoubleKeyFrame {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IDoubleKeyFrameFactory<
+        R,
+        F: FnOnce(&IDoubleKeyFrameFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<DoubleKeyFrame, IDoubleKeyFrameFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IDoubleKeyFrameStatics<
@@ -16868,6 +16990,37 @@ impl GravityConnectedAnimationConfiguration {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<GravityConnectedAnimationConfiguration>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IGravityConnectedAnimationConfigurationFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IGravityConnectedAnimationConfigurationFactory<
+        R,
+        F: FnOnce(&IGravityConnectedAnimationConfigurationFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            GravityConnectedAnimationConfiguration,
+            IGravityConnectedAnimationConfigurationFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for GravityConnectedAnimationConfiguration {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -18270,6 +18423,24 @@ impl NavigationTransitionInfo {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<NavigationTransitionInfo>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::INavigationTransitionInfoFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn GetNavigationStateCore(&self) -> ::windows_core::Result<::windows_core::HSTRING> {
         let this = &::windows_core::ComInterface::cast::<INavigationTransitionInfoOverrides>(self)?;
         unsafe {
@@ -18293,6 +18464,19 @@ impl NavigationTransitionInfo {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn INavigationTransitionInfoFactory<
+        R,
+        F: FnOnce(&INavigationTransitionInfoFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            NavigationTransitionInfo,
+            INavigationTransitionInfoFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for NavigationTransitionInfo {
@@ -18940,6 +19124,24 @@ impl ObjectKeyFrame {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ObjectKeyFrame>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IObjectKeyFrameFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ValueProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IObjectKeyFrameStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -18959,6 +19161,17 @@ impl ObjectKeyFrame {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IObjectKeyFrameFactory<
+        R,
+        F: FnOnce(&IObjectKeyFrameFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<ObjectKeyFrame, IObjectKeyFrameFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IObjectKeyFrameStatics<
@@ -20700,6 +20913,24 @@ impl PointKeyFrame {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<PointKeyFrame>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IPointKeyFrameFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn ValueProperty() -> ::windows_core::Result<super::super::DependencyProperty> {
         Self::IPointKeyFrameStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -20719,6 +20950,17 @@ impl PointKeyFrame {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IPointKeyFrameFactory<
+        R,
+        F: FnOnce(&IPointKeyFrameFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<PointKeyFrame, IPointKeyFrameFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IPointKeyFrameStatics<
@@ -29810,6 +30052,24 @@ impl Timeline {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Timeline>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::ITimelineFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn AllowDependentAnimations() -> ::windows_core::Result<bool> {
         Self::ITimelineStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -29888,6 +30148,14 @@ impl Timeline {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn ITimelineFactory<R, F: FnOnce(&ITimelineFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Timeline, ITimelineFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn ITimelineStatics<R, F: FnOnce(&ITimelineStatics) -> ::windows_core::Result<R>>(

@@ -7274,6 +7274,24 @@ impl AdaptiveTrigger {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<AdaptiveTrigger>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IAdaptiveTriggerFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn MinWindowWidthProperty() -> ::windows_core::Result<DependencyProperty> {
         Self::IAdaptiveTriggerStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -7444,6 +7462,17 @@ impl AdaptiveTrigger {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IAdaptiveTriggerFactory<
+        R,
+        F: FnOnce(&IAdaptiveTriggerFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<AdaptiveTrigger, IAdaptiveTriggerFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IAdaptiveTriggerStatics<
@@ -7668,6 +7697,24 @@ impl Application {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Application>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IApplicationFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn OnLaunched<P0>(&self, args: P0) -> ::windows_core::Result<()>
     where
         P0: ::windows_core::IntoParam<LaunchActivatedEventArgs>,
@@ -7742,6 +7789,14 @@ impl Application {
             )
             .ok()
         })
+    }
+    #[doc(hidden)]
+    pub fn IApplicationFactory<R, F: FnOnce(&IApplicationFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Application, IApplicationFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IApplicationStatics<R, F: FnOnce(&IApplicationStatics) -> ::windows_core::Result<R>>(
@@ -8236,6 +8291,35 @@ impl BrushTransition {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<BrushTransition>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IBrushTransitionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IBrushTransitionFactory<
+        R,
+        F: FnOnce(&IBrushTransitionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<BrushTransition, IBrushTransitionFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for BrushTransition {
@@ -9072,6 +9156,24 @@ impl ColorPaletteResources {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ColorPaletteResources>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IColorPaletteResourcesFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn GetValue<P0>(&self, dp: P0) -> ::windows_core::Result<::windows_core::IInspectable>
     where
         P0: ::windows_core::IntoParam<DependencyProperty>,
@@ -9451,6 +9553,19 @@ impl ColorPaletteResources {
             .from_abi(result__)
         }
     }
+    #[doc(hidden)]
+    pub fn IColorPaletteResourcesFactory<
+        R,
+        F: FnOnce(&IColorPaletteResourcesFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ColorPaletteResources,
+            IColorPaletteResourcesFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for ColorPaletteResources {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -9658,6 +9773,24 @@ impl DataTemplate {
             )
             .from_abi(result__)
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DataTemplate>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDataTemplateFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
     }
     pub fn ExtensionInstanceProperty() -> ::windows_core::Result<DependencyProperty> {
         Self::IDataTemplateStatics(|this| unsafe {
@@ -9867,6 +10000,17 @@ impl DataTemplate {
         }
     }
     #[doc(hidden)]
+    pub fn IDataTemplateFactory<
+        R,
+        F: FnOnce(&IDataTemplateFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<DataTemplate, IDataTemplateFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    #[doc(hidden)]
     pub fn IDataTemplateStatics<
         R,
         F: FnOnce(&IDataTemplateStatics) -> ::windows_core::Result<R>,
@@ -9928,6 +10072,56 @@ impl DataTemplateKey {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DataTemplateKey>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDataTemplateKeyFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    pub unsafe fn CreateInstanceWithType<P0, P1>(
+        datatype: P0,
+        baseinterface: P1,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DataTemplateKey>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+        P1: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDataTemplateKeyFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithType)(
+                ::windows_core::Interface::as_raw(this),
+                datatype.into_param().abi(),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IDataTemplateKeyFactory<
+        R,
+        F: FnOnce(&IDataTemplateKeyFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<DataTemplateKey, IDataTemplateKeyFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for DataTemplateKey {
@@ -10306,6 +10500,37 @@ impl DependencyObject {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DependencyObject>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDependencyObjectFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IDependencyObjectFactory<
+        R,
+        F: FnOnce(&IDependencyObjectFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            DependencyObject,
+            IDependencyObjectFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for DependencyObject {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -10474,6 +10699,26 @@ impl DependencyObjectCollection {
             )
             .from_abi(result__)
         }
+    }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DependencyObjectCollection>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDependencyObjectCollectionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
     }
     #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
     #[cfg(feature = "Windows_Foundation_Collections")]
@@ -10729,6 +10974,19 @@ impl DependencyObjectCollection {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IDependencyObjectCollectionFactory<
+        R,
+        F: FnOnce(&IDependencyObjectCollectionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            DependencyObjectCollection,
+            IDependencyObjectCollectionFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 #[cfg(feature = "Windows_Foundation_Collections")]
@@ -11066,6 +11324,35 @@ impl DispatcherTimer {
             (::windows_core::Interface::vtable(this).Stop)(::windows_core::Interface::as_raw(this))
                 .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<DispatcherTimer>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IDispatcherTimerFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IDispatcherTimerFactory<
+        R,
+        F: FnOnce(&IDispatcherTimerFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<DispatcherTimer, IDispatcherTimerFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for DispatcherTimer {
@@ -12097,6 +12384,37 @@ impl ElementFactoryGetArgs {
             .ok()
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ElementFactoryGetArgs>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IElementFactoryGetArgsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IElementFactoryGetArgsFactory<
+        R,
+        F: FnOnce(&IElementFactoryGetArgsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ElementFactoryGetArgs,
+            IElementFactoryGetArgsFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for ElementFactoryGetArgs {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -12169,6 +12487,37 @@ impl ElementFactoryRecycleArgs {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ElementFactoryRecycleArgs>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IElementFactoryRecycleArgsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IElementFactoryRecycleArgsFactory<
+        R,
+        F: FnOnce(&IElementFactoryRecycleArgsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ElementFactoryRecycleArgs,
+            IElementFactoryRecycleArgsFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for ElementFactoryRecycleArgs {
@@ -13692,6 +14041,24 @@ impl FrameworkElement {
             )
             .from_abi(result__)
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<FrameworkElement>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IFrameworkElementFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
     }
     #[doc = "Required features: `\"Windows_Foundation\"`"]
     #[cfg(feature = "Windows_Foundation")]
@@ -17478,6 +17845,19 @@ impl FrameworkElement {
         }
     }
     #[doc(hidden)]
+    pub fn IFrameworkElementFactory<
+        R,
+        F: FnOnce(&IFrameworkElementFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            FrameworkElement,
+            IFrameworkElementFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
+    #[doc(hidden)]
     pub fn IFrameworkElementStatics<
         R,
         F: FnOnce(&IFrameworkElementStatics) -> ::windows_core::Result<R>,
@@ -17663,6 +18043,37 @@ impl FrameworkTemplate {
             )
             .from_abi(result__)
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<FrameworkTemplate>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IFrameworkTemplateFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IFrameworkTemplateFactory<
+        R,
+        F: FnOnce(&IFrameworkTemplateFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            FrameworkTemplate,
+            IFrameworkTemplateFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for FrameworkTemplate {
@@ -18171,6 +18582,51 @@ impl PropertyMetadata {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstanceWithDefaultValue<P0, P1>(
+        defaultvalue: P0,
+        baseinterface: P1,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<PropertyMetadata>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+        P1: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IPropertyMetadataFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithDefaultValue)(
+                ::windows_core::Interface::as_raw(this),
+                defaultvalue.into_param().abi(),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    pub unsafe fn CreateInstanceWithDefaultValueAndCallback<P0, P1, P2>(
+        defaultvalue: P0,
+        propertychangedcallback: P1,
+        baseinterface: P2,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<PropertyMetadata>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+        P1: ::windows_core::IntoParam<PropertyChangedCallback>,
+        P2: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IPropertyMetadataFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstanceWithDefaultValueAndCallback)(
+                ::windows_core::Interface::as_raw(this),
+                defaultvalue.into_param().abi(),
+                propertychangedcallback.into_param().abi(),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn CreateWithDefaultValue<P0>(defaultvalue: P0) -> ::windows_core::Result<PropertyMetadata>
     where
         P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
@@ -18238,6 +18694,19 @@ impl PropertyMetadata {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IPropertyMetadataFactory<
+        R,
+        F: FnOnce(&IPropertyMetadataFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            PropertyMetadata,
+            IPropertyMetadataFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IPropertyMetadataStatics<
@@ -19106,6 +19575,37 @@ impl ResourceDictionary {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ResourceDictionary>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IResourceDictionaryFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IResourceDictionaryFactory<
+        R,
+        F: FnOnce(&IResourceDictionaryFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ResourceDictionary,
+            IResourceDictionaryFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for ResourceDictionary {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -19270,6 +19770,35 @@ impl RoutedEventArgs {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<RoutedEventArgs>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IRoutedEventArgsFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IRoutedEventArgsFactory<
+        R,
+        F: FnOnce(&IRoutedEventArgsFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<RoutedEventArgs, IRoutedEventArgsFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
+    }
 }
 impl ::windows_core::RuntimeType for RoutedEventArgs {
     const SIGNATURE: ::windows_core::imp::ConstBuffer =
@@ -19322,6 +19851,37 @@ impl ScalarTransition {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<ScalarTransition>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IScalarTransitionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IScalarTransitionFactory<
+        R,
+        F: FnOnce(&IScalarTransitionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            ScalarTransition,
+            IScalarTransitionFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for ScalarTransition {
@@ -20642,6 +21202,24 @@ impl StateTriggerBase {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<StateTriggerBase>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IStateTriggerBaseFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn SetActive(&self, isactive: bool) -> ::windows_core::Result<()> {
         let this = &::windows_core::ComInterface::cast::<IStateTriggerBaseProtected>(self)?;
         unsafe {
@@ -20651,6 +21229,19 @@ impl StateTriggerBase {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IStateTriggerBaseFactory<
+        R,
+        F: FnOnce(&IStateTriggerBaseFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            StateTriggerBase,
+            IStateTriggerBaseFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for StateTriggerBase {
@@ -26506,6 +27097,26 @@ impl UIElementWeakCollection {
     }
     #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
     #[cfg(feature = "Windows_Foundation_Collections")]
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<UIElementWeakCollection>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IUIElementWeakCollectionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc = "Required features: `\"Windows_Foundation_Collections\"`"]
+    #[cfg(feature = "Windows_Foundation_Collections")]
     pub fn GetAt(&self, index: u32) -> ::windows_core::Result<UIElement> {
         let this = self;
         unsafe {
@@ -26678,6 +27289,19 @@ impl UIElementWeakCollection {
             )
             .ok()
         }
+    }
+    #[doc(hidden)]
+    pub fn IUIElementWeakCollectionFactory<
+        R,
+        F: FnOnce(&IUIElementWeakCollectionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            UIElementWeakCollection,
+            IUIElementWeakCollectionFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 #[cfg(feature = "Windows_Foundation_Collections")]
@@ -26856,6 +27480,37 @@ impl Vector3Transition {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Vector3Transition>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IVector3TransitionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IVector3TransitionFactory<
+        R,
+        F: FnOnce(&IVector3TransitionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            Vector3Transition,
+            IVector3TransitionFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for Vector3Transition {
@@ -27691,6 +28346,24 @@ impl VisualStateManager {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<VisualStateManager>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IVisualStateManagerFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     #[doc = "Required features: `\"Microsoft_UI_Xaml_Controls\"`"]
     #[cfg(feature = "Microsoft_UI_Xaml_Controls")]
     pub fn GoToStateCore<P0, P1, P2, P3>(
@@ -27855,6 +28528,19 @@ impl VisualStateManager {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IVisualStateManagerFactory<
+        R,
+        F: FnOnce(&IVisualStateManagerFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            VisualStateManager,
+            IVisualStateManagerFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IVisualStateManagerStatics<
@@ -28160,6 +28846,37 @@ impl VisualTransition {
             )
             .ok()
         }
+    }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<VisualTransition>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IVisualTransitionFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
+    #[doc(hidden)]
+    pub fn IVisualTransitionFactory<
+        R,
+        F: FnOnce(&IVisualTransitionFactory) -> ::windows_core::Result<R>,
+    >(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<
+            VisualTransition,
+            IVisualTransitionFactory,
+        > = ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
 }
 impl ::windows_core::RuntimeType for VisualTransition {
@@ -28556,6 +29273,24 @@ impl Window {
             .from_abi(result__)
         }
     }
+    pub unsafe fn CreateInstance<P0>(
+        baseinterface: P0,
+        innerinterface: &mut ::core::option::Option<::windows_core::IInspectable>,
+    ) -> ::windows_core::Result<Window>
+    where
+        P0: ::windows_core::IntoParam<::windows_core::IInspectable>,
+    {
+        Self::IWindowFactory(|this| unsafe {
+            let mut result__ = ::std::mem::zeroed();
+            (::windows_core::Interface::vtable(this).CreateInstance)(
+                ::windows_core::Interface::as_raw(this),
+                baseinterface.into_param().abi(),
+                innerinterface as *mut _ as _,
+                &mut result__,
+            )
+            .from_abi(result__)
+        })
+    }
     pub fn Current() -> ::windows_core::Result<Window> {
         Self::IWindowStatics(|this| unsafe {
             let mut result__ = ::std::mem::zeroed();
@@ -28565,6 +29300,14 @@ impl Window {
             )
             .from_abi(result__)
         })
+    }
+    #[doc(hidden)]
+    pub fn IWindowFactory<R, F: FnOnce(&IWindowFactory) -> ::windows_core::Result<R>>(
+        callback: F,
+    ) -> ::windows_core::Result<R> {
+        static SHARED: ::windows_core::imp::FactoryCache<Window, IWindowFactory> =
+            ::windows_core::imp::FactoryCache::new();
+        SHARED.call(callback)
     }
     #[doc(hidden)]
     pub fn IWindowStatics<R, F: FnOnce(&IWindowStatics) -> ::windows_core::Result<R>>(
