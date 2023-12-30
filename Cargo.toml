@@ -12,5 +12,5 @@ members = [
 #TODO update to latest release when available
 windows = { git = "https://github.com/microsoft/windows-rs/", rev = "0a65f6cf7277d8d44b860821070e9b1d2ba7636b" }
 windows-core = { git = "https://github.com/microsoft/windows-rs/", rev = "0a65f6cf7277d8d44b860821070e9b1d2ba7636b" }
-windows-implement = { git = "https://github.com/kaivol/windows-rs/", rev = "10bcd8c2106d2d9ed70183808d9c7436eacfd3b3" }
-windows-bindgen = { git = "https://github.com/kaivol/windows-rs/", rev = "10bcd8c2106d2d9ed70183808d9c7436eacfd3b3" }
+windows-implement = { git = "https://github.com/kaivol/windows-rs/", rev = "80e520a2edee35c0ed530dc7e85b3afb5059cb85" }
+windows-bindgen = { git = "https://github.com/kaivol/windows-rs/", rev = "80e520a2edee35c0ed530dc7e85b3afb5059cb85" }
