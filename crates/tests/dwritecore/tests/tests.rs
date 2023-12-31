@@ -6,7 +6,7 @@ use windows::Win32::Foundation::BOOL;
 use windows_app::bootstrap;
 use windows_app::DWriteCore::*;
 
-static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(|| bootstrap::initialize());
+static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(bootstrap::initialize);
 
 // This sample will demonstrate enumerating the fonts in the system font collection, by family name.
 // Based on: https://docs.microsoft.com/windows/win32/directwrite/font-enumeration
@@ -63,7 +63,7 @@ fn main() -> Result<()> {
 
             let mut buffer = vec![0u16; (name_length + 1) as usize];
             family_names.GetString(name_index, &mut buffer)?;
-            let _ = String::from_utf16_lossy(&buffer.split_at(buffer.len() - 1).0);
+            let _ = String::from_utf16_lossy(buffer.split_at(buffer.len() - 1).0);
         }
     }
     Ok(())

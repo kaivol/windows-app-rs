@@ -10,7 +10,7 @@ use windows::Win32::UI::WindowsAndMessaging::{GetDesktopWindow, LoadIconW, IDI_Q
 use windows_app::bootstrap;
 use windows_app::Microsoft::UI::{DisplayId, IconId, WindowId};
 
-static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(|| bootstrap::initialize());
+static BOOTSTRAP: Lazy<Result<()>> = Lazy::new(bootstrap::initialize);
 
 #[test]
 fn window() -> Result<()> {
