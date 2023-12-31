@@ -11,9 +11,16 @@ use std::{env, fmt};
 ///
 /// Also instructs `MSVC` to `DELAYLOAD` the Windows App SDK .dll's
 pub fn include_bootstrap_dll<const N: usize>(targets: [LinkArgTarget; N]) {
+    let bytes: &[u8] = match env::var("CARGO_CFG_TARGET_ARCH").unwrap().as_str() {
+        "x86" => &generated::BOOTSTRAP_DLL_BYTES_X86,
+        "x86_64" => &generated::BOOTSTRAP_DLL_BYTES_X86_64,
+        "aarch64" => &generated::BOOTSTRAP_DLL_BYTES_AARCH64,
+        _ => panic!("Unsupported target architecture"),
+    };
+
     for path in LinkArgTarget::output_paths(&targets) {
         let file = path.path().join("Microsoft.WindowsAppRuntime.Bootstrap.dll");
-        File::create(file).unwrap().write_all(&generated::BOOTSTRAP_DLL_BYTES).unwrap();
+        File::create(file).unwrap().write_all(bytes).unwrap();
     }
 
     // All Windows App SDK DLLs with non-COM/WinRT exports must be delay-loaded to give

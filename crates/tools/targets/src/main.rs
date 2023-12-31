@@ -27,12 +27,9 @@ fn gen_bootstrap(output: &std::path::Path) {
     let arm64_length = arm64.len();
 
     let tokens = quote! {
-        #[cfg(target_arch = "x86")]
-        pub static BOOTSTRAP_DLL_BYTES:[u8;#x86_length] = [ #(#x86,)* ];
-        #[cfg(target_arch = "x86_64")]
-        pub static BOOTSTRAP_DLL_BYTES:[u8;#x64_length] = [ #(#x64,)* ];
-        #[cfg(target_arch = "arm64")]
-        pub static BOOTSTRAP_DLL_BYTES:[u8;#arm64_length] = [ #(#arm64,)* ];
+        pub static BOOTSTRAP_DLL_BYTES_X86:[u8;#x86_length] = [ #(#x86,)* ];
+        pub static BOOTSTRAP_DLL_BYTES_X86_64:[u8;#x64_length] = [ #(#x64,)* ];
+        pub static BOOTSTRAP_DLL_BYTES_AARCH64:[u8;#arm64_length] = [ #(#arm64,)* ];
     };
 
     let output = output.join("src/generated.rs");
