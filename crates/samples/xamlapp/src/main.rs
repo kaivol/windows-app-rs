@@ -1,7 +1,7 @@
 use std::cell::RefCell;
 use std::convert::TryFrom;
 
-use windows::core::{h, ComInterface, IInspectable, PWSTR};
+use windows::core::{h, implement, ComInterface, IInspectable, PWSTR};
 use windows::ApplicationModel::Package;
 use windows::Win32::Foundation;
 use windows::Win32::Foundation::{HWND, RECT};
@@ -21,7 +21,6 @@ use windows_app::Microsoft::UI::Xaml::{
     IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs, ResourceDictionary,
     RoutedEventHandler, Window,
 };
-use windows::core::implement;
 
 fn main() -> windows::core::Result<()> {
     let package = unsafe {
