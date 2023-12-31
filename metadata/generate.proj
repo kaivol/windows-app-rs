@@ -4,7 +4,7 @@
 
     <PropertyGroup Label="Globals">
         <OutputWinmd>../winmd/Microsoft.winmd</OutputWinmd>
-        <WinmdVersion>255.255.255.255</WinmdVersion>
+        <WinmdVersion>1.4.3.0</WinmdVersion>
     </PropertyGroup>
 
     <Target Name="CopyMetadata" AfterTargets="Build">
