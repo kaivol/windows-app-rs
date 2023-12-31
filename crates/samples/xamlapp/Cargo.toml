@@ -2,26 +2,40 @@
 name = "sample_xamlapp"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
-[build-dependencies.windows-app]
-path = "../../../"
+[build-dependencies.windows_app_deploy]
+path = "../../libs/windows-app-deploy"
+
+#[dependencies.windows-implement]
+#workspace = true
+
+[dependencies.windows_app]
+path = "../../libs/windows-app"
 features = [
-    "WindowsAppSdk_Foundation"
+    "implement",
+    "bootstrap",
+    "Microsoft_UI_Xaml_Controls_Primitives",
+    "Microsoft_UI_Xaml_Controls",
+    "Microsoft_UI_Xaml_Markup",
+    "Microsoft_UI_Xaml_Media",
+    "Microsoft_UI_Xaml_XamlTypeInfo",
+    "Windows_UI",
+    "Windows_Win32_Foundation",
+    "Windows_Foundation",
+    "Windows_Foundation_Collections",
+    "Windows_UI_Xaml_Interop",
 ]
 
 [dependencies.windows]
-version = "0.35.0"
+workspace = true
 features = [
-    "alloc",
     "implement",
+    "Foundation",
+    "ApplicationModel",
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Storage",
     "Win32_UI_HiDpi",
-]
-
-[dependencies.windows-app]
-path = "../../../"
-features = [
-    "implement",
-    "WindowsAppSdk_Foundation",
-    "UI_Xaml_Controls_Primitives",
+    "Win32_UI_WindowsAndMessaging",
 ]

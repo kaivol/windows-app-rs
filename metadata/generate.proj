@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.Windows.WinmdGenerator/0.56.13-preview">
+
+    <PropertyGroup Label="Globals">
+        <OutputWinmd>../winmd/Microsoft.winmd</OutputWinmd>
+        <WinmdVersion>1.4.3.0</WinmdVersion>
+    </PropertyGroup>
+
+    <Target Name="CopyMetadata" AfterTargets="Build">
+        <ItemGroup>
+            <WindowsAppSdkMetadata Include="$(PkgMicrosoft_WindowsAppSDK)\lib\uap10.0\*.winmd" />
+            <WindowsAppSdkMetadata Include="$(PkgMicrosoft_WindowsAppSDK)\lib\uap10.0.18362\*.winmd" />
+        </ItemGroup>
+        <Copy SourceFiles="@(WindowsAppSdkMetadata)" DestinationFolder="../winmd" />
+    </Target>
+
+    <Target Name="CopyBootstrapLib" AfterTargets="Build">
+        <ItemGroup>
+            <WindowsAppSdkBootstrapLib_x86 Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-x86\*.lib" />
+            <WindowsAppSdkBootstrapLib_x64 Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-x64\*.lib" />
+            <WindowsAppSdkBootstrapLib_arm64 Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-arm64\*.lib" />
+        </ItemGroup>
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapLib_x86)" DestinationFolder="../crates/targets/i686_msvc/lib" />
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapLib_x64)" DestinationFolder="../crates/targets/x86_64_msvc/lib" />
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapLib_arm64)" DestinationFolder="../crates/targets/aarch64_msvc/lib" />
+    </Target>
+
+    <Target Name="CopyBootstrapRuntime" AfterTargets="Build">
+        <ItemGroup>
+            <WindowsAppSdkBootstrapRuntime_x86 Include="$(PkgMicrosoft_WindowsAppSDK)\runtimes\win10-x86\native\Microsoft.WindowsAppRuntime.Bootstrap.dll" />
+            <WindowsAppSdkBootstrapRuntime_x64 Include="$(PkgMicrosoft_WindowsAppSDK)\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll" />
+            <WindowsAppSdkBootstrapRuntime_arm64 Include="$(PkgMicrosoft_WindowsAppSDK)\runtimes\win10-arm64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll" />
+        </ItemGroup>
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapRuntime_x86)" DestinationFolder="../crates/tools/targets/bootstrap/x86" />
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapRuntime_x64)" DestinationFolder="../crates/tools/targets/bootstrap/x64" />
+        <Copy SourceFiles="@(WindowsAppSdkBootstrapRuntime_arm64)" DestinationFolder="../crates/tools/targets/bootstrap/arm64" />
+    </Target>
+
+    <ItemGroup>
+        <ImportLibs
+            Include="$(PkgMicrosoft_WindowsAppSDK)\lib\win10-*\*.lib" />
+
+        <DirectWriteHeaders
+            Include="$(PkgMicrosoft_WindowsAppSDK)\include\dwrite*.h" />
+        <Partition Include="dwritecore.cpp">
+            <TraverseFiles>@(DirectWriteHeaders)</TraverseFiles>
+            <Namespace>DWriteCore</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="mrm.cpp">
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\mrm.h</TraverseFiles>
+            <Namespace>MRM</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="microsoft.ui.xaml.cpp">
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.window.h</TraverseFiles>
+            <Namespace>Microsoft.UI.Xaml</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="microsoft.ui.xaml.hosting.cpp">
+            <TraverseFiles>
+                $(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.hosting.desktopwindowxamlsource.h;
+                $(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.hosting.referencetracker.h
+            </TraverseFiles>
+            <Namespace>Microsoft.UI.Xaml.Hosting</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="microsoft.ui.xaml.media.cpp">
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\microsoft.ui.xaml.media.dxinterop.h</TraverseFiles>
+            <Namespace>Microsoft.UI.Xaml.Media</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <Partition Include="microsoft.windowsappruntime.bootstrap.cpp">
+            <TraverseFiles>$(PkgMicrosoft_WindowsAppSDK)\include\MddBootstrap.h;$(PkgMicrosoft_WindowsAppSDK)\include\WindowsAppSDK-VersionInfo.h</TraverseFiles>
+            <Namespace>Microsoft.WindowsAppRuntime.Bootstrap</Namespace>
+            <ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+        </Partition>
+
+        <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.2428" GeneratePathProperty="true">
+            <IncludeAssets>none</IncludeAssets>
+        </PackageReference>
+
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231115000" GeneratePathProperty="true">
+            <IncludeAssets>none</IncludeAssets>
+        </PackageReference>
+
+    </ItemGroup>
+
+</Project>

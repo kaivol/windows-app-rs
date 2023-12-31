@@ -2,20 +2,17 @@
 name = "sample_battery"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
-[build-dependencies.windows-app]
-path = "../../../"
+[build-dependencies.windows_app_deploy]
+path = "../../libs/windows-app-deploy"
+
+[dependencies.windows_app]
+path = "../../libs/windows-app"
 features = [
-    "WindowsAppSdk_Foundation",
+    "bootstrap",
+    "Microsoft_Windows_System_Power"
 ]
 
 [dependencies.windows]
-version = "0.35.0"
-
-[dependencies.windows-app]
-path = "../../../"
-features = [
-    "WindowsAppSdk_Foundation",
-    "Windows_System_Power"
-]
+workspace = true

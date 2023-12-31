@@ -1,3 +1,6 @@
+use windows_app_deploy::*;
+
 fn main() {
-    ::windows_app::bootstrap::deploy::to_output_dir();
+    include_bootstrap_dll([LinkArgTarget::Bins]);
+    embed_manifest([LinkArgTarget::Bins]);
 }

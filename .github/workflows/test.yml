@@ -1,0 +1,46 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - '.github/ISSUE_TEMPLATE/**'
+    branches:
+      - master
+
+env:
+  RUSTFLAGS: -Dwarnings
+
+jobs:
+  test:
+    name: Test
+    runs-on: windows-2022
+    strategy:
+      matrix:
+        channel: [stable, nightly]
+        target: [
+          {
+            rust: x86_64-pc-windows-msvc,
+            sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x64.exe',
+          },
+# OOM on 32-bit
+#          {
+#            rust: i686-pc-windows-msvc,
+#            sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x86.exe',
+#          },
+        ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update toolchain
+        run: rustup update --no-self-update ${{ matrix.channel }} && rustup default ${{ matrix.channel }}-${{ matrix.target.rust }}
+      - name: Set target
+        run: rustup target add ${{ matrix.target.rust }}
+      - name: Install AppSDK
+        run: |
+          Invoke-webrequest -uri ${{ matrix.target.sdk_uri }} -OutFile windowsappruntimeinstall.exe
+          &.\windowsappruntimeinstall.exe
+      - name: Run tests
+        run: >
+          cargo test -p sample_* &&
+          cargo test -p test_*

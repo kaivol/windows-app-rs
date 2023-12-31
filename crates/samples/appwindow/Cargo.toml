@@ -2,21 +2,26 @@
 name = "sample_appwindow"
 version = "0.0.0"
 publish = false
-edition = "2018"
+edition = "2021"
 
-[build-dependencies.windows-app]
-path = "../../../"
+[build-dependencies.windows_app_deploy]
+path = "../../libs/windows-app-deploy"
+
+[dependencies.windows_app]
+path = "../../libs/windows-app"
 features = [
-    "WindowsAppSdk_Foundation"
+    "bootstrap",
+    "Microsoft_UI_Windowing",
+    "Windows_Foundation",
+    "Windows_Win32_Foundation",
 ]
 
 [dependencies.windows]
-version = "0.35.0"
-features = [ "Win32_UI_HiDpi" ]
-
-[dependencies.windows-app]
-path = "../../../"
+workspace = true
 features = [
-    "WindowsAppSdk_Foundation",
-    "UI_Windowing",
+    "Foundation",
+    "Win32_Foundation",
+    "Win32_UI_HiDpi",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_Com",
 ]
