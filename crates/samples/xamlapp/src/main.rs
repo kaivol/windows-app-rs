@@ -21,7 +21,7 @@ use windows_app::Microsoft::UI::Xaml::{
     IApplicationOverrides_Impl, IWindowNative, LaunchActivatedEventArgs, ResourceDictionary,
     RoutedEventHandler, Window,
 };
-use windows_implement::implement;
+use windows::core::implement;
 
 fn main() -> windows::core::Result<()> {
     let package = unsafe {
