@@ -22,10 +22,12 @@ jobs:
           {
             rust: x86_64-pc-windows-msvc,
             sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x64.exe',
+            check_all: true,
           },
           {
             rust: i686-pc-windows-msvc,
             sdk_uri: 'https://aka.ms/windowsappsdk/1.4/1.4.231115000/windowsappruntimeinstall-x86.exe',
+            check_all: false,
           },
         ]
     steps:
@@ -39,8 +41,6 @@ jobs:
         run: |
           Invoke-webrequest -uri ${{ matrix.target.sdk_uri }} -OutFile windowsappruntimeinstall.exe
           &.\windowsappruntimeinstall.exe
-      - name: Run cargo check windows_app
-        run: cargo check -p windows_app --all-features
       - name: Run tests
         run: >
           cargo test -p sample_* &&

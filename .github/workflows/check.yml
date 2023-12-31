@@ -36,7 +36,7 @@ jobs:
       - name: Install clippy
         run: rustup component add clippy
       - name: Run cargo clippy
-        run: cargo clippy --workspace
+        run: cargo clippy --workspace --all-targets --all-features
 
   docs:
     name: Docs
